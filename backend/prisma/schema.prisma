@@ -1,0 +1,152 @@
+// ─────────────────────────────────────────────────────────────────────────────
+// ComplyPilot — Prisma Schema
+// Source of truth: BACKEND_STRUCTURE.md §1
+// Note: Uses `directUrl` for migrations (direct Supabase connection)
+// ─────────────────────────────────────────────────────────────────────────────
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+// ─── Enumerations ─────────────────────────────────────────────────────────────
+
+enum UserRole {
+  CA_PARTNER
+  CA_ARTICLE
+  MSME_OWNER
+}
+
+enum DocumentStatus {
+  MISSING
+  PENDING_VERIFICATION
+  VERIFIED
+  REJECTED
+}
+
+enum SPCBState {
+  PUNJAB
+  DELHI
+  MAHARASHTRA
+  OTHER
+}
+
+enum SPCBColorCategory {
+  RED
+  ORANGE
+  GREEN
+  WHITE
+  BLUE
+}
+
+// ─── Models ───────────────────────────────────────────────────────────────────
+
+model User {
+  id           String   @id @default(uuid())
+  email        String   @unique
+  phoneNumber  String?  @unique
+  passwordHash String
+  fullName     String
+  role         UserRole
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+
+  // CA → Client many-to-many assignment
+  clients   Client[] @relation("CAClientAssignment")
+
+  // CA Partner → CA Article hierarchy (self-referential)
+  managedBy User?  @relation("ArticleHierarchy", fields: [managerId], references: [id])
+  managerId String?
+  articles  User[] @relation("ArticleHierarchy")
+
+  // Collaborative comments
+  comments Comment[]
+}
+
+model Client {
+  id           String            @id @default(uuid())
+  companyName  String
+  gstin        String            @unique
+  state        SPCBState
+  spcbCategory SPCBColorCategory
+  pan          String
+  createdAt    DateTime          @default(now())
+  updatedAt    DateTime          @updatedAt
+
+  // Relations
+  assignedCAs    User[]             @relation("CAClientAssignment")
+  deadlines      CalendarDeadline[]
+  documents      Document[]
+  secureTokens   SecureToken[]
+  creditPassport CreditPassport?
+}
+
+model CalendarDeadline {
+  id             String         @id @default(uuid())
+  clientId       String
+  client         Client         @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  title          String         // e.g., "GSTR-3B Filing", "PPCB CTO Renewal"
+  description    String?
+  targetDate     DateTime
+  status         DocumentStatus @default(MISSING)
+  complianceType String         // e.g., "GST", "TDS", "SPCB", "FACTORY_ACT"
+  createdAt      DateTime       @default(now())
+  updatedAt      DateTime       @updatedAt
+
+  // Relations
+  documents Document[]
+  comments  Comment[]
+
+  @@index([clientId, targetDate])
+}
+
+model Document {
+  id          String            @id @default(uuid())
+  clientId    String
+  client      Client            @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  deadlineId  String?
+  deadline    CalendarDeadline? @relation(fields: [deadlineId], references: [id], onDelete: SetNull)
+  fileName    String
+  storagePath String            // Supabase private-documents bucket path
+  status      DocumentStatus    @default(PENDING_VERIFICATION)
+  uploadedAt  DateTime          @default(now())
+  verifiedAt  DateTime?
+
+  @@index([clientId, deadlineId])
+}
+
+model SecureToken {
+  id         String   @id @default(uuid())
+  clientId   String
+  client     Client   @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  tokenHash  String   @unique // HMAC-SHA256 hash of the raw token (prd.md §5)
+  docType    String   // Target document type the owner must upload
+  expiryDate DateTime // 48-hour window from creation (prd.md §5)
+  isUsed     Boolean  @default(false)
+  createdAt  DateTime @default(now())
+}
+
+model Comment {
+  id         String           @id @default(uuid())
+  deadlineId String
+  deadline   CalendarDeadline @relation(fields: [deadlineId], references: [id], onDelete: Cascade)
+  userId     String
+  user       User             @relation(fields: [userId], references: [id], onDelete: Cascade)
+  message    String
+  createdAt  DateTime         @default(now())
+}
+
+model CreditPassport {
+  id               String  @id @default(uuid())
+  clientId         String  @unique
+  client           Client  @relation(fields: [clientId], references: [id], onDelete: Cascade)
+  filingHealth     Float   // On-time % over rolling 12-month period
+  auditedRevenue   Float
+  spcbStatusSecure Boolean  @default(true)
+  updatedAt        DateTime @updatedAt
+}

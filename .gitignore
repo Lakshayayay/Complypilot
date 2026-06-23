@@ -7,6 +7,14 @@ dist/
 build/
 backend/dist/
 
+# Next.js build artefacts
+.next/
+out/
+next-env.d.ts
+
+# ESLint cache
+.eslintcache
+
 # Environment files
 .env
 .env.local
@@ -24,3 +32,6 @@ backend/dist/
 # OS/System files
 .DS_Store
 Thumbs.db
+
+# TS Build Info
+*.tsbuildinfo
