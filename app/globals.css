@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────
+   ComplyPilot Design System — CSS Custom Properties
+   Tokens mirror tailwind.config.ts for runtime access if needed
+   ───────────────────────────────────────────────────────────── */
+:root {
+  /* Brand primaries */
+  --color-brand-navy:    #0A192F;
+  --color-brand-blue:    #1E3A8A;
+  --color-brand-teal:    #0F766E;
+
+  /* Accent palette */
+  --color-accent-gold:   #F59E0B;
+  --color-accent-mint:   #10B981;
+  --color-accent-rose:   #EF4444;
+  --color-accent-purple: #7C3AED;
+
+  /* Neutrals */
+  --color-neutral-canvas:   #F8FAFC;
+  --color-neutral-surface:  #FFFFFF;
+  --color-neutral-muted:    #64748B;
+
+  /* Sticker shadow values */
+  --shadow-sticker-sm: 2px 2px 0px 0px #0A192F;
+  --shadow-sticker:    4px 4px 0px 0px #0A192F;
+  --shadow-sticker-lg: 6px 6px 0px 0px #0A192F;
+
+  /* Radii */
+  --radius-sticker: 12px;
+  --radius-badge:   8px;
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Base resets & body defaults
+   ───────────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after {
+    box-sizing: border-box;
+    border-color: theme("colors.brand.navy");
+  }
+
+  html {
+    /* Smooth scrolling for anchor navigation */
+    scroll-behavior: smooth;
+    /* Prevent horizontal overflow on mobile */
+    overflow-x: hidden;
+  }
+
+  body {
+    /* Default canvas background */
+    background-color: theme("colors.neutral.canvas");
+    /* Inter as the primary body font */
+    font-family: theme("fontFamily.sans");
+    color: theme("colors.brand.navy");
+    /* System-level antialiasing */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* Remove list styles globally — re-apply per component */
+  ul, ol { list-style: none; padding: 0; margin: 0; }
+
+  /* Focus ring — accessible & brand-consistent */
+  :focus-visible {
+    outline: 2px solid var(--color-accent-purple);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+/* ─────────────────────────────────────────────────────────────
+   Component utilities (shared across portals)
+   ───────────────────────────────────────────────────────────── */
+@layer components {
+  /* Sticker card base — used by calendar days, SPCB cards, etc. */
+  .card-sticker {
+    @apply bg-neutral-surface border-[2px] border-brand-navy rounded-[12px]
+           shadow-[4px_4px_0px_0px_#0A192F]
+           transition-all duration-100 cursor-pointer;
+  }
+
+  .card-sticker:hover {
+    @apply -translate-x-0.5 -translate-y-0.5
+           shadow-[6px_6px_0px_0px_#0A192F];
+  }
+
+  /* Active sticker card lift (for selected client sidebar items, etc.) */
+  .card-sticker-active {
+    @apply translate-x-1 shadow-[2px_2px_0px_0px_#0A192F];
+  }
+
+  /* Badge pill */
+  .badge {
+    @apply inline-flex items-center px-2 py-0.5
+           font-sans font-extrabold text-[10px] tracking-wider uppercase
+           border border-brand-navy rounded-[8px];
+  }
+
+  /* Handwritten annotation pop-out */
+  .annotation {
+    @apply font-handwritten text-accent-purple text-sm
+           rotate-3 leading-none;
+  }
+
+  /* Drawer slide-in overlay background */
+  .drawer-overlay {
+    @apply fixed inset-0 bg-brand-navy/30 backdrop-blur-sm
+           z-40 animate-in fade-in duration-150;
+  }
+
+  /* Primary action button — Tally/Neo-brutalist style */
+  .btn-primary {
+    @apply px-4 py-2 bg-brand-navy text-neutral-surface
+           font-sans font-bold text-sm
+           border-[2px] border-brand-navy rounded-[12px]
+           shadow-[4px_4px_0px_0px_#0A192F]
+           hover:translate-y-0.5 hover:shadow-[2px_2px_0px_0px_#0A192F]
+           active:translate-y-1 active:shadow-none
+           transition-all duration-100;
+  }
+
+  /* Secondary button */
+  .btn-secondary {
+    @apply px-4 py-2 bg-neutral-surface text-brand-navy
+           font-sans font-bold text-sm
+           border-[2px] border-brand-navy rounded-[12px]
+           hover:bg-neutral-canvas
+           transition-all duration-100;
+  }
+}
