@@ -1,5 +1,6 @@
 import { Injectable, Logger } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service';
+import { DocumentStatus } from '@prisma/client';
 
 @Injectable()
 export class ComplianceEngineService {
@@ -12,7 +13,7 @@ export class ComplianceEngineService {
 
     const now = new Date();
     const currentYear = now.getFullYear();
-    const deadlinesToCreate = [];
+    const deadlinesToCreate: { clientId: string; complianceType: string; title: string; targetDate: Date; status: DocumentStatus }[] = [];
 
     const addYears = (years: number) => {
       const d = new Date();
@@ -29,7 +30,7 @@ export class ComplianceEngineService {
         complianceType: 'FACTORY_ACT',
         title: 'Factory License (Form 2-F)',
         targetDate: form2fDate,
-        status: 'PENDING'
+        status: DocumentStatus.MISSING
       });
 
       let ctoYears = 0;
@@ -43,7 +44,7 @@ export class ComplianceEngineService {
           complianceType: 'SPCB',
           title: `PPCB Consent to Operate (${category})`,
           targetDate: addYears(ctoYears),
-          status: 'PENDING'
+          status: DocumentStatus.MISSING
         });
       }
     } else if (state === 'DELHI') {
@@ -56,7 +57,7 @@ export class ComplianceEngineService {
           complianceType: 'SPCB',
           title: 'Online DPCC Undertaking Form',
           targetDate: thirtyDays,
-          status: 'PENDING'
+          status: DocumentStatus.MISSING
         });
       } else {
         let ctoYears = 0;
@@ -69,7 +70,7 @@ export class ComplianceEngineService {
             complianceType: 'SPCB',
             title: `DPCC Consent to Operate (${category})`,
             targetDate: addYears(ctoYears),
-            status: 'PENDING'
+            status: DocumentStatus.MISSING
           });
         }
       }
@@ -79,7 +80,7 @@ export class ComplianceEngineService {
         complianceType: 'FACTORY_ACT',
         title: 'DFS Fire NOC',
         targetDate: addYears(3),
-        status: 'PENDING'
+        status: DocumentStatus.MISSING
       });
     } else if (state === 'MAHARASHTRA') {
       const janDate = new Date(currentYear, 0, 31);
@@ -97,7 +98,7 @@ export class ComplianceEngineService {
         complianceType: 'FACTORY_ACT',
         title: 'Form B (Fire Safety)',
         targetDate: nextFireSafety,
-        status: 'PENDING'
+        status: DocumentStatus.MISSING
       });
 
       let ctoYears = 5; 
@@ -109,7 +110,7 @@ export class ComplianceEngineService {
         complianceType: 'SPCB',
         title: `MPCB Consent to Operate (${category})`,
         targetDate: addYears(ctoYears),
-        status: 'PENDING'
+        status: DocumentStatus.MISSING
       });
     }
 

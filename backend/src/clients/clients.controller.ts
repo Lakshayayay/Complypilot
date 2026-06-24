@@ -42,12 +42,13 @@ export class ClientsController {
   @Post()
   async createClient(
     @Req() req: any,
-    @Body() body: { name: string; gstNumber: string; state: SPCBState; spcbCategory: SPCBColorCategory }
+    @Body() body: { companyName: string; gstin: string; pan: string; state: SPCBState; spcbCategory: SPCBColorCategory }
   ) {
     const newClient = await this.prisma.client.create({
       data: {
-        name: body.name,
-        gstNumber: body.gstNumber,
+        companyName: body.companyName,
+        gstin: body.gstin,
+        pan: body.pan ?? 'PENDING',
         state: body.state,
         spcbCategory: body.spcbCategory,
         assignedCAs: {

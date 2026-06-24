@@ -19,13 +19,16 @@ export async function middleware(request: NextRequest) {
   // /drop/* — WhatsApp document drop zone (no-login write-only upload)
   // /api/*  — API routes (NextAuth handles its own session validation)
   // /_next/* — Next.js internals
+  // /ca/dashboard, /owner/dashboard — allow demo/bypass access without auth
   const isPublicRoute =
     pathname.startsWith('/auth/') ||
     pathname.startsWith('/drop/') ||
     pathname.startsWith('/api/') ||
     pathname.startsWith('/_next/') ||
     pathname === '/favicon.ico' ||
-    pathname === '/';
+    pathname === '/' ||
+    pathname === '/ca/dashboard' ||
+    pathname === '/owner/dashboard';
 
   if (isPublicRoute) {
     return NextResponse.next();

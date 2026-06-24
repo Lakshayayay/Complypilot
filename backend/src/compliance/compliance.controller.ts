@@ -30,7 +30,7 @@ export class ComplianceController {
       const diffTime = deadline.targetDate.getTime() - now.getTime();
       const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24));
       
-      if (diffDays <= 30 && deadline.status !== 'FILED') {
+      if (diffDays <= 30 && deadline.status !== 'VERIFIED') {
         isAtRisk = true;
         break;
       }

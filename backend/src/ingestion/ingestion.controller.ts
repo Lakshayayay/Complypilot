@@ -1,5 +1,5 @@
 import { Controller, Post, Param, Req, Res, UseGuards, BadRequestException } from '@nestjs/common';
-import { FastifyRequest, FastifyReply } from 'fastify';
+import type { FastifyRequest, FastifyReply } from 'fastify';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { TallyParserService } from './tally-parser/tally-parser.service';
 import { ExcelParserService } from './excel-parser/excel-parser.service';
@@ -13,7 +13,7 @@ export class IngestionController {
 
   @UseGuards(JwtAuthGuard)
   @Post(':id/sync-tally')
-  async uploadFile(@Param('id') clientId: string, @Req() req: FastifyRequest, @Res() res: FastifyReply) {
+  async uploadFile(@Param('id') clientId: string, @Req() req: any, @Res() res: any) {
     if (!req.isMultipart()) {
       throw new BadRequestException('Request is not multipart');
     }

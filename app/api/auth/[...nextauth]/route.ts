@@ -12,7 +12,7 @@ import CredentialsProvider from 'next-auth/providers/credentials';
  * Session strategy: JWT (no database session table in Next.js layer —
  * user state lives in NestJS + Prisma).
  */
-export const authOptions: AuthOptions = {
+const authOptions: AuthOptions = {
   providers: [
     CredentialsProvider({
       id: 'credentials',

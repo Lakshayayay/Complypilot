@@ -8,6 +8,9 @@ import { ClientsModule } from './clients/clients.module';
 import { DocumentsModule } from './documents/documents.module';
 import { IngestionModule } from './ingestion/ingestion.module';
 import { ComplianceModule } from './compliance/compliance.module';
+import { AiModule } from './ai/ai.module';
+import { ReconModule } from './recon/recon.module';
+import { CreditModule } from './credit/credit.module';
 
 @Module({
   imports: [
@@ -36,6 +39,13 @@ import { ComplianceModule } from './compliance/compliance.module';
     IngestionModule,
 
     ComplianceModule,
+
+    // Phase 5: Grounded AI Auditing & Reconciliation
+    AiModule,
+    ReconModule,
+
+    // Phase 6: Credit Readiness & Embedded Financing
+    CreditModule,
   ],
 })
 export class AppModule {}

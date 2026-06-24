@@ -10,7 +10,7 @@ export class ExcelParserService {
       const workbook = xlsx.read(buffer, { type: 'buffer' });
       const sheetNameList = workbook.SheetNames;
       
-      const parsedData = {};
+      const parsedData: Record<string, any[]> = {};
       
       for (const sheetName of sheetNameList) {
         const xlData = xlsx.utils.sheet_to_json(workbook.Sheets[sheetName]);

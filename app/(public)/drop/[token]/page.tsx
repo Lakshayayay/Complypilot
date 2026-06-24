@@ -1,7 +1,7 @@
 import { notFound } from 'next/navigation';
 import { SecureDropzone } from '@/components/dropzone/secure-dropzone';
 
-export default async function DropZonePage({ params }: { params: { token: string } }) {
+export default async function DropZonePage({ params }: { params: Promise<{ token: string }> }) {
   // Extract token from params. In Next 15, params is a Promise that needs awaiting or we can access it directly if we destructure early.
   // Wait, in Next 15, params is a Promise. Let's await it.
   const { token } = await params;

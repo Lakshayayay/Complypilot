@@ -2,7 +2,7 @@ import { TallySyncDropzone } from '@/components/dropzone/tally-sync-dropzone';
 import { WhatsAppTriggerModal } from '@/components/whatsapp-trigger-modal';
 
 interface ClientDetailPageProps {
-  params: { id: string };
+  params: Promise<{ id: string }>;
 }
 
 export default async function ClientDetailPage({ params }: ClientDetailPageProps) {

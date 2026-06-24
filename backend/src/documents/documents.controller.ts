@@ -1,7 +1,7 @@
 import { Controller, Post, Body, UseGuards, Req } from '@nestjs/common';
 import { DocumentsService } from './documents.service';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
-import { FastifyRequest } from 'fastify';
+import type { FastifyRequest } from 'fastify';
 
 @Controller('documents')
 export class DocumentsController {
@@ -12,7 +12,7 @@ export class DocumentsController {
   async requestDropUrl(
     @Body('clientId') clientId: string,
     @Body('docType') docType: string,
-    @Req() req: FastifyRequest
+    @Req() req: any
   ) {
     // Ideally use process.env.NEXT_PUBLIC_APP_URL, but we fallback to origin or localhost
     const baseUrl = process.env.NEXT_PUBLIC_APP_URL || 'http://localhost:3000';
