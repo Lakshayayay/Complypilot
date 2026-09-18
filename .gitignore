@@ -1,41 +1,23 @@
-# Dependency directories
+# Dependencies
 node_modules/
-backend/node_modules/
 
 # Build outputs
-dist/
-build/
-backend/dist/
-
-# Next.js build artefacts
 .next/
 out/
+dist/
+build/
+*.tsbuildinfo
 next-env.d.ts
 
-# ESLint cache
-.eslintcache
-
-# Environment files
+# Environment files (secrets)
 .env
-.env.local
 .env.*
 
-# IDE files
+# Editor / OS
 .vscode/
 .idea/
-*.suo
-*.ntvs*
-*.njsproj
-*.sln
-*.sw?
-
-# OS/System files
 .DS_Store
 Thumbs.db
 
-# TS Build Info
-*.tsbuildinfo
-
-# Scratch test scripts
-test_*.js
-backend/test_*.js
+# Generated codebase dumps
+repomix-output.xml
