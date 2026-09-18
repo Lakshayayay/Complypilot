@@ -1,23 +1,16 @@
+# ComplyPilot
 
-  # ComplyPilot MVP Development
+A shared workspace for Indian CAs (chartered accountants) and MSME factory owners. It tracks filings, collects documents over WhatsApp, and warns about factory licence renewals. It works alongside Tally and Winman; it doesn't replace them.
 
-  This is a code bundle for ComplyPilot MVP Development. The original project is available at https://www.figma.com/design/qxAk4a3CqsicJPDCGaXWi8/ComplyPilot-MVP-Development.
+**Status:** fresh start. We're planning v1. There's no application code yet; coding starts at v1's Build stage.
 
-  ## Running the code
+## Where things are
+- `AGENTS.md`: the rules every AI assistant follows (Claude loads them through `CLAUDE.md`).
+- `docs/STATUS.md`: where we are right now and what's next.
+- `docs/PDP.md`: the product vision.
+- `docs/ROADMAP.md`: the five versions, backlog and risks.
+- `docs/versions/`: one folder per version with its plan, research, and stage docs.
+- `docs/adr/`: records of big decisions.
 
-  Run `npm i` to install the dependencies.
-
-  Run `npm run dev` to start the development server.
-  
-  ## Backend (NestJS)
-  
-  A NestJS TypeScript backend template is initialized under `backend/`.
-  
-  - Install dependencies:
-    - `cd backend`
-    - `npm install`
-  - Start the API server:
-    - `npm run start:dev` (runs NestJS in development mode)
-  - The server starts on `http://localhost:5000` (configured in `src/main.ts` to avoid conflict with Vite's dev server on port 3000).
-
-  
+## The old prototype
+The earlier prototype is saved in git under the tag `v0-prototype`. To look at an old file: `git show v0-prototype:<path>`.
