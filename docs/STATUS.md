@@ -7,11 +7,11 @@
 ## Last session
 - Fresh start: the old prototype is saved under git tag `v0-prototype` and removed from the project.
 - Set up the doc structure and the AI rules (`AGENTS.md`, loaded through `CLAUDE.md`).
-- Work is on branch `chore/fresh-start`. Not merged into main or pushed yet.
+- Merged into `main` and pushed to GitHub, together with the `v0-prototype` tag.
+- Added the "update status" trigger phrase to `AGENTS.md`.
 
 ## Next
-1. Merge `chore/fresh-start` into main and push to GitHub (waiting for Lakshay's OK).
-2. Start v1 stage 0 together: read PDP + ROADMAP, then decide v1's time budget, scope and acceptance criteria (the checks that prove v1 works).
+Start v1 stage 0 together: read PDP + ROADMAP, then decide v1's time budget, scope and acceptance criteria (the checks that prove v1 works).
 
 ## Open decisions
 See `docs/ROADMAP.md` → Risks and open decisions.
