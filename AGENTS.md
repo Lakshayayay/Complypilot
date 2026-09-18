@@ -50,7 +50,9 @@ Stages inside every version (in order; the next starts only after the gate is ap
 - Rewrite docs/STATUS.md (≤30 lines) whenever Lakshay says "update status" (or "wrap up" / "switching"). Cover: current version and stage, what was done, what's next, open questions. Show the diff and don't commit unless asked.
 - docs/SYSTEM.md = how the product works today; created at the v1 checkpoint, updated at every checkpoint.
 - ADRs (short records of big decisions): docs/adr/NNNN-title.md with context, decision, consequences. Never edit an accepted one; write a new one that replaces it.
-- Caps: AGENTS 80 · STATUS 30 · ROADMAP 80 · version README 200 · stage doc 250 · ADR 25 lines.
+- Compress at every checkpoint: the finished version's folder is frozen and becomes archive (never read unless asked). Whatever is still true moves into SYSTEM.md. Stale docs are worse than missing ones.
+- Index before detail: once there are more than ~10 ADRs, keep docs/adr/README.md with one line per decision; read the index, open only the ADR the task needs.
+- Caps: AGENTS 80 · STATUS 30 · ROADMAP 80 · SYSTEM 150 · version README 200 · stage doc 250 · ADR 25 lines.
 - The v0 prototype is reference only: `git show v0-prototype:<path>`.
 
 ## Stack
