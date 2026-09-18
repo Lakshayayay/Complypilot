@@ -35,3 +35,7 @@ Thumbs.db
 
 # TS Build Info
 *.tsbuildinfo
+
+# Scratch test scripts
+test_*.js
+backend/test_*.js
