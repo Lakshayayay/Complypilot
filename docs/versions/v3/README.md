@@ -9,7 +9,7 @@ The owner sees their compliance health, calendar and documents on their phone, a
 - Owner login on mobile web.
 - Health score (green / yellow / red), shared calendar, document vault.
 - Profile by state + industry → the licences that apply: pollution consents (CTE = consent to set up, CTO = consent to run), factory licence, fire NOC, boiler certificate, EPR (plastic/waste recycling duties).
-- Expiry tracking and early warnings.
+- Expiry tracking and early warnings. v1 already has a basic licence tracker on the CA side; v3 adds owner alerts and the state profiler. Note: CTO no longer expires (see `../v1/research/licences.md`).
 - AI: match the owner's industry to the official pollution category list, showing the source.
 
 ## References
