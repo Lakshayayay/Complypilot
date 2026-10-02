@@ -100,12 +100,12 @@ Tracks: [PM] product · [UX] design · [FS] full-stack · [AI] AI and data · [Q
 Order matters: the deploy pipeline comes first, and privacy is done before pilots enter real data.
 | ID | Task | Output | Done when |
 |---|---|---|---|
-| v1-FS-1 | Choose the stack, one ADR each: app framework; database, login and file storage; hosting; data region (India if possible). Also decide whether to reuse or reset the old Supabase project | docs/adr/0003+ | ADRs accepted |
+| v1-FS-1 | Choose the stack, one ADR each: app framework; database, login and file storage; hosting; data region (India if possible). Also decide whether to reuse or reset the old Supabase project | docs/adr/0004+ (0003 = TypeScript) | ADRs accepted |
 | v1-QA-1 | Deploy pipeline: CI (automatic checks on every change: lint, type check, unit tests), preview deploys, production deploys from `main`, error tracking | CI config | A starter page deploys by itself |
 | v1-FS-2 | Data structure, API shapes (what the server sends and receives) and RLS rules (database rules that keep firms apart), with tests | tech.md | Shapes agreed; cross-firm tests pass |
 | v1-FS-3 | Login, firm sign-up, invite a colleague, store consent | Code + tests | Criterion 1 |
 | v1-FS-4 | Clients: add, edit, archive; choose the filings that apply | Code + tests | Client form saves and shows |
-| v1-FS-5 | Due-date engine: first confirm every ⚠️ row on the official text, then write it as a pure function (same inputs → same answer) | Code + unit tests | Criterion 4 |
+| v1-FS-5 | Due-date engine: first confirm every ⚠️ row on the official text, then write it as a pure function (same inputs → same answer). **Started early (2 Oct):** GSTR-3B monthly and QRMP, PMT-06 and overrides are done in `src/due-dates.ts`; other rows are added as each is confirmed | Code + unit tests | Criterion 4 |
 | v1-FS-6 | The grid | Code + tests | Criterion 6 |
 | v1-FS-7 | Mark done + receipt upload to private storage | Code + tests | Criterion 7 |
 | v1-FS-8 | CSV import with a report of bad rows | Code + parser tests | Criterion 3 |

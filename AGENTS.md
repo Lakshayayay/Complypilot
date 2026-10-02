@@ -56,4 +56,4 @@ Stages inside every version (in order; the next starts only after the gate is ap
 - The v0 prototype is reference only: `git show v0-prototype:<path>`.
 
 ## Stack
-Decided in v1 stage 2 via ADRs. No application code until then.
+Each part is decided in an ADR. Language: TypeScript, run directly by Node, tested with `node --test` (ADR-0003). Framework, database and hosting are chosen in v1-FS-1. Only the due-date engine (`src/due-dates.ts`) was started early, in stage 0, at Lakshay's request; no other app code before v1-FS-1.

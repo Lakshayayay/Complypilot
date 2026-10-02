@@ -2,7 +2,7 @@
 
 A shared workspace for Indian CAs (chartered accountants) and MSME factory owners. It tracks filings, collects documents over WhatsApp, and warns about factory licence renewals. It works alongside Tally and Winman; it doesn't replace them.
 
-**Status:** fresh start. We're planning v1. There's no application code yet; coding starts at v1's Build stage.
+**Status:** planning v1. The only code so far is the due-date engine in `src/`, started early. Run its tests with `npm test` (needs Node 25.2 or newer).
 
 ## Where things are
 - `AGENTS.md`: the rules every AI assistant follows (Claude loads them through `CLAUDE.md`).
