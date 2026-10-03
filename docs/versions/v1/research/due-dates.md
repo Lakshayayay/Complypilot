@@ -27,13 +27,13 @@ Terms used below:
 |---|---|---|---|---|
 | GSTR-1 (sales return) | GST, monthly filer | Month | 11th of next month | ⚠️ |
 | GSTR-1 | GST, QRMP | Quarter | 13th of month after quarter | ⚠️ |
-| GSTR-3B (summary return + tax) | GST, monthly filer | Month | 20th of next month | ✅ in code |
-| GSTR-3B | GST, QRMP | Quarter | 22nd or 24th of month after quarter, by state (list below) | ✅ in code |
-| PMT-06 (monthly tax payment) | GST, QRMP, 1st and 2nd month of quarter | Month | 25th of next month | ✅ in code |
+| GSTR-3B (summary return + tax) | GST, monthly filer | Month | 20th of next month | ✅ |
+| GSTR-3B | GST, QRMP | Quarter | 22nd or 24th of month after quarter, by state (list below) | ✅ days · ⚠️ state list |
+| PMT-06 (monthly tax payment) | GST, QRMP, 1st and 2nd month of quarter | Month | 25th of next month | ⚠️ |
 | CMP-08 (composition tax statement) | GST, composition | Quarter | 18th of month after quarter | ⚠️ |
 | GSTR-4 (composition annual return) | GST, composition | Year | 30 April | ⚠️ |
 | GSTR-9 (annual return) | GST, above the turnover limit | Year | 31 December | ⚠️ |
-| TDS/TCS payment | Deducts TDS | Month | 7th of next month; March → 30 April | ✅ March 2026 only · ⚠️ 7th, and March under the new Act |
+| TDS/TCS payment | Deducts TDS | Month | 7th of next month; March → 30 April | ✅ March · ⚠️ 7th |
 | TDS/TCS quarterly return (138/140/143/144) | Deducts TDS | Quarter | 31 Jul, 31 Oct, 31 Jan, 31 May | ⚠️ |
 | Advance tax | Income tax | Instalments | 15 Jun, 15 Sep, 15 Dec, 15 Mar | ⚠️ |
 | Tax audit report | Income tax, audit case | Year | 30 September | ⚠️ |
@@ -48,10 +48,10 @@ Not tracked in v1:
 - transfer-pricing cases
 - ROC (company law) filings. We ask pilots about these in v1-PM-7.
 
-## QRMP GSTR-3B: which states file on the 22nd and which on the 24th ✅
+## QRMP GSTR-3B: which states file on the 22nd and which on the 24th ⚠️
 - **22nd:** Chhattisgarh, Madhya Pradesh, Gujarat, Maharashtra, Karnataka, Goa, Kerala, Tamil Nadu, Telangana, Andhra Pradesh, Daman & Diu, Dadra & Nagar Haveli, Puducherry, Andaman & Nicobar Islands, Lakshadweep.
 - **24th:** Himachal Pradesh, Punjab, Uttarakhand, Haryana, Rajasthan, Uttar Pradesh, Bihar, Sikkim, Arunachal Pradesh, Nagaland, Manipur, Mizoram, Tripura, Meghalaya, Assam, West Bengal, Jharkhand, Odisha, Jammu & Kashmir, Ladakh, Chandigarh, Delhi.
-- **Confirmed 2026-10-02** against the table in rule 61(1)(ii) of the CGST Rules, as substituted by Notification 82/2020-Central Tax. The state is taken from the client's main place of business. Daman & Diu and Dadra & Nagar Haveli are one Union territory since 2020; the code names it "Dadra and Nagar Haveli and Daman and Diu".
+- **Official text to check in v1-FS-5:** rule 61 of the CGST Rules, as amended by Notification 82/2020-Central Tax. The state is taken from the client's main place of business.
 
 ## Open questions
 - **Holidays:** if a due date falls on a Sunday or public holiday, does it move? UNVERIFIED. v1 uses the notified date as it is; override dates cover any exceptions.
@@ -65,8 +65,7 @@ Not tracked in v1:
 ## Sources (accessed 2026-09-22)
 - ✅ GSTR-3B FAQ (monthly 20th; quarterly 22nd/24th; extension by notification): https://tutorial.gst.gov.in/userguide/returns/GSTR3B.htm
 - ✅ QRMP FAQ (₹5 crore limit, opt-in windows, IFF 13th): https://tutorial.gst.gov.in/userguide/returns/FAQs_change_profile.htm
-- ✅ CGST rule 61 as substituted by Notification 82/2020-Central Tax (GSTR-3B 20th; QRMP 22nd/24th state table; PMT-06 25th), accessed 2026-10-02: https://gstcouncil.gov.in/sites/default/files/2024-05/notfctn-82-central-tax-english-2020.pdf
-- ✅ TDS for March 2026 due 30 April 2026 (an FAQ answer about that one month; it gives no general rule under the new Act, re-checked 2026-10-02): https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/tds-compliance
+- ✅ TDS for March due 30 April 2026: https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/tds-compliance
 - Form 138/140 pages on the official site (found, not yet read in full): https://www.incometax.gov.in/iec/foportal/newformpage/forms/form140-um
 - ⚠️ QRMP state list: https://cleartax.in/s/gstr-3b
 - ⚠️ New TDS form numbers and quarterly dates: https://taxguru.in/income-tax/tds-returns-statements-income-tax-act-2025.html
