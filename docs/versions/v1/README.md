@@ -1,6 +1,23 @@
-# v1
+# v1 — Foundation & Core Workflow
 
-Fresh start. This file is rewritten from scratch.
+**Goal:** Establish a working collaboration layer between Indian Chartered Accountants (CAs) and MSME factory owners. Track filings, document collection, and compliance deadlines without replacing Tally/Winman.
+
+**Current Stage:** 0 Plan & Research [PM]
+
+---
+
+## Stage 0 Tasks [PM]
+- [ ] `v1-PM-1`: Define primary persona pain points and select the single core workflow (e.g., filing calendar vs document collection vs factory licenses).
+- [ ] `v1-PM-2`: Research statutory due date rules (GST, TDS, Advance Tax, Factory Act) and regulatory edge cases.
+- [ ] `v1-PM-3`: Draft data structure and API requirements for the core workflow.
+- [ ] `v1-PM-4`: Stage 0 review and scope freeze.
+
+---
+
+## Active Mocks
+*(None yet)*
+
+---
 
 ## Engineering rules
 - Branch per task `<type>/vN-<slug>`; Conventional Commits; merge only when checks pass.
