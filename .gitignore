@@ -21,3 +21,6 @@ Thumbs.db
 
 # Generated codebase dumps
 repomix-output.xml
+
+# Local / non-project folders
+College_Notes/
