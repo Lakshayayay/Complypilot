@@ -2,7 +2,7 @@
 
 **Version:** v1
 **Stage:** 0 Plan & Research [PM]
-**Last updated:** 2026-10-10
+**Last updated:** 2026-10-11
 
 ## What was done
 - Completed Stage 0 research: statutory due dates, licences, competitors, DPDP privacy, import formats, pilot scripts.
