@@ -12,7 +12,7 @@
 - Fixed links to the deleted PDP.md and ROADMAP.md (README, AGENTS.md, v2–v5); pilot script updated for the demo-only v1.
 
 ## Next (in this order)
-1. **Commit today's doc changes.** idea.md was never committed; it must go in, because AGENTS.md now points to it. Commit only when Lakshay says so.
+1. **Merge branch `docs/v1-scope-lock` into main** (today's doc changes, pushed 2026-10-17) through a pull request on GitHub, when Lakshay says so.
 2. **v1-PM-8, Delhi + Haryana licence rules** → new file `versions/v1/research/applicability-delhi-haryana.md`.
    - Cover: factory licence (size limits under the OSH Code, the new labour law), fire NOC, boiler, pollution consent (CTE/CTO), hazardous waste.
    - For each rule: which factories it applies to, the official source and the date checked.
