@@ -37,7 +37,7 @@ Stages inside every version (in order; the next starts only after the gate is ap
 
 ## Engineering rules
 - Engineering is designed together. Before writing code, give Lakshay options and a recommendation for each design question (folder and file structure, how the code is split into parts, naming, and so on). Never assume; ask, and go back and forth until Lakshay understands and agrees.
-- Branch per task `<type>/vN-<slug>`; Conventional Commits; merge only when checks pass.
+- Docs-only changes go straight to `main`. Code goes on a branch `<type>/vN-<slug>` and merges only when checks pass. For a big or risky docs change, Claude may suggest a branch; Lakshay decides. Commit messages follow Conventional Commits (e.g. `docs: …`, `feat: …`).
 - Agree the data structure and API shapes (what the backend sends and receives) before building screens.
 - Every table must stop one customer from seeing another's data (Postgres RLS).
 - Unit-test money, compliance-rule, parser and auth logic. E2E only for critical flows.
