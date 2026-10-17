@@ -10,7 +10,7 @@ Started 2026-10-05.
 | Firm B | (Contact 2) | ~8 manufacturing units | Contacted | Pending | Pending |
 | Firm C | (Direct intro) | ~20 fabrication & engineering units | Outreach drafted | Pending | Pending |
 
-**Target Gate:** Secure agreement from at least 3 firms to conduct discovery calls, and complete at least 2 structured interviews before closing Stage 0.
+**Target:** show the v1 demo to at least 2 CAs before the v1 checkpoint (task v1-QA-6). Earlier interviews are welcome but don't block stage 0; scope was locked on 2026-10-17.
 
 ## Standardized Outreach Messages
 
@@ -34,16 +34,20 @@ Started 2026-10-05.
 - What are the major friction points when collecting data or confirming filings?
 - Where do you store filing proofs (ARNs and official government receipts)?
 - When the government unexpectedly extends a due date, how do you notify staff and update target deadlines?
+- About how much time do you and your staff spend each week asking owners for documents or answers? Where does it happen: WhatsApp, calls, email? (Checks our guess that this wastes a lot of CA time; no Indian survey found, 2026-10-17.)
 
 ### 3. Industrial Licence Management (8 Minutes)
+- Which states are your factory clients in? (v1 licence rules cover Delhi and Haryana only.)
 - Do your factory clients ask for assistance tracking operational licences (Factories Act renewal, PCB Consent to Operate, Fire NOC, Boilers)?
 - Has a client ever suffered factory downtime, fines, or supply disruption due to an unnoticed licence lapse?
 - With the recent central guideline change making Consent to Operate (CTO) valid until cancelled, are your state boards still issuing renewals or requiring one-time fees?
 
-### 4. Pilot Validation & Onboarding (7 Minutes)
-- If ComplyPilot gave you a live grid showing all client filings and licence alerts with instant filtering, would you run your **January 2027 filing cycle** on it?
-- Would you be willing to share an anonymized client spreadsheet so we can ensure our CSV import matches your columns?
-- Can you provide 5 sample GST Registration Certificates (Form GST REG-06) to help benchmark our automated AI extractor?
+### 4. Demo Feedback (7 Minutes)
+v1 runs on made-up demo data only, so we ask for feedback, not real client data.
+- If each deadline had one thread with the owner (messages, files, the receipt), would it replace your WhatsApp follow-ups? What's missing?
+- Would your factory clients log in by email, or only use WhatsApp?
+- Would you share an anonymized client spreadsheet (no real names or numbers) so our CSV import matches your columns?
+- Could you describe 3–5 of your factory clients' products in plain words, without names? (Helps test our AI factory type matcher.)
 
 ---
 
@@ -53,6 +57,8 @@ Started 2026-10-05.
 - **Current System:** [Excel / Jamku / Winman / Other]
 - **Top Priority Filings:** [GSTR-3B / QRMP / TDS / PF / ESIC]
 - **Licence Tracking Need:** [High / Moderate / Handled by third-party consultant]
-- **Pilot Readiness for January 2027:** [Committed / Undecided / Declined]
+- **Client States:** [Delhi / Haryana / Other]
+- **Time Spent Chasing Owners:** [Hours per week, channel]
+- **Thread Idea Reaction:** [Would use / Unsure / Wouldn't use]
 - **Identified Blockers:** [List specific concerns]
 - **Actionable Scope Adjustments:** [Any required tweaks to v1 plan]
