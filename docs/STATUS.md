@@ -12,15 +12,14 @@
 - Fixed links to the deleted PDP.md and ROADMAP.md (README, AGENTS.md, v2–v5); pilot script updated for the demo-only v1.
 
 ## Next (in this order)
-1. **Merge branch `docs/v1-scope-lock` into main** (today's doc changes, pushed 2026-10-17) through a pull request on GitHub, when Lakshay says so.
-2. **v1-PM-8, Delhi + Haryana licence rules** → new file `versions/v1/research/applicability-delhi-haryana.md`.
+1. **v1-PM-8, Delhi + Haryana licence rules** → new file `versions/v1/research/applicability-delhi-haryana.md`.
    - Cover: factory licence (size limits under the OSH Code, the new labour law), fire NOC, boiler, pollution consent (CTE/CTO), hazardous waste.
    - For each rule: which factories it applies to, the official source and the date checked.
    - Add test factories (made up), each with its expected licence list. These become the tests for F4.
-3. **v1-PM-9, the CPCB pollution category list** → `versions/v1/research/pollution-categories.md`. Find the official red/orange/green/white list and check whether Delhi or Haryana change it. This list feeds the AI matcher (F11) and its eval set.
-4. **v1-PM-10, MSME Form-1 dates:** confirm 30 Apr and 31 Oct on the official MCA site and who must file, then add a ✅ row to [due-dates.md](versions/v1/research/due-dates.md).
-5. **v1-PM-11, stage 0 gate:** Lakshay reviews the research and approves.
-6. **Then stage 1, Design [UX]:** create `versions/v1/design.md` and start v1-UX-1 (user flows).
+2. **v1-PM-9, the CPCB pollution category list** → `versions/v1/research/pollution-categories.md`. Find the official red/orange/green/white list and check whether Delhi or Haryana change it. This list feeds the AI matcher (F11) and its eval set.
+3. **v1-PM-10, MSME Form-1 dates:** confirm 30 Apr and 31 Oct on the official MCA site and who must file, then add a ✅ row to [due-dates.md](versions/v1/research/due-dates.md).
+4. **v1-PM-11, stage 0 gate:** Lakshay reviews the research and approves.
+5. **Then stage 1, Design [UX]:** create `versions/v1/design.md` and start v1-UX-1 (user flows).
 
 ## Open questions
 - None right now. New ideas go into idea.md, not into v1.
