@@ -36,7 +36,7 @@ Stages inside every version (in order; the next starts only after the gate is ap
 - Checkpoint = acceptance criteria pass, no unlisted mocks, deployed, feedback collected (from pilots or a demo), SYSTEM.md updated, tag vN.0.0, CHANGELOG, retro, then plan the next version.
 
 ## Engineering rules
-- Engineering is designed together. Before writing code, give Lakshay options and a recommendation for each design question (folder and file structure, how the code is split into parts, naming, and so on). Never assume; ask, and go back and forth until Lakshay understands and agrees.
+- Engineering is designed together, in every chat where development starts. Before writing code, give Lakshay options and a recommendation, based on best engineering practice, for each design question (folder and file structure, how the code is split into parts, file naming, and so on). Never assume; ask, and go back and forth until Lakshay understands and agrees.
 - Docs-only changes go straight to `main`. Code goes on a branch `<type>/vN-<slug>` and merges only when checks pass. For a big or risky docs change, Claude may suggest a branch; Lakshay decides. Commit messages follow Conventional Commits (e.g. `docs: …`, `feat: …`).
 - Agree the data structure and API shapes (what the backend sends and receives) before building screens.
 - Every table must stop one customer from seeing another's data (Postgres RLS).
