@@ -1,0 +1,88 @@
+serial,sector,sub_sector_of_green
+1,"Assembly of Bicycles, Baby carriages and other small non motorized vehicles",no
+2,Baling (hydraulic press) of waste papers,no
+3,Bio fertilizers and bio-pesticides without using inorganic chemicals,no
+4,Block making of printing without foundry (excluding wooden block making),no
+5,Flavoured Betel nuts production or grinding (completely dry mechanical operations),no
+6,Manufacturing of shoe brush and wire brush,no
+7,Coir fibre or pith processing and/or manufacturing of coir products from coir (only dry process),no
+8,"Assembly of air coolers or air conditioners, repairing and servicing",no
+9,Cardboard or corrugated box and paper products (excluding paper or pulp manufacturing and without using boilers),no
+10,Chalk making from plaster of paris [only casting without boilers etc. (sun drying or electrical oven drying)],no
+11,Standalone manufacturing of concrete admixtures up to 1000 Metric Ton per month capacity by physical mixing (without boiler and reactor and no generation of wastewater),no
+12,Used cooking oil collection centres,no
+13,Soap manufacturing (handmade-without steam boiling or boiler),no
+14,Diesel pump repairing and servicing (complete mechanical dry process),no
+15,Electric lamp (bulb) and Compact Fluorescent Lamp (CFL) manufacturing by assembling only,no
+16,Electrical and electronic item assembling (completely dry process),no
+17,Engineering and fabrication units dry process without any heat treatment or metal surface finishing operations or painting,no
+18,"Carpentry and wooden furniture manufacturing without spray painting [excluding saw mill with the help of electrical (motorized) machines such as electrical wood planer, steel saw cutting circular blade, etc.]",no
+19,Steel furniture without spray painting,no
+20,"Compressed bio gas plants based on feedstock Municipal solid waste, agro -residue, energy crops grass or weeds, animal waste, press mud, etc. (as similar type feedstock apart from industrial or process waste), not discharging any waste water and producing by -products- (i) Fermented Organic Manure (FOM) Liquid Fermented Organic Manure (LFOM) enriched manure and/or (ii) Briquette or pellet using electricity.",no
+21,"Hydrogen production through electrolysis(using renewable energy) on Build -Own-Operate (BOO) or Build-Own-Operate-Transfer (BOOT) or Build -Operate-Transfer (BOT) mode etc., located in the premises of end user industry and directly using de -mineralized water and other utilities (cooling tower, Effluent Treatment Plant, etc.) sourced from end user industry",no
+22,Compressed oxygen gas from crude liquid oxygen (without use of any solvents and by maintaining pressure and temperature only for separation of other gases),no
+23,Glass ampules and vials making from glass tubes,no
+24,Ground nut decorticating,no
+25,Medical oxygen,no
+26,Handloom or carpet weaving (without dyeing and bleaching operation),no
+27,Manufacturing of scientific and mathematical instruments (assembling only),no
+28,Manufacturing of products from jute (without dyeing or without boiler),no
+29,Leather foot wear and leather products (excluding tanning and hide processing),no
+30,Leather cutting and stitching (more than 10 machines and using motors),no
+31,Organic manure (physical mixing),no
+32,Packing of powdered milk,no
+33,Cold rolling mill (without heat treatment),no
+34,Wire drawing and wire netting (without pickling and without heat treatment),no
+35,Manufacturing of metal caps containers etc.,no
+36,Organic and inorganic nutrients by physical mixing (without boiler and without any reactor),no
+37,Biscuits trays etc. from rolled Polyvinyl Chloride (PVC) sheet (using automatic vacuum forming machines),no
+38,Fountain pen manufacturing by assembling only,no
+39,Glass putty and sealant (by mixing with machine only),no
+40,"Manufacturing of paper pins, u-clips, etc.",no
+41,Solar power generation through solar photovoltaic cell and wind power,no
+42,Repairing of electric motors and generators (dry mechanical process),no
+43,Manufacturing of plastic or cotton rope,no
+44,Tyre retreaders,no
+45,"Collection centres (without depollution, dismantling and shredding)",no
+46,Surgical and medical products assembled only (without effluent-generating process),no
+47,Manufacturing of solar module or non-conventional energy apparatus,no
+48,Digital thermometer manufacturing,no
+49,Blending and packing of tea,no
+50,Garment and apparel manufacturing industry including doubling or reeling or TFO (Two -for-one unit) dry process - without boiler,no
+51,Cotton and woollen hosiers making (dry process only without any dyeing or washing operation),no
+52,Railway sidings only for defence purpose,no
+53,"Household bio-digesters or gobar-gas (cow-dung) plants based on biodegradable wastes, etc.",no
+54,Mini hydel power plants (capacity -25 Mega Watt),no
+55,"Agro-produce processing units having capacity more than 0.5 Tonnes Per Day but less than 1 Tonnes Per Day, using only cleaner fuels-electricity or gaseous fuel (without effluent generation)",no
+56,Assembling units and mechanical workshops (without heat or surface treatment or spray painting),no
+57,"Bakery, confectionery and sweets production units having capacity more than 0.5 Tonnes Per Day but less than 1 Tonnes Per Day , using only cleaner fuels -electricity or gaseous fuel and with having permission to discharge in municipal sewerage system connected to terminal Sewage Treatment Plant (STP)",yes
+58,Cleaning and other brushes manufacturing through dry mechanical process (without moulding and without effluent or emission generation),no
+59,Cattle or fish or poultry feed pellet making (only pelletisation unit without boiler and effluent generation),no
+60,"Cement products (without using asbestos) like pipe, pillar, jafri, well ring, blocks/tiles etc. (<1 Tonnes Per)",yes
+61,Decoration of ceramic cups and plates by electric furnace,no
+62,Detergent powder manufacturing (handmade -without steam boiling or boiler),yes
+63,"Digital printing on flex or vinyl, PVC etc. (less than 5 machines)",yes
+64,Distilled water using only electricity (< 1 KLD capacity),yes
+65,Double Paper Covering (paper coating) of copper and aluminium wire (only dry process),no
+66,"Food and food processing unit (having capacity more than 0.5 Tonnes Per but less than 1 Tonnes Per) using only cleaner fuels –electricity or gaseous fuel, with having permission to discharge in municipal sewerage system connected to terminal Sewage Treatment Plant",yes
+67,"Fuel dispensing unit only without automobile servicing, repairing and painting",no
+68,Gold assaying and hallmarking centres,no
+69,Herbal powder products making without extraction (dry process - without emissions or effluent generation),no
+70,Industrial items from engineering plastics by fabrication process only (without moulding),no
+71,"Manufacturing of all types of threads, cordage, twines etc. (without ginning)",no
+72,"Manufacturing of cotton wicks, tapes, bandages, absorbent cotton etc.(dry process without boiler and effluent generation)",no
+73,Manufacturing of domestic hardware and utensils (without heat or surface treatment or effluent generation),no
+74,Manufacturing of products by only cutting or stitching or gumming (without effluent or emissions generation),no
+75,"Manufacturing of products through physical mixing only like - floor polish, nail polish, hair oil, shampoo, tooth powder, tooth paste, perfume, hand sanitizer (micro and small scale operations)",no
+76,Manufacturing of sanitary napkins or diapers fixing and sealing (small and micro scale units without effluent or emission generation),no
+77,Manufacturing of stationery items (by assembling or cutting or punching or stapling or binding etc.),no
+78,Metal fabrication works and hand tool manufacturing through machines (without heat or surface treatment or spray painting),no
+79,Oil mill ghani and extraction no hydrogenation refining with capacity not exceeding 500 kg/day,yes
+80,Packing of food items (without processing),no
+81,Paints and varnishes mixing and blending (without ball mill and only dry process),no
+82,"Plastic wire, net, nivar and other products (dry process through looping, twisting, cutting etc.)",no
+83,Puffed rice or murhi or chura with capacity not exceeding 1 TPD per day,yes
+84,Rice mills huller machine with capacity not exceeding 1 TPD per day,yes
+85,Small scale restaurant or hotel without room or cloud kitchens or resorts (without stay or room facility),yes
+86,Sports goods manufacturing units (without seasoning of woods),no
+87,Non-leather footwear manufacturing (dry process and without boiler),no

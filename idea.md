@@ -159,7 +159,7 @@ One line per idea: date · idea → where it goes. To add an idea, add one line.
 - 2026-10-17 · **The CA invites the owner.** No owner-only sign-up for now → v1
 - 2026-10-17 · **Factory questions:** the owner says what the factory makes, where it is, workers, boiler, chemicals and so on. The app lists the licences that apply, each with its official source, and the CA checks the list. Closes the owner's knowledge gap → v1 (Delhi + Haryana); more states → v3
 - 2026-10-17 · **One thread per calendar item:** click a date or item to see the people, the messages, tags, and files sent and received. Replaces "Did you file it?" calls and lost WhatsApp chats → v1
-- 2026-10-17 · **AI factory type matcher:** the owner's plain words → the official pollution category (red/orange/green/white), with the matching line shown; the CA checks it → v1
+- 2026-10-17 · **AI factory type matcher:** the owner's plain words → the official pollution category (red/orange/green/white/blue), with the matching line shown; the CA checks it → v1
 - 2026-10-17 · **Calendar extras:** CA's own repeating tasks, email reminders, MSME Form-1 → v1
 - 2026-10-17 · **Module 1 rule:** never ask for or store government portal passwords. Government data only through official, licensed routes → later
 - 2026-10-17 · **Tally/Winman import is blocked for now:** Tally has no all-clients export, and Winman's data needs its password pulled out, which we refuse to do (see docs/versions/v1/research/import-formats.md) → later
@@ -169,3 +169,4 @@ One line per idea: date · idea → where it goes. To add an idea, add one line.
 - 2026-10-17 · **Export and delete a client** (privacy law) → the first version with real users
 - 2026-10-17 · Company filings (ROC/MCA), professional tax, CA fee tracking, staff roles, GST certificate reader, calendar export to phone/Google → later
 - 2026-10-17 · **v1 is for engineering and a college/competition pitch.** Made-up demo data only; no sales goal → v1
+- 2026-10-18 · **Watch official pages for rule changes automatically** (new notices, date extensions) so licence rules and due dates stay fresh → later

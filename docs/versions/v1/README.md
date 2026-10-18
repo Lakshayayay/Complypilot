@@ -24,14 +24,14 @@ Tracks: [PM] product · [UX] design · [FS] full-stack · [AI] AI and data · [Q
 | F1 | Firm sign-up with privacy notice and consent; invite colleagues | UX · FS |
 | F2 | Add clients by hand or import a CSV file (a spreadsheet saved as plain text). Choose which filings apply to each client | UX · FS |
 | F3 | Invite the owner; the owner logs in with a link sent to their email | UX · FS |
-| F4 | **Factory questions:** about 10 simple questions (what it makes, where, workers, power, boiler, chemicals). Written rules suggest the licences that apply, each with its official source. The CA checks the list before it goes on the calendar. Rules for **Delhi and Haryana** only; anywhere else the CA adds licences by hand, and an unknown case says "ask your CA" | PM · UX · FS |
+| F4 | **Factory questions:** about 10 simple questions (what it makes, where, workers, power, boiler, chemicals). Written rules suggest the licences that apply, each with its official source and a short plain-words note for the owner (what it is, which office gives it, where to apply). The CA checks the list before it goes on the calendar. Rules for **Delhi and Haryana** only; anywhere else the CA adds licences by hand, and an unknown case says "ask your CA" | PM · UX · FS |
 | F5 | **Due dates** worked out automatically: GST, TDS, PF, ESIC, income tax, MSME Form-1 ([due-dates.md](research/due-dates.md)). **Override dates:** when the government extends a date, change it once and every client updates | PM · FS |
 | F6 | **Shared calendar:** the CA sees all clients (by month, with filters); the owner sees only their own | UX · FS |
 | F7 | **Licence tracker:** type, number, office, issue date, optional expiry date, certificate file. Warnings at 90, 60 and 30 days, then "Expired". No expiry date shows "Valid until cancelled" ([licences.md](research/licences.md)) | FS |
 | F8 | **CA's own tasks**, which can repeat monthly, quarterly or yearly | UX · FS |
 | F9 | **Item thread:** each calendar item has one thread with the people on it, messages, files and fixed tags (Need document / Question / Filed). **Mark done** here, with the ARN (the government's acknowledgement number) and the receipt file | UX · FS |
 | F10 | **Email reminders** before a due date, to the firm and the owner | FS · QA |
-| F11 | **AI factory type matcher:** the owner describes the factory in plain words; AI finds its official pollution category (red/orange/green/white, from CPCB, the central pollution board) and shows the line it matched. The CA confirms | AI · UX |
+| F11 | **AI factory type matcher:** the owner describes the factory in plain words; AI finds its official pollution category (red/orange/green/white/blue, from CPCB, the central pollution board; blue was added in February 2025, see [pollution-categories.md](research/pollution-categories.md)) and shows the line it matched. The CA confirms | AI · UX |
 | F12 | **Demo:** a realistic demo data set and a 5-minute demo story | PM · QA |
 | — | **Setup:** auto-deploy, firms can't see each other's data, error alerts, backups | FS · QA |
 
@@ -80,9 +80,10 @@ Each task has an ID and a track. Tick the box when its "done when" check passes.
 - [x] v1-PM-5 CSV import format → [import-formats.md](research/import-formats.md)
 - [x] v1-PM-6 Pilot interview script → [pilots.md](research/pilots.md)
 - [x] v1-PM-7 Choose the core workflow and lock the scope (2026-10-17) → this file
-- [ ] v1-PM-8 Delhi + Haryana licence rules: factory licence (size limits under the OSH Code, the new labour law), fire NOC, boiler, pollution consent, hazardous waste. Include test factories with their expected licence list → research/applicability-delhi-haryana.md. Done when every rule has an official source
-- [ ] v1-PM-9 The official CPCB industry category list, and whether Delhi/Haryana change it → research/pollution-categories.md. Done when the list's official source is linked
-- [ ] v1-PM-10 MSME Form-1 due dates checked on the official MCA site → due-dates.md. Done when marked ✅
+- [x] v1-PM-8 Delhi + Haryana licence rules: factory licence (size limits under the OSH Code, the new labour law), fire NOC, boiler, pollution consent, hazardous waste. Include test factories with their expected licence list → research/applicability-delhi-haryana.md. Done when every rule has an official source (rules with no official source are marked ⚠️ and give "ask your CA")
+- [x] v1-PM-9 The official CPCB industry category list (5 colours: red, orange, green, white, blue), copied once into research/data/cpcb-categories-2025.csv, and whether Delhi/Haryana change it → research/pollution-categories.md. Done when the list's official source is linked and the count per colour matches CPCB's totals
+- [x] v1-PM-10 MSME Form-1 due dates checked on the official MCA site → due-dates.md. Done when marked ✅. Closed as ⚠️ by Lakshay (2026-10-18): the MCA site refuses automated reading; the filing duty is ✅, the two dates are ⚠️ and out of the app until a CA confirms them in the demo calls
+- [x] v1-PM-14 Confirm every ⚠️ row in due-dates.md and licences.md on official sites. Good enough, not perfect: a row we can't confirm stays ⚠️ and out of the app. If a site is blocked, a PDF is unreadable, results look stale or sources disagree, stop and ask Lakshay how to go on. Done when every row is ✅ or listed as staying out
 - [ ] v1-PM-11 **Gate:** Lakshay approves stage 0
 
 ### Stage 1: Design [UX] → design.md
@@ -99,7 +100,7 @@ Before any code, we agree the design together: folder and file structure, how th
 - [ ] v1-FS-2 Data structure, API shapes (what the server sends and receives) and RLS rules (database rules that keep firms apart), with tests → criterion 2
 - [ ] v1-FS-3 Login, firm sign-up, consent, invite colleagues → criterion 1
 - [ ] v1-FS-4 Clients: add, edit, archive; choose the filings that apply
-- [ ] v1-FS-5 Due-date engine: first confirm every ⚠️ row on official text, then write it as a pure function (same inputs, same answer) → criterion 6
+- [ ] v1-FS-5 Due-date engine: write the ✅ rows (confirmed in v1-PM-14) as a pure function (same inputs, same answer) → criterion 6
 - [ ] v1-FS-6 Shared calendar, CA view and owner view → criterion 8
 - [ ] v1-FS-7 Item thread: messages, tags, files in private storage, mark done with ARN and receipt → criterion 11
 - [ ] v1-FS-8 CSV import with a report of bad rows → criterion 3
@@ -123,6 +124,7 @@ Before any code, we agree the design together: folder and file structure, how th
 - [ ] v1-QA-3 Security checks: cross-firm and cross-owner tests on every table and file link; OWASP Top 10 basics (the standard list of common web security holes); dependency audit; secret scan
 - [ ] v1-QA-4 Speed test with 200 clients → criterion 8 with room to spare
 - [ ] v1-QA-5 Monitoring: uptime check, error alerts, one backup restore → criterion 14
+- [ ] v1-PM-15 Re-check the licence rules and due dates on their official sources just before the demo (rules change, e.g. Haryana's labour rules were still a draft in May 2026). Done when every "checked on" date is refreshed
 - [ ] v1-PM-13 Pitch: 5-minute demo script and slides
 - [ ] v1-QA-6 Show the demo to 2 CAs and write down their feedback
 
@@ -151,10 +153,12 @@ A task is done only when its tests pass. v1 has no money calculations.
 | Risk | What we do |
 |---|---|
 | A licence rule is wrong, so an owner thinks they're safe | Every rule links its official source; the CA confirms; unit tests; unknown cases say "ask your CA" |
-| Haryana is new research | v1-PM-8 must finish before v1-FS-13 starts |
+| Haryana is new research | v1-PM-8 must finish before v1-FS-13 starts (done; its ⚠️ rules say "ask your CA") |
+| Delhi and Haryana use different pollution lists (Delhi's own 4-colour list vs CPCB's 5-colour list) | Decided 2026-10-18: Delhi → Delhi's list, Haryana → CPCB's list ([pollution-categories.md](research/pollution-categories.md)); the eval set (v1-AI-2) must cover both |
+| Official sources disagree on the factory size limit (Delhi's labour page: 10/20 workers; OSH Code and PIB: 20/40) | Workers in the grey band give "ask your CA" ([applicability-delhi-haryana.md](research/applicability-delhi-haryana.md), rule FL-2) |
 | No time limit, so scope keeps growing | Scope is locked; new ideas go to idea.md |
 | Owners ignore email | WhatsApp comes in v2; ask about it in the CA demos |
-| Due-date rules change (new Income-tax Act, labour codes, extensions) | Check every ⚠️ row in v1-FS-5; override dates; show new and old form names |
+| Due-date rules change (new Income-tax Act, labour codes, extensions) | Confirm every ⚠️ row in v1-PM-14; re-check before the demo (v1-PM-15); override dates; show new and old form names |
 | CTO (pollution consent to run) no longer expires | The licence tracker allows "no expiry date" |
 | Solo developer and student | One task at a time; cut scope, not quality |
 | The old Supabase project may still hold prototype data | v1-FS-1 decides whether to reuse or reset it |
