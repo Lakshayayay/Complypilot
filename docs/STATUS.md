@@ -1,21 +1,19 @@
 # Status
 
-**Version:** v1 — Shared Compliance Calendar · **Stage:** 0 Plan & Research [PM], research finished, waiting for the gate · **Last updated:** 2026-10-18
+**Version:** v1 — Shared Compliance Calendar · **Stage:** 0 Plan & Research is done (gate approved 2026-10-18); **stage 1 Design [UX] is next, not started** · **Last updated:** 2026-10-18
 **Plan for this version:** [v1 README](versions/v1/README.md) · **Vision and ideas:** [idea.md](../idea.md) · **Rules:** [AGENTS.md](../AGENTS.md)
 
 ## Done (milestones)
 - Fresh start (2026-09-18): v0 code archived under git tag `v0-prototype` ([how to read it](../README.md#the-old-prototype)).
 - **v1 scope locked (2026-10-17):** a CA dashboard and an owner dashboard joined by one shared calendar, with factory questions (Delhi + Haryana), one thread per item, email reminders and an AI factory type matcher. 12 features (F1–F12), each tagged with its tracks.
-- **Stage 0 research finished (2026-10-18):** [due dates](versions/v1/research/due-dates.md) · [licences](versions/v1/research/licences.md) · [competitors](versions/v1/research/competitors.md) · [privacy (DPDP)](versions/v1/research/privacy.md) · [CSV import](versions/v1/research/import-formats.md) · [pilot script](versions/v1/research/pilots.md) · new: [pollution categories](versions/v1/research/pollution-categories.md) · [licence rules for Delhi and Haryana](versions/v1/research/applicability-delhi-haryana.md).
-  - v1-PM-9: the official CPCB 2025 list (419 sectors, 5 colours) in `research/data/`, plus Delhi's own list (725 activities) and the 87-sector exempt schedule.
-  - v1-PM-8: 21 rules for 5 licences, each with its source, and 9 made-up test factories (these become the F4 tests).
-  - v1-PM-14: most ⚠️ rows in due-dates and licences are now ✅ on official text.
-- **Decisions (2026-10-18):** Delhi uses its own pollution list and Haryana uses CPCB's. Workers in the factory-size grey band (10–19 with power) give "ask your CA". Unconfirmed rows stay ⚠️ and out of the app.
-- Housekeeping: AGENTS.md rules (no deadlines, tracks, engineering design agreed first); idea.md is the vision doc and ideas log.
+- **Stage 0 finished and approved (2026-10-18):** [due dates](versions/v1/research/due-dates.md) · [licences](versions/v1/research/licences.md) · [competitors](versions/v1/research/competitors.md) · [privacy (DPDP)](versions/v1/research/privacy.md) · [CSV import](versions/v1/research/import-formats.md) · [pilot script](versions/v1/research/pilots.md) · [pollution categories](versions/v1/research/pollution-categories.md) · [licence rules for Delhi and Haryana](versions/v1/research/applicability-delhi-haryana.md). Committed as `225a718`.
+  - Data files in `research/data/`: CPCB 2025 list (419 sectors, 5 colours), Delhi's own list (725 activities), the 87-sector exempt schedule.
+  - 21 licence rules with sources and 9 made-up test factories (these become the F4 tests).
+- **Decisions (2026-10-18):** Delhi uses its own pollution list, Haryana uses CPCB's. Workers in the factory-size grey band give "ask your CA". Unconfirmed rows stay ⚠️ and out of the app.
 
 ## Next (in this order)
-1. **v1-PM-11, stage 0 gate:** Lakshay reviews the research and approves. Suggested spot-check: 10 random rows of `cpcb-categories-2025.csv` against the PDF page in its `pdf_page` column, and 5 links per research file.
-2. **Then stage 1, Design [UX]:** create `versions/v1/design.md` and start v1-UX-1 (user flows). Carry into design: the factory questions list (in the licence-rules file), "ask your CA" screens, and reminder days (some renewals must be applied for 60 days to 6 months early).
+1. **Stage 1, Design [UX]:** create `versions/v1/design.md` (opens with "Learn first") and start v1-UX-1, the user flows: firm sign-up → add clients → invite owner → factory questions → calendar → item thread → mark done.
+2. **Carry into design:** the factory questions list (in the licence-rules file), the "ask your CA" and "inform the board" result screens, and the reminder days (some renewals must be applied for 60 days to 6 months early).
 3. **Later:** v1-PM-15 re-checks the rules and dates just before the demo.
 
 ## Open questions

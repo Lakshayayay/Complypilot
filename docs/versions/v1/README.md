@@ -84,7 +84,7 @@ Each task has an ID and a track. Tick the box when its "done when" check passes.
 - [x] v1-PM-9 The official CPCB industry category list (5 colours: red, orange, green, white, blue), copied once into research/data/cpcb-categories-2025.csv, and whether Delhi/Haryana change it → research/pollution-categories.md. Done when the list's official source is linked and the count per colour matches CPCB's totals
 - [x] v1-PM-10 MSME Form-1 due dates checked on the official MCA site → due-dates.md. Done when marked ✅. Closed as ⚠️ by Lakshay (2026-10-18): the MCA site refuses automated reading; the filing duty is ✅, the two dates are ⚠️ and out of the app until a CA confirms them in the demo calls
 - [x] v1-PM-14 Confirm every ⚠️ row in due-dates.md and licences.md on official sites. Good enough, not perfect: a row we can't confirm stays ⚠️ and out of the app. If a site is blocked, a PDF is unreadable, results look stale or sources disagree, stop and ask Lakshay how to go on. Done when every row is ✅ or listed as staying out
-- [ ] v1-PM-11 **Gate:** Lakshay approves stage 0
+- [x] v1-PM-11 **Gate:** Lakshay approves stage 0 (approved 2026-10-18)
 
 ### Stage 1: Design [UX] → design.md
 - [ ] v1-UX-1 "Learn first" notes and user flows: firm sign-up → add clients → invite owner → factory questions → calendar → item thread → mark done. Done when every feature has a flow
