@@ -5,6 +5,7 @@ A study of 16 pages from similar or admired products: what to copy and what to a
 - **Captured 2026-10-19**, full page at 1440 px wide, with Playwright. The images are in [design-refs/](design-refs/) and stay out of git (they are other companies' pages).
 - **Checked 2026-10-19:** quoted words were matched against each live page's text; claims about images were checked by eye on the captures; colours were measured with ImageMagick (the top 1800 px of each page).
 - "Window N" means the Nth 900 px slice of a full-page image (window 1 is the top).
+- **In Figma:** the 26 windows used below, each with its caption, are on page `01 References` ([board](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=10-2)).
 
 ## The study
 | # | Page | Image · where | What we learned | Feeds |
@@ -13,7 +14,7 @@ A study of 16 pages from similar or admired products: what to copy and what to a
 | 1b | [Jamku login](https://jamku.app) | `01b-jamku-app-login` · window 1 | Sends clients to a separate client portal ("Looking for Client Portal? Visit client.jamku.app") | Competitor check |
 | 2 | [Zoho Practice](https://www.zoho.com/practice/) | `02-zoho-practice` · windows 4–5 | "Real-time client collaboration": a chat card "Tax Return Filling : FY 2024 · 4 Participants" (their spelling). Documents marked "Processed / Not Processed". Tasks with "High Priority", "IN PROGRESS", "YET TO START". Green brand, a small label above every section | Thread (F9), status |
 | 3 | [Karbon](https://karbonhq.com/) | `03-karbon` · window 4 | A task "Prepare draft tax return · Due Friday" with comments and "32 Colleagues can see this conversation": thread and due date in one card. Confident coral brand with a warm dark brown | Thread, brand confidence |
-| 4 | [PracticeStacks](https://practicestacks.in/ca-management-software) | `04-practicestacks` · page text | Pain points in its own words: "Tracking compliance deadlines in Excel sheets", "Chasing clients on WhatsApp", "Missing GST/TDS deadlines". Template look, navy and indigo | Pitch story; what to avoid |
+| 4 | [PracticeStacks](https://practicestacks.in/ca-management-software) | `04-practicestacks` · window around y 700 | Pain points in its own words: "Tracking compliance deadlines in Excel sheets", "Manually chasing clients on WhatsApp for documents", "Missing GST/TDS deadlines for clients". Template look, navy and indigo | Pitch story; what to avoid |
 | 5 | [Winman](https://winmansoftware.com/) | `05-winman` · window 2 | The dense, old desktop grid CAs are used to (Winman CA-ERP). Blue | CA grid density |
 | 6 | [EnvironDesk](https://environdesk.com/) | `06-environdesk` · window 1 + page text | Closest on factory licences: chips "CCA, HW Auth, CGWA NOC"; "60·30·7 day reminders"; pain cards "A renewal slips. A factory shuts." and "Kya hua mera NOC?" (Hinglish); a stage board with stuck items. Sells to environmental consultancies in Gujarat, not to CAs. Green | Licence tracker (F7), owner voice, pitch |
 | 7 | [ClearTax](https://cleartax.in/) | `07-cleartax` · window 1 | Trust claimed in words ("India's Most Trusted Tax Filing Platform", "100% Accuracy", "8M+ users"), bright blue, a real person's photo | Indian trust cues |

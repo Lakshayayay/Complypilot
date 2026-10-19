@@ -32,6 +32,10 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | 2026-10-19 | **One Figma design file with 7 pages, plus one FigJam board** for the flows. |
 | 2026-10-19 | **Prototype: the demo path only.** The other screens stay static. |
 | 2026-10-19 | **The real app (stage 2) is built from this Figma file through the Figma MCP.** |
+| 2026-10-19 | **Login:** CA staff and owners both sign in with an email link. No passwords. |
+| 2026-10-19 | **Factory questions:** the owner answers on the phone; the CA can fill them in or correct them on the desktop. |
+| 2026-10-19 | **Before the CA checks,** the owner sees "Your CA will check". Licences reach the owner's calendar only after the CA confirms. |
+| 2026-10-19 | **The owner ticks off only tasks the CA gives them.** Filings and licences are marked done by the CA (ARN and receipt). The owner can upload a new certificate in the thread. |
 
 ## Design read
 From the design-taste-frontend skill: "Reading this as **a work tool for small Indian CA firms (desktop, dense) plus a phone companion for factory owners**, with a **calm, trust-first, crisp** language, leaning toward **Carbon-style data patterns and GOV.UK/UX4G plain-word status rules**. It's bold only in brand moments."
@@ -58,7 +62,7 @@ From the design-taste-frontend skill: "Reading this as **a work tool for small I
 **Files.** `complypilot` (design file) has 7 pages: `Cover` · `01 References` · `02 Wireframes` · `03 Brand` · `04 Foundations` · `05 Components` · `06 Screens`. `06 Screens` holds the CA desktop and owner phone screens side by side, because a Figma prototype works within one page. The flows live in one FigJam board, drawn from the Mermaid text in this file.
 **Rules.**
 - Load Figma's skill for the job before every call (table above).
-- Look before writing. Every layer gets a fixed, predictable name, and every call returns the IDs it made. The IDs are kept in `figma-ledger.json` next to this file (a list from name to Figma ID, made in setup), so a new chat can pick up where the last one stopped.
+- Look before writing. Every layer gets a fixed, predictable name, and every call returns the IDs it made. The IDs are kept in [figma-ledger.json](figma-ledger.json) (a list from name to Figma ID), so a new chat can pick up where the last one stopped.
 - One writing call at a time; reading calls may run side by side.
 - Before each phase, Lakshay saves a named version (File → Save to version history). The API can't do this.
 - At most about 150 calls a day, under the limit of 200. One screenshot per finished view, plus one after a fix.
@@ -98,8 +102,15 @@ The real app is built from this Figma file through the MCP. So during design:
 
 How stage 2 uses it goes in tech.md. **Code Connect** (links each Figma component to its code version) is `UNVERIFIED` for our Education plan: Figma's [developer docs](https://developers.figma.com/docs/code-connect/) list Professional, Organization and Enterprise, but not Education. If we can't use it, a mapping table in tech.md does the same job.
 
+## Setup (done 2026-10-19)
+- **Drawing test passed:** Claude can write to `complypilot`. The 7 pages exist; their IDs are in `figma-ledger.json`.
+- **References board** on `01 References`: the 5 lessons and 26 windows from the study, each with its caption and link ([board](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=10-2)). Its colours are typed in by hand, because it's a working page made before the colour variables exist.
+- **Fonts in Figma:** all 6 candidates are there (IBM Plex Sans and Plex Sans Devanagari, Noto Sans and Noto Sans Devanagari, Anek Latin and Anek Devanagari), plus Inter. Watch the style names: Inter writes "Semi Bold", the others "SemiBold".
+- **Libraries:** none attached. The free kits on offer (Material 3, Simple Design System, Apple's iOS and macOS kits) have no Phosphor icons, so the icons come in as SVGs in UX-3.
+- **Open:** Lakshay's stray "Vector 1" line stays on `Cover` until he decides.
+
 ## UX-1 User flows
-_Not started._ Open questions to settle here: how the CA logs in; who fills in the factory questions (the owner, the CA, or both); what the owner can tick off.
+_In progress._ The three open questions were settled on 2026-10-19 (see Decisions so far).
 
 ## UX-2 Screens and wireframes
 _Not started._ First guess at the screens (about 27), to be checked against the flows:
@@ -110,7 +121,7 @@ _Not started._ First guess at the screens (about 27), to be checked against the 
 ## UX-3 Brand and design basics
 _Not started._
 - **Brand interview** (one question at a time): the story and the promise · a real CA and owner you're picturing · 3 words it is and isn't · what "Pilot" means to you · symbols and colours you like or want off-limits · whether owner copy may use Hinglish (EnvironDesk does) · the pitch audience and room · domain and trademark check (Claude checks IP India, with the date).
-- **Font candidates:** IBM Plex Sans + IBM Plex Sans Devanagari · Noto Sans + Noto Sans Devanagari (UX4G uses this pair) · Anek Latin + Anek Devanagari. Checked against Figma's font list in setup.
+- **Font candidates:** IBM Plex Sans + IBM Plex Sans Devanagari · Noto Sans + Noto Sans Devanagari (UX4G uses this pair) · Anek Latin + Anek Devanagari. All are in Figma (setup, 2026-10-19).
 - **Brand accent:** outside the colours competitors and status already use ([lesson 4](research/design-references.md#what-we-take-from-it)).
 - **Steps:** interview → strategy (category, promise, one metaphor) → 3 logo directions, each with its meaning and construction → Lakshay picks one → colour and a contrast table → type scale (tabular numbers on number styles) → spacing on a 4-point scale, one corner-size system, layout grids (CA 12 columns, owner 4) → status system (at most 6: word + icon + colour) → voice (plain words, no em-dashes, realistic Indian demo names) → motion → variables, styles and components in Figma → 3×3 brand board, logo, app icon, favicon (16/32/180/512).
 - **Components** (built in this order): icons → button → input, select, checkbox, radio → status chip → tag → avatar → file chip → side menu, phone tab bar, top bar → table row → calendar day cell and item chip → thread message → licence card → licence result row (Required / Not required / Inform / Ask CA, with its source) → step indicator → toast → modal → empty state.
