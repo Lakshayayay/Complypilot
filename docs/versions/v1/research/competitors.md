@@ -24,7 +24,7 @@ Researched 2026-10-05. Prices sourced from public vendor websites.
   - Simple, flat pricing per firm (no per-seat penalties for audit interns).
   - Direct receipt attachment (PDF/image) linked to the government acknowledgement number (ARN).
 - **Defer to Future Releases:**
-  - Client portal and WhatsApp document requests (v2 and v3).
+  - WhatsApp messages and a no-login upload link (v2); a document vault (v3). v1 already has a simple owner login: the owner's own calendar and item threads (README F3, F6, F9).
   - Billing, timesheets, and invoicing (backlog; ComplyPilot is not an ERP).
   - Tally/Winman automatic data sync (backlog; requires dedicated on-premises agent).
 
@@ -32,6 +32,17 @@ Researched 2026-10-05. Prices sourced from public vendor websites.
 - Focus strictly on speed and clarity: A CA partner can scan 100 clients in 10 seconds to see red flags.
 - Deliver instant value by displaying factory licence expiry dates directly next to GST/TDS status.
 - Pilots are free in v1; paid tiers will be modeled after successful pilot feedback.
+
+## Re-check 2026-10-19: client portals and licences
+Done for the stage 1 design study ([design-references.md](design-references.md)). Sources opened 2026-10-19.
+| Tool | What the client side does | Factory licences? | Sources |
+|---|---|---|---|
+| Jamku | A client portal (client.jamku.app, linked from the login page). Clients see document requests, send documents, download task files, and see the task fields and stages the firm marks "client visible". iOS client app since May 2022. The help pages date from 2021–2023 | Not seen | [login page](https://jamku.app) · [client login](https://help.jamku.app/guide/client-login.html) · [documents](https://help.jamku.app/guide/document.html) · [changes 2021-03](https://help.jamku.app/changes/202103.html) · [changes 2022-05](https://help.jamku.app/changes/202205.html) |
+| Zoho Practice | A self-service portal: client requests with messages and documents, e-sign requests, reviews, email. The help page doesn't say clients see tasks or due dates | No | [self-service portal](https://www.zoho.com/practice/help/self-service-portal.html) |
+| TaxDome | A client portal and mobile app: a to-do dashboard (sign, pay, fill in organisers), chats with to-dos, notifications. **UNVERIFIED:** its site blocks automated reading, so this comes from search snippets of its help centre | No | [client portal](https://taxdome.com/client-portal) · [client home page](https://client-help.taxdome.com/article/64-mobile-client-dashboard) · [chats](https://help.taxdome.com/article/1487-chats-overview) |
+| EnvironDesk | For environmental consultancies: "Tracking CTO, CTE & EC compliance for 50+ consultancies across Gujarat", with a compliance calendar and WhatsApp alerts to their clients | Pollution and environment clearances only; no tax filings | [environdesk.com](https://environdesk.com/) |
+
+**Result:** client portals are common, so "the owner can log in" is not an edge on its own. Our edge is narrower: **tax filings and factory licences on one calendar that the CA and the owner both use.** README "Why this can win" now says this.
 
 ## Primary Sources
 - Jamku Pricing: https://madrecha.com/jamku/pricing/

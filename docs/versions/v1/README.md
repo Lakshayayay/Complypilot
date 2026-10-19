@@ -1,6 +1,6 @@
 # v1 — Shared Compliance Calendar
 
-**Stage:** 0 Plan & Research [PM]. Scope locked 2026-10-17. Any change from here is written down in this file.
+**Stage:** 1 Design [UX] → [design.md](design.md) (stage 0 approved 2026-10-18). Scope locked 2026-10-17. Any change from here is written down in this file.
 **Time:** no deadlines or hour budgets. Progress = the task checklist below.
 **Vision and ideas:** [idea.md](../../../idea.md)
 
@@ -14,7 +14,7 @@ A CA firm and its factory owners share one compliance calendar. Every filing dea
 - **Data rule:** v1 uses **made-up demo data only**. No real person's data goes in until "export and delete a client" exists (required by DPDP, India's privacy law; see [privacy.md](research/privacy.md)).
 
 ## Why this can win
-Plain CA trackers are cheap and common (Jamku costs about ₹6,500/yr). None we found joins the CA and the owner on one calendar, or tracks factory licences next to tax filings. Details: [competitors.md](research/competitors.md).
+Plain CA trackers are cheap and common (Jamku costs about ₹6,500/yr). Client portals are common too (Jamku, Zoho Practice, TaxDome), and EnvironDesk tracks pollution consents for environmental consultants. None we found puts tax filings and factory licences on one calendar that the CA and the owner both use (re-checked 2026-10-19). Details: [competitors.md](research/competitors.md).
 
 ## Features
 Tracks: [PM] product · [UX] design · [FS] full-stack · [AI] AI and data · [QA] testing and release.
@@ -89,7 +89,7 @@ Each task has an ID and a track. Tick the box when its "done when" check passes.
 ### Stage 1: Design [UX] → design.md
 - [ ] v1-UX-1 "Learn first" notes and user flows: firm sign-up → add clients → invite owner → factory questions → calendar → item thread → mark done. Done when every feature has a flow
 - [ ] v1-UX-2 Screen list and wireframes (rough layouts) for both sides, desktop for the CA and phone for the owner. Done when every step of every flow has a screen
-- [ ] v1-UX-3 Design basics: colours, fonts, spacing, status chips. Status is never shown by colour alone. Done when text contrast passes WCAG AA (the standard readability check)
+- [ ] v1-UX-3 Brand and design basics: logo, app icon, favicon, colours, fonts, spacing, status chips. Status is never shown by colour alone. Done when text contrast passes WCAG AA (the standard readability check) and the logo reads at 16 px (brand added 2026-10-19)
 - [ ] v1-UX-4 Detailed calendar and item thread screens; agree the reminder days. Done when Lakshay can walk the demo story on the designs
 - [ ] v1-PM-12 **Gate:** Lakshay approves the design
 
