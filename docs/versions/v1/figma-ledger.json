@@ -79,5 +79,14 @@
       "21-12-research": "10:124", "22-13-group": "10:132", "23-13-icons": "10:133", "24-14-hero": "10:141",
       "25-14-compliance": "10:142", "26-15-hero": "10:150"
     }
+  },
+  "brand": {
+    "note": "UX-3 phase A, drawn 2026-10-20 on page 03 Brand. A section with 3 comparable brand directions, each a frame 1552 px wide with 5 blocks (head, logo-block, palette-block, type-block, calendar-block). These frames use typed-in hex colours (exploration, before the colour variables). Marks are named mark/<A|B|C>/<large|lockup|32|16|one-colour|reversed|topbar>. The page brief (18:2) stays at the left.",
+    "section": "47:2",
+    "directions": {
+      "A": { "frame": "47:3", "logoBlock": "47:10", "palette": "49:2", "type": "49:73", "calendar": "50:2" },
+      "B": { "frame": "47:60", "logoBlock": "47:67", "palette": "49:85", "type": "49:156", "calendar": "50:151" },
+      "C": { "frame": "47:123", "logoBlock": "47:130", "palette": "49:168", "type": "49:239", "calendar": "50:301" }
+    }
   }
 }

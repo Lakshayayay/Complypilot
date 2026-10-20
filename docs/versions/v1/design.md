@@ -112,7 +112,7 @@ _Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [x] Brand interview, 8 questions, one at a time (review point 3, done 2026-10-20). Answers: UX-3 section below
 - [ ] Domain and trademark check (IP India and domains), with the date. Lakshay does it later, by hand (wants complypilot.com)
 - [x] Strategy: category, promise, one metaphor (confirmed by Lakshay 2026-10-20)
-- [ ] 3 brand directions, each with a logo idea, accent colour, font pair and calendar sample. Review point 4: Lakshay picks one
+- [ ] 3 brand directions, each with a logo idea, accent colour, font pair and calendar sample. Drawn 2026-10-20 (section `brand-directions` on `03 Brand`; results in UX-3 below). **Review point 4: Lakshay picks one**
 - [ ] Foundations on `04`: variables (Primitives, Color, Spacing, Radius) with scopes and CSS names; text styles; shadows; grids
 - [ ] Contrast table worked out by script (WCAG AA)
 - [ ] Status system: at most 6 in one place, each a word + icon + colour; grayscale test; record pairs like "Waiting on owner" / "Needs you"
@@ -228,6 +228,24 @@ _Started 2026-10-20. Brand interview done the same day._
 - **More study, done here:** a 10-heuristic audit of Jamku, Zoho Practice, Karbon and Winman, and phone references at 390 px (e.g. Typeform, a mobile import screen).
 - The draft's prompt pack (`figma-prompts.md`) is replaced by drawing through the MCP. Before each Figma task runs, its goal, skills, references, musts and must-nots, frame size and done check are stated in chat.
 - `brand-kit.md` is made only if this file nears its 400-line limit.
+
+**Brand directions (drawn 2026-10-20; waiting for review point 4).** Figma: `03 Brand`, section `brand-directions` ([open](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=47-2)); IDs in figma-ledger.json. Each direction is a 1552 px frame with the same 5 blocks: name and meaning, logo (large, with name, at 32 and 16 px, one colour and reversed), colour, type (with a Hindi line), and a CA week-view calendar sample drawn at the real 1440 px width.
+| | A "Side by side" | B "Ticked date" | C "Same page" |
+|---|---|---|---|
+| Logo | Two seats, one a step ahead: plum (the CA) and teal (the owner) | A calendar page with a tick cut out | A calendar page holding the two seats |
+| Main / second colour | `#5C3A5E` plum / `#0F7B80` teal | `#0B5C63` petrol teal / `#7A4A6E` muted plum | `#7A2E57` mulberry / `#0E7A79` teal |
+| Text / quiet text / page | `#2A2428` / `#675E65` / `#FAF8F7` | `#1D2A2E` / `#52646A` / `#F6F9FA` | `#2B2427` / `#67595F` / `#FBF8F7` |
+| Fonts | IBM Plex Sans + Plex Sans Devanagari | Noto Sans + Noto Sans Devanagari | Anek Latin + Anek Devanagari |
+| Lowest text ratio · input border | 5.04 · 3.50 | 5.86 · 3.23 | 5.15 · 3.48 |
+
+Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#6B4200` on `#FDF0D2`, waiting `#1E4E79` on `#E4EEF8`, upcoming `#3F4A50` on `#EAEEF0`, done `#1B6137` with no background (lowest ratio 6.48).
+- **Contrast (WCAG AA):** a small script (Python, formula from WCAG 2.2; its black-on-white = 21:1 self-check passed) checked 16 pairs per direction: text needs 4.5:1, input borders 3:1. **All pass.** The script is not kept in the repo; the hex values here are enough to repeat it.
+- **Hue** (a colour's place on the colour wheel, in degrees): the nearest competitor colour ([lesson 4](research/design-references.md#what-we-take-from-it)) is 32° away for A (violet and blue), 30° for B (blue) and 34° for C (green). C's mulberry is also about 32° from the "late" red; the chip's word and icon carry the meaning, never colour alone.
+- **Logo at 16 px:** B reads clearly. A reads as two seat shapes, but is close to a generic "users" icon. C reads as a calendar with two dots; its seats are too small below about 24 px, so the favicon could drop them. All three work in one colour and reversed.
+- **Projector:** the calendar sample rendered at 1024 px wide still shows chip words, dates and client names clearly. 1024 px as a projector width is an assumption (`UNVERIFIED`); a real projector test is optional.
+- **Taste pre-flight:** one main and one second colour per direction, corner sizes 6 / 10 / 16 only, no em-dashes in copy, no small label above every section.
+- **Sample data:** dates use only ✅ rows of [due-dates.md](research/due-dates.md): GSTR-3B monthly 20 Oct, tax audit report 21 Oct (extended), ESIC 15 Oct (so "5 days late"), GSTR-3B quarterly for Delhi and Haryana 24 Oct, PMT-06 25 Oct. The licence and the two tasks are made-up demo items.
+- **Exceptions (like the References page):** these frames use typed-in hex colours (variables come in phase B). The status icons are simple glyphs drawn for this sample (Phosphor icons arrive in phase C). The logo cut-outs are paper-coloured strokes; real cut-out shapes come with the logo files.
 
 ## UX-4 Detailed screens and demo
 _Not started._ Reminder days to agree: [licences.md](research/licences.md) notes that 90/60/30 days can be too late. The Delhi fire certificate must be renewed 6 months ahead, and the Delhi factory licence about 60 days ahead.
