@@ -106,5 +106,69 @@
     "section": "64:2",
     "set": "64:83",
     "checks": "64:85"
+  },
+  "components": {
+    "note": "UX-3 phase D, page 05 Components, one section per group. Sets are component sets unless noted. Icons gained check, minus, circle-notch (50 in total).",
+    "1-basics": {
+      "section": "67:88",
+      "Button": "67:210",
+      "Input": "68:164",
+      "Select": "68:257",
+      "Checkbox": "69:156",
+      "Radio": "69:184",
+      "Tag": "69:197",
+      "Avatar": "69:210",
+      "FileChip": "69:239",
+      "review": "70:107"
+    },
+    "2-navigation": {
+      "section": "71:211",
+      "LogoMark": "71:219",
+      "NavItem": "71:235",
+      "SideMenu": "71:236",
+      "MenuItem": "71:309",
+      "Menu": "71:310",
+      "ViewSwitchItem": "71:332",
+      "ViewSwitch": "71:333",
+      "SearchBar": "72:258",
+      "PageHeader": "72:325",
+      "TabItem": "72:336",
+      "PhoneTabBar": "72:337",
+      "PhoneHeader": "72:373",
+      "review": "72:374",
+      "note": "LogoMark, SideMenu, Menu, ViewSwitch, SearchBar and PhoneTabBar are single components; Menu has a slot 'items'"
+    },
+    "3-data": {
+      "section": "73:449",
+      "TableHeaderCell": "73:459",
+      "TableCell": "73:481",
+      "TableRow": "73:536",
+      "CalendarItemChip": "74:545",
+      "CalendarDayCell": "74:604",
+      "LicenceCard": "76:634",
+      "LicenceResultRow": "76:706",
+      "StageStep": "76:719",
+      "StageBar": "76:720",
+      "review": "77:611",
+      "note": "CalendarDayCell has a slot 'items'; StageBar is a single component"
+    },
+    "4-thread": {
+      "section": "79:887",
+      "ThreadMessage": "79:955",
+      "Composer": "79:1016",
+      "ChatterPanel": "80:1168",
+      "note": "ChatterPanel has a slot 'thread'",
+      "review": "ChatterPanel set (80:1168) is its own review"
+    },
+    "5-feedback": {
+      "section": "82:1089",
+      "StepIndicator": "82:1131",
+      "Toast": "82:1166",
+      "Banner": "82:1212",
+      "Modal": "82:1271",
+      "EmptyState": "82:1296",
+      "review": "83:1130",
+      "note": "Modal has a slot 'body'"
+    }
   }
 }

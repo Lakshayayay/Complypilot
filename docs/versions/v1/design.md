@@ -120,7 +120,7 @@ _Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [x] Contrast table worked out by script (WCAG AA): 27 pairs, all pass (2026-10-20)
 - [x] Status system: at most 6 in one place, each a word + icon + colour; grayscale test; record pairs like "Waiting on owner" / "Needs you" (2026-10-20, `StatusChip`)
 - [x] Icons: Phosphor, one weight, as components (Bold 2.1.1, 47 icons, 2026-10-20)
-- [ ] Components on `05`, in the order listed in UX-3
+- [x] Components on `05`, in the order listed in UX-3 (38 sets in 5 groups, 2026-10-20)
 - [ ] Logo lockups, app icon, favicon (16, 32, 180, 512 px), 3×3 brand board; the logo reads at 16 px and in one colour. Ask before any Figma AI image
 - [ ] Lakshay: tabular numbers on the number styles (by hand)
 - [ ] Review point 5: Lakshay approves the look and the parts; tick v1-UX-3
@@ -279,7 +279,23 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 | `valid` | Valid (quiet) | done (green) | seal-check |
 | `valid-until-cancelled` | Valid until cancelled (quiet) | done (green) | infinity |
 - **Rules (GOV.UK and Carbon, study 1):** a word + an icon + a colour, never colour alone; light background, dark text; not clickable; at most 6 kinds in one place.
-- **Checks (frame `status-checks`):** the **grayscale test passes**: under a "Saturation" blend layer, every status is still clear from its word and icon. **Brand next to late passes**: the mulberry button is a solid fill, while late and expired are light chips with dark red text and an icon, so the late red stays as it is. Read-back: 0 typed-in colours (225 bound), all 96 texts styled, all Anek.
+- **Checks (frame `status-checks`):** the grayscale test passes (see below)
+
+**Components (phase D, built 2026-10-20).** Figma: `05 Components`, one section per group, each with a review frame that uses the parts as instances. 38 sets; IDs in figma-ledger.json. Each set's description has its code signature, e.g. `<Button variant="primary" size="md" label="Save" />`.
+| Group | Sets (variants) |
+|---|---|
+| 1 Basics | `Button` (24: variant primary, secondary, ghost, danger × size md 40 px, lg 48 px × state default, hover, disabled; `label`, `icon`, `iconLeft`, `focus`) · `Input` (8) · `Select` (8) · `Checkbox` (9) · `Radio` (6) · `Tag` (3) · `Avatar` (6, brand = CA staff, accent = owner) · `FileChip` (3) |
+| 2 Navigation | `LogoMark` · `NavItem` (3) · `SideMenu` (240 px, the CA menu) · `PageHeader` (2) · `SearchBar` (search + Filters, Group by, Favourites) · `MenuItem` (6) · `Menu` · `ViewSwitchItem` (2) · `ViewSwitch` · `TabItem` (2) · `PhoneTabBar` · `PhoneHeader` (2) |
+| 3 Data | `TableHeaderCell` (2) · `TableCell` (6) · `TableRow` (3) · `CalendarItemChip` (10) · `CalendarDayCell` (5) · `LicenceCard` (6) · `LicenceResultRow` (5) · `StageStep` (3) · `StageBar` |
+| 4 Thread | `ThreadMessage` (6: CA or owner message, with a file, internal note, event) · `Composer` (4) · `ChatterPanel` (3 tabs: Messages, Notes, Activity) |
+| 5 Feedback | `StepIndicator` (10) · `Toast` (3) · `Banner` (4) · `Modal` (3 sizes) · `EmptyState` (2) |
+- **Decided 2026-10-20:** the CA desktop uses the **side menu** from the approved app map; the brand sample's top bar is not used. The page top is `PageHeader`.
+- **New tokens for the parts (D0, all AA by script):** primitives `grey/100` `#F3EDEE`, `red/800` `#7F1717`, `overlay/40` (text colour at 40%); meanings `bg/hover`, `bg/disabled`, `bg/danger`, `bg/danger-hover`, `bg/accent` (teal, owner avatars), `bg/overlay`, `text/disabled`, `text/on-danger`, `border/danger`; text style `owner/tab` (14 Medium). Icons gained `check`, `minus` and `circle-notch` (50 in all).
+- **Slots** (areas a screen fills with its own content): `Menu` items, `CalendarDayCell` items, `ChatterPanel` thread and `Modal` body.
+- **Focus** is a `focus` on/off setting (a 2 px `border/focus` ring), not a variant, so the sets stay under 30 variants.
+- **Lessons:** a shared text setting gives every variant one default text, so it is used only where one default fits (`Button` "Button"); elsewhere each variant keeps its own words. A spacing step that isn't in the scale (`space/6`) is silently ignored and leaves 0 padding; the final check now tests every gap and padding.
+- **Final check (2026-10-20):** 38 sets and 50 icons: 0 typed-in colours, 0 loose corners, 0 unbound gaps or padding, all 682 texts styled and Anek, every set described. `LogoMark` still has white-stroke cut-outs until phase E.
+- **Status-chip checks (frame `status-checks`):** the **grayscale test passes**: under a "Saturation" blend layer, every status is still clear from its word and icon. **Brand next to late passes**: the mulberry button is a solid fill, while late and expired are light chips with dark red text and an icon, so the late red stays as it is. Read-back: 0 typed-in colours (225 bound), all 96 texts styled, all Anek.
 
 ## UX-4 Detailed screens and demo
 _Not started._ Reminder days to agree: [licences.md](research/licences.md) notes that 90/60/30 days can be too late. The Delhi fire certificate must be renewed 6 months ahead, and the Delhi factory licence about 60 days ahead.
