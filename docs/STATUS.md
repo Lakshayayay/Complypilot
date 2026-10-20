@@ -1,28 +1,28 @@
 # Status
 
-**Version:** v1 — Shared Compliance Calendar · **Stage:** 0 Plan & Research is done (gate approved 2026-10-18); **stage 1 Design [UX] is next, not started** · **Last updated:** 2026-10-18
-**Plan for this version:** [v1 README](versions/v1/README.md) · **Vision and ideas:** [idea.md](../idea.md) · **Rules:** [AGENTS.md](../AGENTS.md)
+**Version:** v1 — Shared Compliance Calendar · **Stage:** 1 Design [UX], in progress. User flows (UX-1) are drawn and **wait for Lakshay's review** · **Last updated:** 2026-10-20
+**Plan for this version:** [v1 README](versions/v1/README.md) · **Stage doc:** [design.md](versions/v1/design.md) · **Flows:** [flows.md](versions/v1/flows.md) · **Vision and ideas:** [idea.md](../idea.md) · **Rules:** [AGENTS.md](../AGENTS.md)
 
-## Done (milestones)
-- Fresh start (2026-09-18): v0 code archived under git tag `v0-prototype` ([how to read it](../README.md#the-old-prototype)).
-- **v1 scope locked (2026-10-17):** a CA dashboard and an owner dashboard joined by one shared calendar, with factory questions (Delhi + Haryana), one thread per item, email reminders and an AI factory type matcher. 12 features (F1–F12), each tagged with its tracks.
-- **Stage 0 finished and approved (2026-10-18):** [due dates](versions/v1/research/due-dates.md) · [licences](versions/v1/research/licences.md) · [competitors](versions/v1/research/competitors.md) · [privacy (DPDP)](versions/v1/research/privacy.md) · [CSV import](versions/v1/research/import-formats.md) · [pilot script](versions/v1/research/pilots.md) · [pollution categories](versions/v1/research/pollution-categories.md) · [licence rules for Delhi and Haryana](versions/v1/research/applicability-delhi-haryana.md). Committed as `225a718`.
-  - Data files in `research/data/`: CPCB 2025 list (419 sectors, 5 colours), Delhi's own list (725 activities), the 87-sector exempt schedule.
-  - 21 licence rules with sources and 9 made-up test factories (these become the F4 tests).
-- **Decisions (2026-10-18):** Delhi uses its own pollution list, Haryana uses CPCB's. Workers in the factory-size grey band give "ask your CA". Unconfirmed rows stay ⚠️ and out of the app.
+## Done
+- **Stage 0 (research) approved 2026-10-18.** v1 scope is locked: 12 features F1–F12.
+- **Stage 1 started 2026-10-19.** Order agreed: flows → grey wireframes → brand and design basics → detailed screens and demo → gate PM-12.
+  - Docs: [design.md](versions/v1/design.md) ("Learn first", decisions, Figma rules), [design-references.md](versions/v1/research/design-references.md) (16-page study), competitor re-check in [competitors.md](versions/v1/research/competitors.md).
+  - **Figma set up:** design file [complypilot](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot) with 7 pages and a References board (26 study windows). Fonts checked. IDs are in [figma-ledger.json](versions/v1/figma-ledger.json).
+  - **UX-1 drawn:** 12 flows, a demo story and 15 edge cases in [flows.md](versions/v1/flows.md), and on the FigJam board [ComplyPilot v1 flows](https://www.figma.com/board/bZB8Y1uSb5rAIYV0BOQpRh).
+- **Decisions (2026-10-19):** one email-link login for CA and owner · the owner answers the factory questions and the CA can correct them · the owner sees "Your CA will check" until the CA confirms · the owner ticks only tasks the CA gives them · prototype = demo path only · the real app is built from Figma through the MCP.
 
 ## Next (in this order)
-1. **Stage 1, Design [UX]:** create `versions/v1/design.md` (opens with "Learn first") and start v1-UX-1, the user flows: firm sign-up → add clients → invite owner → factory questions → calendar → item thread → mark done.
-2. **Carry into design:** the factory questions list (in the licence-rules file), the "ask your CA" and "inform the board" result screens, and the reminder days (some renewals must be applied for 60 days to 6 months early).
-3. **Later:** v1-PM-15 re-checks the rules and dates just before the demo.
+1. **Review point 1:** Lakshay reviews the flows and the demo story on the FigJam board. Fix what he says, then tick v1-UX-1 in the README.
+2. **Phase 3 (UX-2):** the app's map (CA side menu, owner tabs), the screen list (about 27 screens), then grey wireframes in Figma page `02 Wireframes`.
+3. **Then UX-3 (brand interview, logo, colours, fonts, components) and UX-4 (detailed screens, clickable demo, reminder days),** then the PM-12 gate. The full plan is in `design.md`.
 
 ## Open questions
-- None blocking. Still ⚠️ and out of the app: TDS forms 140/143/144, advance tax 15 Sep/15 Dec, non-audit ITR dates, PF 15th, MSME Form-1 dates (a CA confirms in the demo calls). Haryana boiler office, fire portal and licence validity not found ("ask your CA").
-- New ideas go into idea.md, not into v1.
+- Before Phase 3: Lakshay saves a named version in Figma (File → Save to version history), and says whether to delete the stray "Vector 1" line on `Cover`.
+- Still ⚠️ and out of the app: TDS forms 140/143/144, advance tax 15 Sep/15 Dec, non-audit ITR dates, PF 15th, MSME Form-1 dates. Haryana boiler office, fire portal and licence validity not found ("ask your CA").
+- Code Connect (links Figma parts to code) is `UNVERIFIED` on the Education plan. Check it in stage 2.
 
 ## Watch out
-- v1 uses made-up demo data only, until "export and delete a client" exists.
-- No app code until stage 2. Before any code, agree the folders, files and naming together.
-- Delhi bans Red-category factories and licenses factories only in conforming industrial areas, so the questions must ask about area type.
-- Comments left on a plan in the review screen don't reach Claude unless the plan is sent back with a typed note. Paste them in chat to be safe.
-- `.env*` files are v0 leftovers, local only (never in git). The v1 stack isn't chosen yet.
+- **Figma:** about 200 MCP calls a day. Writing through the MCP is free in beta and paid later. Never move nodes made by `generate_diagram`: their arrows keep old routes (put cards behind them). Load Figma's skills before drawing. A new chat can read `figma-ledger.json` to find every ID.
+- The reference screenshots in `research/design-refs/` stay out of git (other companies' pages).
+- v1 uses made-up demo data only. No app code until stage 2, and before any code we agree the folders, files and naming together.
+- New ideas go into idea.md, not into v1.
