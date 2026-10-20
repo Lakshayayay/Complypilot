@@ -86,6 +86,50 @@ The six non-Figma skills above are "only you can start them" in Lakshay's user s
 | UX-4 | Detailed screens, the demo prototype, agreed reminder days | `06 Screens` | Lakshay walks the demo story on the prototype |
 | PM-12 | Gate | | Lakshay approves the design |
 
+## Stage 1 plan: done and remaining
+_Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs are in [figma-ledger.json](figma-ledger.json). Review points stop the work until Lakshay answers._
+
+**Setup and UX-1 (done)**
+- [x] Setup: 7 Figma pages, References board, fonts, ID ledger (2026-10-19)
+- [x] Cover sheet and a brief on pages 02 to 06 (2026-10-20)
+- [x] UX-1: 12 flows, demo story, edge cases. Approved by Lakshay (review point 1, 2026-10-20)
+- [x] Figma connection checked; six design skills switched on for this project (2026-10-20)
+
+**UX-2 Wireframes (drawn 2026-10-20; waiting for review point 2)**
+- [x] App map agreed and drawn on the FigJam board
+- [x] Screen list and flow coverage: [screens.md](screens.md)
+- [x] Grey kit (16 parts) on `02 Wireframes`
+- [x] Wireframes for F-01 to F-11: 65 frames, a behaviour note on each
+- [x] Checks: flow-coverage script, text audit, heuristic self-check (UX-2 section)
+- [ ] Lakshay saves a named version in Figma: "UX-2 wireframes" (by hand)
+- [ ] Review point 2: Lakshay reviews the wireframes and the 7 proposals; fixes made
+- [ ] Optional: one CA looks at the wireframes for 15 minutes
+- [ ] Tick v1-UX-2 in the README; Cover and brief chips to "Done"; commit
+
+**UX-3 Brand and design basics (started: interview question 1 asked)**
+- [ ] Brand interview, 8 questions, one at a time (review point 3). Where we are: UX-3 section below
+- [ ] Domain and trademark check (IP India and domains), with the date
+- [ ] Strategy: category, promise, one metaphor
+- [ ] 3 brand directions, each with a logo idea, accent colour, font pair and calendar sample. Review point 4: Lakshay picks one
+- [ ] Foundations on `04`: variables (Primitives, Color, Spacing, Radius) with scopes and CSS names; text styles; shadows; grids
+- [ ] Contrast table worked out by script (WCAG AA)
+- [ ] Status system: at most 6 in one place, each a word + icon + colour; grayscale test; record pairs like "Waiting on owner" / "Needs you"
+- [ ] Icons: Phosphor, one weight, as components
+- [ ] Components on `05`, in the order listed in UX-3
+- [ ] Logo lockups, app icon, favicon (16, 32, 180, 512 px), 3×3 brand board; the logo reads at 16 px and in one colour. Ask before any Figma AI image
+- [ ] Lakshay: tabular numbers on the number styles (by hand)
+- [ ] Review point 5: Lakshay approves the look and the parts; tick v1-UX-3
+
+**UX-4 Detailed screens and the clickable demo**
+- [ ] Agree the reminder days (licences: 90/60/30 plus earlier ones where needed; filings)
+- [ ] Demo-path screens first (the 11 demo beats), then the rest with empty, error and loading states and the 100-client frame
+- [ ] Apply the UX-4 fixes from the heuristic self-check (UX-2 section)
+- [ ] Check CA screens at 1366 px and owner screens at 360 px
+- [ ] Behaviour notes as Dev Mode annotations; Lakshay marks finished screens "Ready for dev" (by hand)
+- [ ] Clickable demo: demo path only, start point "Demo", agreed motion, motion review table
+- [ ] Design QA: every item in "Checks" below; builder check by a fresh helper agent; fresh-eyes pass the next day
+- [ ] Gate v1-PM-12: Lakshay walks the 5-minute demo on the prototype; tick UX-4 and PM-12
+
 ## Checks
 - Every reference has a link and a "checked on" date. Anything unchecked is marked `UNVERIFIED`.
 - Every text and background pair passes WCAG AA (4.5:1 text, 3:1 large text and UI parts).
@@ -155,8 +199,18 @@ _Drawn 2026-10-20. Waiting for Lakshay's review (review point 2)._
 | 10 Help and documentation | Owners get "What it is / Where to apply" (OW-12); CAs get no help on screens | Fine for v1 (CAs know the filings); revisit after the CA demos |
 
 ## UX-3 Brand and design basics
-_Not started._
-- **Brand interview** (one question at a time): the story and the promise · a real CA and owner you're picturing · 3 words it is and isn't · what "Pilot" means to you · symbols and colours you like or want off-limits · whether owner copy may use Hinglish (EnvironDesk does) · the pitch audience and room · domain and trademark check (Claude checks IP India, with the date).
+_Started 2026-10-20: the brand interview is under way._
+**Brand interview** (review point 3). One question at a time; each answer is written here as soon as it is given. **Continue at question 1.**
+| # | Question | Answer |
+|---|---|---|
+| 1 | The story and the promise: what one promise does ComplyPilot make? Options offered on 2026-10-20: "No missed deadlines" (the v1 plan's promise: no penalties for missed deadlines) · "One calendar both trust" (the demo's closing line) · "Tax and licences, one place" (the edge over competitors). Lakshay may also write his own | _Asked 2026-10-20; not answered yet (the chat wrapped up first)_ |
+| 2 | Picture a real CA and a real owner: who are they? | |
+| 3 | Three words ComplyPilot is, and three it isn't | |
+| 4 | What does "Pilot" mean to you? | |
+| 5 | Symbols and colours you like, or want off-limits | |
+| 6 | May owner copy use Hinglish (EnvironDesk does)? | |
+| 7 | The pitch: who is the audience, and what is the room like? | |
+| 8 | Domain and trademark: names you'd want. Claude then checks IP India and domains, with the date | |
 - **Font candidates:** IBM Plex Sans + IBM Plex Sans Devanagari · Noto Sans + Noto Sans Devanagari (UX4G uses this pair) · Anek Latin + Anek Devanagari. All are in Figma (setup, 2026-10-19).
 - **Brand accent:** outside the colours competitors and status already use ([lesson 4](research/design-references.md#what-we-take-from-it)).
 - **Steps:** interview → strategy (category, promise, one metaphor) → 3 logo directions, each with its meaning and construction → Lakshay picks one → colour and a contrast table → type scale (tabular numbers on number styles) → spacing on a 4-point scale, one corner-size system, layout grids (CA 12 columns, owner 4) → status system (at most 6: word + icon + colour) → voice (plain words, no em-dashes, realistic Indian demo names) → motion → variables, styles and components in Figma → 3×3 brand board, logo, app icon, favicon (16/32/180/512).
