@@ -36,7 +36,7 @@ Under the amended Uniform Consent Guidelines issued by the Ministry of Environme
   - `31–60 days remaining`: Warning (Yellow)
   - `1–30 days remaining`: Critical (Orange)
   - `≤ 0 days remaining`: Expired (Red)
-- **Reminder days to agree in design (v1-UX-4):** some renewals must be *applied for* well before expiry (Delhi fire certificate: 6 months; Delhi factory licence: about 60 days). The fixed 90/60/30 days may be too late for them.
+- **Reminder days (agreed 2026-10-21, see [design.md](../design.md), UX-4):** each licence has an apply-by date = expiry minus `lead_days` (default by type: Delhi factory licence 30, Delhi fire certificate 180, others 0; the CA can edit it). The 90/60/30 alerts count back from the apply-by date, not from expiry. Stage 2 stores `lead_days` on each licence.
 - **Document Attachment:** Each licence record supports uploading the official certificate (PDF/JPG/PNG up to 10 MB) into tenant-isolated storage.
 
 ## Primary Sources

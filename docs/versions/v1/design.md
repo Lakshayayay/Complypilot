@@ -18,6 +18,8 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | Never colour alone | Colour is never the only sign of meaning; a word or an icon goes with it | Colour-blind users, and grey printouts, still tell statuses apart | Chips need a little more room | [W3C WCAG 2.2: 1.4.1](https://www.w3.org/WAI/WCAG22/Understanding/use-of-color.html) |
 | Target size | Anything you tap is at least 24 × 24 px (AA). On the owner's phone we aim for 44 px | Big fingers, small phones | Fewer items fit on a phone screen | [W3C WCAG 2.2: 2.5.8](https://www.w3.org/WAI/WCAG22/Understanding/target-size-minimum.html) |
 | Prototype | Screens linked so a click moves to the next one, like the real app | We can walk the demo story before any code | Only the demo path clicks | [Figma: Guide to prototyping](https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma) |
+| Skeleton screen (UX-4) | A grey outline of the page shown while it loads, shaped like the content that is coming | The calendar of 100 clients takes a moment; the CA sees the layout at once instead of a blank page | A spinner is still better for one small part, e.g. a file uploading | [NN/g: Skeleton Screens 101](https://www.nngroup.com/articles/skeleton-screens/) (Tankala, reviewed 2026-09-02; opened 2026-10-21) |
+| Dev Mode annotation (UX-4) | A note pinned to a layer that developers read in Figma's Dev Mode, e.g. "row click opens the thread panel" | Behaviour the picture can't show reaches stage 2 with the screen | Figma lists annotations for paid plans; whether Lakshay's Education plan counts is `UNVERIFIED` until the first one is added | [Figma: Add measurements and annotate designs](https://help.figma.com/hc/en-us/articles/20774752502935-Add-measurements-and-annotations-in-Dev-Mode) (opened 2026-10-21) |
 | Figma MCP | A connection that lets Claude read and change the Figma file through small scripts | Claude draws the design now and turns it into code in stage 2 | In beta: free now, paid later; about 200 calls a day | [Figma: write to canvas](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/) · [rate limits](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/) |
 
 ## Decisions so far
@@ -41,6 +43,7 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | 2026-10-20 | **Status words approved** (10 statuses, table in UX-3) and **icons: Phosphor Bold**, one weight everywhere (Lakshay). |
 | 2026-10-20 | **Vision: a modern look** (rounder corners, soft floating shadows, gentle animations), applied in a **polish pass in UX-4**. Today's base stays until then. Corners are `Radius` variables and shadows are effect styles (with `shadow/float`), so the change is a value edit, not a redraw. Motion keeps the agreed rules (≤ 200 ms for frequent actions, ease-out, "reduce motion"), and the brand's "isn't" words still apply: no glow, no gradients, no animation everywhere. |
 | 2026-10-21 | **Tagline: "One calendar. No missed deadlines."** (Claude's pick, as Lakshay asked). **No Hindi in new design work** (Lakshay): boards, screens and the demo use Anek Latin only; the existing Hindi styles and samples stay until he says otherwise. Brand board pictures are drawn shapes, no AI images. |
+| 2026-10-21 | **Reminder days** (Lakshay): licences count from an **apply-by date** (expiry minus the legal lead time), reminders 90/60/30 days before it. Filings: a **morning list** for the firm, a **Monday list** for the owner, plus a task email. Rules in UX-4 below; README F7, F10 and criteria 9 and 12 updated. |
 | 2026-10-20 | **Flows approved** (UX-1). **App map, as in the flows:** CA side menu Calendar (home) · Clients · Licences · Tasks · Settings (Firm, Team, Due-date changes, Privacy); an item opens its thread as a side panel. Owner bottom tabs Home ("What needs me") · Calendar · Licences; an item opens its thread full screen. The owner side is a phone web app opened from the email link ([idea.md](../../../idea.md): "Mobile-First Web App"), not an app-store app. |
 
 ## Design read
@@ -127,7 +130,7 @@ _Updated 2026-10-21 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [x] Review point 5: Lakshay approved the look and the parts; v1-UX-3 ticked (2026-10-21)
 
 **UX-4 Detailed screens and the clickable demo**
-- [ ] Agree the reminder days (licences: 90/60/30 plus earlier ones where needed; filings)
+- [x] Agree the reminder days: licences from an apply-by date, filings as a morning and a Monday list (Lakshay, 2026-10-21)
 - [ ] Demo-path screens first (the 11 demo beats), then the rest with empty, error and loading states and the 100-client frame
 - [ ] Apply the UX-4 fixes from the heuristic self-check (UX-2 section)
 - [ ] Check CA screens at 1366 px and owner screens at 360 px
@@ -307,4 +310,19 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 - **Export files** (.svg, .png, .ico) are not in the repo yet; stage 2 exports them from Figma into the app's public folder.
 
 ## UX-4 Detailed screens and demo
-_Not started._ Reminder days to agree: [licences.md](research/licences.md) notes that 90/60/30 days can be too late. The Delhi fire certificate must be renewed 6 months ahead, and the Delhi factory licence about 60 days ahead.
+_Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screens` (batches A to E by demo beat, a short stop after A, then review point 6) → the other 43 frames with their states → width checks → polish pass → annotations → clickable demo → design QA → gate PM-12. About 150 Figma calls a day, so at least 3 Figma days.
+
+**Reminder days (agreed by Lakshay 2026-10-21).** Facts from [licences.md](research/licences.md) (checked 2026-10-18).
+| Kind | Rule | Why |
+|---|---|---|
+| Licence | **Apply by** = expiry minus the lead time: Delhi factory licence 30 days (✅ 25% late fee after that), Delhi fire certificate 180 days (⚠️ sources disagree), every other type 0. The CA can change it on the licence | A reminder that arrives after the late fee starts is too late |
+| Licence | Reminders 90, 60 and 30 days before the apply-by date. "Renew soon" from the first reminder until expiry (the chip can say "Apply by 1 Dec"), then "Expired". No expiry date: "Valid until cancelled", no reminders | Keeps the familiar 90/60/30 |
+| Firm | One email each morning: late items, and items due in the next 7 days | Proposal 1 (UX-2): one list, not hundreds of emails |
+| Owner | One email each Monday: their items due in the next 10 days, and anything waiting on them. Plus an email right away when the CA gives them a task (EM-05) | 6 to 8 filings a month per factory; per-item emails would be ignored |
+| Both | Licences on a reminder day join both lists. Done items never appear | Criterion 12 |
+
+**Demo cast** (made up; all screens use it, so the demo story stays consistent). "Today" = Monday 19 Oct 2026. Dates only from ✅ rows of [due-dates.md](research/due-dates.md). English only.
+- **Firm:** Kapoor & Associates, Delhi, about 100 factory clients. Rakesh Kapoor (CA, partner) and Priya Malhotra (staff).
+- **Clients:** Verma Textiles (ESIC for September, due 15 Oct: 4 days late) · Sharma Castings, Delhi (factory licence expires 31 Dec 2026, apply by 1 Dec: Renew soon) · Singh Auto Parts (boiler certificate: Done) · Khanna Packaging (fire certificate scan: Waiting on owner) · Sunrise Plastics, Haryana, test factory T2 (hazardous waste authorisation expires 15 Jan 2027: Renew soon; owner Kavita Yadav) · Metro Beverages, Delhi, test factory T3 (the new client in beat 4; owner Amit Bansal).
+- **This fortnight:** GSTR-3B monthly 20 Oct (48 clients) · tax audit report 21 Oct (extended) · GSTR-3B quarterly 24 Oct (Delhi and Haryana) · TDS salary return, Form 138, 31 Oct · TDS deposit 7 Nov · GSTR-1 monthly 11 Nov · ITR for audit cases 21 Nov (extended).
+- **Correction:** the UX-3 brand sample shows "PMT-06, 25 Oct". That's wrong: PMT-06 is paid only for the first two months of a quarter (CGST Rule 61(3)), and September is the third. It is not reused.
