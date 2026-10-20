@@ -90,5 +90,11 @@
       "B": { "frame": "47:60", "logoBlock": "47:67", "palette": "49:85", "type": "49:156", "calendar": "50:151" },
       "C": { "frame": "47:123", "logoBlock": "47:130", "palette": "49:168", "type": "49:239", "calendar": "50:301" }
     }
+  },
+  "foundations": {
+    "note": "UX-3 phase B, built 2026-10-20. Variables live in the file (not on a page). The sheet on page 04 Foundations shows them; everything on it is bound. Variable IDs: Primitives 54:3-54:23, Color 54:25-54:52, Spacing 54:54-54:65, Radius 54:67-54:70; look up by collection and name, not by ID.",
+    "collections": { "Primitives": "VariableCollectionId:54:2", "Color": "VariableCollectionId:54:24", "Spacing": "VariableCollectionId:54:53", "Radius": "VariableCollectionId:54:66" },
+    "styles": "17 text styles (ca/*, owner/*, demo/heading, num/*, hi/*), 4 effect styles (shadow/sm, md, lg, float), 2 grid styles (grid/ca-1440, grid/owner-390); look up by name",
+    "sheet": "56:2"
   }
 }

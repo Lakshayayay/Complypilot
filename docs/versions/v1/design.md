@@ -38,6 +38,7 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | 2026-10-19 | **The owner ticks off only tasks the CA gives them.** Filings and licences are marked done by the CA (ARN and receipt). The owner can upload a new certificate in the thread. |
 | 2026-10-20 | **Odoo is the main design reference** (colours, elements; a formal app with quirky brand moments). Tally and Winman add CA-style density and shortcuts. A light touch: guides, not rules, and new references can join any time. |
 | 2026-10-20 | **Brand picked (review point 4):** direction C's colours and type (mulberry `#7A2E57`, teal `#0E7A79`, Anek Latin + Anek Devanagari) with direction B's logo (a calendar page with a tick), all mulberry with a white tick. Teal stays in the app, not in the logo. The three explorations stay on `03 Brand`, labelled "not picked". |
+| 2026-10-20 | **Vision: a modern look** (rounder corners, soft floating shadows, gentle animations), applied in a **polish pass in UX-4**. Today's base stays until then. Corners are `Radius` variables and shadows are effect styles (with `shadow/float`), so the change is a value edit, not a redraw. Motion keeps the agreed rules (≤ 200 ms for frequent actions, ease-out, "reduce motion"), and the brand's "isn't" words still apply: no glow, no gradients, no animation everywhere. |
 | 2026-10-20 | **Flows approved** (UX-1). **App map, as in the flows:** CA side menu Calendar (home) · Clients · Licences · Tasks · Settings (Firm, Team, Due-date changes, Privacy); an item opens its thread as a side panel. Owner bottom tabs Home ("What needs me") · Calendar · Licences; an item opens its thread full screen. The owner side is a phone web app opened from the email link ([idea.md](../../../idea.md): "Mobile-First Web App"), not an app-store app. |
 
 ## Design read
@@ -70,7 +71,7 @@ The six non-Figma skills above are "only you can start them" in Lakshay's user s
 - Load Figma's skill for the job before every call (table above).
 - Look before writing. Every layer gets a fixed, predictable name, and every call returns the IDs it made. The IDs are kept in [figma-ledger.json](figma-ledger.json) (a list from name to Figma ID), so a new chat can pick up where the last one stopped.
 - One writing call at a time; reading calls may run side by side.
-- Before each phase, Lakshay saves a named version (File → Save to version history). The API can't do this.
+- Saving a named version before a phase (File → Save to version history) is optional, Lakshay's call. He skips it from 2026-10-20; Figma's own history still keeps changes.
 - At most about 150 calls a day, under the limit of 200. One screenshot per finished view, plus one after a fix.
 - Colours, spacing and corner sizes come from variables, never typed-in hex codes. Text uses text styles. Frames use auto layout. Repeated parts are components (at most 30 variants per set). Icons are SVG components, swapped with an instance-swap setting.
 - Made-up demo data only (the README data rule), with realistic Indian names.
@@ -114,8 +115,8 @@ _Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [ ] Domain and trademark check (IP India and domains), with the date. Lakshay does it later, by hand (wants complypilot.com)
 - [x] Strategy: category, promise, one metaphor (confirmed by Lakshay 2026-10-20)
 - [x] 3 brand directions, each with a logo idea, accent colour, font pair and calendar sample. Drawn 2026-10-20 (section `brand-directions` on `03 Brand`; results in UX-3 below). Review point 4 (2026-10-20): C's colours and type with B's logo, drawn as `brand/picked`
-- [ ] Foundations on `04`: variables (Primitives, Color, Spacing, Radius) with scopes and CSS names; text styles; shadows; grids
-- [ ] Contrast table worked out by script (WCAG AA)
+- [x] Foundations on `04`: variables (Primitives, Color, Spacing, Radius) with scopes and CSS names; text styles; shadows; grids (2026-10-20)
+- [x] Contrast table worked out by script (WCAG AA): 27 pairs, all pass (2026-10-20)
 - [ ] Status system: at most 6 in one place, each a word + icon + colour; grayscale test; record pairs like "Waiting on owner" / "Needs you"
 - [ ] Icons: Phosphor, one weight, as components
 - [ ] Components on `05`, in the order listed in UX-3
@@ -247,6 +248,19 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 - **Taste pre-flight:** one main and one second colour per direction, corner sizes 6 / 10 / 16 only, no em-dashes in copy, no small label above every section.
 - **Sample data:** dates use only ✅ rows of [due-dates.md](research/due-dates.md): GSTR-3B monthly 20 Oct, tax audit report 21 Oct (extended), ESIC 15 Oct (so "5 days late"), GSTR-3B quarterly for Delhi and Haryana 24 Oct, PMT-06 25 Oct. The licence and the two tasks are made-up demo items.
 - **Exceptions (like the References page):** these frames use typed-in hex colours (variables come in phase B). The status icons are simple glyphs drawn for this sample (Phosphor icons arrive in phase C). The logo cut-outs are paper-coloured strokes; real cut-out shapes come with the logo files.
+
+**Foundations (phase B, built 2026-10-20).** Figma: `04 Foundations`, frame `foundations-sheet` ([open](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=56-2)). Every colour, gap, corner and text on the sheet is bound to a variable or a style (read-back: 552 bound paints, 0 typed-in; 278 texts, all with a style, all Anek).
+| Collection (mode) | What's in it | Scopes | Code name, e.g. |
+|---|---|---|---|
+| `Primitives` (Default) | 21 raw shades, only the ones in use: `mulberry/50, 500, 700, 800`, `teal/700`, `grey/0, 50, 200, 500, 600, 900`, `red`, `amber`, `blue`, `slate`, `green` (50 and 700; amber 800). New: hover `mulberry/800` `#642647`, focus ring `mulberry/500` `#975C7C` (mixed by script) | none (hidden) | `var(--mulberry-700)` |
+| `Color` (Light) | 28 meanings, each pointing to a primitive: `bg/page, surface, subtle, brand, brand-hover`; `text/default, muted, on-brand, brand, link`; `border/default, strong, focus`; `status/<late, soon, waiting, upcoming, done>/<bg, text, icon>` | fills, text or strokes | `var(--color-bg-page)` |
+| `Spacing` (Default) | `space/0, 2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64` | gap and padding | `var(--space-16)` |
+| `Radius` (Default) | `radius/sm` 6, `md` 10, `lg` 16, `full` 999 | corner radius | `var(--radius-md)` |
+- **Contrast:** a script (same WCAG 2.2 formula) checked 27 pairs: every text colour on every background it meets, the two borders, and each status text on its chip and on white. **All pass.** The lowest are `text/link` on `bg/page` 4.87 and `border/strong` on `bg/page` 3.48 (needs 3). The full table is on the sheet.
+- **Text styles (17):** CA desktop `ca/caption` 12, `ca/label` 14 Medium, `ca/body` 14, `ca/body-lg` 16, `ca/title-s` 20, `ca/title-m` 24, `ca/title-l` 32; owner phone `owner/body` 16, `owner/label` 16 Medium, `owner/body-lg` 18, `owner/title` 22, `owner/title-l` 28; `demo/heading` 40 (projector); `num/body` 14, `num/title` 24; Hindi `hi/body` 16, `hi/title` 28. Line height 140 to 145% for body text, 115 to 125% for titles.
+- **Fact-checks (font files from the official [google/fonts](https://github.com/google/fonts) repo, read by script 2026-10-20):** Anek Latin has tabular numbers (`tnum`), but its default digits have different widths, so **Lakshay turns on tabular numbers by hand on `num/body` and `num/title`** (the API can't). Anek Devanagari's own line height is 171% of the font size (Latin: 110%), so the Hindi styles use 170% and 160%.
+- **Shadows:** `shadow/sm` (cards), `shadow/md` (menus, the thread panel), `shadow/lg` (modals), and `shadow/float`, a soft, layered one kept for the UX-4 polish pass.
+- **Grids:** `grid/ca-1440` (12 columns, 24 gutter, 32 margin) and `grid/owner-390` (4 columns, 16 gutter, 16 margin). Grid lines show in Figma, not in screenshots.
 
 ## UX-4 Detailed screens and demo
 _Not started._ Reminder days to agree: [licences.md](research/licences.md) notes that 90/60/30 days can be too late. The Delhi fire certificate must be renewed 6 months ahead, and the Delhi factory licence about 60 days ahead.
