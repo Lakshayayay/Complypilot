@@ -91,7 +91,7 @@ The six non-Figma skills above are "only you can start them" in Lakshay's user s
 | PM-12 | Gate | | Lakshay approves the design |
 
 ## Stage 1 plan: done and remaining
-_Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs are in [figma-ledger.json](figma-ledger.json). Review points stop the work until Lakshay answers._
+_Updated 2026-10-21 at the wrap-up. Tick a box when its check passes. Figma IDs are in [figma-ledger.json](figma-ledger.json). Review points stop the work until Lakshay answers._
 
 **Setup and UX-1 (done)**
 - [x] Setup: 7 Figma pages, References board, fonts, ID ledger (2026-10-19)
@@ -110,7 +110,7 @@ _Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [ ] Optional: one CA looks at the wireframes for 15 minutes
 - [x] Tick v1-UX-2 in the README; Cover and brief chips to "Done"; commit
 
-**UX-3 Brand and design basics (started: interview question 1 asked)**
+**UX-3 Brand and design basics (phases A to D done 2026-10-20; phase E next, in a new chat)**
 - [x] Study 2 (light, 2026-10-20): Odoo as the main guide, plus Tally and Winman. Basic principles and a few images in [design-references.md](research/design-references.md#study-2-light-odoo-tally-winman). Guides, not rules
 - [x] Brand interview, 8 questions, one at a time (review point 3, done 2026-10-20). Answers: UX-3 section below
 - [ ] Domain and trademark check (IP India and domains), with the date. Lakshay does it later, by hand (wants complypilot.com)
@@ -121,8 +121,8 @@ _Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [x] Status system: at most 6 in one place, each a word + icon + colour; grayscale test; record pairs like "Waiting on owner" / "Needs you" (2026-10-20, `StatusChip`)
 - [x] Icons: Phosphor, one weight, as components (Bold 2.1.1, 47 icons, 2026-10-20)
 - [x] Components on `05`, in the order listed in UX-3 (38 sets in 5 groups, 2026-10-20)
-- [ ] Logo lockups, app icon, favicon (16, 32, 180, 512 px), 3×3 brand board; the logo reads at 16 px and in one colour. Ask before any Figma AI image
-- [ ] Lakshay: tabular numbers on the number styles (by hand)
+- [ ] Phase E: logo lockups with real cut-outs (they replace the white strokes in `LogoMark`), app icon, favicon (16, 32, 180, 512 px), 3×3 brand board with a tagline Lakshay picks from 3; the logo reads at 16 px and in one colour. Ask before any Figma AI image
+- [x] Lakshay: tabular numbers on the number styles (by hand; checked by read-back, 2026-10-20)
 - [ ] Review point 5: Lakshay approves the look and the parts; tick v1-UX-3
 
 **UX-4 Detailed screens and the clickable demo**
