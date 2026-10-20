@@ -1,7 +1,7 @@
 # v1 Design (stage 1)
 
 **Stage:** 1 Design [UX], started 2026-10-19. **Tasks:** UX-1 to UX-4 and the gate PM-12, in the [README](README.md). **Study:** [design-references.md](research/design-references.md).
-**Figma:** design file [complypilot](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot) · FigJam flows board: made in UX-1.
+**Figma:** design file [complypilot](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot) · FigJam board [ComplyPilot v1 flows](https://www.figma.com/board/bZB8Y1uSb5rAIYV0BOQpRh) · **Flows:** [flows.md](flows.md).
 
 ## Learn first
 New ideas this stage uses. All sources opened 2026-10-19.
@@ -110,7 +110,11 @@ How stage 2 uses it goes in tech.md. **Code Connect** (links each Figma componen
 - **Open:** Lakshay's stray "Vector 1" line stays on `Cover` until he decides.
 
 ## UX-1 User flows
-_In progress._ The three open questions were settled on 2026-10-19 (see Decisions so far).
+_Drawn 2026-10-19, waiting for Lakshay's review._ The three open questions were settled first (see Decisions so far).
+- **12 flows, the demo story and the edge cases:** [flows.md](flows.md). They live in their own file to keep this one under its 400-line limit. The text there is the source.
+- **FigJam board:** [ComplyPilot v1 flows](https://www.figma.com/board/bZB8Y1uSb5rAIYV0BOQpRh), with a "Read me" card, then F-01 to F-12 from left to right.
+- **Check:** every feature F1–F12 maps to a flow, and every edge case from the research files appears in one (both tables are in flows.md).
+- **Lesson for later Figma work:** don't move nodes made by the diagram tool, because their arrows keep their old routes. Place cards behind them instead.
 
 ## UX-2 Screens and wireframes
 _Not started._ First guess at the screens (about 27), to be checked against the flows:

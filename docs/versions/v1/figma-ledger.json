@@ -7,7 +7,18 @@
     "url": "https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot"
   },
   "planKey": "team::1461050131782830714",
-  "figjamFlows": null,
+  "figjamFlows": {
+    "name": "ComplyPilot v1 flows",
+    "key": "bZB8Y1uSb5rAIYV0BOQpRh",
+    "url": "https://www.figma.com/board/bZB8Y1uSb5rAIYV0BOQpRh",
+    "note": "Cards are sections placed behind each diagram; the diagrams are not inside them (moving diagram nodes breaks their connectors). To change a flow: edit flows.md, delete that flow's nodes, redraw with generate_diagram, re-place its card.",
+    "cards": {
+      "Read me": "27:760",
+      "F-01": "27:724", "F-02": "27:727", "F-03": "27:730", "F-04": "27:733", "F-05": "27:736", "F-06": "27:739",
+      "F-07": "27:742", "F-08": "27:745", "F-09": "27:748", "F-10": "27:751", "F-11": "27:754", "F-12": "27:757"
+    },
+    "diagramIdPrefix": { "F-01": 15, "F-02": 16, "F-03": 17, "F-04": 18, "F-05": 19, "F-06": 20, "F-07": 21, "F-08": 22, "F-09": 23, "F-10": 24, "F-11": 25, "F-12": 26 }
+  },
   "pages": {
     "Cover": "0:1",
     "01 References": "9:4",
