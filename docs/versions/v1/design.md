@@ -109,9 +109,9 @@ _Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs 
 
 **UX-3 Brand and design basics (started: interview question 1 asked)**
 - [x] Study 2 (light, 2026-10-20): Odoo as the main guide, plus Tally and Winman. Basic principles and a few images in [design-references.md](research/design-references.md#study-2-light-odoo-tally-winman). Guides, not rules
-- [ ] Brand interview, 8 questions, one at a time (review point 3). Where we are: UX-3 section below
-- [ ] Domain and trademark check (IP India and domains), with the date
-- [ ] Strategy: category, promise, one metaphor
+- [x] Brand interview, 8 questions, one at a time (review point 3, done 2026-10-20). Answers: UX-3 section below
+- [ ] Domain and trademark check (IP India and domains), with the date. Lakshay does it later, by hand (wants complypilot.com)
+- [ ] Strategy: category, promise, one metaphor (draft written 2026-10-20; Lakshay confirms)
 - [ ] 3 brand directions, each with a logo idea, accent colour, font pair and calendar sample. Review point 4: Lakshay picks one
 - [ ] Foundations on `04`: variables (Primitives, Color, Spacing, Radius) with scopes and CSS names; text styles; shadows; grids
 - [ ] Contrast table worked out by script (WCAG AA)
@@ -201,18 +201,26 @@ _Drawn 2026-10-20. **Approved by Lakshay 2026-10-20** (review point 2): the jour
 | 10 Help and documentation | Owners get "What it is / Where to apply" (OW-12); CAs get no help on screens | Fine for v1 (CAs know the filings); revisit after the CA demos |
 
 ## UX-3 Brand and design basics
-_Started 2026-10-20: the brand interview is under way._
-**Brand interview** (review point 3). One question at a time; each answer is written here as soon as it is given. **Continue at question 1.**
+_Started 2026-10-20. Brand interview done the same day._
+**Brand interview** (review point 3). One question at a time; each answer is written here as soon as it is given. **Done 2026-10-20** (review point 3).
 | # | Question | Answer |
 |---|---|---|
-| 1 | The story and the promise: what one promise does ComplyPilot make? Options offered on 2026-10-20: "No missed deadlines" (the v1 plan's promise: no penalties for missed deadlines) · "One calendar both trust" (the demo's closing line) · "Tax and licences, one place" (the edge over competitors). Lakshay may also write his own | _Asked 2026-10-20; not answered yet (the chat wrapped up first)_ |
-| 2 | Picture a real CA and a real owner: who are they? | |
-| 3 | Three words ComplyPilot is, and three it isn't | |
-| 4 | What does "Pilot" mean to you? | |
-| 5 | Symbols and colours you like, or want off-limits | |
-| 6 | May owner copy use Hinglish (EnvironDesk does)? | |
-| 7 | The pitch: who is the audience, and what is the room like? | |
-| 8 | Domain and trademark: names you'd want. Claude then checks IP India and domains, with the date | |
+| 1 | The story and the promise: what one promise does ComplyPilot make? Options offered on 2026-10-20: "No missed deadlines" (the v1 plan's promise: no penalties for missed deadlines) · "One calendar both trust" (the demo's closing line) · "Tax and licences, one place" (the edge over competitors). Lakshay may also write his own | **No missed deadlines** (Lakshay, 2026-10-20) |
+| 2 | Picture a real CA and a real owner: who are they? | **CA:** a small firm, one or two partners with 3 to 5 staff, about 100 clients, many of them factories; busy at month-end, chasing owners on WhatsApp. **Owner: both, equally:** a hands-on owner of 45 to 55 (20 to 50 workers in Delhi or Haryana, on the phone and WhatsApp, rarely at a computer) and a next-gen owner of 28 to 35 (at home with UPI and DigiLocker). The owner screens must be big and simple for the first and quick for the second (Lakshay, 2026-10-20) |
+| 3 | Three words ComplyPilot is, and three it isn't | **Is:** calm, reliable, a bit playful (formal where work happens, a small smile in brand moments, as Odoo does). **Isn't:** flashy, trendy, gimmicky (no gradients, glow or animation everywhere) (Lakshay, 2026-10-20) |
+| 4 | What does "Pilot" mean to you? | **A co-pilot beside you:** it watches the dates and nudges, but the CA stays in charge and confirms (Lakshay, 2026-10-20) |
+| 5 | Symbols and colours you like, or want off-limits | **Symbols:** two seats side by side (the CA and the owner, the co-pilot idea) and a date with a tick. **Colours:** in Odoo's spirit (deep muted main colour, teal, warm greys); 3 palettes come with the 3 brand directions and Lakshay picks one at review point 4 (Lakshay, 2026-10-20) |
+| 6 | May owner copy use Hinglish (EnvironDesk does)? | **Plain English only** in v1; Hindi can come in a later version (Lakshay, 2026-10-20) |
+| 7 | The pitch: who is the audience, and what is the room like? | **A college jury, on a projector:** professors or judges in a classroom or hall, so demo text and statuses must read from the back row (Lakshay, 2026-10-20) |
+| 8 | Domain and trademark: names you'd want. Claude then checks IP India and domains, with the date | **complypilot.com.** Lakshay checks the domain and the trademark later, by hand (2026-10-20) |
+
+**Strategy (draft from the interview, 2026-10-20; Lakshay confirms):**
+- **Category:** a shared compliance calendar for a CA firm and its factory clients. Not an ERP, not a tax engine.
+- **Promise:** no missed deadlines.
+- **Metaphor:** the co-pilot. Two seats side by side: the CA flies, ComplyPilot watches the dates and calls out what's coming, and the owner sees the same view.
+- **Personality:** calm, reliable, a bit playful. Never flashy, trendy or gimmicky.
+- **Logo seeds:** two seats side by side; a date with a tick.
+- **Readers:** a small CA firm (~100 clients) on a desktop; owners of 45 to 55 and of 28 to 35 on a phone (big and simple, and quick); a college jury on a projector.
 - **Font candidates:** IBM Plex Sans + IBM Plex Sans Devanagari · Noto Sans + Noto Sans Devanagari (UX4G uses this pair) · Anek Latin + Anek Devanagari. All are in Figma (setup, 2026-10-19).
 - **Brand accent:** Odoo's palette is the main guide: a deep, muted main colour, a teal second colour, greys ([study 2](research/design-references.md#study-2-light-odoo-tally-winman)). Close to its feel, not a copy of its exact plum. Keep it apart from the status colours, and note the colours competitors use ([lesson 4](research/design-references.md#what-we-take-from-it)).
 - **Steps:** interview → strategy (category, promise, one metaphor) → 3 logo directions, each with its meaning and construction → Lakshay picks one → colour and a contrast table → type scale (tabular numbers on number styles) → spacing on a 4-point scale, one corner-size system, layout grids (CA 12 columns, owner 4) → status system (at most 6: word + icon + colour) → voice (plain words, no em-dashes, realistic Indian demo names) → motion → variables, styles and components in Figma → 3×3 brand board, logo, app icon, favicon (16/32/180/512).
