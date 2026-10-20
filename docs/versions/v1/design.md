@@ -279,7 +279,7 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 | `valid` | Valid (quiet) | done (green) | seal-check |
 | `valid-until-cancelled` | Valid until cancelled (quiet) | done (green) | infinity |
 - **Rules (GOV.UK and Carbon, study 1):** a word + an icon + a colour, never colour alone; light background, dark text; not clickable; at most 6 kinds in one place.
-- **Checks (frame `status-checks`):** the grayscale test passes (see below)
+- **Checks (frame `status-checks`):** the **grayscale test passes**: under a "Saturation" blend layer, every status is still clear from its word and icon. **Brand next to late passes**: the mulberry button is a solid fill, while late and expired are light chips with dark red text and an icon, so the late red stays as it is. Read-back: 0 typed-in colours (225 bound), all 96 texts styled, all Anek.
 
 **Components (phase D, built 2026-10-20).** Figma: `05 Components`, one section per group, each with a review frame that uses the parts as instances. 38 sets; IDs in figma-ledger.json. Each set's description has its code signature, e.g. `<Button variant="primary" size="md" label="Save" />`.
 | Group | Sets (variants) |
@@ -295,7 +295,6 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 - **Focus** is a `focus` on/off setting (a 2 px `border/focus` ring), not a variant, so the sets stay under 30 variants.
 - **Lessons:** a shared text setting gives every variant one default text, so it is used only where one default fits (`Button` "Button"); elsewhere each variant keeps its own words. A spacing step that isn't in the scale (`space/6`) is silently ignored and leaves 0 padding; the final check now tests every gap and padding.
 - **Final check (2026-10-20):** 38 sets and 50 icons: 0 typed-in colours, 0 loose corners, 0 unbound gaps or padding, all 682 texts styled and Anek, every set described. `LogoMark` still has white-stroke cut-outs until phase E.
-- **Status-chip checks (frame `status-checks`):** the **grayscale test passes**: under a "Saturation" blend layer, every status is still clear from its word and icon. **Brand next to late passes**: the mulberry button is a solid fill, while late and expired are light chips with dark red text and an icon, so the late red stays as it is. Read-back: 0 typed-in colours (225 bound), all 96 texts styled, all Anek.
 
 ## UX-4 Detailed screens and demo
 _Not started._ Reminder days to agree: [licences.md](research/licences.md) notes that 90/60/30 days can be too late. The Delhi fire certificate must be renewed 6 months ahead, and the Delhi factory licence about 60 days ahead.
