@@ -288,11 +288,11 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 **Components (phase D, built 2026-10-20).** Figma: `05 Components`, one section per group, each with a review frame that uses the parts as instances. 38 sets; IDs in figma-ledger.json. Each set's description has its code signature, e.g. `<Button variant="primary" size="md" label="Save" />`.
 | Group | Sets (variants) |
 |---|---|
-| 1 Basics | `Button` (24: variant primary, secondary, ghost, danger × size md 40 px, lg 48 px × state default, hover, disabled; `label`, `icon`, `iconLeft`, `focus`) · `Input` (8) · `Select` (8) · `Checkbox` (9) · `Radio` (6) · `Tag` (3) · `Avatar` (6, brand = CA staff, accent = owner) · `FileChip` (3) · `IconButton` (added in UX-4) |
+| 1 Basics | `Button` (24: variant primary, secondary, ghost, danger × size md 40 px, lg 48 px × state default, hover, disabled; `label`, `icon`, `iconLeft`, `focus`) · `Input` (8) · `Select` (8) · `Checkbox` (9) · `Radio` (6) · `Tag` (3) · `Avatar` (6, brand = CA staff, accent = owner) · `FileChip` (3) · `IconButton`, `ChoiceCard` (2), `Textarea` (added in UX-4) |
 | 2 Navigation | `LogoMark` · `NavItem` (3) · `SideMenu` (240 px, the CA menu) · `PageHeader` (2) · `SearchBar` (search + Filters, Group by, Favourites) · `MenuItem` (6) · `Menu` · `ViewSwitchItem` (2) · `ViewSwitch` · `TabItem` (2) · `PhoneTabBar` · `PhoneHeader` (2) |
 | 3 Data | `TableHeaderCell` (2) · `TableCell` (6) · `TableRow` (3) · `CalendarItemChip` (10) · `CalendarDayCell` (5) · `LicenceCard` (6) · `LicenceResultRow` (5) · `StageStep` (3) · `StageBar` |
 | 4 Thread | `ThreadMessage` (6: CA or owner message, with a file, internal note, event) · `Composer` (4) · `ChatterPanel` (3 tabs: Messages, Notes, Activity) |
-| 5 Feedback | `StepIndicator` (10) · `Toast` (3) · `Banner` (4) · `Modal` (3 sizes) · `EmptyState` (2) |
+| 5 Feedback | `StepIndicator` (8, was 10 until UX-4) · `Toast` (3) · `Banner` (4) · `Modal` (3 sizes) · `EmptyState` (2) |
 - **Decided 2026-10-20:** the CA desktop uses the **side menu** from the approved app map; the brand sample's top bar is not used. The page top is `PageHeader`.
 - **New tokens for the parts (D0, all AA by script):** primitives `grey/100` `#F3EDEE`, `red/800` `#7F1717`, `overlay/40` (text colour at 40%); meanings `bg/hover`, `bg/disabled`, `bg/danger`, `bg/danger-hover`, `bg/accent` (teal, owner avatars), `bg/overlay`, `text/disabled`, `text/on-danger`, `border/danger`; text style `owner/tab` (14 Medium). Icons gained `check`, `minus` and `circle-notch` (50 in all).
 - **Slots** (areas a screen fills with its own content): `Menu` items, `CalendarDayCell` items, `ChatterPanel` thread and `Modal` body.
@@ -345,3 +345,16 @@ _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screen
 | CA-12 Invite owner (window) | CA-11 behind a dimmed overlay; the window "Invite the owner of Metro Beverages" with name and email, a note "First, 8 questions about the factory", Cancel and "Send invite" |
 - **Facts settled:** the owner answers **8 questions**: the 8 answers the rules use in [applicability-delhi-haryana.md](research/applicability-delhi-haryana.md) (README says "about 10"). Batch C shows "Question N of 8".
 - **Checks:** read-back on the four frames, 510 layers: 0 typed-in colours (369 bound), 0 loose corners, gaps or padding, all 182 texts styled and Anek Latin, no dashes. A Figma quirk was found and fixed: a part resized to "fill" after it is put inside another part's slot keeps its old drawn width, so parts are sized before they go into a slot.
+
+**Batch C: demo beats 5 and 6, the owner's phone (built 2026-10-21).** Same section, after CA-12. Phone frames are 390 px wide; owner text is 16 to 28 px; every tap target is at least 44 px.
+| Frame | What it shows |
+|---|---|
+| EM-03 Owner invite email | "Kapoor & Associates invited you to ComplyPilot": the logo, "See Metro Beverages' deadlines in one place", what they get, "Open ComplyPilot", and what the one-time link does |
+| OW-02 Welcome | "Welcome, Vikram", three things they will see (with icons), "First, tell us about your factory", "Start the factory questions" and "Later" |
+| OW-03 Question with choices | "Question 1 of 8", "Where is your factory?", Delhi (chosen), Haryana, Another state, and what happens for other states |
+| OW-04 Question with a number | "Question 2 of 8", how many people work there, how to count, 120 |
+| OW-05 Question in own words | "Question 5 of 8", "What do you make?": "We make soft drinks and fruit juice, and we have a steam boiler." (the demo line), and that the CA checks the match |
+| OW-06 Check and send | All 8 answers, each with "Change"; "Nothing is final until your CA confirms"; "Send to Kapoor & Associates" |
+| OW-07 Your CA will check | "Sent to your CA", the "Your CA will check" note, what happens next in 3 steps, "Go to home", the bottom tabs |
+- **Parts changed:** `StepIndicator` now has 8 steps (each bar k/8, "Question k of 8"). New `ChoiceCard` (a 56 px tappable answer; chosen = tint, 2 px border and a filled radio, never colour alone) and `Textarea` (styled from `Input` lg, at least 120 px tall). New icon `chat-circle-text` (Phosphor Bold 2.1.1, from the same pinned package). The answers match test factory T3 (120 workers, boiler, no waste, 2,400 sq m).
+- **Checks:** read-back on the 7 frames, 216 layers: 0 typed-in colours (167 bound), 0 loose corners, gaps or padding, all 87 texts styled and Anek Latin, no dashes, no phone button under 44 px.
