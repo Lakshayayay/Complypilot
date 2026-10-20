@@ -36,6 +36,7 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | 2026-10-19 | **Factory questions:** the owner answers on the phone; the CA can fill them in or correct them on the desktop. |
 | 2026-10-19 | **Before the CA checks,** the owner sees "Your CA will check". Licences reach the owner's calendar only after the CA confirms. |
 | 2026-10-19 | **The owner ticks off only tasks the CA gives them.** Filings and licences are marked done by the CA (ARN and receipt). The owner can upload a new certificate in the thread. |
+| 2026-10-20 | **Flows approved** (UX-1). **App map, as in the flows:** CA side menu Calendar (home) · Clients · Licences · Tasks · Settings (Firm, Team, Due-date changes, Privacy); an item opens its thread as a side panel. Owner bottom tabs Home ("What needs me") · Calendar · Licences; an item opens its thread full screen. The owner side is a phone web app opened from the email link ([idea.md](../../../idea.md): "Mobile-First Web App"), not an app-store app. |
 
 ## Design read
 From the design-taste-frontend skill: "Reading this as **a work tool for small Indian CA firms (desktop, dense) plus a phone companion for factory owners**, with a **calm, trust-first, crisp** language, leaning toward **Carbon-style data patterns and GOV.UK/UX4G plain-word status rules**. It's bold only in brand moments."
@@ -58,7 +59,10 @@ From the design-taste-frontend skill: "Reading this as **a work tool for small I
 | Figma: figma-generate-diagram, figma-use-figjam | Flows in FigJam | Simple diagrams; at most 2 redraws per flow |
 | Figma: figma-design-to-code | Stage 2 | Code is built from Figma's design data, then compared with the Figma screenshot |
 
+The six non-Figma skills above are "only you can start them" in Lakshay's user settings. For this project they are switched on in `.claude/settings.local.json` (private, not in git; 2026-10-20). design-taste-frontend is listed there by its folder name, `taste-skill`.
+
 ## How we work in Figma
+**Connection (checked 2026-10-20).** Figma's own Claude Code plugin (`figma@claude-plugins-official`) is installed for Lakshay's whole user account and is connected. His claude.ai Figma connector reaches the same Figma server, and Claude Code connects only once, preferring the plugin ([Claude Code MCP docs](https://code.claude.com/docs/en/mcp)). Don't add a hand-made Figma server: it would hide the plugin.
 **Files.** `complypilot` (design file) has 7 pages: `Cover` · `01 References` · `02 Wireframes` · `03 Brand` · `04 Foundations` · `05 Components` · `06 Screens`. `06 Screens` holds the CA desktop and owner phone screens side by side, because a Figma prototype works within one page. The flows live in one FigJam board, drawn from the Mermaid text in this file.
 **Rules.**
 - Load Figma's skill for the job before every call (table above).
@@ -112,7 +116,7 @@ How stage 2 uses it goes in tech.md. **Code Connect** (links each Figma componen
 - **Named version:** Lakshay saves one by hand (File → Save to version history) when we move on, before the wireframes. The API can't do it.
 
 ## UX-1 User flows
-_Drawn 2026-10-19, waiting for Lakshay's review._ The three open questions were settled first (see Decisions so far).
+_Drawn 2026-10-19. **Approved by Lakshay 2026-10-20** on the FigJam board._ The three open questions were settled first (see Decisions so far).
 - **12 flows, the demo story and the edge cases:** [flows.md](flows.md). They live in their own file to keep this one under its 400-line limit. The text there is the source.
 - **FigJam board:** [ComplyPilot v1 flows](https://www.figma.com/board/bZB8Y1uSb5rAIYV0BOQpRh), with a "Read me" card, then F-01 to F-12 from left to right.
 - **Check:** every feature F1–F12 maps to a flow, and every edge case from the research files appears in one (both tables are in flows.md).
