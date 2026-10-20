@@ -107,7 +107,8 @@ How stage 2 uses it goes in tech.md. **Code Connect** (links each Figma componen
 - **References board** on `01 References`: the 5 lessons and 26 windows from the study, each with its caption and link ([board](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=10-2)). Its colours are typed in by hand, because it's a working page made before the colour variables exist.
 - **Fonts in Figma:** all 6 candidates are there (IBM Plex Sans and Plex Sans Devanagari, Noto Sans and Noto Sans Devanagari, Anek Latin and Anek Devanagari), plus Inter. Watch the style names: Inter writes "Semi Bold", the others "SemiBold".
 - **Libraries:** none attached. The free kits on offer (Material 3, Simple Design System, Apple's iOS and macOS kits) have no Phosphor icons, so the icons come in as SVGs in UX-3.
-- **Open:** Lakshay's stray "Vector 1" line stays on `Cover` until he decides.
+- **Cover cleaned (2026-10-20):** Lakshay's stray "Vector 1" line was deleted at his request; `Cover` is empty.
+- **Named version:** Lakshay saves one by hand (File → Save to version history) when we move on, before the wireframes. The API can't do it.
 
 ## UX-1 User flows
 _Drawn 2026-10-19, waiting for Lakshay's review._ The three open questions were settled first (see Decisions so far).

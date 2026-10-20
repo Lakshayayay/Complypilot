@@ -17,7 +17,7 @@
 3. **Then UX-3 (brand interview, logo, colours, fonts, components) and UX-4 (detailed screens, clickable demo, reminder days),** then the PM-12 gate. The full plan is in `design.md`.
 
 ## Open questions
-- Before Phase 3: Lakshay saves a named version in Figma (File → Save to version history), and says whether to delete the stray "Vector 1" line on `Cover`.
+- Lakshay saves a named version in Figma by hand (File → Save to version history) when we move on, before the wireframes. Not now. The stray "Vector 1" line on `Cover` is deleted (2026-10-20).
 - Still ⚠️ and out of the app: TDS forms 140/143/144, advance tax 15 Sep/15 Dec, non-audit ITR dates, PF 15th, MSME Form-1 dates. Haryana boiler office, fire portal and licence validity not found ("ask your CA").
 - Code Connect (links Figma parts to code) is `UNVERIFIED` on the Education plan. Check it in stage 2.
 

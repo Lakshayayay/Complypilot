@@ -1,6 +1,6 @@
 {
   "about": "Map from fixed names to Figma node IDs, so a new chat can pick up the Figma work. Claude updates it after each Figma step. See design.md, 'How we work in Figma'.",
-  "updated": "2026-10-19",
+  "updated": "2026-10-20",
   "file": {
     "name": "complypilot",
     "key": "wMTrpY84cAfQiI5a9lcr0f",
@@ -29,7 +29,7 @@
     "06 Screens": "9:9"
   },
   "cover": {
-    "Vector 1 (Lakshay's stray line, kept until he decides)": "7:2"
+    "note": "Empty. The stray Vector 1 line (7:2) was deleted on 2026-10-20 at Lakshay's request."
   },
   "references": {
     "board": "10:2",
