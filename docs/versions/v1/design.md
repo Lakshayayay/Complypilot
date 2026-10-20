@@ -37,6 +37,7 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | 2026-10-19 | **Before the CA checks,** the owner sees "Your CA will check". Licences reach the owner's calendar only after the CA confirms. |
 | 2026-10-19 | **The owner ticks off only tasks the CA gives them.** Filings and licences are marked done by the CA (ARN and receipt). The owner can upload a new certificate in the thread. |
 | 2026-10-20 | **Odoo is the main design reference** (colours, elements; a formal app with quirky brand moments). Tally and Winman add CA-style density and shortcuts. A light touch: guides, not rules, and new references can join any time. |
+| 2026-10-20 | **Brand picked (review point 4):** direction C's colours and type (mulberry `#7A2E57`, teal `#0E7A79`, Anek Latin + Anek Devanagari) with direction B's logo (a calendar page with a tick), all mulberry with a white tick. Teal stays in the app, not in the logo. The three explorations stay on `03 Brand`, labelled "not picked". |
 | 2026-10-20 | **Flows approved** (UX-1). **App map, as in the flows:** CA side menu Calendar (home) · Clients · Licences · Tasks · Settings (Firm, Team, Due-date changes, Privacy); an item opens its thread as a side panel. Owner bottom tabs Home ("What needs me") · Calendar · Licences; an item opens its thread full screen. The owner side is a phone web app opened from the email link ([idea.md](../../../idea.md): "Mobile-First Web App"), not an app-store app. |
 
 ## Design read
@@ -112,7 +113,7 @@ _Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [x] Brand interview, 8 questions, one at a time (review point 3, done 2026-10-20). Answers: UX-3 section below
 - [ ] Domain and trademark check (IP India and domains), with the date. Lakshay does it later, by hand (wants complypilot.com)
 - [x] Strategy: category, promise, one metaphor (confirmed by Lakshay 2026-10-20)
-- [ ] 3 brand directions, each with a logo idea, accent colour, font pair and calendar sample. Drawn 2026-10-20 (section `brand-directions` on `03 Brand`; results in UX-3 below). **Review point 4: Lakshay picks one**
+- [x] 3 brand directions, each with a logo idea, accent colour, font pair and calendar sample. Drawn 2026-10-20 (section `brand-directions` on `03 Brand`; results in UX-3 below). Review point 4 (2026-10-20): C's colours and type with B's logo, drawn as `brand/picked`
 - [ ] Foundations on `04`: variables (Primitives, Color, Spacing, Radius) with scopes and CSS names; text styles; shadows; grids
 - [ ] Contrast table worked out by script (WCAG AA)
 - [ ] Status system: at most 6 in one place, each a word + icon + colour; grayscale test; record pairs like "Waiting on owner" / "Needs you"
@@ -229,7 +230,7 @@ _Started 2026-10-20. Brand interview done the same day._
 - The draft's prompt pack (`figma-prompts.md`) is replaced by drawing through the MCP. Before each Figma task runs, its goal, skills, references, musts and must-nots, frame size and done check are stated in chat.
 - `brand-kit.md` is made only if this file nears its 400-line limit.
 
-**Brand directions (drawn 2026-10-20; waiting for review point 4).** Figma: `03 Brand`, section `brand-directions` ([open](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=47-2)); IDs in figma-ledger.json. Each direction is a 1552 px frame with the same 5 blocks: name and meaning, logo (large, with name, at 32 and 16 px, one colour and reversed), colour, type (with a Hindi line), and a CA week-view calendar sample drawn at the real 1440 px width.
+**Brand directions (drawn 2026-10-20). Picked: C's colours and type with B's logo,** all mulberry with a white tick (review point 4). The picked version is section `brand-picked` at the top of `03 Brand` ([open](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=53-3)): direction C's frame with every mark swapped for B's. Its 16 px mark reads clearly, and it fixes C's one weak point (seats too small below 24 px). Still open: mulberry is about 32° from the "late" red, so phase C checks chips beside the brand colour; if they're confused, the late red moves. The explorations sit below it, labelled "not picked": section `brand-directions` ([open](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=47-2)). IDs are in figma-ledger.json. Each direction is a 1552 px frame with the same 5 blocks: name and meaning, logo (large, with name, at 32 and 16 px, one colour and reversed), colour, type (with a Hindi line), and a CA week-view calendar sample drawn at the real 1440 px width.
 | | A "Side by side" | B "Ticked date" | C "Same page" |
 |---|---|---|---|
 | Logo | Two seats, one a step ahead: plum (the CA) and teal (the owner) | A calendar page with a tick cut out | A calendar page holding the two seats |

@@ -83,6 +83,8 @@
   "brand": {
     "note": "UX-3 phase A, drawn 2026-10-20 on page 03 Brand. A section with 3 comparable brand directions, each a frame 1552 px wide with 5 blocks (head, logo-block, palette-block, type-block, calendar-block). These frames use typed-in hex colours (exploration, before the colour variables). Marks are named mark/<A|B|C>/<large|lockup|32|16|one-colour|reversed|topbar>. The page brief (18:2) stays at the left.",
     "section": "47:2",
+    "sectionNote": "brand-directions moved to y 2332 on 2026-10-20 and labelled not picked (label 53:364)",
+    "picked": { "note": "Review point 4, 2026-10-20: C colours and type with B logo, all mulberry with a white tick. A clone of direction/C with marks renamed mark/picked/<kind>. Typed-in hex, kept as the reference.", "section": "53:2", "frame": "53:3" },
     "directions": {
       "A": { "frame": "47:3", "logoBlock": "47:10", "palette": "49:2", "type": "49:73", "calendar": "50:2" },
       "B": { "frame": "47:60", "logoBlock": "47:67", "palette": "49:85", "type": "49:156", "calendar": "50:151" },
