@@ -29,7 +29,16 @@
     "06 Screens": "9:9"
   },
   "cover": {
-    "note": "Empty. The stray Vector 1 line (7:2) was deleted on 2026-10-20 at Lakshay's request."
+    "sheet": "14:2",
+    "note": "Cover sheet made 2026-10-20: title, status, page index with status chips, decisions so far, status words. The stray Vector 1 line (7:2) was deleted the same day at Lakshay's request."
+  },
+  "pageBriefs": {
+    "note": "A frame named page-brief at the top left of each empty page (made 2026-10-20): purpose, what goes there, rules, inputs, done-when. Replace or update it when the phase starts.",
+    "02 Wireframes": "16:2",
+    "03 Brand": "18:2",
+    "04 Foundations": "18:48",
+    "05 Components": "18:88",
+    "06 Screens": "18:178"
   },
   "references": {
     "board": "10:2",

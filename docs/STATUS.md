@@ -7,7 +7,7 @@
 - **Stage 0 (research) approved 2026-10-18.** v1 scope is locked: 12 features F1–F12.
 - **Stage 1 started 2026-10-19.** Order agreed: flows → grey wireframes → brand and design basics → detailed screens and demo → gate PM-12.
   - Docs: [design.md](versions/v1/design.md) ("Learn first", decisions, Figma rules), [design-references.md](versions/v1/research/design-references.md) (16-page study), competitor re-check in [competitors.md](versions/v1/research/competitors.md).
-  - **Figma set up:** design file [complypilot](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot) with 7 pages and a References board (26 study windows). Fonts checked. IDs are in [figma-ledger.json](versions/v1/figma-ledger.json).
+  - **Figma set up:** design file [complypilot](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot) with 7 pages, a References board (26 study windows), a Cover sheet and a brief on each empty page (purpose, rules, done-when). Fonts checked. IDs are in [figma-ledger.json](versions/v1/figma-ledger.json).
   - **UX-1 drawn:** 12 flows, a demo story and 15 edge cases in [flows.md](versions/v1/flows.md), and on the FigJam board [ComplyPilot v1 flows](https://www.figma.com/board/bZB8Y1uSb5rAIYV0BOQpRh).
 - **Decisions (2026-10-19):** one email-link login for CA and owner · the owner answers the factory questions and the CA can correct them · the owner sees "Your CA will check" until the CA confirms · the owner ticks only tasks the CA gives them · prototype = demo path only · the real app is built from Figma through the MCP.
 
