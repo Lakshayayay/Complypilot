@@ -38,6 +38,7 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | 2026-10-19 | **The owner ticks off only tasks the CA gives them.** Filings and licences are marked done by the CA (ARN and receipt). The owner can upload a new certificate in the thread. |
 | 2026-10-20 | **Odoo is the main design reference** (colours, elements; a formal app with quirky brand moments). Tally and Winman add CA-style density and shortcuts. A light touch: guides, not rules, and new references can join any time. |
 | 2026-10-20 | **Brand picked (review point 4):** direction C's colours and type (mulberry `#7A2E57`, teal `#0E7A79`, Anek Latin + Anek Devanagari) with direction B's logo (a calendar page with a tick), all mulberry with a white tick. Teal stays in the app, not in the logo. The three explorations stay on `03 Brand`, labelled "not picked". |
+| 2026-10-20 | **Status words approved** (10 statuses, table in UX-3) and **icons: Phosphor Bold**, one weight everywhere (Lakshay). |
 | 2026-10-20 | **Vision: a modern look** (rounder corners, soft floating shadows, gentle animations), applied in a **polish pass in UX-4**. Today's base stays until then. Corners are `Radius` variables and shadows are effect styles (with `shadow/float`), so the change is a value edit, not a redraw. Motion keeps the agreed rules (≤ 200 ms for frequent actions, ease-out, "reduce motion"), and the brand's "isn't" words still apply: no glow, no gradients, no animation everywhere. |
 | 2026-10-20 | **Flows approved** (UX-1). **App map, as in the flows:** CA side menu Calendar (home) · Clients · Licences · Tasks · Settings (Firm, Team, Due-date changes, Privacy); an item opens its thread as a side panel. Owner bottom tabs Home ("What needs me") · Calendar · Licences; an item opens its thread full screen. The owner side is a phone web app opened from the email link ([idea.md](../../../idea.md): "Mobile-First Web App"), not an app-store app. |
 
@@ -117,8 +118,8 @@ _Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [x] 3 brand directions, each with a logo idea, accent colour, font pair and calendar sample. Drawn 2026-10-20 (section `brand-directions` on `03 Brand`; results in UX-3 below). Review point 4 (2026-10-20): C's colours and type with B's logo, drawn as `brand/picked`
 - [x] Foundations on `04`: variables (Primitives, Color, Spacing, Radius) with scopes and CSS names; text styles; shadows; grids (2026-10-20)
 - [x] Contrast table worked out by script (WCAG AA): 27 pairs, all pass (2026-10-20)
-- [ ] Status system: at most 6 in one place, each a word + icon + colour; grayscale test; record pairs like "Waiting on owner" / "Needs you"
-- [ ] Icons: Phosphor, one weight, as components
+- [x] Status system: at most 6 in one place, each a word + icon + colour; grayscale test; record pairs like "Waiting on owner" / "Needs you" (2026-10-20, `StatusChip`)
+- [x] Icons: Phosphor, one weight, as components (Bold 2.1.1, 47 icons, 2026-10-20)
 - [ ] Components on `05`, in the order listed in UX-3
 - [ ] Logo lockups, app icon, favicon (16, 32, 180, 512 px), 3×3 brand board; the logo reads at 16 px and in one colour. Ask before any Figma AI image
 - [ ] Lakshay: tabular numbers on the number styles (by hand)
@@ -261,6 +262,24 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 - **Fact-checks (font files from the official [google/fonts](https://github.com/google/fonts) repo, read by script 2026-10-20):** Anek Latin has tabular numbers (`tnum`), but its default digits have different widths, so **Lakshay turns on tabular numbers by hand on `num/body` and `num/title`** (the API can't). Anek Devanagari's own line height is 171% of the font size (Latin: 110%), so the Hindi styles use 170% and 160%.
 - **Shadows:** `shadow/sm` (cards), `shadow/md` (menus, the thread panel), `shadow/lg` (modals), and `shadow/float`, a soft, layered one kept for the UX-4 polish pass.
 - **Grids:** `grid/ca-1440` (12 columns, 24 gutter, 32 margin) and `grid/owner-390` (4 columns, 16 gutter, 16 margin). Grid lines show in Figma, not in screenshots.
+
+**Status system and icons (phase C, built 2026-10-20).** Figma: `05 Components`, sections `icons` ([open](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=63-2)) and `status-chip` ([open](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=64-2)).
+- **Icons:** [Phosphor](https://github.com/phosphor-icons/phosphor-core) **Bold**, version **2.1.1**, MIT licence (npm registry, checked 2026-10-20). The SVGs came from the pinned package and were imported as shapes, never redrawn. 47 components `Icon/<name>`, 24 px, fill bound to `text/default`; used at 16, 20 or 24 px and recoloured with a Color variable. Screens swap icons through an instance-swap setting.
+- **`StatusChip`:** 20 variants, `status` (10) × `size` (`sm` = CA desktop, `ca/label` 14 with a 16 px icon; `md` = owner phone, `owner/label` 16 with a 20 px icon). Colours, gaps, padding and corners all come from variables. Change the text on each instance, e.g. "5 days late". A shared text property was tried, but Figma gives a whole set one default text, so each variant keeps its own word instead.
+| `status=` | Word | Colour family | Icon |
+|---|---|---|---|
+| `late` | "N days late" | late (red) | warning-circle |
+| `soon` | Due soon / "N left" | soon (amber) | clock |
+| `waiting` | Waiting on owner (CA); **Needs you** (owner) | waiting (blue) | hourglass-medium |
+| `upcoming` | Upcoming | upcoming (grey) | calendar-blank |
+| `done` | Done (quiet, no background) | done (green) | check-circle |
+| `expired` | Expired | late (red) | x-circle |
+| `renew` | Renew soon | soon (amber) | arrows-clockwise |
+| `details-needed` | Details needed | waiting (blue) | file-arrow-up |
+| `valid` | Valid (quiet) | done (green) | seal-check |
+| `valid-until-cancelled` | Valid until cancelled (quiet) | done (green) | infinity |
+- **Rules (GOV.UK and Carbon, study 1):** a word + an icon + a colour, never colour alone; light background, dark text; not clickable; at most 6 kinds in one place.
+- **Checks (frame `status-checks`):** the **grayscale test passes**: under a "Saturation" blend layer, every status is still clear from its word and icon. **Brand next to late passes**: the mulberry button is a solid fill, while late and expired are light chips with dark red text and an icon, so the late red stays as it is. Read-back: 0 typed-in colours (225 bound), all 96 texts styled, all Anek.
 
 ## UX-4 Detailed screens and demo
 _Not started._ Reminder days to agree: [licences.md](research/licences.md) notes that 90/60/30 days can be too late. The Delhi fire certificate must be renewed 6 months ahead, and the Delhi factory licence about 60 days ahead.

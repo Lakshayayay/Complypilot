@@ -96,5 +96,15 @@
     "collections": { "Primitives": "VariableCollectionId:54:2", "Color": "VariableCollectionId:54:24", "Spacing": "VariableCollectionId:54:53", "Radius": "VariableCollectionId:54:66" },
     "styles": "17 text styles (ca/*, owner/*, demo/heading, num/*, hi/*), 4 effect styles (shadow/sm, md, lg, float), 2 grid styles (grid/ca-1440, grid/owner-390); look up by name",
     "sheet": "56:2"
+  },
+  "icons": {
+    "note": "UX-3 phase C, 2026-10-20, page 05 Components. 47 components Icon/<name> (Phosphor Bold 2.1.1, MIT), 24 px, fill bound to text/default. Look up by name inside the section.",
+    "section": "63:2"
+  },
+  "statusChip": {
+    "note": "UX-3 phase C, 2026-10-20. Component set StatusChip, 20 variants: status (late, soon, waiting, upcoming, done, expired, renew, details-needed, valid, valid-until-cancelled) x size (sm, md). Checks frame: colour row, grayscale row, brand vs late.",
+    "section": "64:2",
+    "set": "64:83",
+    "checks": "64:85"
   }
 }
