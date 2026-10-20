@@ -111,7 +111,7 @@ _Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [x] Study 2 (light, 2026-10-20): Odoo as the main guide, plus Tally and Winman. Basic principles and a few images in [design-references.md](research/design-references.md#study-2-light-odoo-tally-winman). Guides, not rules
 - [x] Brand interview, 8 questions, one at a time (review point 3, done 2026-10-20). Answers: UX-3 section below
 - [ ] Domain and trademark check (IP India and domains), with the date. Lakshay does it later, by hand (wants complypilot.com)
-- [ ] Strategy: category, promise, one metaphor (draft written 2026-10-20; Lakshay confirms)
+- [x] Strategy: category, promise, one metaphor (confirmed by Lakshay 2026-10-20)
 - [ ] 3 brand directions, each with a logo idea, accent colour, font pair and calendar sample. Review point 4: Lakshay picks one
 - [ ] Foundations on `04`: variables (Primitives, Color, Spacing, Radius) with scopes and CSS names; text styles; shadows; grids
 - [ ] Contrast table worked out by script (WCAG AA)
@@ -214,7 +214,7 @@ _Started 2026-10-20. Brand interview done the same day._
 | 7 | The pitch: who is the audience, and what is the room like? | **A college jury, on a projector:** professors or judges in a classroom or hall, so demo text and statuses must read from the back row (Lakshay, 2026-10-20) |
 | 8 | Domain and trademark: names you'd want. Claude then checks IP India and domains, with the date | **complypilot.com.** Lakshay checks the domain and the trademark later, by hand (2026-10-20) |
 
-**Strategy (draft from the interview, 2026-10-20; Lakshay confirms):**
+**Strategy (from the interview; confirmed by Lakshay 2026-10-20):**
 - **Category:** a shared compliance calendar for a CA firm and its factory clients. Not an ERP, not a tax engine.
 - **Promise:** no missed deadlines.
 - **Metaphor:** the co-pilot. Two seats side by side: the CA flies, ComplyPilot watches the dates and calls out what's coming, and the owner sees the same view.
