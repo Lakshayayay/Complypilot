@@ -36,6 +36,7 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | 2026-10-19 | **Factory questions:** the owner answers on the phone; the CA can fill them in or correct them on the desktop. |
 | 2026-10-19 | **Before the CA checks,** the owner sees "Your CA will check". Licences reach the owner's calendar only after the CA confirms. |
 | 2026-10-19 | **The owner ticks off only tasks the CA gives them.** Filings and licences are marked done by the CA (ARN and receipt). The owner can upload a new certificate in the thread. |
+| 2026-10-20 | **Odoo is the main design reference** (colours, elements; a formal app with quirky brand moments). Tally and Winman add CA-style density and shortcuts. A light touch: guides, not rules, and new references can join any time. |
 | 2026-10-20 | **Flows approved** (UX-1). **App map, as in the flows:** CA side menu Calendar (home) · Clients · Licences · Tasks · Settings (Firm, Team, Due-date changes, Privacy); an item opens its thread as a side panel. Owner bottom tabs Home ("What needs me") · Calendar · Licences; an item opens its thread full screen. The owner side is a phone web app opened from the email link ([idea.md](../../../idea.md): "Mobile-First Web App"), not an app-store app. |
 
 ## Design read
@@ -107,7 +108,7 @@ _Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [x] Tick v1-UX-2 in the README; Cover and brief chips to "Done"; commit
 
 **UX-3 Brand and design basics (started: interview question 1 asked)**
-- [ ] Study 2: Odoo (app and odoo.com), Tally and Winman as main references. Screenshots, a pattern table, a Figma section on `01 References`. Review point 2.5: Lakshay sets take / change / skip on each pattern
+- [x] Study 2 (light, 2026-10-20): Odoo as the main guide, plus Tally and Winman. Basic principles and a few images in [design-references.md](research/design-references.md#study-2-light-odoo-tally-winman). Guides, not rules
 - [ ] Brand interview, 8 questions, one at a time (review point 3). Where we are: UX-3 section below
 - [ ] Domain and trademark check (IP India and domains), with the date
 - [ ] Strategy: category, promise, one metaphor
@@ -213,7 +214,7 @@ _Started 2026-10-20: the brand interview is under way._
 | 7 | The pitch: who is the audience, and what is the room like? | |
 | 8 | Domain and trademark: names you'd want. Claude then checks IP India and domains, with the date | |
 - **Font candidates:** IBM Plex Sans + IBM Plex Sans Devanagari · Noto Sans + Noto Sans Devanagari (UX4G uses this pair) · Anek Latin + Anek Devanagari. All are in Figma (setup, 2026-10-19).
-- **Brand accent:** outside the colours competitors and status already use ([lesson 4](research/design-references.md#what-we-take-from-it)).
+- **Brand accent:** Odoo's palette is the main guide: a deep, muted main colour, a teal second colour, greys ([study 2](research/design-references.md#study-2-light-odoo-tally-winman)). Close to its feel, not a copy of its exact plum. Keep it apart from the status colours, and note the colours competitors use ([lesson 4](research/design-references.md#what-we-take-from-it)).
 - **Steps:** interview → strategy (category, promise, one metaphor) → 3 logo directions, each with its meaning and construction → Lakshay picks one → colour and a contrast table → type scale (tabular numbers on number styles) → spacing on a 4-point scale, one corner-size system, layout grids (CA 12 columns, owner 4) → status system (at most 6: word + icon + colour) → voice (plain words, no em-dashes, realistic Indian demo names) → motion → variables, styles and components in Figma → 3×3 brand board, logo, app icon, favicon (16/32/180/512).
 - **Components** (built in this order): icons → button → input, select, checkbox, radio → status chip → tag → avatar → file chip → side menu, phone tab bar, top bar → table row → calendar day cell and item chip → thread message → licence card → licence result row (Required / Not required / Inform / Ask CA, with its source) → step indicator → toast → modal → empty state.
 - **More study, done here:** a 10-heuristic audit of Jamku, Zoho Practice, Karbon and Winman, and phone references at 390 px (e.g. Typeform, a mobile import screen).
