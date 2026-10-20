@@ -1,0 +1,420 @@
+colour,annexure,serial,group,sector,pollution_index,pdf_page
+Red,I,1,,Manufacturing of Automobiles (integrated facilities),83.8,52
+Red,I,2,,Asbestos and asbestos based industries,98,52
+Green,I,3,,"Almirah, Grill Manufacturing (Dry Mechanical Process)",30,52
+Orange,I,4.1,"BAKERY, CONFECTIONERY AND SWEETS PRODUCTS","Bakery, confectionery, sweets with production capacity ≥ 1 TPD",61.3,52
+Green,I,4.2,"BAKERY, CONFECTIONERY AND SWEETS PRODUCTS","Bakery, confectionery, sweets with production capacity ≥ 1 TPD. (using cleaner/gaseous fuel)",54.6,53
+Orange,I,5.1,BRICK MANUFACTURING,Brick kilns using coal as fuel,75,53
+Orange,I,5.2,BRICK MANUFACTURING,Brick kilns using biomass as fuel,65,53
+Orange,I,5.3,BRICK MANUFACTURING,Tunnel brick kilns (gas fired),60,53
+Red,I,6.1,MANUFACTURING OF AUTOCLAVED AERATED CONCRETE (AAC) BRICKS/BLOCKS.,AAC bricks/blocks manufacturing using coal as fuel (12 TPD and above),80,53
+Orange,I,6.2,MANUFACTURING OF AUTOCLAVED AERATED CONCRETE (AAC) BRICKS/BLOCKS.,AAC bricks/blocks manufacturing using coal as fuel (less than 12 TPD),75,53
+Orange,I,6.3,MANUFACTURING OF AUTOCLAVED AERATED CONCRETE (AAC) BRICKS/BLOCKS.,AAC bricks/blocks manufacturing using biomass as fuel,70,53
+Orange,I,6.4,MANUFACTURING OF AUTOCLAVED AERATED CONCRETE (AAC) BRICKS/BLOCKS.,AAC bricks/blocks manufacturing using gas as fuel,65,53
+Orange,I,7.1,FLY ASH BRICKS / BLOCK MANUFACTURING,Fly ash bricks/ block manufacturing (with boiler),75,53
+Green,I,7.2,FLY ASH BRICKS / BLOCK MANUFACTURING,Fly ash bricks/ block manufacturing (without boiler),25,53
+Red,I,8.1,MANUFACTURING OF NON-ALCOHOLIC BEVERAGES,Wastewater generation ≥ 100 KLD,81.3,53
+Orange,I,8.2,MANUFACTURING OF NON-ALCOHOLIC BEVERAGES,Wastewater generation < 100 KLD,77.5,53
+Red,I,9.1,BATTERY MANUFACTURING,Lead-acid Battery manufacturing (excluding assembling and charging of lead acid Battery in micro- scale),94.3,54
+Orange,I,9.2,BATTERY MANUFACTURING,Dry cell Battery (excluding anufacturing of electrodes) nd assembling & charging f acid lead battery on micro cale,76,54
+Green,I,9.3,BATTERY MANUFACTURING,Battery manufacturing without boiler (excluding lead acid battery),43.1,54
+Green,I,10,,Briquette manufacturing (coal/biomass/coke),30,54
+White,I,11,,"Assembly of Bicycles, Baby carriages and other small non motorizing vehicles",0,54
+White,I,12,,Bailing (hydraulic press) of waste papers,0,54
+White,I,13,,Bio fertilizer and bio- pesticides without using inorganic chemicals,20,54
+White,I,14,,Block making of printing without foundry (excluding wooden block making),0,54
+White,I,15,,Flavoured Betel nuts production/ grinding (completely dry mechanical operations),0,55
+White,I,16,,Manufacturing of shoe Brush and wire Brush,20,55
+Red,I,17.1,"MANUFACTURING OF INDUSTRIAL CARBON INCLUDING ELECTRODES AND GRAPHITE BLOCKS, ACTIVATED CARBON, CARBON BLACK",Carbon black manufacturing,92.9,55
+Red,I,17.2,"MANUFACTURING OF INDUSTRIAL CARBON INCLUDING ELECTRODES AND GRAPHITE BLOCKS, ACTIVATED CARBON, CARBON BLACK",Industrial carbon including electrodes & graphite blocks and calcined pet coke,86.9,55
+Orange,I,17.3,"MANUFACTURING OF INDUSTRIAL CARBON INCLUDING ELECTRODES AND GRAPHITE BLOCKS, ACTIVATED CARBON, CARBON BLACK",Activated carbon manufacturing (with steam activation),74.6,55
+Red,I,18.1,INORGANIC CHEMICALS,Basic inorganic chemicals and electro chemicals and its derivatives including manufacturing of acid,90.5,55
+Red,I,18.2,INORGANIC CHEMICALS,"Phosphorous and its compounds, including phosphorous rock processing",86.5,55
+Red,I,18.3,INORGANIC CHEMICALS,"Chlorates, per-chlorates & peroxides",88.8,55
+Red,I,18.4,INORGANIC CHEMICALS,"Chlorine, fluorine, bromine, iodine, and their compounds",83.4,55
+Red,I,19,,"Coke oven plant, coal liquefaction, coal tar distillation and fuel gas- making",98.3,55
+Red,I,20.1,CEMENT PLANTS,With co-processing with CPP (Captive Power Plant),100,56
+Red,I,20.2,CEMENT PLANTS,With co-processing without CPP,100,56
+Red,I,20.3,CEMENT PLANTS,Without co-processing with CPP,100,56
+Red,I,20.4,CEMENT PLANTS,Without co-processing without CPP,92,56
+Red,I,20.5,CEMENT PLANTS,Stand-alone grinding units with CPP,97,56
+Orange,I,20.6,CEMENT PLANTS,Stand-alone grinding units without CPP,64,56
+Green,I,20.7,CEMENT PLANTS,Bulk terminals for storage and packaging of cement,30,56
+Red,I,21.1,CHLOR ALKALI,Chlor alkali,89.5,56
+Red,I,21.2,CHLOR ALKALI,Chlor alkali using washed salt,87.5,56
+Red,I,21.3,CHLOR ALKALI,Chlor alkali using cleaner/gaseous fuel,81.6,56
+Orange,I,21.4,CHLOR ALKALI,Chlor alkali using cleaner/gaseous fuel and washed salt,78.1,56
+Green,I,22,,Manufacturing of Compact disc Computer (CD/DVD) / cassette manufacturing / reel manufacturing,51,56
+Orange,I,23.1,MANUFACTURING OF COIR/COIR PITH AND COIR PRODUCTS,Coir bleaching and dyeing/printing units,77.5,56
+Green,I,23.2,MANUFACTURING OF COIR/COIR PITH AND COIR PRODUCTS,Coir fibre/pith processing units generating effluent,51.9,56
+White,I,23.3,MANUFACTURING OF COIR/COIR PITH AND COIR PRODUCTS,Coir fibre/pith processing and/or Manufacturing of coir products from coir (only dry process),20,57
+Red,I,24.1,CERAMICS,Ceramics/ Glass /Earthen potteries and tile manufacturing using coal/oil fired kilns (fuel consumption: 12 TPD and above),80,57
+Orange,I,24.2,CERAMICS,Ceramics/ Glass /Earthen potteries and tile manufacturing using coal/oil fired kilns (fuel consumption: less than 12 TPD),75,57
+Orange,I,24.3,CERAMICS,Ceramics/ Glass /Earthen potteries and tile manufacturing (using gas fired kilns)/tunnel kiln,60,57
+Green,I,24.4,CERAMICS,Ceramics/ Glass /Earthen potteries and tile manufacturing (using only electrical kiln),25,57
+Orange,I,25,,Coal Washeries,78.1,57
+Orange,I,26,,"Liquid floor Cleaner, black phenyl, liquid soap, glycerol mono-stearate manufacturing",68.5,57
+Green,I,27,,Phenyl/toilet Cleaner formulation and bottling,32.5,57
+Orange,I,28,,Cashew nut processing,67,58
+Orange,I,29.1,COFFEE SEEDS PROCESSING INDUSTRY,Coffee seeds processing (wet process),64,58
+Green,I,29.2,COFFEE SEEDS PROCESSING INDUSTRY,Coffee seeds processing with eco-pulper,50.5,58
+Green,I,30,,Manufacturing of Candy,25,58
+White,I,31,,Cardboard or corrugated box and paper products (excluding paper or pulp manufacturing and without using boilers),20,58
+Green,I,32,,"Manufacturing of precast Cement products (without using asbestos/ boiler / steam curing) like pipe, pillar, jafri, well ring, block/tiles etc.(should be done in closed covered shed to control fugitive emissions)",30.6,58
+Green,I,33,,Manufacturing of Ceramic Colour by mixing & blending only (not using boiler and wastewater recycling process),25,58
+Green,I,34.1,"CHILLING PLANT, COLD STORAGE AND ICE-MAKING",Chilling plant,50,58
+Green,I,34.2,"CHILLING PLANT, COLD STORAGE AND ICE-MAKING",Cold storage,30,58
+Green,I,34.3,"CHILLING PLANT, COLD STORAGE AND ICE-MAKING",Ice Making,35,58
+Green,I,35,,Decoration of Ceramic Cups and plates by electric furnace,25,59
+Green,I,36,,Ready mix Cement Concrete,30,59
+Green,I,37,,CO2 recovery plant,30,59
+White,I,38,,"Assembly of air Coolers/Conditioners, repairing and servicing",0,59
+White,I,39,,Chalk making from plaster of Paris (only casting without boilers etc. - sun drying / electrical oven),0,59
+White,I,40,,Standalone manufacturing of Concrete admixtures up to 1000 MT per Month capacity by physical mixing (without boiler and reactor and no generation of wastewater),20,59
+White,I,41,,Used Cooking oil (UCO) collection centers,0,59
+Red,I,42.1,"DYES, DYE INTERMEDIATES AND PIGMENT PRODUCTIONS","Dyes, Dye Intermediates and Pigments produced by chemical synthesis",96.3,59
+Red,I,42.2,"DYES, DYE INTERMEDIATES AND PIGMENT PRODUCTIONS",Natural Dye and Pigments requiring acidic/ alkaline/ solvent extraction,90,60
+Orange,I,42.3,"DYES, DYE INTERMEDIATES AND PIGMENT PRODUCTIONS",Natural Dye and Pigments not require acidic/ alkaline/ solvent extraction,77.5,60
+Red,I,43.1,SYNTHETIC DETERGENT AND SOAPS,Synthetic detergents and soaps (wastewater generation ≥ 100 KLD),82.8,60
+Orange,I,43.2,SYNTHETIC DETERGENT AND SOAPS,Synthetic detergents and soaps (wastewater generation < 100 KLD),79.9,60
+Green,I,43.3,SYNTHETIC DETERGENT AND SOAPS,Synthetic detergents and soaps (only formulation),50,60
+White,I,43.4,SYNTHETIC DETERGENT AND SOAPS,Soap manufacturing (handmade -without steam boiling / boiler),0,60
+Red,I,44.1,DISTILLERIES AND FERMENTATION INDUSTRIES,Distillery (Molasses based),97.1,60
+Red,I,44.2,DISTILLERIES AND FERMENTATION INDUSTRIES,Distillery (Grain based),93.8,60
+Red,I,44.3,DISTILLERIES AND FERMENTATION INDUSTRIES,Distillery (Grain based) with Distiller's Dried Grains with Soluble (DDGS) as by- product,83.8,60
+Red,I,44.4,DISTILLERIES AND FERMENTATION INDUSTRIES,Standalone yeast manufacturing units,96.8,60
+Red,I,44.5,DISTILLERIES AND FERMENTATION INDUSTRIES,Breweries and malteries industry (with fermentation)- Wastewater generation ≥ 100 KLD,81.3,60
+Orange,I,44.6,DISTILLERIES AND FERMENTATION INDUSTRIES,Breweries and malteries industry (with fermentation)- Wastewater generation < 100 KLD,77.5,60
+Green,I,44.7,DISTILLERIES AND FERMENTATION INDUSTRIES,"Potable alcohol by blending, bottling of alcohol products",45,61
+White,I,45,,Diesel pump repairing and servicing (complete mechanical dry process),20,61
+Red,I,46,,"Manufacturing of Explosives, detonators, fuses, etc.",80.5,61
+Green,I,47,,Manufacturing of coated Electrode,38.8,61
+Green,I,48,,Emery powder (fine dust of sand) manufacturing,30,61
+White,I,49,,Electric lamp (bulb) and CFL manufacturing by assembling only,0,61
+White,I,50,,Electrical and electronic item assembling (completely dry process),0,61
+White,I,51,,Engineering and fabrication units (dry process without any heat treatment / metal surface finishing operations / painting),0,62
+Orange,I,52.1,FIBRE GLASS (FIBRE REINFORCED PLASTIC) PRODUCTION,Fibre glass (containing lead) production and processing (excluding moulding),69,62
+Orange,I,52.2,FIBRE GLASS (FIBRE REINFORCED PLASTIC) PRODUCTION,Fibre glass (without lead) production and processing (excluding moulding),65.1,62
+Orange,I,53,,"Manufacturing of Firecrackers including improved crackers/green crackers, etc.",72,62
+Red,I,54.1,SYNTHETIC FIBRES MANUFACTURING,"Synthetic fibres-PSF & PFY, generated from petrochemical",100,62
+Red,I,54.2,SYNTHETIC FIBRES MANUFACTURING,"Synthetic fibres including rayon, tyre cord, viscose filament yarn/staple fibre, acrylic fibres",87.5,62
+Red,I,54.3,SYNTHETIC FIBRES MANUFACTURING,"Synthetic fibres including rayon, tyre cord, viscose filament yarn/staple fibre, acrylic fibres using cleaner/gaseous fuel",83.5,62
+Red,I,55.1,FERTILIZERS PRODUCTION,Fertilizers (Urea),92.5,63
+Red,I,55.2,FERTILIZERS PRODUCTION,Fertilizers (Calcium Ammonium Nitrate/Ammonium Nitrate),90.5,63
+Red,I,55.3,FERTILIZERS PRODUCTION,Fertilizers (NPK),90.5,63
+Red,I,55.4,FERTILIZERS PRODUCTION,Fertilizers (Straight Phosphatic Fertilizers),90.5,63
+Orange,I,55.5,FERTILIZERS PRODUCTION,"Fertilizer (granulation /formulation / blending) generating wastewater through floor washings, cooling towers etc.",75,63
+Orange,I,55.6,FERTILIZERS PRODUCTION,Fertilizer (granulation /formulation / blending) not generating wastewater,64,63
+Orange,I,56.1,FOOD AND FOOD PROCESSING INCLUDING FRUITS AND VEGETABLE PROCESSING,Wastewater generation ≥ 10 KLD,62.5,63
+Green,I,56.2,FOOD AND FOOD PROCESSING INCLUDING FRUITS AND VEGETABLE PROCESSING,Wastewater generation < 10 KLD (without boiler),40,63
+Orange,I,57.1,"FISH FEED, POULTRY FEED AND CATTLE FEED","Fish feed, poultry feed and cattle feed (with boiler)",79.4,63
+Green,I,57.2,"FISH FEED, POULTRY FEED AND CATTLE FEED","Fish feed, poultry feed and cattle feed (without boiler)",25,63
+Orange,I,58,,Fish processing and packing (excluding chilling of fishes),73,63
+Orange,I,59.1,MANUFACTURING OF MODULAR WOODEN FURNITURE,"Modular wooden furniture from particle board, MDF, swan timber etc, Ceiling tiles/ partition board from saw dust, wood chips etc., and other agricultural waste using synthetic adhesive resin, wooden box making (With boiler)",60,64
+Green,I,59.2,MANUFACTURING OF MODULAR WOODEN FURNITURE,"Modular wooden furniture from particle board, MDF, swan timber etc, Ceiling tiles/ partition board from saw dust, wood chips etc., and other agricultural waste using synthetic adhesive resin, wooden box making (Without boiler)",25,64
+Green,I,60.1,CARPENTRY & WOODEN FURNITURE MANUFACTURING,"Carpentry & wooden furniture manufacturing with spray painting (excluding saw mill) with the help of electrical (motorized) machines such as electrical wood planner, steel saw cutting circular blade, etc.",25,64
+White,I,60.2,CARPENTRY & WOODEN FURNITURE MANUFACTURING,"Carpentry & wooden furniture manufacturing without spray painting (excluding saw mill) with the help of electrical (motorized) machines such as electrical wood planner, steel saw cutting circular blade, etc.",0,64
+Green,I,61,,Foam manufacturing,44.8,65
+Green,I,62,,Flour mills (dry process),25,65
+Green,I,63.1,STEEL FURNITURE INDUSTRY,Steel furniture with spray painting,25,65
+White,I,63.2,STEEL FURNITURE INDUSTRY,Steel furniture without spray painting,0,65
+Red,I,64.1,MANUFACTURING OF GLUE AND GELATIN,Manufacturing of glue and gelatin using coal/liquid fuel,82,65
+Orange,I,64.2,MANUFACTURING OF GLUE AND GELATIN,Manufacturing of glue and gelatin by using biomass/cleaner fuel,76,65
+Orange,I,65.1,MANUFACTURING OF GLASS (INCLUDING PRINTING OR ETCHING OF GLASS SHEET USING HYDROFLUORIC ACID),Manufacturing of glass (Oil/coal fired),78.8,65
+Orange,I,65.2,MANUFACTURING OF GLASS (INCLUDING PRINTING OR ETCHING OF GLASS SHEET USING HYDROFLUORIC ACID),Manufacturing of glass (gas fired),66,65
+Orange,I,66,,Producer Gas plant using conventional coal Gasification,78,65
+Red,I,67.1,COMPRESSED BIOGAS (CBG)/BIO-CNG PLANTS,CBG plants based on Municipal Solid Waste (MSW) as feed,82,66
+Red,I,67.2,COMPRESSED BIOGAS (CBG)/BIO-CNG PLANTS,"CBG plants based on process waste (industrial/ process liquid effluent & solid waste like press mud, organic sludge, molasses, etc.) as feed",82,66
+Orange,I,67.3,COMPRESSED BIOGAS (CBG)/BIO-CNG PLANTS,"CBG plants based on crop residue (paddy straw /wheat straw /corn sweet sorghum/ Napier grass, etc.) as feed",77.5,66
+Orange,I,67.4,COMPRESSED BIOGAS (CBG)/BIO-CNG PLANTS,"CBG plants based on animal waste (dairy farms, poultry farms, and other animal waste) as feed",77.5,66
+White,I,67.5,COMPRESSED BIOGAS (CBG)/BIO-CNG PLANTS,CBG plants producing Fermented Organic Manure (FOM) & Liquid Fermented Organic Manure (LFOM) as by-products,20,66
+Red,I,68.1,STANDALONE PRODUCTION OF HYDROGEN AND/OR AMMONIA (WITHOUT CAPTIVE POWER PLANT USING FOSSIL FUEL),Integrated unit for production of Ammonia through Hydrogen generated by pyrolysis/gasification,87.3,67
+Red,I,68.2,STANDALONE PRODUCTION OF HYDROGEN AND/OR AMMONIA (WITHOUT CAPTIVE POWER PLANT USING FOSSIL FUEL),Integrated unit for production of ammonia through Hydrogen generated by electrolysis using renewable energy (capacity ≥ 15 TPD),80.5,67
+Orange,I,68.3,STANDALONE PRODUCTION OF HYDROGEN AND/OR AMMONIA (WITHOUT CAPTIVE POWER PLANT USING FOSSIL FUEL),Integrated unit for production of Ammonia through hydrogen generated by electrolysis using renewable energy (Capacity < 15 TPD),68.5,68
+Red,I,68.4,STANDALONE PRODUCTION OF HYDROGEN AND/OR AMMONIA (WITHOUT CAPTIVE POWER PLANT USING FOSSIL FUEL),Hydrogen production through pyrolysis/gasification,85.8,68
+Orange,I,68.5,STANDALONE PRODUCTION OF HYDROGEN AND/OR AMMONIA (WITHOUT CAPTIVE POWER PLANT USING FOSSIL FUEL),Hydrogen production through electrolysis using raw/seawater and renewable energy (capacity ≥ 2.5 TPD),64.0,69
+Green,I,68.6,STANDALONE PRODUCTION OF HYDROGEN AND/OR AMMONIA (WITHOUT CAPTIVE POWER PLANT USING FOSSIL FUEL),Hydrogen production through electrolysis using raw/sea water and renewable energy (capacity < 2.5 TPD),52.0,69
+White,I,68.7,STANDALONE PRODUCTION OF HYDROGEN AND/OR AMMONIA (WITHOUT CAPTIVE POWER PLANT USING FOSSIL FUEL),"Hydrogen production through electrolysis (using renewable energy) on BOO/BOOT/BOT, mode etc., located in the premises of end user industry and directly using de-mineralized water & other utilities (cooling tower, ETP, etc.) sourced from end user industry",10.0,69
+Green,I,69,,Glue from starch (physical mixing) with Gas/ electrically operated oven /boiler.,35,70
+Green,I,70,,Gold and silver smithy (purification with acid smelting operation and sulphuric acid polishing operation) (using less or equal to 1 litre of sulphuric acid/ nitric acid per month),25,70
+White,I,71,,Compressed oxygen Gas from crude liquid oxygen (without use of any solvents and by maintaining pressure & temperature only for separation of other Gases),0,70
+White,I,72,,Glass and ampules and vials making from Glass tubes,0,70
+White,I,73,,Ground nut decorticating,0,70
+White,I,74,,Medical Oxygen,20,71
+Orange,I,75.1,HOT MIX PLANTS,Hot mix plants using oil as fuel,75,71
+Orange,I,75.2,HOT MIX PLANTS,Hot mix plants using gaseous as fuel,60,71
+Red,I,76,,"Hazardous waste pre- processing/processing facility including spent acid processing, spent solvent recovery, etc.",87.3,71
+White,I,77,,Handloom/ carpet weaving ( without dying and bleaching operation),0,71
+Orange,I,78,,Ice cream manufacturing units,77.5,71
+Orange,I,79,,Printing Ink Manufacturing,77.3,71
+White,I,80,,Manufacturing of scientific and mathematical Instrument (assembling only),0,72
+Orange,I,81.1,JUTE PROCESSING,Jute processing (with dyeing / with boiler),77.5,72
+Green,I,81.2,JUTE PROCESSING,Jute processing (without dyeing / without boiler),40,72
+White,I,81.3,JUTE PROCESSING,Manufacturing of products from jute (without dyeing/ without boiler),0,72
+Orange,I,82,,Lime manufacturing (using lime kiln),55,72
+White,I,83,,Leather foot wear and Leather products (excluding tanning and hide processing),20,72
+Green,I,84,,Manufacturing of optical Lenses (using electrical furnace),35,72
+White,I,85,,Leather cutting and stitching (more than 10 machine and using motor),0,72
+Green,I,86,,Mobile towers using genset(s),50,73
+Red,I,87.1,MILK PROCESSES AND DAIRY PRODUCTS,Milk processes and dairy products (integrated project),90.6,73
+Red,I,87.2,MILK PROCESSES AND DAIRY PRODUCTS,"Dairy and dairy products (Small scale units), using coal/biomass as fuel (Wastewater generation ≥ 100 KLD)",85,73
+Orange,I,87.3,MILK PROCESSES AND DAIRY PRODUCTS,"Dairy and dairy products (Small scale units), using coal/biomass as fuel (Wastewater generation < 100 KLD)",77.5,73
+Orange,I,87.4,MILK PROCESSES AND DAIRY PRODUCTS,"Dairy and dairy products, (Small scale units), using PNG as fuel",71.5,73
+Red,I,88.1,MINING AND ORE BENEFICIATION,Open-cast coal mining,97.5,73
+Red,I,88.2,MINING AND ORE BENEFICIATION,Underground coal mining,93,73
+Red,I,88.3,MINING AND ORE BENEFICIATION,Mining of major minerals and ore beneficiation,99.4,73
+Orange,I,88.4,MINING AND ORE BENEFICIATION,Mining of minor minerals (except Sand/riverbed material mining),78.8,74
+Orange,I,88.5,MINING AND ORE BENEFICIATION,"Grinding, processing, and screening of minor minerals",55,74
+Orange,I,89,,Manufacturing of Mirror from sheet glass,58.8,74
+Orange,I,90,,"Mineral processing, industries involving ore sintering, pelletisating, grinding & pulverization",75,74
+Orange,I,91,,Malteries (without fermentation),77.5,74
+Orange,I,92,,Manufacturing of Mosquito repellent & coil,55,74
+White,I,93,,Organic Manure (physical mixing),20,74
+White,I,94,,Packing of powdered Milk,0,74
+Red,I,95.1,"IRON & STEEL (PRIMARY PROCESSING FROM ORE, INTEGRATED STEEL PLANTS AND SPONGE IRON UNITS)",Integrated iron and steel plants,98.3,74
+Red,I,95.2,"IRON & STEEL (PRIMARY PROCESSING FROM ORE, INTEGRATED STEEL PLANTS AND SPONGE IRON UNITS)",Stand-alone sintering/palletisation,90,74
+Red,I,95.3,"IRON & STEEL (PRIMARY PROCESSING FROM ORE, INTEGRATED STEEL PLANTS AND SPONGE IRON UNITS)",Sponge iron with CPP (Captive Power Plant),97,74
+Red,I,95.4,"IRON & STEEL (PRIMARY PROCESSING FROM ORE, INTEGRATED STEEL PLANTS AND SPONGE IRON UNITS)",Sponge iron without CPP,96.3,74
+Red,I,95.5,"IRON & STEEL (PRIMARY PROCESSING FROM ORE, INTEGRATED STEEL PLANTS AND SPONGE IRON UNITS)",Stand-alone coke oven gas plants,98,75
+Red,I,96.1,ALUMINIUM PROCESSING,Aluminium Refinery,96.6,75
+Red,I,96.2,ALUMINIUM PROCESSING,Aluminium Smelter,99.1,75
+Red,I,97,,Copper Smelter,97.8,75
+Red,I,98,,Zinc smelter,97.8,75
+Red,I,99.1,"FERROUS AND NON-FERROUS METAL SECONDARY PROCESSING/REPROCESSING UNITS INVOLVING DIFFERENT FURNACES THROUGH MELTING, REFINING, CASTING, ALLOY-MAKING","All Ferrous and Non-ferrous metal secondary processing/reprocessing units involving different furnaces through melting, refining, casting, alloy-making (using coal/liquid fuels)",83.1,75
+Orange,I,99.2,"FERROUS AND NON-FERROUS METAL SECONDARY PROCESSING/REPROCESSING UNITS INVOLVING DIFFERENT FURNACES THROUGH MELTING, REFINING, CASTING, ALLOY-MAKING","Ferrous and Non-ferrous metal (excluding lead, nickel, and manganese) secondary processing/reprocessing units involving different furnaces through melting, refining, casting, alloy-making (using cleaner fuels/electricity)",70,75
+Orange,I,100,,Aluminium & copper extraction from scrap using an oil-fired furnace (dry process only),75,75
+Red,I,101.1,INDUSTRY OR PROCESS INVOLVING METAL SURFACE TREATMENT OR PROCESS/HEAT TREATMENT,Industry or process involving metal surface treatment or process such as pickling/ electroplating/paint stripping/ heat treatment using cyanide bath/ phosphating or finishing and anodizing / enamellings/ galvanizing,88.8,76
+Orange,I,101.2,INDUSTRY OR PROCESS INVOLVING METAL SURFACE TREATMENT OR PROCESS/HEAT TREATMENT,Plasma electrolytic polishing (electroplating),78.3,76
+Green,I,101.3,INDUSTRY OR PROCESS INVOLVING METAL SURFACE TREATMENT OR PROCESS/HEAT TREATMENT,Heat treatment using furnace ( without cyaniding),50,76
+Green,I,101.4,INDUSTRY OR PROCESS INVOLVING METAL SURFACE TREATMENT OR PROCESS/HEAT TREATMENT,"Heat treatment with any of the new technology like ultrasound probe, induction hardening, ionization beam, gas carburizing etc.",38.8,76
+Orange,I,102.1,FORGING OF FERROUS AND NON- FERROUS METALS,Forging of ferrous and non- ferrous metals using liquid fuel,76,76
+Orange,I,102.2,FORGING OF FERROUS AND NON- FERROUS METALS,Forging of ferrous and non- ferrous metals using gaseous fuel,68,76
+Orange,I,102.3,FORGING OF FERROUS AND NON- FERROUS METALS,Forging of ferrous and non- ferrous metals using electricity,60,76
+Green,I,102.4,FORGING OF FERROUS AND NON- FERROUS METALS,"Forging of ferrous and non- ferrous metals (cold forging, without any heat treatment)",40,76
+Red,I,103.1,ROLLING MILLS,Rolling and pickling,90.5,76
+Orange,I,103.2,ROLLING MILLS,Rolling mills (oil and coal fired),57.5,76
+Green,I,103.3,ROLLING MILLS,Rolling mills (gas fired),44.8,76
+White,I,103.4,ROLLING MILLS,Cold rolling mill (without heat treatment),0,77
+Orange,I,104.1,FOUNDRY OPERATIONS,Cupola furnace,77.5,77
+Orange,I,104.2,FOUNDRY OPERATIONS,Induction furnace/arc furnace,59.5,77
+Red,I,105.1,WIRE DRAWING AND WIRE NETTING,Wire drawing and wire netting (with pickling),81.3,77
+Green,I,105.2,WIRE DRAWING AND WIRE NETTING,Wire drawing and wire netting (without pickling and with heat treatment),50.5,77
+White,I,105.3,WIRE DRAWING AND WIRE NETTING,Wire drawing and wire netting (without pickling and without heat treatment),0,77
+Green,I,106,,Die-casting /extrusion process only,50,77
+Green,I,107,,Manufacturing of aluminium utensils from aluminium circles pressing/ Brass and bell Metal utensils manufacturing from circles (dry mechanical operation only),30,77
+White,I,108,,Manufacturing of Metal caps containers etc,0,77
+Orange,I,109,,"Formulation/palletisation of camphor tablets, Naphthalene balls from camphor/ naphthalene powders.",55,78
+White,I,110,,Organic and inorganic Nutrients by physical mixing (without boiler and without any reactor),20,78
+Red,I,111.1,ORGANIC CHEMICALS INCLUDING HALOGENATED HYDROCARBONS,Organic chemicals including halogenated hydrocarbons (using solid/liquid fuel),93.6,78
+Red,I,111.2,ORGANIC CHEMICALS INCLUDING HALOGENATED HYDROCARBONS,Organic chemicals including halogenated hydrocarbons (using cleaner fuel),92.1,78
+Red,I,112,,"Oil and gas extraction (offshore & onshore extraction through drilling wells), Coal Bed Methane (CBM) drilling and shale gas, including group gathering stations (GGS), etc.",82.8,78
+Orange,I,113.1,EDIBLE OIL MILLS,Vegetable oil manufacturing including solvent extraction and refinery /hydrogenated oils,76.8,78
+Green,I,113.2,EDIBLE OIL MILLS,Oil mills Ghani and extraction without boiler (no refining/ hydrogenation),50,78
+Red,I,114.1,POWER GENERATION PLANTS,Power plants based on coal,98.3,79
+Red,I,114.2,POWER GENERATION PLANTS,Power plants based on liquid fuels,92.5,79
+Red,I,114.3,POWER GENERATION PLANTS,Biomass-based power plants,88.1,79
+Red,I,114.4,POWER GENERATION PLANTS,Nuclear energy-based power plants (> 220 MW),81.6,79
+Orange,I,114.5,POWER GENERATION PLANTS,Nuclear energy-based power plants (up to 220 MW),79.9,79
+Orange,I,114.6,POWER GENERATION PLANTS,Gas-based power plants,61.3,79
+Red,I,115.1,PULP & PAPER (AGRO & WOOD),"Manufacturing of bleached chemical pulp, papers, and paperboards",98.1,79
+Red,I,115.2,PULP & PAPER (AGRO & WOOD),"Unbleached or Totally Chlorine Free (TCF) bleaching for manufacturing of chemical pulp, papers, and paperboards",92.9,79
+Red,I,115.3,PULP & PAPER (AGRO & WOOD),"Bleached grades of chemical pulp, paper, and paperboard having Totally Chlorine Free (TCF) bleaching",92.9,79
+Red,I,116.1,PULP AND PAPER (RECYCLED FIBRE/WASTE PAPER BASED),Pulp & Paper (With bleaching),89,79
+Red,I,116.2,PULP AND PAPER (RECYCLED FIBRE/WASTE PAPER BASED),"Pulp & Paper (Without bleaching, capacity ≥15 TPD)",86.3,79
+Orange,I,116.3,PULP AND PAPER (RECYCLED FIBRE/WASTE PAPER BASED),Pulp & Paper (Without bleaching; plant capacity <15 TPD),74,80
+Red,I,117.1,"MANUFACTURING OF PAINTS, VARNISHES",Manufacturing of solvent- based paints/varnish,94.4,80
+Red,I,117.2,"MANUFACTURING OF PAINTS, VARNISHES",Manufacturing of water- based paints,88.8,80
+Red,I,117.3,"MANUFACTURING OF PAINTS, VARNISHES",Manufacturing of powder coatings,82.5,80
+Orange,I,117.4,"MANUFACTURING OF PAINTS, VARNISHES",Manufacturing of paint and varnishes (only blending and mixing),77.3,80
+Red,I,118.1,PESTICIDE INDUSTRIES,Pesticide technical (organic chemicals based),94,80
+Red,I,118.2,PESTICIDE INDUSTRIES,Pesticide technical (inorganic chemicals based like Zinc Phosphide and Aluminium Phosphide),91,80
+Red,I,118.3,PESTICIDE INDUSTRIES,Pesticide formulation industries (Liquid formulation only) having boiler/thermopack,86.5,80
+Orange,I,118.4,PESTICIDE INDUSTRIES,Pesticide formulation industries (Liquid formulation only) without having boiler/thermopack,79,80
+Red,I,118.5,PESTICIDE INDUSTRIES,Pesticide formulation industries (having both liquid and dry formulation or dry formulation only) without having boiler / thermopack,83.5,80
+Red,I,118.6,PESTICIDE INDUSTRIES,Pesticide formulation industries (having both liquid and dry formulation or dry formulation only) having boiler / thermopack,88.8,81
+Orange,I,119,,Photographic film and its chemicals,74.1,81
+Red,I,120,,Petroleum oil refineries,98.3,81
+Red,I,121.1,PETROCHEMICALS,Petrochemicals (Naphtha cracker.),98.5,81
+Red,I,121.2,PETROCHEMICALS,Petrochemicals (Gas cracker),96.8,81
+Red,I,121.3,PETROCHEMICALS,Petrochemicals (without cracker),88.1,81
+Red,I,121.4,PETROCHEMICALS,Petrochemicals (without cracker and using cleaner/gaseous fuel),87.5,81
+Orange,I,122.1,"MANUFACTURING OF LUBRICATING OILS, GREASE AND PETROLEUM-BASED PRODUCTS","Manufacturing of lubricating oils, grease, and petroleum- based products",75.3,81
+Green,I,122.2,"MANUFACTURING OF LUBRICATING OILS, GREASE AND PETROLEUM-BASED PRODUCTS","Manufacturing of lubricating oils, grease, and petroleum- based products (only blending)",32.5,81
+Red,I,123.1,PHARMACEUTICAL INDUSTRY,Pharmaceuticals manufacturing,98.6,81
+Red,I,123.2,PHARMACEUTICAL INDUSTRY,Pharmaceuticals manufacturing using cleaner/gaseous fuel,98,81
+Orange,I,123.3,PHARMACEUTICAL INDUSTRY,Pharmaceuticals (Formulation),72.5,82
+Orange,I,123.4,PHARMACEUTICAL INDUSTRY,Pharmaceuticals (Formulation) using cleaner/gaseous fuel,68.8,82
+Orange,I,123.5,PHARMACEUTICAL INDUSTRY,Vaccine manufacturing,78,82
+Orange,I,123.6,PHARMACEUTICAL INDUSTRY,Vaccine manufacturing using cleaner/gaseous fuel,68.8,82
+Orange,I,123.7,PHARMACEUTICAL INDUSTRY,Pharmaceutical R&D facilities,72.5,82
+Orange,I,123.8,PHARMACEUTICAL INDUSTRY,Ayurvedic or Unani medicines manufacturing,72.5,82
+Orange,I,123.9,PHARMACEUTICAL INDUSTRY,Ayurvedic or unani medicines manufacturing using cleaner fuel,58.8,82
+Green,I,123.10,PHARMACEUTICAL INDUSTRY,Ayurvedic or unani medicines manufacturing (Without boiler ),50,82
+Green,I,124,,"Digital Printing on flex /vinyl, PVC etc. (more than 5 machines)",46,82
+Green,I,125,,"Spray Painting, Paint baking, Paint shipping",47.5,82
+Orange,I,126,,Plywood/board manufacturing ( including Veneer and laminate) with biomass fired boiler / thermic fluid heater (without resin plant),78.3,82
+Orange,I,127,,"Printing press (newspaper, books, magazines, etc./ Gravure printing",56.5,83
+Green,I,128,,Manufacturing of bi-axially oriented Polypropylene (PP) film along with metalizing operations,30,83
+Green,I,129,,Pulse/Dal Mills,30,83
+Green,I,130,,Insulation and other coated Papers (excluding paper or pipe manufacturing),25,83
+Green,I,131,,"Packaging materials manufacturing from non- asbestos fibre, vegetable fibre yarn",25,83
+Green,I,132,,Polythene and plastic processed products manufacturing (virgin/compostable plastic),37,83
+Green,I,133,,"Poultry, piggery, and hatchery",50,83
+Green,I,134,,Puffed rice (muri) (using gas),35,83
+White,I,135,,Biscuits trays etc from rolled PVC sheet (using automatic vacuum forming machines),0,84
+White,I,136,,Fountain Pen manufacturing by assembling only,0,84
+White,I,137,,Glass Putty and sealant (by mixing with machine only),0,84
+White,I,138,,"Manufacturing of Paper Pins, U-clips, etc.",0,84
+White,I,139,,Solar Power generation through solar photovoltaic cell and wind power,0,84
+Orange,I,140,,Synthetic Rubber excluding molding,68.8,84
+Red,I,141.1,REFRACTORIES,Refractories based on coal/liquid fuel (fuel consumption: 12 TPD and above),80,84
+Orange,I,141.2,REFRACTORIES,Refractories based on coal/liquid fuel (fuel consumption: less than 12 TPD),75,84
+Orange,I,141.3,REFRACTORIES,Refractories based on cleaner fuels,60,84
+Orange,I,142.1,RUBBER PRODUCTS MANUFACTURING,Tyre and tube manufacturing,78.8,85
+Orange,I,142.2,RUBBER PRODUCTS MANUFACTURING,Tyres and tubes vulcanization/ hot retreading,61.8,85
+Orange,I,142.3,RUBBER PRODUCTS MANUFACTURING,Rubber goods industry (with solid fuel/oil-based boiler),57.5,85
+Green,I,142.4,RUBBER PRODUCTS MANUFACTURING,Rubber goods industry (with gas-based boiler),44.8,85
+Red,I,143.1,SYNTHETIC RESINS,Synthetic resins manufacturing,82,85
+Orange,I,143.2,SYNTHETIC RESINS,Synthetic resins manufacturing (using only gaseous fuel),73,85
+Green,I,144,,"Blending of melamine Resins & different powder, additives by physical mixing, including phenolic resin (without boiler)",51,85
+Orange,I,145.1,RICE MILLS,Parboiled rice mill (with soaking and steam/drier),61.3,85
+Green,I,145.2,RICE MILLS,Raw rice mill (Without soaking and steam/drier)/ hullers),30,85
+White,I,146,,Repairing of electric motors and generators (dry mechanical process),0,85
+White,I,147,,Manufacturing of plastic or cotton Rope,0,85
+White,I,148,,Tyre Retraders,0,86
+Red,I,149.1,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE UNDER SCHEDULE IV OF H&OW(M & TBM) RULES, 2016 - ITEMS, NAMELY, SPENT CATALYSTS CONTAINING NICKEL, CADMIUM, ZINC, COPPER, ARSENIC, VANADIUM, AND COBALT, INCLUDING DRY BATTERY (EXCEPT LEAD), AND CLEARED METAL CATALYST.",Hydro & pyro metallurgy,91,86
+Red,I,149.2,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE UNDER SCHEDULE IV OF H&OW(M & TBM) RULES, 2016 - ITEMS, NAMELY, SPENT CATALYSTS CONTAINING NICKEL, CADMIUM, ZINC, COPPER, ARSENIC, VANADIUM, AND COBALT, INCLUDING DRY BATTERY (EXCEPT LEAD), AND CLEARED METAL CATALYST.",Hydro & pyro metallurgy (using cleaner/gaseous fuels & without crushing of materials),82,86
+Red,I,149.3,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE UNDER SCHEDULE IV OF H&OW(M & TBM) RULES, 2016 - ITEMS, NAMELY, SPENT CATALYSTS CONTAINING NICKEL, CADMIUM, ZINC, COPPER, ARSENIC, VANADIUM, AND COBALT, INCLUDING DRY BATTERY (EXCEPT LEAD), AND CLEARED METAL CATALYST.",Pyro metallurgy (using coal/liquid fuels),87.3,86
+Orange,I,149.4,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE UNDER SCHEDULE IV OF H&OW(M & TBM) RULES, 2016 - ITEMS, NAMELY, SPENT CATALYSTS CONTAINING NICKEL, CADMIUM, ZINC, COPPER, ARSENIC, VANADIUM, AND COBALT, INCLUDING DRY BATTERY (EXCEPT LEAD), AND CLEARED METAL CATALYST.",Pyro metallurgy (using cleaner/gaseous fuels),74.5,86
+Orange,I,149.5,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE UNDER SCHEDULE IV OF H&OW(M & TBM) RULES, 2016 - ITEMS, NAMELY, SPENT CATALYSTS CONTAINING NICKEL, CADMIUM, ZINC, COPPER, ARSENIC, VANADIUM, AND COBALT, INCLUDING DRY BATTERY (EXCEPT LEAD), AND CLEARED METAL CATALYST.",Hydro metallurgy,73,86
+Red,I,150.1,E-WASTE DISMANTLING / RECYCLING,Industry engaged in recycling of e-waste generated from the electrical and electronic Equipment (EEE) listed in the E-Waste (Management) Rules 2022 using pyro/ hydro/ electro- metallurgical processing and recycling of plastic separated from Waste EEE,92,86
+Orange,I,150.2,E-WASTE DISMANTLING / RECYCLING,"Industry engaged in recycling of e-waste generated from the electrical and electronic equipment (EEE) listed in the E-Waste (Management) Rules 2022 (PCB processing limited to only mechanical processing and separation without pyro/ hydro/ electro-metallurgical processing), production of Al, Cu, and other metals from non-PCB sources and/or recycling of plastic separated from Waste EEE.",73,87
+Green,I,150.3,E-WASTE DISMANTLING / RECYCLING,"Industry engaged in dismantling (only) of e- waste, generated from the electrical and electronic equipment (EEE) listed in the E-Waste (Management) Rules 2022",43.1,87
+Green,I,150.4,E-WASTE DISMANTLING / RECYCLING,E-waste refurbishing centres,43.1,87
+Red,I,151.1,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE (Items as per Schedule IV of H&OW( M & TBM) Rules, 2016.)",Lead Recycling ( Lead Acid Batteries with Acids; Lead Scrap Recycling) Rotary Furnace/ Pit Furnace (Mandir/Canopy Bhatti),94.5,87
+Red,I,151.2,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE (Items as per Schedule IV of H&OW( M & TBM) Rules, 2016.)",Lead Recycling ( Drained Lead Acid Batteries; Lead Scrap Recycling) Rotary Furnace/Mandir Bhatti on Cleaner Fuel,84.4,88
+Orange,I,151.3,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE (Items as per Schedule IV of H&OW( M & TBM) Rules, 2016.)","Isolated storages (as defined under Manufacture, Storage, and Import of Hazardous Chemicals Rules, 1989 as amended)",71.3,88
+Orange,I,151.4,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE (Items as per Schedule IV of H&OW( M & TBM) Rules, 2016.)",Paint and ink sludge / residues recycling,72,88
+Orange,I,151.5,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE (Items as per Schedule IV of H&OW( M & TBM) Rules, 2016.)","Industries engaged in recycling / reprocessing/ recovery/reuse of Hazardous Waste, excluding lead, paint, and ink sludge",75,88
+Orange,I,151.6,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE (Items as per Schedule IV of H&OW( M & TBM) Rules, 2016.)",Refining of used oil by hydro-treating/using solvent extraction,78,89
+Orange,I,151.7,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE (Items as per Schedule IV of H&OW( M & TBM) Rules, 2016.)",Refining of used oil by using thin film evaporation/vacuum distillation with clay treatment,67.5,89
+Orange,I,151.8,"INDUSTRIES ENGAGED IN RECYCLING/REPROCESSING/ RECOVERY/REUSE OF HAZARDOUS WASTE (Items as per Schedule IV of H&OW( M & TBM) Rules, 2016.)",Recycling / reprocessing of waste oil,74,89
+Orange,I,152.1,RECYCLING OF PLASTIC WASTE,Manufacturing of flakes/staple fibre/strip from the recycling of PET bottles,64,89
+Orange,I,152.2,RECYCLING OF PLASTIC WASTE,Plastic waste processing (manufacturing of flakes/granules),55,89
+Orange,I,153.1,"SCRAPING FACILITIES FOR RECYCLING END-OF-LIFE VEHICLES, WAGONS, AND COACHES","Collection, Depollution and Dismantling Centers (Without shredding)",62.9,89
+Orange,I,153.2,"SCRAPING FACILITIES FOR RECYCLING END-OF-LIFE VEHICLES, WAGONS, AND COACHES","Collection, Depollution, Dismantling and shredding Centers",62.9,89
+Green,I,153.3,"SCRAPING FACILITIES FOR RECYCLING END-OF-LIFE VEHICLES, WAGONS, AND COACHES",Common Shredders (Standalone),44.8,89
+White,I,153.4,"SCRAPING FACILITIES FOR RECYCLING END-OF-LIFE VEHICLES, WAGONS, AND COACHES","Collection Centers (Without depollution, dismantling and shredding)",0,89
+Red,I,154,,Sugar (excluding khandsari/jaggery),94.5,89
+Orange,I,155,,Ship breaking industries,57.5,90
+Red,I,156,,"Slaughterhouse / Slaughterhouse (with rendering plant)/ integrated slaughtering unit, meat processing units, bone mill, processing of animal horns, hoofs and other body parts",90.3,90
+Orange,I,157,,Manufacturing of Silica gel,74.1,90
+Orange,I,158,,Manufacturing of Iodized Salt from Crude / Raw Salt,61.3,90
+Orange,I,159,,Manufacturing of Starch / Sago / Sorbitol,77.5,90
+Orange,I,160,,Stone crushers,55,90
+Orange,I,161,,Stone crushing/grinding/washing & screening of riverbed material(s),62.9,90
+Orange,I,162.1,MANUFACTURING OF SURGICAL AND MEDICAL PRODUCTS,Manufacturing of Surgical and medical products,58.8,91
+Green,I,162.2,MANUFACTURING OF SURGICAL AND MEDICAL PRODUCTS,Surgical and medical products assembled only (with effluent-generating processes),50,91
+White,I,162.3,MANUFACTURING OF SURGICAL AND MEDICAL PRODUCTS,Surgical and medical products assembled only (without effluent-generating processes),0,91
+Red,I,163.1,SEMICONDUCTOR MANUFACTURING INDUSTRIES,Semiconductor fabs manufacturing,95,91
+Red,I,163.2,SEMICONDUCTOR MANUFACTURING INDUSTRIES,Display fabs manufacturing,94.5,91
+Red,I,163.3,SEMICONDUCTOR MANUFACTURING INDUSTRIES,Sensor fabs manufacturing/ Compound semiconductors/ silicon photonics,94.5,91
+Green,I,163.4,SEMICONDUCTOR MANUFACTURING INDUSTRIES,"Semiconductor Assembly, Testing, Marking and Packaging Facility (ATMP)",43.1,91
+Green,I,164,,Saw mills,30,91
+Green,I,165,,Spice grinding,30,92
+Green,I,166,,"Cutting, Sizing and polishing of marble, granite and other stones",40.5,92
+White,I,167,,Manufacturing of Solar module/ non-conventional energy apparatus,0,92
+Red,I,168.1,TANNERIES,Tanneries (Raw to finish),93.8,92
+Red,I,168.2,TANNERIES,Tanneries (Raw to wet blue),93.8,92
+Red,I,168.3,TANNERIES,Tanneries (Wet blue to finish),90.6,92
+Orange,I,168.4,TANNERIES,Vegetable tanning,77.5,92
+Orange,I,169.1,"MANUFACTURING OF TOOTH POWDER, TOOTHPASTE, TALCUM POWDER AND OTHER COSMETIC ITEMS",Manufacturing of toothpaste and other cosmetic items,73.8,92
+Green,I,169.2,"MANUFACTURING OF TOOTH POWDER, TOOTHPASTE, TALCUM POWDER AND OTHER COSMETIC ITEMS","Manufacturing of tooth powder, talcum powder",25,92
+Orange,I,170.1,THERMOMETER MANUFACTURING,Glass (mercury based) thermometer manufacturing,70.8,92
+White,I,170.2,THERMOMETER MANUFACTURING,Digital thermometer manufacturing,0,92
+Orange,I,171,,Manufacturing of Teflon- based products,78.1,93
+Orange,I,172,,Thermocol manufacturing (with boiler),58.8,93
+Orange,I,173.1,MANUFACTURING OF TOBACCO PRODUCTS INCLUDING CIGARETTES AND TOBACCO PROCESSES,Manufacturing of tobacco products including cigarettes and tobacco processes (with boiler),75.3,93
+Green,I,173.2,MANUFACTURING OF TOBACCO PRODUCTS INCLUDING CIGARETTES AND TOBACCO PROCESSES,Manufacturing of tobacco products including cigarettes and tobacco processes (without boiler),41.5,93
+Green,I,174,,Transformer repairing/ manufacturing (dry process only),47.5,93
+Orange,I,175,,Tyre Pyrolysis Oil Industries-Applicable for advanced batch automated process / continuous TPO units,78.1,93
+Green,I,176,,Tamarind powder manufacturing,50.5,93
+Orange,I,177.1,TEA PROCESSING AND BLENDING,Tea processing (with boiler),56.3,94
+Green,I,177.2,TEA PROCESSING AND BLENDING,Tea processing (without boiler),25,94
+White,I,177.3,TEA PROCESSING AND BLENDING,Blending and packing of tea,0,94
+Red,I,178.1,TEXTILE INDUSTRY,"Yarn / Textile processing involving any effluent/emission generating processes including bleaching, dyeing, printing, and colouring, including the garment and apparel manufacturing industry",95.5,94
+Orange,I,178.2,TEXTILE INDUSTRY,Yarn to grey fabric manufacturing with water jet machines,70,94
+Green,I,178.3,TEXTILE INDUSTRY,Garment and apparel manufacturing industry including Doubling / Reeling / TFO-Two for one unit (dry process)-with boiler,50,94
+White,I,178.4,TEXTILE INDUSTRY,Garment and apparel manufacturing industry including Doubling / Reeling / TFO-Two for one unit (dry process)-without boiler,0,94
+Orange,I,179.1,SAREE/FABRIC PRINTING BY SCREEN / WOODEN BLOCK /HAND BLOCK,Saree/fabric printing by screen / wooden block/hand block,71.3,94
+Green,I,179.2,SAREE/FABRIC PRINTING BY SCREEN / WOODEN BLOCK /HAND BLOCK,Hand block printing without effluent generation,45,94
+Orange,I,180.1,"TEXTILE SPINNING, SIZING AND WEAVING MILLS","Textile spinning, sizing and weaving mills (wastewater generation≥ 10 KLD )",60,95
+Green,I,180.2,"TEXTILE SPINNING, SIZING AND WEAVING MILLS","Textile spinning, sizing and weaving mills (wastewater generation <10 KLD)",54.6,95
+Green,I,181,,Power looms (without dye and bleaching),25,95
+Red,I,182.1,REPROCESSING OF WASTE TEXTILE FABRIC,"Integrated facility for reprocessing of waste textile fabric (including washing, bleaching, dyeing etc.)",86.5,95
+Green,I,182.2,REPROCESSING OF WASTE TEXTILE FABRIC,Reprocessing of waste textile fabric (dry process),25,95
+White,I,183,,Cotton and woollen Hosiers making (Dry process only without any dying / washing operation),0,95
+Green,I,184,,Seasoning of Wood in steam heated chamber,50,95
+Green,I,185,,Pulverization of bamboo and scrap Wood,25,95
+Green,I,186,,Distilled Water (without boiler) with electricity as source of heat,40,95
+Green,I,187,,Purification of Water and packaging (mineralized/non- mineralized water),45,96
+Red,II-A,1.1,COMMON EFFLUENT TREATMENT PLANT (CETP),CETP having MEE/spray drier,98.1,98
+Red,II-A,1.2,COMMON EFFLUENT TREATMENT PLANT (CETP),"CETP (without having MEE/spray drier), Common MEE/common spray driers",89.1,98
+Red,II-A,1.3,COMMON EFFLUENT TREATMENT PLANT (CETP),Common Sewage-Effluent Treatment Plant (CSETP),88.4,98
+Red,II-A,2.0,,Effluent conveyance projects,87.6,98
+Red,II-A,3.1,"COMMON HAZARDOUS WASTE TREATMENT, STORAGE AND DISPOSAL FACILITY",Integrated facility (Secured landfill and incinerator),100.0,98
+Red,II-A,3.2,"COMMON HAZARDOUS WASTE TREATMENT, STORAGE AND DISPOSAL FACILITY",Only secured landfill,97.6,98
+Red,II-A,3.3,"COMMON HAZARDOUS WASTE TREATMENT, STORAGE AND DISPOSAL FACILITY",Only incinerator,100.0,98
+Red,II-A,4.1,COMMON BIO-MEDICAL WASTE TREATMENT FACILITY (CBWTF),CBWTF,90.5,98
+Red,II-A,4.2,COMMON BIO-MEDICAL WASTE TREATMENT FACILITY (CBWTF),CBWTF using cleaner/gaseous fuel,83.4,98
+Blue,II-B,1.1,MUNICIPAL SOLID WASTE MANAGEMENT FACILITY,"Municipal Solid Waste Management Facility (Sanitary landfill/ Integrated Sanitary landfill with material recycling facility/ refused derived fuel, etc.)",86.0,99
+Blue,II-B,1.2,MUNICIPAL SOLID WASTE MANAGEMENT FACILITY,Waste to energy power plants,97.6,99
+Blue,II-B,1.3,MUNICIPAL SOLID WASTE MANAGEMENT FACILITY,Bio-mining of legacy waste projects,93.0,99
+Blue,II-B,1.4,MUNICIPAL SOLID WASTE MANAGEMENT FACILITY,Municipal Solid Waste Bio- methanation plant (Quantity of MSW ≥ 5 TPD),82.0,99
+Blue,II-B,1.5,MUNICIPAL SOLID WASTE MANAGEMENT FACILITY,Municipal Solid Waste Composting Facility (Quantity of MSW ≥ 5 TPD),74.5,99
+Blue,II-B,1.6,MUNICIPAL SOLID WASTE MANAGEMENT FACILITY,Municipal Solid Waste Material Recovery Facility (Quantity of MSW ≥ 5 TPD),66.0,99
+Blue,II-B,2.0,,Construction and Demolition (C&D) Waste Processing Plants,56.3,99
+Blue,II-B,3.1,SEWAGE TREATMENT PLANT,Sewage Treatment Plant (5 MLD and above),59.5,99
+Blue,II-B,3.2,SEWAGE TREATMENT PLANT,Sewage Treatment Plant (less than 5 MLD),50.5,99
+Orange,III,1.1,STANDALONE GENERATOR SET (Genset),"Genset(s) of total capacity ≥ 1 MVA, using liquid fuel",60.0,101
+Green,III,1.2,STANDALONE GENERATOR SET (Genset),"Genset(s) of total capacity ≥ 1 MVA, using cleaner/gaseous fuel",50.5,101
+Orange,III,2.0,,Airports,75.3,101
+Red,III,3.1,"HEALTH CARE FACILITIES (HCFS, AS DEFINED UNDER BIO-MEDICAL WASTE MANAGEMENT RULES, 2016)","HCFs with captive incinerator, irrespective of number of beds",88.5,101
+Red,III,3.2,"HEALTH CARE FACILITIES (HCFS, AS DEFINED UNDER BIO-MEDICAL WASTE MANAGEMENT RULES, 2016)",more than 1000 bedded HCFs,100.0,101
+Red,III,3.3,"HEALTH CARE FACILITIES (HCFS, AS DEFINED UNDER BIO-MEDICAL WASTE MANAGEMENT RULES, 2016)","501 to 1,000 bedded HCFs",85.0,101
+Orange,III,3.4,"HEALTH CARE FACILITIES (HCFS, AS DEFINED UNDER BIO-MEDICAL WASTE MANAGEMENT RULES, 2016)",201 to 500 bedded HCFs,70.0,101
+Orange,III,3.5,"HEALTH CARE FACILITIES (HCFS, AS DEFINED UNDER BIO-MEDICAL WASTE MANAGEMENT RULES, 2016)",51 to 200 bedded HCFs,60.0,101
+Green,III,3.6,"HEALTH CARE FACILITIES (HCFS, AS DEFINED UNDER BIO-MEDICAL WASTE MANAGEMENT RULES, 2016)",11 to 50 bedded HCFs,52.0,101
+Green,III,3.7,"HEALTH CARE FACILITIES (HCFS, AS DEFINED UNDER BIO-MEDICAL WASTE MANAGEMENT RULES, 2016)",Up to 10 bedded HCFs,44.8,101
+Green,III,3.8,"HEALTH CARE FACILITIES (HCFS, AS DEFINED UNDER BIO-MEDICAL WASTE MANAGEMENT RULES, 2016)",Non-bedded HCFs,25.0,101
+Red,III,4.1,HOTELS/BANQUET HALLS HAVING ROOM FACILITY,Hotels (above 3 star) or having 100 & above rooms,81.3,102
+Orange,III,4.2,HOTELS/BANQUET HALLS HAVING ROOM FACILITY,Hotels (above 3 star) or having 100 & above rooms (based on cleaner /gaseous fuel),79.4,102
+Orange,III,4.3,HOTELS/BANQUET HALLS HAVING ROOM FACILITY,Hotels (up to 3 star) or having more than 20 rooms but less than 100 rooms.,73.8,102
+Green,III,4.4,HOTELS/BANQUET HALLS HAVING ROOM FACILITY,Up to 20 rooms,52.5,102
+Red,III,5.1,RAILWAY LOCOMOTIVE WORK SHOP/ INTEGRATED ROAD TRANSPORT WORKSHOP/ AUTHORIZED SERVICE CENTERS,Railway locomotive work shop/ Integrated road transport workshop/ Authorized service centers (wastewater generation ≥ 10 KLD),84.3,102
+Orange,III,5.2,RAILWAY LOCOMOTIVE WORK SHOP/ INTEGRATED ROAD TRANSPORT WORKSHOP/ AUTHORIZED SERVICE CENTERS,Railway locomotive work shop/ Integrated road transport workshop/ Authorized service centers (wastewater generation <10 KLD),79.0,102
+Orange,III,6.1,RAILWAY STATIONS,Railway Stations (Wastewater Generation ≥ 5 MLD),75.3,102
+Green,III,6.2,RAILWAY STATIONS,"Railway Stations (Wastewater Generation ≥ 100 KLD, but < 5 MLD)",35.0,102
+Green,III,7.1,RAILWAY SIDINGS,Railway sidings / Mineral stock yard,25.0,103
+White,III,7.2,RAILWAY SIDINGS,Railway sidings only for defence purpose,0.0,103
+Red,III,8.1,PORTS AND HARBOURS,"Ports and harbours, jetties and dredging operations",84.4,103
+Orange,III,8.2,PORTS AND HARBOURS,Ports and harbours (only containers handling)/ Captive jetties,76.4,103
+Orange,III,9.0,,Automobile service stations/ workshops,75.5,103
+Orange,III,10.1,BUILDING CONSTRUCTION PROJECTS,"Building construction project ≥ 20,000 sq. m. built-up area",61.3,103
+Green,III,10.2,BUILDING CONSTRUCTION PROJECTS,"Building construction project ≥ 5,000 sq. m., but < 20,000 sq. m. built-up area (without connectivity to terminal STP)",40.0,103
+Orange,III,11.0,,Standalone mechanized laundry (using boiler),60.0,104
+Orange,III,12.0,,New highway construction project,75.0,104
+Red,III,13.1,DAIRY FARM,Dairy Farm (having more than 500 animals),82.0,104
+Orange,III,13.2,DAIRY FARM,Dairy Farm (having 101 to 500 animals),77.5,104
+Orange,III,13.3,DAIRY FARM,Dairy Farm (having 15 to 100 animals),73.0,104
+Green,III,14.0,,Gold Assaying & Hallmarking Centres,46.4,104
+Green,III,15.0,,"Facility of handling, storage, and transportation of food grains in bulk",25.0,104
+Green,III,16.0,,Flyash export or disposal operations,25.0,104
+Green,III,17.0,,"Oil and gas transportation pipeline (excluding pipeline covered under definition of isolated storage of hazardous chemicals, as per Manufacture, Storage, and Import of Hazardous Chemicals Rules, 1989)",35.0,105
+Green,III,18.0,,Gaushalas,41.5,105
+White,III,19.0,,"Household bio-digesters/gobar- gas (cow-dung) plants based on biodegradable wastes, etc.",20.0,105
+Red,IV,1.1,HYDEL POWER PLANTS INCLUDING PUMPED STORAGE PROJECTS,Hydel power plants (Capacity > 50 MW),,107
+Orange,IV,1.2,HYDEL POWER PLANTS INCLUDING PUMPED STORAGE PROJECTS,Mini Hydel power plants (Capacity from more than 25 MVA and up to 50 MW),,107
+White,IV,1.3,HYDEL POWER PLANTS INCLUDING PUMPED STORAGE PROJECTS,Mini Hydel power plants (Capacity ≤ 25 MW),,107
+Red,IV,2.1,SAND / RIVERBED MATERIAL MINING FROM RIVERBED AND ITS FLOODPLAINS (excluding manual excavation),Mining lease area more than 5 hectares or Mining lease area up to 5 hectares which is part of cluster mining,,107
+Orange,IV,2.2,SAND / RIVERBED MATERIAL MINING FROM RIVERBED AND ITS FLOODPLAINS (excluding manual excavation),Standalone mining lease area up to five hectares in areas (not a part of any cluster mining),,107

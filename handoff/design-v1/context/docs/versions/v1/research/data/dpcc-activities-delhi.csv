@@ -1,0 +1,726 @@
+serial,activity,category,hazardous,office_order_class,effluent_device_required,effluent_device_type,emission_device_required,emission_device_type,status
+1,Aerated Water and Fruit Beverage,ORANGE,NO,II(a),YES,ETP,NO,,Active
+2,Aerated Water and Fruit Beverage with Boiler,ORANGE,NO,II(a),YES,ETP,NO,,Active
+3,Agarbatti and similar products,WHITE,NO,,NO,,NO,,Active
+4,Agriculture equipments and implements including repair,WHITE,NO,,NO,,NO,,Active
+5,Airports and Commercial Air strips,RED,NO,II(a),YES,STP,NO,,Active
+6,"Aluminium Casting (except cupola furnace only), Rolling (with capacity less than 25 MT/day) and Annealing",ORANGE,NO,II(b),NO,,YES,Wet Scrubber,Active
+7,"Aluminium Doors/Windows/ Fittings/Furniture, Aluminium Wares, Aluminium Products(without buffing,anodizing/ casting)",GREEN,NO,I,NO,,NO,,Active
+8,Aluminium Pressure Die Casting,ORANGE,NO,II(b),NO,,NO,,Active
+9,"Aluminium -Wares, moulds of cakes and pastry(without buffing, anodizing/ casting)",GREEN,NO,I,NO,,NO,,Active
+10,Amusement/Water Park,RED,NO,II(b),NO,,NO,,Active
+11,Ancillary Units of Slaughter House,RED,NO,II(a),YES,ETP,NO,,Active
+12,Ancillary Units of Slaughter House with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+13,Annealing using Electric Furnace/Oven,GREEN,NO,I,NO,,NO,,Active
+14,Anodizing,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+15,"Apparel Making (without washing ,dyeing &bleaching and boiler)",GREEN,NO,I,NO,,NO,,Active
+16,Arm Parts (Light Engg. Works),WHITE,NO,,NO,,NO,,Active
+17,Asbestos Based Products,RED,YES,II(b),NO,,YES,Bag Filter,Active
+18,"Assembling of Central Industrial Machinery(such as hydraulic equipments, drilling equipments, boilers etc.)",GREEN,NO,I,NO,,NO,,Active
+19,Assembling of Conveyors and Conveying equipments,WHITE,NO,,NO,,NO,,Active
+20,Assembling of Diesel Engines,ORANGE,YES,II(b),NO,,NO,,Active
+21,"Assembling of Industrial trucks, trailers, stakers etc.",GREEN,NO,I,NO,,NO,,Active
+22,Assembling of lifts,WHITE,NO,,NO,,NO,,Active
+23,"Assembling of other primary metal industries(e.g. cold rolled sheets, alloy sheets etc.)(Light Engg. Work)",WHITE,NO,,NO,,NO,,Active
+24,Assembling of power driven pumps and pumping equipments,WHITE,NO,,NO,,NO,,Active
+25,Assembling of sewing machines,WHITE,NO,,NO,,NO,,Active
+26,Assembling of sluice gates and gears,WHITE,NO,,NO,,NO,,Active
+27,Assembling of special industry machinery,WHITE,NO,,NO,,NO,,Active
+28,Assembling of steel chains,WHITE,NO,,NO,,NO,,Active
+29,Assembling of telephone equipments,WHITE,NO,,NO,,NO,,Active
+30,Assembling of tractor and agriculture machinery (power driven),WHITE,NO,,NO,,NO,,Active
+31,Assembly and repair of electrical gadgets,WHITE,NO,,NO,,NO,,Active
+32,Assembly and repair of electronic goods,WHITE,NO,,NO,,NO,,Active
+33,Assembly and repair of sewing machines.,WHITE,NO,,NO,,NO,,Active
+34,"Assembly of air coolers / conditioners, repairing and servicing",WHITE,NO,,NO,,NO,,Active
+35,"Assembly of bicycles, baby carriage and other small non-motorised vehicles",WHITE,NO,,NO,,NO,,Active
+36,Assembly of domestic electrical appliances,WHITE,NO,,NO,,NO,,Active
+37,Assembly of Lathe machine,WHITE,NO,,NO,,NO,,Active
+38,Atta Chakkies(with less than 6KW Power),WHITE,NO,,NO,,NO,,Active
+39,Automobile and Coach Building (Small Scale),ORANGE,YES,II(b),NO,,NO,,Active
+40,Automobile fuel outlets (only dispensing),GREEN,NO,I,NO,,NO,,Active
+41,Automobile fuel outlets (only dispensing with vapour recovery system),WHITE,NO,,NO,,NO,,Active
+42,"Automobile Fuel Outlet (with Automobile Servicing, Washing, Repairing and Painting)",ORANGE,YES,II(b),YES,ETP,NO,,Active
+43,"Automobile Fuel Outlet (with Automobile Servicing, Washing, Repairing and Painting) with furnace",ORANGE,NO,I,NO,,NO,,Active
+44,Automobile Repair and Servicing (without Washing),ORANGE,YES,II(b),NO,,NO,,Active
+45,Automobile Repair and Servicing (without Washing) with oil fired Paint Booth,ORANGE,YES,II(b),NO,,NO,,Active
+46,Automobile Servicing and Repair Station with Washing Activity,ORANGE,YES,II(b),YES,ETP,NO,,Active
+47,Automobile Servicing and Repair Station with Washing Activity with burner,ORANGE,YES,II(b),YES,ETP,NO,,Active
+48,"Automobile servicing, repairing and painting(excluding only fuel dispensing)",ORANGE,YES,II(b),YES,ETP,NO,,Active
+49,Ayurvedic and Homeopathic Medicines (with boiler / Furnace),ORANGE,YES,II(b),YES,ETP,NO,,Active
+50,Ayurvedic and Homeopathic Medicines (without boiler / Furnace),GREEN,YES,II(b),NO,,NO,,Active
+51,Ayurvedic Medicines without trade effluent generation,GREEN,NO,I,NO,,NO,,Active
+52,"Ayurvedic Medicines with trade effluent generation, having Electric/PNG fired boiler.",ORANGE,NO,II(b),YES,ETP,NO,,Active
+53,Bakelite Powder mfg. using Phenol Formaldehyde Resin As Raw Material and Bakelite Products,GREEN,NO,II(b),NO,,YES,Bag Filter,Active
+54,Bakery Products and Confectionery with Trade Effluent/Emission Discharge,ORANGE,NO,II(b),YES,ETP,NO,,Active
+55,Bakery Products and Confectionery with Trade Effluent/Emission Discharge with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+56,Bakery Products and Confectionery with Trade Effluent/Emission Discharge with oil fired furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+57,Bamboo and cane products(only dry operations),WHITE,NO,,NO,,NO,,Active
+58,Batic works,WHITE,NO,,NO,,NO,,Active
+59,Batteries (Lead Acid) and Accessories without Trade Effluent Discharge,RED,NO,II(b),NO,,YES,Wet Scrubber/ Bag Filter,Active
+60,Batteries (Lead Acid) and Accessories with Trade Effluent Discharge,RED,NO,II(b),YES,ETP,YES,Wet Scrubber/ Bag Filter,Active
+61,Battery Charging without trade effluent discharge,ORANGE,NO,II(b),NO,,NO,,Active
+62,Battery Charging with trade effluent discharge (Discharging effluent from acid make up and washing of batteries),ORANGE,NO,II(b),YES,ETP,NO,,Active
+63,Battery Containers (PVC Section),GREEN,NO,I,NO,,NO,,Active
+64,Belts and Buckles,WHITE,NO,,NO,,NO,,Active
+65,Bio-Fertilizer and Bio-Pesticides without using Inorganic Chemicals,WHITE,NO,,NO,,NO,,Active
+66,Bio-Gas/Bio-Methanisation/Bio-CNG Bottling,WHITE,NO,,NO,,NO,,Active
+67,"Bio-Medical Waste Collection, Transportation, Reception, Storage, Treatment and Disposal, Facility Connected with Sewer with Terminal STP (with Boiler / with Incinerator)",RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+68,Blending and Packaging of Tea,WHITE,NO,,NO,,NO,,Active
+69,Block Making for printing without foundry (excluding wooden block making),WHITE,NO,,NO,,NO,,Active
+70,"Book binding, embossing and photograms etc.(without printing)",WHITE,NO,,NO,,NO,,Active
+71,Brake Lining without use of Asbestos,GREEN,NO,I,NO,,NO,,Active
+72,Brass fittings/Brass work(without casting / buffing),WHITE,NO,,NO,,NO,,Active
+73,Bridge and approaches with builtup area 150000 Sqm or above and have obtained Environmental clearances without generation of effluent/emissions during operation phase,ORANGE,NO,II(a),NO,,NO,,Active
+74,Brief Cases and Bags assembly (excluding plastic moulding),WHITE,NO,,NO,,NO,,Active
+75,Brushes & Brooms,WHITE,NO,,NO,,NO,,Active
+76,Brushes(without moulding),WHITE,NO,,NO,,NO,,Active
+77,Buckets(other than plastic without galvanizing/pickling),WHITE,NO,,NO,,NO,,Active
+78,Buffing on Metal,GREEN,NO,II(b),NO,,YES,Bag Filter/ Cyclone,Active
+79,Builders hardware(light Engg. Works only),WHITE,NO,,NO,,NO,,Active
+80,Bulbs(battery) Assembly,WHITE,NO,,NO,,NO,,Active
+81,Bulk Cement Terminal (Storage) (100 Tonne and Above,ORANGE,NO,II(b),NO,,YES,Dust Collector,Active
+82,"Button clips and hooks(other than plastic), without electroplating and buffing",WHITE,NO,,NO,,NO,,Active
+83,"Button making, fixing of buttons and hooks",WHITE,NO,,NO,,NO,,Active
+84,Candles (electrical/LPG heating),GREEN,NO,I,NO,,NO,,Active
+85,"Canvas bags and holdalls making (cutting, stitching, assembling)",WHITE,NO,,NO,,NO,,Active
+86,Cardboard or corrugated box and Paper products( paper or pulp mfg excluded),GREEN,NO,I,NO,,NO,,Active
+87,Cardboard/ Paper or Corrugated Box & Other Products (with Printing Activity Including Effluent Generation) from Card board as raw material,ORANGE,YES,II(b),YES,ETP,NO,,Active
+88,Carpentry (excluding saw mill),WHITE,NO,,NO,,NO,,Active
+89,Carpet weaving,WHITE,NO,,NO,,NO,,Active
+90,Cashewnut Processing Plants (Dry Process),GREEN,NO,I,NO,,NO,,Active
+91,Cashewnut Processing Plants (Dry Process) with Oil Fired Furnace,ORANGE,NO,II(b),NO,,NO,,Active
+92,Casting of Ferrous/ Non Ferrous Metal (except cupola furnace Only),ORANGE,NO,II(b),NO,,YES,Wet Scrubber,Active
+93,Cattle Dairy connected to sewer,ORANGE,NO,II(b),YES,Biogas Plant,NO,,Active
+94,Cattle Dairy not connected to sewer,ORANGE,NO,II(b),YES,Biogas Plant,NO,,Active
+95,Cattle Feed,ORANGE,NO,II(b),NO,,NO,,Active
+96,Cement Clinker Grinding Units,RED,NO,II(b),NO,,YES,,Deactive
+97,Cement Paint Powder and Distemper,ORANGE,YES,II(b),NO,,YES,Dust Collector,Active
+98,Cement products (Small Scale),GREEN,NO,II(b),YES,ETP,NO,,Active
+99,Cement Testing without Trade Effluent Discharge,WHITE,NO,,NO,,NO,,Active
+100,Cement Tiles Using Fly Ash (without Trade Effluent Discharge),GREEN,NO,II(b),NO,,NO,,Active
+101,Cement Tiles Using Fly Ash (with Trade Effluent Discharge),GREEN,NO,II(b),YES,ETP,YES,Dust Collector,Active
+102,CETP,RED,YES,II(a),YES,ETP,NO,,Active
+103,Chilling Plants and Cold Storages (Integrated) (Excluding meat/ food processing) without trade effluent,GREEN,NO,I,NO,,NO,,Active
+104,Chilling Plants and Cold Storages (Integrated) (Excluding meat/ food processing) with Trade Effluent Discharge,GREEN,NO,II(b),YES,ETP,NO,,Active
+105,Chilly Powder (Grinding Activity),GREEN,NO,II(b),NO,,YES,Dust Collector,Active
+106,C.I. Malleable Pipe Fittings (with Casting except cupola furnace),ORANGE,NO,II(b),NO,,YES,Dust Collector,Active
+107,C.I. Malleable pipe fittings without casting,WHITE,NO,,NO,,NO,,Active
+108,Cinema halls/Multiplexes having kitchen/washing facility,ORANGE,NO,I,NO,,NO,,Active
+109,Cinema halls/Multiplexes not having kitchen/washing facility,WHITE,NO,,NO,,NO,,Active
+110,Clay and moulding( without baking),WHITE,NO,,NO,,NO,,Active
+111,Cloud Kitchen with trade effluent discharge connected to sewer,ORANGE,NO,II(b),YES,ETP/STP,YES,Channelization,Deactive
+112,Cloud Kitchen with trade effluent discharge not connected to sewer,ORANGE,NO,II(b),YES,ETP/STP,YES,Channelization,Deactive
+113,Coated Cotton Fabrics (PVC Rexene Cloth),GREEN,NO,II(b),NO,,NO,,Active
+114,Coir and jute Products (dry process only),WHITE,NO,,NO,,NO,,Active
+115,Cold Re-Rolling without Pickling of S .S. Sheets (with capacity less than 25 MT/ day),GREEN,NO,I,NO,,NO,,Active
+116,"Collapsible gates, railing and grills (light engineering work without phosphating)",WHITE,NO,,NO,,NO,,Active
+117,"Collection, depollution,dismantling center",ORANGE,YES,II(b),NO,,NO,,Deactive
+118,"Collection, depollution,dismantling center and shredding center",ORANGE,YES,II(b),NO,,NO,,Deactive
+119,Colour/Black & White Photostudio with Film Development Process,GREEN,NO,II(b),YES,ETP,NO,,Active
+120,Compressed / refined Bio-Gas Production from Bio-degradable wastes,ORANGE,NO,II(b),NO,,NO,,Active
+121,Computer designing and data processing,WHITE,NO,,NO,,NO,,Active
+122,Concrete and Mosaic Products (without Trade Effluent Discharge),WHITE,NO,,NO,,NO,,Active
+123,Concrete and Mosaic Products (with Trade Effluent Discharge),GREEN,NO,II(b),YES,ETP,YES,Dust Collector,Active
+124,Conduit Pipes (Plastic) using fresh raw material,GREEN,NO,I,NO,,NO,,Active
+125,Conduit Pipes (Plastic) using plastic scrap without trade effluent discharge,GREEN,NO,II(b),NO,,NO,,Active
+126,Conduit Pipes (Plastic) using plastic scrap with trade effluent discharge,ORANGE,NO,II(b),YES,ETP,NO,,Active
+127,Confectionery without Trade Effluent and having electric oven with boiler,ORANGE,NO,II(b),NO,,NO,,Active
+128,Confectionery without Trade Effluent and having electric oven with oil fired furnace,ORANGE,NO,II(b),NO,,NO,,Active
+129,Confectionery without Trade Effluent and having electric oven without boiler,GREEN,NO,I,NO,,NO,,Active
+130,Confectionery without Trade Effluent and having electric oven without oil fired furnace,GREEN,NO,I,NO,,NO,,Active
+131,Confectionery without Trade Effluent and having Gas Stove without Boiler/Oil Fired Furnace,GREEN,NO,I,NO,,NO,,Active
+132,Construction and Demolition Waste Processing Plant,RED,NO,II(a),NO,,YES,Dust Collector,Active
+133,Contact Lens (without Trade Effluent),WHITE,NO,,NO,,NO,,Active
+134,Contact Lens (with Trade Effluent),GREEN,NO,II(b),YES,ETP,NO,,Active
+135,Copper / Aluminium Re-Rolling Industry(Foils and Strips Etc.) with Capacity less than 25MT/Day,GREEN,NO,II(b),NO,,NO,,Active
+136,Copper and brass art wares without casting / buffing,WHITE,NO,,NO,,NO,,Active
+137,"Copper metal parts, copper ware and utensils (without casting and reheating)",WHITE,NO,,NO,,NO,,Active
+138,"Copper Wire Drawing without Super Enameling, pickling (Dry Process)",ORANGE,YES,II(b),NO,,NO,,Active
+139,Copper Wire Drawing with Super Enamelling (Dry Process),ORANGE,YES,II(b),NO,,YES,Wet Scrubber/ Cataletic Converter,Active
+140,Copper Wire Drawing with Super Enamelling. (with Trade Effluent Discharge from Pickling),RED,YES,II(a),YES,ETP,YES,Wet Scrubber/ Cataletic Converter,Active
+141,Cotton and Silk Printing by Screen Printing with trade effluent discharge,ORANGE,YES,II(b),YES,ETP,NO,,Active
+142,Cotton and Silk Printing by Screen Printing with trade effluent discharge with Boiler,ORANGE,YES,II(b),YES,ETP,NO,,Active
+143,Cotton and woolen hosiers making ( Dry process only without any dying / washing operation),WHITE,NO,,NO,,NO,,Active
+144,Cotton Ginning,GREEN,NO,II(b),NO,,NO,,Active
+145,Cotton Spinning and Weaving (with Dyeing or Bleaching),RED,YES,II(a),YES,ETP,NO,,Active
+146,Cotton Spinning and Weaving (with Dyeing or Bleaching) with Boiler,RED,YES,II(a),YES,ETP,NO,,Active
+147,Cranes andhosits (Light Engg.work),WHITE,NO,,NO,,NO,,Active
+148,Crayons (without trade effluent),WHITE,NO,,NO,,NO,,Active
+149,Culture centre/Trust/Society(having Seating Capacity from 36 to 100 seats)- connected to/ Discharging Effluent into Public/ Municipal/ DJB Sewer and having Kitchen and/ or Laundry with Boiler,ORANGE,NO,II(b),YES,ETP,YES,Channelization,Active
+150,Culture centre/Trust/Society(having Seating Capacity from 36 to 100 seats)- connected to/ Discharging Effluent into Public/ Municipal/ DJB Sewer and having Kitchen and/ or Laundry without Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+151,Culture centre/Trust/Society(having Seating Capacity from 36 to 100 seats)- not connected to/ Discharging Effluent into Public/ Municipal/ DJB Sewer and having Kitchen and/ or Laundry with Boiler,ORANGE,NO,II(b),YES,STP & ETP,YES,Channelization,Active
+152,Culture centre/Trust/Society(having Seating Capacity from 36 to 100 seats)- not connected to/ Discharging Effluent into Public/ Municipal/ DJB Sewer and having Kitchen and/ or Laundry without Boiler,ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+153,Culture centre/Trust/Society(having Seating Capacity less than 36)(with Floor area less than 100 m2) Connected to/ Discharging Effluent into Public/ Municipal/ DJB Sewer and having Kitchen and/ or Laundry with Boiler,ORANGE,NO,I,NO,,YES,Channelization,Active
+154,Culture centre/Trust/Society(having Seating Capacity less than 36)(with Floor area less than 100 m2) not Connected to/ Discharging Effluent into Public/ Municipal/ DJB Sewer and having Kitchen and/ or Laundry with Boiler,ORANGE,NO,II(b),YES,STP & ETP,YES,Channelization,Active
+155,Culture centre/Trust/Society(having Seating Capacity less than 36)(with Floor area less than 100 m2) not Connected to/ Discharging Effluent into Public/ Municipal/ DJB Sewer and having Kitchen and/ or Laundry without Boiler,ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+156,Culture centre/Trust/Society(having Seating Capacity less than 36)(with minimum Floor area less than 100 m2) Connected to/ Discharging Effluent into Public/ Municipal/ DJB Sewer and having Kitchen and/ or Laundry without Boiler,ORANGE,NO,II(b),NO,,NO,,Active
+157,Culture centre/Trust/Society(with minimum Seating Capacity of 101) (with Floor area less than 100 m2) Connected to/ Discharging Effluent into Public/ Municipal/ DJB Sewer and having Kitchen and/ or Laundry without Boiler,ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+158,Culture centre/Trust/Society(with minimum Seating Capacity of 101)(with minimum Floor area 100 m2) Connected to/ Discharging Effluent into Public/ Municipal/ DJB Sewer and having Kitchen and/ or Laundry with Boiler,ORANGE,NO,II(b),YES,STP & ETP,YES,Channelization,Active
+159,Culture centre/Trust/Society(with minimum Seating Capacity of 101)(with minimum Floor area 100 m2) not Connected to/ Discharging Effluent into Public/ Municipal/ DJB Sewer and having Kitchen and/ or Laundry without Boiler,ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+160,Cutlery (without buffing/electroplating/pickling),WHITE,NO,,NO,,NO,,Active
+161,"Cutting, Sizing and Polishing of Marble Stones",GREEN,NO,II(b),YES,ETP,YES,Dust Collector,Active
+162,Cycle chain (light engg. Work),WHITE,NO,,NO,,NO,,Active
+163,Dairy and Dairy Products,ORANGE,NO,II(a),YES,ETP,NO,,Active
+164,Dairy and Dairy Products with Boiler,ORANGE,NO,II(a),YES,ETP,NO,,Active
+165,Dairy farm (Stand-alone or isolated dairy farm having 15 animals and above) having its effluent discharge in drain,ORANGE,NO,II(b),YES,Biogas Plant,NO,,Active
+166,Dairy farm (Stand-alone or isolated dairy farm having 15 animals and above) having its effluent discharge in sewer,ORANGE,NO,II(b),YES,Biogas Plant,NO,,Active
+167,Dairy farm (Stand-alone or isolated dairy farm having up to 14 animals) having its effluent discharge in drain,GREEN,NO,II(b),YES,Biogas Plant,NO,,Active
+168,Dairy farm (Stand-alone or isolated dairy farm having up to 14 animals) having its effluent discharge in sewer,GREEN,NO,II(b),YES,Biogas Plant,NO,,Active
+169,Dal Mills,GREEN,NO,II(b),NO,,YES,Dust Collector,Active
+170,Decorative Goods (Painting/ Polishing),ORANGE,YES,II(b),NO,,NO,,Active
+171,Delhi Jal Board STP,RED,NO,II(a),YES,STP,NO,,Active
+172,"Dental base Material, Dental Acrylic Powder and Acrylic liquid with Trade Effluent Discharge",ORANGE,NO,II(b),YES,ETP,NO,,Active
+173,Denting and Painting of Vehicles,ORANGE,YES,II(b),NO,,NO,,Active
+174,Denting and painting of Vehicles with oil fired Paint Booth,ORANGE,YES,II(b),NO,,NO,,Active
+175,Detergent (without bhatti),GREEN,NO,I,NO,,NO,,Active
+176,Diamond cutting and polishing work.,WHITE,NO,,NO,,NO,,Active
+177,Dies without casting,WHITE,NO,,NO,,NO,,Active
+178,Dilution and Packaging of Surface Finishing Additives without Trade Effluent Discharge,GREEN,NO,I,NO,,NO,,Active
+179,Dilution of Sodium Silicate using Sodium Silicate as Raw Material,ORANGE,NO,II(b),NO,,NO,,Active
+180,Dismantling of E-waste manually,GREEN,NO,I,NO,,NO,,Active
+181,Distilled Water,GREEN,NO,II(b),YES,ETP,NO,,Active
+182,Door shutters and windows (excluding saw mill),WHITE,NO,,NO,,NO,,Active
+183,Dry Cleaning,ORANGE,NO,II(b),YES,ETP,NO,,Active
+184,Dry Cleaning with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+185,"Dyeing, Bleaching (Cotton Textile) (Upto 100 Workers in All Shifts, 1 Acre of Land, 100 KLD Water)",RED,YES,II(a),YES,ETP,NO,,Active
+186,"Dyeing, Bleaching (Woollen Textile) (Upto 100 Workers In All Shifts, 1 Acre of Land, 100 KLD Water)",RED,YES,II(a),YES,ETP,NO,,Active
+187,Elastic products,WHITE,NO,,NO,,NO,,Active
+188,Electrical and Electronic Goods involving use of varnish,ORANGE,YES,II(b),NO,,NO,,Active
+189,Electrical steel sheets and stampings (small scale) less then 1 crore,WHITE,NO,,NO,,NO,,Active
+190,"Electrical Wire and Cables (Upto 100 Workers, 2000 Sqm Plot)",GREEN,NO,I,NO,,NO,,Active
+191,"Electrical Wire and Cables (Upto 100 Workers, 2000 Sqm Plot) with Boiler",ORANGE,NO,II(b),NO,,NO,,Active
+192,Electric appliances (room heater lamps etc) Assembly,WHITE,NO,,NO,,NO,,Active
+193,"Electric lamp shades, fixtures( light engineering work)",WHITE,NO,,NO,,NO,,Active
+194,"Electric motor, transformers, generators and parts (assembly and repair, light engineering activity only )",WHITE,NO,,NO,,NO,,Active
+195,Electric press assembling,WHITE,NO,,NO,,NO,,Active
+196,"Electronic & Electrical goods (Dry process, Light engg. Work)",WHITE,NO,,NO,,NO,,Active
+197,Electronic equipments (Assembly),WHITE,NO,,NO,,NO,,Active
+198,Embroidery,WHITE,NO,,NO,,NO,,Active
+199,Enamel Paints,ORANGE,YES,II(b),NO,,NO,,Active
+200,Engraving,WHITE,NO,,NO,,NO,,Active
+201,Ethanol Blended Petrol(EBP),ORANGE,YES,II(b),NO,,NO,,Active
+202,Eucalyptus Oil (without Distillation of Wood),WHITE,NO,,NO,,NO,,Active
+203,Eucalyptus Oil (without Distillation of Wood) with Boiler,ORANGE,NO,II(b),NO,,NO,,Active
+204,EVA Footwear and EVA Compound,GREEN,NO,I,NO,,NO,,Active
+205,Expanded Metal with Hot Process,GREEN,NO,II(b),NO,,NO,,Active
+206,Fabrication (like trusses and frames) (Light Engineering Works),WHITE,NO,,NO,,NO,,Active
+207,Fabric Lamination using Adhesive,ORANGE,YES,II(b),NO,,NO,,Active
+208,"Facility of handling, storage and transportation of food grains in bulk",GREEN,NO,I,NO,,NO,,Active
+209,Fans (light engg. Works without casting),WHITE,NO,,NO,,NO,,Active
+210,"Fire fighting equipments (light engg,. Work) without painting",WHITE,NO,,NO,,NO,,Active
+211,"Fish feed, poultry feed and cattle feed",ORANGE,NO,II(b),YES,ETP,NO,,Active
+212,"Fish feed, poultry feed and cattle feed with Boiler",ORANGE,NO,II(b),YES,ETP,NO,,Active
+213,"Fish feed, poultry feed and cattle feed with Furnace",ORANGE,NO,II(b),YES,ETP,NO,,Active
+214,Fish Processing,ORANGE,NO,II(b),YES,ETP,NO,,Active
+215,Flour Mills,GREEN,NO,II(b),NO,,YES,Inbuilt Dust Collector,Active
+216,Flour Mills with trade effluent discharge.,GREEN,NO,II(b),YES,ETP,YES,Inbuilt Dust Collector,Active
+217,Fluorescent light fitting by assembly / neon sign boards (light engineering work),WHITE,NO,,NO,,NO,,Active
+218,Fluorescent Lights other than Assembly,ORANGE,YES,II(b),YES,ETP,NO,,Active
+219,Fly Ash Brick Manufacturing (Fal-G) Technology without using Kiln,WHITE,NO,,NO,,NO,,Active
+220,"Flyash export, transport & disposal facilities",GREEN,NO,I,NO,,NO,,Active
+221,Foam Manufacturing (other than Polyurethene Foam),ORANGE,NO,II(b),YES,ETP,NO,,Active
+222,"Food Additives, Nutrients and Flavours with Trade Effluent Discharge with Electric Furnace",ORANGE,NO,II(b),YES,ETP,NO,,Active
+223,"Food Additives, Nutrients and Flours with Trade Effluent Discharge",ORANGE,NO,II(b),YES,ETP,NO,,Active
+224,Food and Fruit Processing Industry Bakery Biscuit Production,ORANGE,NO,II(b),YES,ETP,NO,,Active
+225,Food and Fruit Processing Industry - Bakery (Bread and Biscuit) / Blanco Cakes with Furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+226,Food and Fruit Processing Industry -Bakery (Bread & Biscuit) / Blanco Cakes,GREEN,NO,II(b),YES,ETP,NO,,Active
+227,Food and Fruit Processing Industry - Confectioneries,ORANGE,NO,II(b),YES,ETP,NO,,Active
+228,Food and Fruit Processing Industry - Confectioneries with furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+229,Food and Fruit Processing Industry - Fruit and Vegetables,ORANGE,NO,II(b),YES,ETP,NO,,Active
+230,Food and Fruit Processing Industry - Fruit and Vegetables with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+231,Food and Fruit Processing Industry - Fruit and Vegetables with Furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+232,Footwear (rubber),GREEN,NO,II(b),NO,,NO,,Active
+233,Forging of Ferrous and Non-Ferrous Metal (Except Pneumatic Hammer and More than 4 T Hammer),ORANGE,NO,II(b),NO,,NO,,Active
+234,Formulation of synthetic detergent powder( without washing / dry process),GREEN,NO,I,NO,,NO,,Active
+235,Fountain Pens by assembly only,WHITE,NO,,NO,,NO,,Active
+236,Fragrances and Industrial Perfume,ORANGE,YES,II(b),NO,,NO,,Active
+237,Framing of pictures and mirrors,WHITE,NO,,NO,,NO,,Active
+238,Fruit canning,ORANGE,NO,II(b),YES,ETP,NO,,Active
+239,Fruit canning with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+240,Fuel Gases (Filling and Bottling),ORANGE,NO,II(b),NO,,NO,,Active
+241,"Furniture wooden and steel (without saw mill, painting and phosphating)",GREEN,NO,I,NO,,NO,,Active
+242,Galvanising,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+243,"Garments stitching, tailoring (without washing / dyeing / bleaching and boiler)",WHITE,NO,,NO,,NO,,Active
+244,Gas Extraction from Existing Land Fill Site,RED,NO,II(a),NO,,YES,Wet Scrubber/Channelization,Active
+245,Gaushala having its effluent discharge in Drain,GREEN,NO,II(b),YES,Biogas Plant,NO,,Active
+246,Gaushala having its effluent discharge in Sewer,GREEN,NO,II(b),YES,Biogas Plant,NO,,Active
+247,Glass Moulding without Furnace,WHITE,NO,,NO,,NO,,Active
+248,"Glass Processing (Cutting, Grinding, Polishing etc.) without Trade Effluent Discharge and without Furnace",GREEN,NO,I,NO,,NO,,Active
+249,"Glass Processing (Cutting, Grinding, Polishing etc.) with Trade Effluent Discharge and with Furnace",ORANGE,NO,II(b),YES,ETP,YES,Dust Collector,Active
+250,"Glass Processing (Cutting, Grinding, Polishing etc.) with Trade Effluent Discharge and without Furnace",ORANGE,NO,II(b),YES,ETP,NO,,Active
+251,Glass work (Assembly type),WHITE,NO,,NO,,NO,,Active
+252,Gold and Silver Smithy (Dry Process),GREEN,NO,II(b),NO,,NO,,Active
+253,Gold and Silver smithy (with Trade Effluent Discharge),ORANGE,YES,II(b),YES,ETP,YES,Channelization,Active
+254,Gold and silver thread Zari work,WHITE,NO,,NO,,NO,,Active
+255,Gold Assay and Hallmarking Center as per CPCB guidelines,WHITE,NO,,NO,,NO,,Deactive
+256,"Gold Assaying& Hallmarking Centre involving XRF, melting, fire assaying, cupellation and parting",ORANGE,YES,II(b),NO,,NO,,Active
+257,Gravure Printing (Dry process)(without Trade Effluent Discharge),ORANGE,YES,II(b),NO,,NO,,Active
+258,Gravure Printing with Trade Effluent Discharge,ORANGE,YES,II(b),YES,ETP,NO,,Active
+259,Grinding and surfacing of Optical Lenses (Dry Process),GREEN,NO,II(b),NO,,NO,,Active
+260,Grinding (Engg. Work),WHITE,NO,,NO,,NO,,Active
+261,Grinding of Rubber / PVC,GREEN,NO,II(b),NO,,NO,,Active
+262,Groundnut decorticating (dry),WHITE,NO,,NO,,NO,,Active
+263,Gutka Manufacturing involving Mixing & Grinding process,GREEN,NO,II(b),NO,,YES,Dust Collector,Active
+264,"Handicraft Items (without washing, dyeing, bleaching, painting, varnishing)",WHITE,NO,,NO,,NO,,Active
+265,Handloom weaving/handloom products (dry process),WHITE,NO,,NO,,NO,,Active
+266,Handmade paper (without effluent),WHITE,NO,,NO,,NO,,Active
+267,Hand press (light engg. Work),WHITE,NO,,NO,,NO,,Active
+268,Hand Tools (with Hardening/ Tempering without using Hardening Salt),ORANGE,YES,II(b),NO,,NO,,Active
+269,Hardening by Oil Quenching without use of any salt / chemical and without trade effluent discharge and with annealing in electrically heated furnace,ORANGE,YES,II(b),NO,,NO,,Active
+270,Hardening by Oil Quenching without use of any salt / chemical without trade effluent discharge and with annealing in oil fired furnace,ORANGE,YES,II(b),NO,,NO,,Active
+271,"Hats, caps, turbans including embroiders ( tailoring)",WHITE,NO,,NO,,NO,,Active
+272,Hazardous Waste Stabilization / Treatment / Processing Facility,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+273,Health Care Establishments,ORANGE,NO,II(a),YES,,NO,,Active
+274,Health Care Establishments having bed strength above 50 beds and connected or not connected to Sewer and with boiler,RED,NO,II(a),YES,ETP,NO,,Active
+275,Health Care Establishments having bed strength above 50 beds and connected or not connected to Sewer and without boiler,RED,NO,II(a),YES,ETP,NO,,Active
+276,Health Care Establishments having bed strength upto 50 beds and connected to Sewer and having laundry with boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+277,Health Care Establishments having bed strength upto 50 beds and connected to Sewer and having laundry without boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+278,Health Care Establishments having bed strength upto 50 beds and not connected to Sewer with boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+279,Health Care Establishments having bed strength upto 50 beds and not connected to Sewer without boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+280,Heat Treatment (Hardening/ Tampering of Steel) using Salt and with Trade Effluent Discharge,RED,YES,II(a),YES,ETP,NO,,Active
+281,Helmets,ORANGE,YES,II(b),NO,,NO,,Active
+282,"Hinges and hardwares without phosphating, electroplating, pickling & buffing (light engg. Work)",WHITE,NO,,NO,,NO,,Active
+283,Hi-tech Areas - Biotechnology,WHITE,NO,,NO,,NO,,Active
+284,Hi-tech Areas - Computer hardware and software industry and industries doing system integration using computer hardware and software,WHITE,NO,,NO,,NO,,Active
+285,Hi-tech Areas - Electronic goods,WHITE,NO,,NO,,NO,,Active
+286,Hi-tech Areas - Gems and jewellery,WHITE,NO,,NO,,NO,,Active
+287,Hi-tech Areas - Industries catering to the information needs of uses by providing databases or access databases spread throughout the globe,WHITE,NO,,NO,,NO,,Active
+288,Hi-tech Areas - Industries integrating and manipulating the interfaces of the computers and telecom facilities,WHITE,NO,,NO,,NO,,Active
+289,Hi-tech Areas - Industries providing the facilities for sophisticated testing of different or all computer of the information technology,WHITE,NO,,NO,,NO,,Active
+290,Hi-tech Areas - Packaging,WHITE,NO,,NO,,NO,,Active
+291,Hi-tech Areas - Photo composing and desktop publication,WHITE,NO,,NO,,NO,,Active
+292,Hi-tech Areas - Service and repair of TV and other electronic items,WHITE,NO,,NO,,NO,,Active
+293,Hi-tech Areas - Telecommunications and enabling services,WHITE,NO,,NO,,NO,,Active
+294,Hi-tech Areas - Textile designing and fabric testing etc.,WHITE,NO,,NO,,NO,,Active
+295,Hi-tech Areas - TV and Video Programme production,WHITE,NO,,NO,,NO,,Active
+296,Hobbing and machining,WHITE,NO,,NO,,NO,,Active
+297,Home Furnishing without Washing / bleaching / dying,WHITE,NO,,NO,,NO,,Active
+298,Home Furnishing with Washing,ORANGE,NO,II(b),YES,ETP,NO,,Active
+299,Home Furnishing with Washing with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+300,Hotel (3 Star and Above) - connected to / Discharging Effluent into Public/ Municipal/ DJB Sewer having Kitchen and / or Laundry with boiler,RED,NO,II(b),YES,STP & ETP,NO,,Active
+301,Hotel (3 Star and Above) - connected to / Discharging Effluent into Public/ Municipal/ DJB Sewer having Kitchen and / or Laundry without boiler,RED,NO,II(b),YES,STP & ETP,NO,,Active
+302,Hotel (3 Star and Above) -not connected to / Discharging Effluent into Public/ Municipal/ DJB Sewer having Kitchen and / or Laundry with boiler,RED,NO,II(b),YES,STP & ETP,NO,,Active
+303,Hotel (3 Star and Above) -not connected to / Discharging Effluent into Public/ Municipal/ DJB Sewer having Kitchen and / or Laundry without boiler,RED,NO,II(b),YES,STP & ETP,NO,,Active
+304,Hotel/Guest House having less than 20 Rooms without any Kitchen / Pantry/ DG set / Boiler,WHITE,NO,,NO (Only for units connected to sewer),,NO,,Deactive
+305,Hotel/ Guest Houses having 20 to 50 rooms (double bed) or 40 to 100 rooms (single bed) (excluding 3 Star and above) - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and not having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),NO,,NO,,Active
+306,Hotel/ Guest Houses having 20 to 50 rooms (double bed) or 40 to 100 rooms (single bed) (excluding 3 Star and above) - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and not having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),NO,,NO,,Active
+307,Hotel/ Guest Houses having 20 to 50 rooms (double bed) or 40 to 100 rooms (single bed) (excluding 3 Star and above) - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+308,Hotel/ Guest Houses having 20 to 50 rooms (double bed) or 40 to 100 rooms (single bed) (excluding 3 Star and above) - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+309,Hotel/ Guest Houses having 20 to 50 rooms (double bed) or 40 to 100 rooms (single bed) (excluding 3 Star and above) - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and not having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,STP,NO,,Active
+310,Hotel/ Guest Houses having 20 to 50 rooms (double bed) or 40 to 100 rooms (single bed) (excluding 3 Star and above) - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and not having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,STP,NO,,Active
+311,Hotel/ Guest Houses having less than 20 rooms (double bed) or 40 rooms (single bed) (excluding 3 Star and above) - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and not having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),NO,,NO,,Active
+312,Hotel/ Guest Houses having less than 20 rooms (double bed) or 40 rooms (single bed) (excluding 3 Star and above) - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and not having Kitchen and / or Laundry without Boiler,GREEN,NO,II(b),NO,,NO,,Active
+313,Hotel/ Guest Houses having less than 20 rooms (double bed) or 40 rooms (single bed) (excluding 3 Star and above) -not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+314,Hotel/ Guest Houses having less than 20 rooms (double bed) or 40 rooms (single bed) (excluding 3 Star and above) - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+315,Hotel/ Guest Houses having less than 20 rooms (double bed) or 40 rooms (single bed) (excluding 3 Star and above) -not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and not having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,STP,NO,,Active
+316,Hotel/ Guest Houses having less than 20 rooms (double bed) or 40 rooms (single bed) (excluding 3 Star and above) - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and not having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,STP,NO,,Active
+317,Hotel/ Guest Houses having more than 50 rooms (double bed) or 100 rooms (single bed) (excluding 3 Star and above) - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+318,Hotel/ Guest Houses having more than 50 rooms (double bed) or 100 rooms (single bed) (excluding 3 Star and above) - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+319,Hotel/ Guest Houses having more than 50 rooms (double bed) or 100 rooms (single bed) (excluding 3 Star and above) - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and not having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),NO,,NO,,Active
+320,Hotel/ Guest Houses having more than 50 rooms (double bed) or 100 rooms (single bed) (excluding 3 Star and above) - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and not having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),NO,,NO,,Active
+321,Hotel/ Guest Houses having more than 50 rooms (double bed) or 100 rooms (single bed) (excluding 3 Star and above) - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+322,Hotel/ Guest Houses having more than 50 rooms (double bed) or 100 rooms (single bed) (excluding 3 Star and above) - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+323,Hotel/ Guest Houses having more than 50 rooms (double bed) or 100 rooms (single bed) (excluding 3 Star and above) - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and not having having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,STP,NO,,Active
+324,Hotel/ Guest Houses having more than 50 rooms (double bed) or 100 rooms (single bed) (excluding 3 Star and above) - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and not having having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,STP,NO,,Active
+325,Hotel/ Guest Houses having upto 50 rooms (double bed) or 100 rooms (single bed) (excluding 3 Star and above) - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+326,Hotel/ Guest Houses having upto 50 rooms (double bed) or 100 rooms (single bed) (excluding 3 Star and above) - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+327,Hotels ( 20 rooms and less than 100 rooms(with boiler) (not connected to sewer),ORANGE,NO,II(b),YES,ETP,NO,,Deactive
+328,Hotels having overall wastewater generation @ 100 KLD and more,RED,NO,II(a),YES,STP & ETP,NO,,Active
+329,Hotels having overall wastewater generation at 100 KLD and more,ORANGE,NO,I,NO,,NO,,Deactive
+330,Hotels requiring / having Environmental Clearance under EIA Notification,RED,NO,II(a),YES,STP & ETP,NO,,Active
+331,Hotels (up to 20 rooms and without boilers),GREEN,NO,I,NO,,NO,,Deactive
+332,Household/kitchen appliances (assembly),GREEN,NO,I,NO,,NO,,Active
+333,"Household utensils welding, soldering, patching and assembling (light engg. work only )",WHITE,NO,,NO,,NO,,Active
+334,Hydraulic Press Manufacturing,WHITE,NO,,NO,,NO,,Active
+335,Ice boxes and body of the coolers other than plastic,WHITE,NO,,NO,,NO,,Active
+336,Ice-cream,ORANGE,NO,II(b),YES,ETP,NO,,Active
+337,Ice-cream with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+338,Information Technology Enabled Services Discharging into Public Sewer connected with Terminal Treatment Plant,WHITE,NO,,NO,,NO,,Active
+339,In House Testing Laboratory with Trading Activity,ORANGE,YES,II(b),YES,ETP,NO,,Active
+340,Ink and Printing Ink (Excluding Flexographic Ink) without Trade Effluent Discharge,ORANGE,YES,II(b),NO,,NO,,Active
+341,Insulation and other coated paper (Paper or pulp mfg excluded) without using boiler/ furnace,GREEN,NO,I,NO,,NO,,Active
+342,Interlocking and buttoning,WHITE,NO,,NO,,NO,,Active
+343,"Iron grills and door making fabrication, (light engg. Work)",WHITE,NO,,NO,,NO,,Active
+344,Isolated storage of Petroleum Products,RED,YES,II(b),YES,ETP & OGT,NO,,Active
+345,Ivory carving,WHITE,NO,,NO,,NO,,Active
+346,"Jam, Jellies and Fruit Preserves, Citrus Fruit Concentrated, Vinegar, Tomato Ketchup and Vegetable Sauce etc.",ORANGE,NO,II(b),YES,ETP,NO,,Active
+347,"Jam, Jellies and Fruit Preserves, Citrus Fruit Concentrated, Vinegar, Tomato Ketchup and Vegetable Sauce etc. with Boiler",ORANGE,NO,II(b),YES,ETP,NO,,Active
+348,Key rings (without electroplating),WHITE,NO,,NO,,NO,,Active
+349,Labels/ Stickers (without trade effluent discharge),WHITE,NO,,NO,,NO,,Active
+350,Laboratory Reagents and Kits,ORANGE,YES,II(b),YES,ETP,NO,,Active
+351,"Laboratory wares (dry process , light engg. work)",WHITE,NO,,NO,,NO,,Active
+352,Lace work and lace products,WHITE,NO,,NO,,NO,,Active
+353,Lamp & Burners without buffing and electroplating,WHITE,NO,,NO,,NO,,Active
+354,"Lantern, torches and flash lights dry process, (light engg and assembly)",WHITE,NO,,NO,,NO,,Active
+355,Laundry and Dry-cleaning with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+356,Laundry and Dryclening without Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+357,"Lead Acid Battery Reconditioning/Assembly (without grid casting, oxide mfg & paste mixing)",ORANGE,NO,II(b),YES,ETP,NO,,Deactive
+358,Leather finishing and dyeing (using semi finished leather as starting raw material),RED,YES,II(a),YES,ETP,NO,,Active
+359,Leather finishing and dyeing (using semi finished leather as starting raw material) with Boiler,RED,YES,II(a),YES,ETP,NO,,Active
+360,"Leather footwear and leather products excluding tanning and hide processing, colouring, spray painting",WHITE,NO,,NO,,NO,,Active
+361,Leather upholstery and other leather goods stitching only),WHITE,NO,,NO,,NO,,Active
+362,Light Engineering work,WHITE,NO,,NO,,NO,,Active
+363,Liquid Soap (without Manufacturing Acid Slurry) with Trade Effluent Discharge,ORANGE,NO,II(b),YES,ETP,NO,,Active
+364,Liquid Soap (without Manufacturing Acid Slurry) with Trade Effluent Discharge with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+365,Liquid Soap (without Manufacturing Acid Slurry) with Trade Effluent Discharge with Furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+366,Locks (Light Engg work only),WHITE,NO,,NO,,NO,,Active
+367,Machine Mfg. (Assembly only),WHITE,NO,,NO,,NO,,Active
+368,Manual Mixing & Packing of Chemicals without trade effluent discharge,WHITE,NO,,NO,,NO,,Active
+369,"Manufacturing/formulation of Perfumery and Cosmetics (Not involved in the process - Production and /or industrial use of solvents and Production and/or industrial use of paints, pigments, lacquers ,varnishes, plastics and inks)",GREEN,NO,I,NO,,NO,,Active
+370,Manufacturing of Auto parts using Adhesive,ORANGE,YES,II(b),NO,,NO,,Active
+371,Manufacturing of Caramel (Burnt Sugar) with Trade Effluent Discharge with boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+372,Manufacturing of Caramel (Burnt Sugar) with Trade Effluent Discharge with furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+373,Manufacturing of Caramel (Burnt Sugar) with Trade Effluent Discharge without boiler/furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+374,Manufacturing of Carmel (Burnt Sugar) without Trade Effluent Discharge with boiler,ORANGE,NO,II(b),NO,,NO,,Active
+375,Manufacturing of Carmel (Burnt Sugar) without Trade Effluent Discharge with furnace,ORANGE,NO,II(b),NO,,NO,,Active
+376,Manufacturing of Carmel (Burnt Sugar) without Trade Effluent Discharge without boiler/furnace,WHITE,NO,,NO,,NO,,Active
+377,Manufacturing of cork Sheet / Products,WHITE,NO,,NO,,NO,,Active
+378,Manufacturing of Corn Caps using Adhesive Strip,WHITE,NO,,NO,,NO,,Active
+379,Manufacturing of Diagnostic Kit with Boiler or Furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+380,Manufacturing of Diagnostic Kit without Boiler or Furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+381,Manufacturing of Ferrous and Non-Ferrous Metal Products (without using any Heating Equipment),WHITE,NO,,NO,,NO,,Active
+382,Manufacturing of Ferrous and Non-Ferrous Metal Products (without using any Heating Equipment) with Buffing,GREEN,NO,II(b),NO,,YES,Bag Filter/ Cyclone,Active
+383,Manufacturing of Fishing Hooks using Electric Oven,WHITE,NO,,NO,,NO,,Active
+384,Manufacturing of Footwear Uppers using Adhesive,GREEN,YES,II(b),NO,,NO,,Active
+385,Manufacturing of Ice without Trade Effluent Discharge,GREEN,NO,II(b),NO,,NO,,Active
+386,Manufacturing of Industrial filter using electric oven for moisture removal,WHITE,NO,,NO,,NO,,Active
+387,Manufacturing of Kali Mehandi / Hair Colour in Powder form (Grinding and mixing only),GREEN,NO,II(b),NO,,YES,Bag Filter/ Cyclone,Active
+388,Manufacturing of Katha with Distillation and with Trade Effluent Discharge,ORANGE,NO,II(b),YES,ETP,YES,Dust Collector,Active
+389,Manufacturing of Katha without Distillation and without Trade Effluent Discharge,WHITE,NO,,NO,,NO,,Active
+390,Manufacturing of Leather Garments with Polishing / Colouring (without dyeing/trade Effluent Discharge),ORANGE,YES,II(b),NO,,NO,,Active
+391,Manufacturing of Menthol and its allied products with Boiler,ORANGE,NO,II(b),NO,,NO,,Active
+392,Manufacturing of Menthol and its allied products with Furnace,ORANGE,NO,II(b),NO,,NO,,Active
+393,Manufacturing of Menthol and its allied products without Boiler / Furnace,GREEN,NO,I,NO,,NO,,Active
+394,Manufacturing of Metal Caps and Containers (with Printing),ORANGE,YES,II(b),NO,,NO,,Active
+395,Manufacturing of Metallic Bush (By using Electric Furnace) without Trade Effluent,WHITE,NO,,NO,,NO,,Active
+396,Manufacturing of Mirror from Readymade Glass Sheets (without Trade Effluent Discharge),WHITE,NO,,NO,,NO,,Active
+397,Manufacturing of Phenyl without Trade Effluent Discharge,ORANGE,YES,II(b),NO,,NO,,Active
+398,Manufacturing of Phenyl with Trade Effluent Discharge,ORANGE,NO,II(b),YES,ETP,NO,,Active
+399,Manufacturing of Plastic carry bags (more than 120 microns) without printing,GREEN,NO,I,NO,,NO,,Active
+400,Manufacturing of Plastic carry bags (more than 120 microns) with printing with burner,ORANGE,YES,II(b),NO,,NO,,Active
+401,Manufacturing of Plastic carry bags (more than 120 microns) with printing without burner,ORANGE,YES,II(b),NO,,NO,,Active
+402,Manufacturing of Plastic carry bags (not less than 75 microns) without printing,GREEN,NO,I,NO,,NO,,Deactive
+403,Manufacturing of Plastic carry bags (not less than 75 microns) with printing with burner,ORANGE,YES,II(b),NO,,NO,,Deactive
+404,Manufacturing of Plastic carry bags (not less than 75 microns) with printing without burner,ORANGE,YES,II(b),NO,,NO,,Deactive
+405,"Manufacturing of Plastic sheets or like used for packing, wrapping the commodity (50 microns) without printing",GREEN,NO,I,NO,,NO,,Active
+406,"Manufacturing of Plastic sheets or like used for packing, wrapping the commodity (50 microns) with printing with burner",ORANGE,YES,II(b),NO,,NO,,Active
+407,"Manufacturing of Plastic sheets or like used for packing, wrapping the commodity (50 microns) with printing without burner",ORANGE,YES,I,NO,,NO,,Active
+408,Manufacturing of PVC Granules and Other Injection Moulded Items (without Reprocessing Activity),GREEN,NO,I,NO,,NO,,Active
+409,Manufacturing of Reprocessed PVC Granules and Other Injection Moulded Items (using Scrap as Raw Material without Washing Activity),ORANGE,NO,II(b),NO,,NO,,Active
+410,Manufacturing of Reprocessed PVC Granules & Other Injection Moulded Items (using Scrap As Raw Material with Washing Activity),ORANGE,NO,II(b),YES,ETP,NO,,Active
+411,Manufacturing of Semi-Conductor Devices (with Trade Effluent Discharge),RED,YES,II(a),YES,ETP,YES,Channelization,Active
+412,Manufacturing of Sensitized Papers/Laminated Papers using Paper as Raw Material,GREEN,NO,I,NO,,NO,,Active
+413,Manufacturing of shoe brush & wire brush,WHITE,NO,,NO,,NO,,Active
+414,Manufacturing of Soaps (Generating Trade Effluent),ORANGE,NO,II(b),YES,ETP,NO,,Active
+415,Manufacturing of Soaps (Generating Trade Effluent) with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+416,Manufacturing of Soaps (Generating Trade Effluent) with Furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+417,Manufacturing of soaps involving processes without generation of trade effluents and using electricity/LPG/NG/as source of fuel,GREEN,NO,I,NO,,NO,,Active
+418,Manufacturing of Soaps (without Trade Effluent),GREEN,NO,I,NO,,NO,,Active
+419,Manufacturing of Soaps (without Trade Effluent),GREEN,NO,I,NO,,NO,,Active
+420,Manufacturing of Soaps (without Trade Effluent) with Boiler,ORANGE,NO,II(b),NO,,NO,,Active
+421,Manufacturing of Soaps (without Trade Effluent) with Furnace,ORANGE,NO,II(b),NO,,NO,,Active
+422,Manufacturing of Solder Wire,RED,NO,II(a),NO,,NO,,Active
+423,Manufacturing of Stainless Steel Utensils (with Buffing Activity),GREEN,NO,II(b),NO,,YES,Dust Collector/ Cyclone,Active
+424,Manufacturing of Stainless Steel utensils (without buffing activity),WHITE,NO,,NO,,NO,,Active
+425,Manufacturing of Surface Cleaning and Impregnation Products based on Nanotechnology without Heating,GREEN,NO,II(b),YES,ETP,NO,,Active
+426,Manufacturing of Synthetic Adhesive without Heating,ORANGE,YES,II(b),NO,,NO,,Active
+427,Manufacturing of Synthetic Detergents Intermediates (Other Than Formulated Synthetic Detergent Products and Acid Slurry) with Trade Effluent Discharge with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+428,Manufacturing of Synthetic Detergents Intermediates (Other Than Formulated Synthetic Detergent Products and Acid Slurry) with Trade Effluent Discharge with Furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+429,Manufacturing of Synthetic Detergents Intermediates (Other Then Formulated Synthetic Detergent Products and Acid Slurry) with Trade Effluent Discharge,ORANGE,NO,II(b),YES,ETP,NO,,Active
+430,"Manufacturing of Toothpowder, Toothpaste, Talcum Powder and Other Cosmetic Items with Trade Effluent Discharge",ORANGE,NO,II(b),YES,ETP,YES,Dust Collector,Active
+431,Manufacturing of UF Powder (Melamine Powder) using Urea Formaldehyde Resin as Raw Material,GREEN,NO,II(b),NO,,YES,Dust Collector,Active
+432,Manufacturing of Welding Electrodes,ORANGE,NO,II(b),NO,,NO,,Active
+433,Marbles Stone Items,GREEN,NO,II(b),YES,ETP,NO,,Active
+434,Meat & Sea Food Industry - Meat Processing,ORANGE,NO,II(a),YES,ETP,NO,,Active
+435,Mechanized laundry using oil fired boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+436,Medical and surgical instruments (assembly),WHITE,NO,,NO,,NO,,Active
+437,Medicines / Pharmaceutical Formulation- with Boiler,ORANGE,YES,II(b),YES,ETP,NO,,Active
+438,Medicines / Pharmaceutical Formulation- without Boiler,ORANGE,YES,II(b),YES,ETP,NO,,Active
+439,Metal containers without plating/without furnace /without buffing and spray painting,WHITE,NO,,NO,,NO,,Active
+440,Metal letter cutting,WHITE,NO,,NO,,NO,,Active
+441,Mfg. of Auto parts with induction hardening (cooling by water) without trade effluent discharge,GREEN,NO,I,NO,,NO,,Active
+442,Mfg. of Candles having oil fired boiler with trade effluent discharge,ORANGE,NO,II(b),YES,ETP,NO,,Active
+443,Mfg. of Thermometer without Trade Effluent Discharge,ORANGE,NO,II(b),NO,,NO,,Active
+444,Microbrewery Permitted as per spot zoning by DDA,ORANGE,NO,II(a),YES,ETP/ Biological,NO,,Active
+445,Milk Cream Separators and mixers (Assembly),WHITE,NO,,NO,,NO,,Active
+446,Milk Processing and Dairy Products (Integrated Project) Including Pasturization,RED,NO,II(a),YES,ETP/STP,NO,,Active
+447,Milk Processing and Dairy Products (Integrated Project) Including Pasturization with Boiler,RED,NO,II(a),YES,ETP/STP,NO,,Active
+448,Milk Processing and Dairy Products (Integrated Project) Including Pasturization with Furnace,RED,NO,II(a),YES,ETP/STP,NO,,Active
+449,Milk Testing Equipments(Assembly),WHITE,NO,,NO,,NO,,Active
+450,Mineralised Water/Water Treatment Plant,GREEN,NO,II(b),YES,ETP,NO,,Active
+451,Mineralized Water / Water Treatment Plant without Effluent Discharge,WHITE,NO,,NO,,NO,,Active
+452,Mineral stack yard/ Railway sidings,GREEN,NO,I,NO,,NO,,Active
+453,Motor winding works,WHITE,NO,,NO,,NO,,Active
+454,Moulding using UF/PF Powder with buffing,ORANGE,NO,II(b),NO,,YES,Dust Collector,Active
+455,Moulding using UF/PF Powder without buffing,GREEN,NO,I,NO,,NO,,Active
+456,Musical instruments (Assembly),WHITE,NO,,NO,,NO,,Active
+457,Musical instruments mfg. (light engg. Dry process),WHITE,NO,,NO,,NO,,Active
+458,Name plate making (Light engg./ dry process),WHITE,NO,,NO,,NO,,Active
+459,"Nuts, bolts, pulleys, chains and gears (without hardening/tampering electroplating)",WHITE,NO,,NO,,NO,,Active
+460,Oil and gas transportation pipeline,GREEN,YES,I,NO,,NO,,Active
+461,Oil ginning/expelling(no hydrogenation/ refining ) without trade effluent and boiler,GREEN,NO,I,NO,,NO,,Active
+462,"Oil stoves, pressure lamps and accessories without electroplating, (Light engg. Work)",WHITE,NO,,NO,,NO,,Active
+463,Old STP,RED,NO,II(a),YES,STP,NO,,Active
+464,Optical frames,WHITE,NO,,NO,,NO,,Active
+465,Optical frames,GREEN,NO,I,NO,,NO,,Active
+466,Optical Glass (Surfacing/Grinding Only) (with Trade Effluent Discharge),ORANGE,NO,II(b),YES,ETP,NO,,Active
+467,Optical instruments (Assembly),WHITE,NO,,NO,,NO,,Active
+468,Organic and inorganic nutrients ( by physical mixing),WHITE,NO,,NO,,NO,,Active
+469,Organic manure (manual mixing),WHITE,NO,,NO,,NO,,Active
+470,Oxygen / Medical gases without bottling of by-product gases,WHITE,NO,,NO,,NO,,Active
+471,Packaging of Food Items without emission / trade effluent discharge,WHITE,NO,,NO,,NO,,Active
+472,Packaging of Manufactured food items/ Manufactured Gift Items,WHITE,NO,,NO,,NO,,Active
+473,Packaging of tobacco without using plastic material in any form,WHITE,NO,,NO,,NO,,Active
+474,Packaging & Processing of tobacco/pan masala/gutka without using plastic material in any form (without trade effluent),GREEN,NO,II(b),NO,,YES,Wet Scrubber/Channelization,Active
+475,Packing of powdered milk,WHITE,NO,,NO,,NO,,Active
+476,"Paint and Varnishes (Blending, Mixing)",ORANGE,YES,II(b),NO,,NO,,Active
+477,Paint (By Mixing Process Only) Except Nitrocellulose and Alkd Resin Based Paints,ORANGE,YES,II(b),NO,,NO,,Active
+478,Pan Masala (Mixing Only),GREEN,NO,II(b),NO,,YES,Wet Scrubber/Channelization,Active
+479,Paper cutting,WHITE,NO,,NO,,NO,,Active
+480,Paper Gum using fuel for heating without effluent discharge,GREEN,NO,II(b),NO,,NO,,Active
+481,Paper Gum with cold process without trade effluent discharge,WHITE,NO,,NO,,NO,,Active
+482,Paper Manufacturing from Waste Paper (without Chemical / without Trade Effluent Discharge) in Schools & Offices etc.,WHITE,NO,,NO,,NO,,Active
+483,Paper Manufacturing using Waste Paper (without use of Fresh Raw Material & with Trade Effluent Discharge),RED,NO,II(a),YES,ETP,NO,,Active
+484,Paper pins and U-clips,WHITE,NO,,NO,,NO,,Active
+485,"Paper stationery items, cutting & book binding",WHITE,NO,,NO,,NO,,Active
+486,Parafin Wax Refining Excluding Chlorinated Paraffin Wax Purification - Dry Process,GREEN,NO,II(b),NO,,NO,,Active
+487,Parafin Wax Refining Excluding Chlorinated Paraffin Wax Purification with Boiler,ORANGE,NO,II(b),NO,,NO,,Active
+488,Parafin Wax Refining Excluding Chlorinated Paraffin Wax Purification with Furnace,ORANGE,NO,II(b),NO,,NO,,Active
+489,Perfumes and Cosmetics,ORANGE,YES,II(b),NO,,NO,,Active
+490,Perfumes and Cosmetics (With Effluent Discharge),ORANGE,YES,II(b),YES,ETP,NO,,Active
+491,Petroleum Products/ Crude Oil Storage and Transfer Excluding Cross-Country Pipeline,ORANGE,YES,II(b),NO,,NO,,Active
+492,Petroleum Products (Storage and Packing Only),ORANGE,YES,II(b),NO,,NO,,Active
+493,Pharmaceuticals formulation only (Dry Process),ORANGE,YES,II(b),NO,,NO,,Active
+494,Pharmaceuticals formulation only (Dry Process) with Boiler,ORANGE,YES,II(b),NO,,NO,,Active
+495,Pharmaceuticals formulation only (Dry Process) with Furnace,ORANGE,YES,II(b),NO,,NO,,Active
+496,Pharmaceuticals Formulation With Washing Operation,ORANGE,YES,II(b),YES,ETP,NO,,Active
+497,Pharmaceuticals Formulation With Washing Operation with Boiler,ORANGE,YES,II(b),YES,ETP,NO,,Active
+498,Pharmaceuticals Formulation With Washing Operation with Furnace,ORANGE,YES,II(b),YES,ETP,NO,,Active
+499,Phosphating,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+500,Phosphating & Powder Coating,RED,YES,II(a),YES,ETP,YES,Wet Scrubber/ Inbuilt Dust Collector/ Cyclone,Active
+501,Photographic Films and Chemicals,RED,NO,II(a),YES,ETP,NO,,Active
+502,Photograph Printing (Including Signboard Painting) without Trade Effluent Discharge,ORANGE,YES,II(b),NO,,NO,,Active
+503,Photography goods (except plastic moulding) without trade effluent,WHITE,NO,,NO,,NO,,Active
+504,Photo setting,WHITE,NO,,NO,,NO,,Active
+505,Photostat and Cyclostyling,WHITE,NO,,NO,,NO,,Active
+506,"Pickles, Chutney and Murabba with Boiler",ORANGE,NO,II(b),YES,ETP,NO,,Active
+507,"Pickles, Chutney and Murabba with Furnace",ORANGE,NO,II(b),YES,ETP,NO,,Active
+508,"Pickles, Chutney & Murabba",ORANGE,NO,II(b),YES,ETP,NO,,Active
+509,Pickling - Copper,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+510,Pickling-Others (Except SS pickling),RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+511,Pipeline Transport for Petroleum Product Projects,GREEN,NO,II(b),NO,,NO,,Active
+512,"Plastic Processed Goods (without plastic carry bags / plastic sheets or like used for packing, wrapping the commodity and other than banned SUP items).",GREEN,NO,I,NO,,NO,,Active
+513,"Plastic Processed Goods (without plastic carry bags / plastic sheets or like used for packing, wrapping the commodity and other than banned SUP items).",GREEN,NO,I,NO,,NO,,Active
+514,Plating - Cadmium Plating with less than 5 KLD,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+515,Plating - Cadmium Plating with more than or equal to 5 KLD,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+516,Plating - Copper Plating with less than 5 KLD,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+517,Plating - Copper Plating with more than or equal to 5 KLD,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+518,Plating - Nickel and Chrome Plating with less than 5 KLD,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+519,Plating - Nickel and Chrome Plating with more than or equal to 5 KLD,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+520,Plating - Precious Metal Plating,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+521,Plating - Tin Plating,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+522,Plating - Zinc Plating with less than 5 KLD,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+523,Plating - Zinc Plating with more than or equal to 5 KLD,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+524,"Polishing, Painting, Varnishing etc on goods, furniture etc.",ORANGE,YES,II(b),NO,,NO,,Active
+525,"Polythene, Plastic and PVC Goods through Extrusion Moulding (without use of Scrap)",GREEN,NO,I,NO,,NO,,Active
+526,"Polythene, Plastic and PVC Goods through Extrusion Moulding (without use of Scrap)without plastic carry bags / plastic sheets or like used for packing, wrapping the commodity",GREEN,NO,I,NO,,NO,,Active
+527,"Ports and Harbour, jetties and dredging operations",RED,YES,II(a),YES,,NO,,Active
+528,Poultry Feed,ORANGE,NO,II(b),YES,ETP,NO,,Active
+529,Poultry Feed with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+530,Poultry Feed with Furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+531,Poultry Market,RED,NO,II(a),YES,ETP,NO,,Active
+532,Powder Coating without phosphating,GREEN,NO,II(b),NO,,YES,Inbuilt Dust Collector/ Cyclone,Active
+533,Powerlooms handlooms without dyeing and bleaching),WHITE,NO,,NO,,NO,,Active
+534,Preboiled Rice Mills - Dry Process,ORANGE,NO,II(b),NO,,YES,Dust Collector,Active
+535,Preboiled Rice Mills with Boiler,ORANGE,NO,II(b),NO,,YES,Dust Collector,Active
+536,Precision instruments of all kinds (assembly),WHITE,NO,,NO,,NO,,Active
+537,Pressure cookers (without buffing and anodinzing),WHITE,NO,,NO,,NO,,Active
+538,Printing of Plastic carry bags (more than 120 microns) with burner,ORANGE,YES,II(b),NO,,NO,,Active
+539,Printing of Plastic carry bags (more than 120 microns) without burner,ORANGE,YES,II(b),NO,,NO,,Active
+540,Printing of Plastic carry bags (not less than 75 microns) with burner,ORANGE,YES,II(b),NO,,NO,,Deactive
+541,Printing of Plastic carry bags (not less than 75 microns) without burner,ORANGE,YES,II(b),NO,,NO,,Deactive
+542,"Printing of Plastic sheets or like used for packing, wrapping the commodity (50 microns) with burner",ORANGE,YES,II(b),NO,,NO,,Active
+543,"Printing of Plastic sheets or like used for packing, wrapping the commodity (50 microns) without burner",ORANGE,YES,II(b),NO,,NO,,Active
+544,Printing or Etching of Glass Sheet and PCB Boards using Hydrofluoric Acid,ORANGE,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+545,Printing without Trade Effluent Discharge,ORANGE,YES,II(b),NO,,NO,,Active
+546,Printing with Trade Effluent Discharge,ORANGE,YES,II(b),YES,ETP,NO,,Active
+547,"Processing of Condiments, Spices, Groundnuts and Dal Etc",GREEN,NO,II(b),NO,,YES,Dust Collector,Active
+548,Processing of dry fruits with washing,ORANGE,NO,II(b),YES,ETP,NO,,Active
+549,Processing of Groundnuts and Dry Fruits using Electric Oven (without using any other fuel),ORANGE,NO,II(b),NO,,NO,,Active
+550,Process Involving Buffing,GREEN,NO,II(b),NO,,YES,Dust Collector/ Cyclone,Active
+551,Pulping and fermentation of coffee beans,ORANGE,NO,II(b),YES,ETP,NO,,Active
+552,Pulping and fermentation of coffee beans with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+553,Pulping and fermentation of coffee beans with Furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+554,Pulverizing units,GREEN,NO,II(b),NO,,YES,Dust Collector/Channelization,Active
+555,PVC Footwear (Using Fresh Raw Material),GREEN,NO,I,NO,,NO,,Active
+556,PVC Footwear (Using Scrap),ORANGE,NO,II(b),YES,ETP,NO,,Active
+557,Radio Assembling,WHITE,NO,,NO,,NO,,Active
+558,Railway locomotive work shop/integrated road transport workshop/ Authorized service centers,RED,YES,II(a),YES,STP & ETP,NO,,Active
+559,Railway Locomotive Workshop / Integrated road transport workshop / Authorized service centers having discharge of 100 KLD or more.,ORANGE,YES,II(b),YES,STP & ETP,NO,,Active
+560,Railway stations (Waste water generation >= 100 KLD),RED,NO,II(a),YES,STP & ETP,NO,,Active
+561,Railway Stations(Waste water generation,GREEN,NO,I,YES,STP & ETP,NO,,Active
+562,"Railway Stations(Waste water generation ≥ 10 KLD, but",ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+563,Railway workshop/station/depot/service centre/stackyard etc. waste water discharge (less than 100KLD),ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+564,Railway workshop/station/depot/service centre/stackyard etc. waste water discharge (more than & upto 100KLD),RED,NO,II(a),YES,STP & ETP,NO,,Active
+565,Rakhee making,WHITE,NO,,NO,,NO,,Active
+566,Rapeseed Oil,ORANGE,NO,II(b),YES,ETP,NO,,Active
+567,Rapeseed Oil with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+568,Rapeseed Oil with furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+569,Ready Made Garments/ Cotton /woolen hosiery Products (without washing / dyeing/ bleaching) and without boiler,WHITE,NO,,NO,,NO,,Active
+570,Readymade Garment with Electric/ Gas fired boiler (without Washing/Dyeing),GREEN,NO,II(b),NO,,NO,,Active
+571,Readymade Garment with Electric/ Gas fired boiler (with Washing),ORANGE,NO,II(b),YES,ETP,NO,,Active
+572,Readymade Garment with Electric/ Gas fired boiler (with Washing) with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+573,Readymade Garment with oil fired boiler (without Washing/Dying),ORANGE,NO,II(b),NO,,NO,,Active
+574,Readymade Garment (with Washing),ORANGE,NO,II(b),YES,ETP,NO,,Active
+575,Readymade Garment (with Washing/Dyeing),RED,YES,II(a),YES,ETP,NO,,Active
+576,Readymade Garment (with Washing/Dyeing) with Boiler,RED,YES,II(a),YES,ETP,NO,,Active
+577,Readymade Garment (with Washing) with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+578,Ready Mix Concrete Plants (without trade effluent discharge),GREEN,NO,II(b),NO,,YES,Dust Collector,Active
+579,Ready Mix Concrete Plants (with trade effluent discharge),GREEN,NO,II(b),YES,ETP,YES,Dust Collector,Active
+580,Refilling of adhesive and generating hazardous waste,ORANGE,YES,II(b),NO,,NO,,Active
+581,Refilling of adhesive and not generating hazardous waste,GREEN,NO,I,NO,,NO,,Active
+582,Refining of silver (separation of silver and copper),ORANGE,YES,II(b),YES,ETP,YES,Wet Scrubber,Active
+583,Refurbishing of E-waste(Without discharge of trade effluent and use of fuel),GREEN,YES,II(b),NO,,NO,,Active
+584,Rendering Plant with Boiler,RED,NO,II(a),YES,ETP,NO,,Active
+585,Repair and Refurbishment of (Automated teller machine) ATM machine parts,ORANGE,YES,II(b),YES,ETP,NO,,Active
+586,Repairing of electric motors and generators ( dry mechanical process),WHITE,NO,,NO,,NO,,Active
+587,"Repair of small domestic appliances and gadgets (like room heater, room coolers, hot plates etc.)",WHITE,NO,,NO,,NO,,Active
+588,Repair of watches and clocks,WHITE,NO,,NO,,NO,,Active
+589,Reprocessing of Waste Plastic / PVC (without Washing Activity),ORANGE,NO,II(b),NO,,YES,Channelization,Active
+590,Reprocessing of Waste Plastic / PVC (with Washing Activity),ORANGE,NO,II(b),YES,ETP,YES,Channelization,Active
+591,Re-rolling mill hot (oil or gas fired) (with capacity less than 25 MT/ day),GREEN,NO,II(b),NO,,NO,,Active
+592,Restaurants /Eating houses/ Dhabas and other such establishments(having seating capacity from 36 to 100 seats)- connected to / Discharging Effluent into Public/Municipal/ DJB Sewer and having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,OGT,NO,,Active
+593,Restaurants /Eating houses/ Dhabas and other such establishments(having seating capacity from 36 to 100 seats)- connected to / Discharging Effluent into Public/Municipal/ DJB Sewer and having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,OGT,NO,,Active
+594,Restaurants /Eating houses/ Dhabas and other such establishments(having seating capacity from 36 to 100 seats)- not connected to / Discharging Effluent into Public/Municipal/ DJB Sewer and having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+595,Restaurants /Eating houses/ Dhabas and other such establishments(having seating capacity from 36 to 100 seats)- not connected to / Discharging Effluent into Public/Municipal/ DJB Sewer and having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+596,Restaurants/Eating Houses / Dhabas and other such establishments (having Seating Capacity less than 36) / Banquet Halls/ Party Lawns (with Floor area less than 100 m2) and /Sweet Shops/ Halwais and Other such Establishments (with Annual Average Production of less one Tonne/Day - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+597,Restaurants/Eating Houses / Dhabas and other such establishments (having Seating Capacity less than 36) / Banquet Halls/ Party Lawns (with Floor area less than 100 m2) and /Sweet Shops/ Halwais and Other such Establishments (with Annual Average Production of less one Tonne/Day - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+598,Restaurants/Eating Houses / Dhabas and other such establishments (having Seating Capacity less than 36) / Banquet Halls/ Party Lawns (with Floor area less than 100 m2) and /Sweet Shops/ Halwais and Other such Establishments (with Annual Average Production of less than one Tonne/Day - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,OGT,NO,,Active
+599,Restaurants/Eating Houses / Dhabas and other such establishments (having Seating Capacity less than 36) / Banquet Halls/ Party Lawns (with Floor area less than 100 m2) and /Sweet Shops/ Halwais and Other such Establishments (with Annual Average Production of less than one Tonne/Day - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,OGT,NO,,Active
+600,Restaurants/Eating Houses / Dhabas and other such establishments (with minimum seating capacity of 101) / Banquet Halls/ Party Lawns (with minimum Floor area 100 m2) and /Sweet Shops/ Halwais and Other such Establishments (with Annual Average Production of one Tonne/Day or more) - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+601,Restaurants/Eating Houses / Dhabas and other such establishments (with minimum seating capacity of 101) / Banquet Halls/ Party Lawns (with minimum Floor area 100 m2) and /Sweet Shops/ Halwais and Other such Establishments (with Annual Average Production of one Tonne/Day or more) - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+602,Restaurants/Eating Houses / Dhabas and other such establishments (with minimum seating capacity of 101) / Banquet Halls/ Party Lawns (with minimum Floor area 100 m2) and /Sweet Shops/ Halwais and Other such Establishments (with Annual Average Production of one Tonne/Day or more) - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry with Boiler,ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+603,Restaurants/Eating Houses / Dhabas and other such establishments (with minimum seating capacity of 101) / Banquet Halls/ Party Lawns (with minimum Floor area 100 m2) and /Sweet Shops/ Halwais and Other such Establishments (with Annual Average Production of one Tonne/Day or more) - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen and / or Laundry without Boiler,ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+604,Rexine items (stitching only),WHITE,NO,,NO,,NO,,Active
+605,Rice Mills,GREEN,NO,II(b),NO,,YES,Dust Collector,Active
+606,Rings and eyelets without plating,WHITE,NO,,NO,,NO,,Active
+607,Rolling shutters (assembly / light engg. Work),WHITE,NO,,NO,,NO,,Active
+608,Rope (cotton and plastic),WHITE,NO,,NO,,NO,,Active
+609,Roto and Flexo Printing without trade effluent discharge,ORANGE,YES,II(b),NO,,NO,,Active
+610,Rubber Auto Parts Excluding Production of Tyres And Tubes (without Reclamation And Devulcanisation of Rubber),GREEN,NO,II(b),NO,,NO,,Active
+611,Rubber Compound for Rubber Footwears (without Reclamation and Devulcanisation of Rubber),GREEN,NO,II(b),NO,,NO,,Active
+612,Rubber goods Industry excluding production of tyres and tubes (without reclamation and devulcanisation of rubber),GREEN,NO,II(b),NO,,NO,,Active
+613,Rubber moulded goods excluding production of tyres and tubes (without reclamation and devulcanisation of rubber),GREEN,NO,II(b),NO,,NO,,Active
+614,Rubber moulded goods excluding production of tyres and tubes (without reclamation and devulcanisation of rubber) with Boiler,ORANGE,NO,II(b),NO,,NO,,Active
+615,Rubber Stamps,WHITE,NO,,NO,,NO,,Active
+616,Sanitary Goods with Casting (except cupola furnace) and Buffing without Electroplating,ORANGE,NO,II(b),NO,,YES,Dust Collector/ Cyclone,Active
+617,Sanitary Goods with Casting (except cupola furnace) without Buffing and Electroplating,ORANGE,NO,II(b),NO,,YES,Dust Collector/ Cyclone,Active
+618,Sanitary Napkin,WHITE,NO,,NO,,NO,,Active
+619,Saree fall making (without trade effluent),WHITE,NO,,NO,,NO,,Active
+620,Saw Mill,GREEN,NO,II(b),NO,,YES,Dust Collector,Active
+621,Scientific and mathematical instrument assembly only,GREEN,NO,I,NO,,NO,,Active
+622,Scientific and mathematical instrument assembly only),WHITE,NO,,NO,,NO,,Active
+623,"Scrapping Centres (for end of life vehicles and other scrapes such as plant and machinery, structural material, railway coaches and wagon etc.)",ORANGE,YES,II(b),YES,ETP,NO,,Active
+624,"Screw and nails (without plating, light engg. Work)",WHITE,NO,,NO,,NO,,Active
+625,Seed Food With Trade Effluent Discharge With Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+626,Seed Food With Trade Effluent Discharge With Furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+627,Seed Food With Trade Effluent Discharge without Boiler / Furnace,ORANGE,NO,II(b),YES,ETP,NO,,Active
+628,Self Adhesive Tapes,ORANGE,YES,II(b),NO,,NO,,Active
+629,Service and Repairing of Auto Electrical Spare Parts,GREEN,NO,I,NO,,NO,,Active
+630,Servicing of Electric Vehicle without trade effluent generation,GREEN,NO,I,NO,,NO,,Active
+631,Servicing of Electric Vehicle with trade effluent generation,ORANGE,NO,II(b),YES,ETP,NO,,Active
+632,Sheet Metal Fabrication,WHITE,NO,,NO,,NO,,Active
+633,Sheet Metal Printing with Oil fired Oven or Furnace,ORANGE,YES,II(b),NO,,NO,,Active
+634,Sheet Metal Printing without Oil fired Oven or Furnace,ORANGE,YES,II(b),NO,,NO,,Active
+635,Shoe lace,WHITE,NO,,NO,,NO,,Active
+636,Shoe lace mfg.,WHITE,NO,,NO,,NO,,Active
+637,Shoe making and repairing,WHITE,NO,,NO,,NO,,Active
+638,"Shopping Malls, Housing / Commercial/ Office Complexes having built up area 20,000 sqm and above",RED,NO,II(a),YES,STP & ETP,NO,,Active
+639,"Shopping Malls, Housing / Commercial/ Office Complexes having built up area less than 20,000 sqm",ORANGE,NO,II(b),YES,STP & ETP,NO,,Active
+640,Shot Blasting,GREEN,NO,II(b),NO,,YES,Dust Collector,Active
+641,Showrooms of vehicles involved in sale and purchase having provisions of mechanical lifting of vehicle (washing without chemical/detergent),ORANGE,NO,II(b),YES,Settling tank,NO,,Active
+642,Showrooms of vehicles involved in sale and purchase without having provisions of mechanical lifting of vehicle and involved in moping of the vehicles only,WHITE,NO,,NO,,NO,,Active
+643,Shredding center (can include white goods*/ other scraps also),ORANGE,YES,II(b),NO,,NO,,Active
+644,Silver Foil Making,ORANGE,NO,II(b),NO,,NO,,Active
+645,Silver Foil Making with Furnace,ORANGE,NO,II(b),NO,,NO,,Active
+646,Slaughter House with Boiler,RED,NO,II(a),YES,ETP,NO,,Active
+647,Small machine and machine tools (assembly),WHITE,NO,,NO,,NO,,Active
+648,Small Scale Ice-Cream Manufacturing (with Annual Average Production of less one Tonne/Day - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+649,Small Scale Ice-Cream Manufacturing (with Annual Average Production of less one Tonne/Day - connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen without Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+650,Small Scale Ice-Cream Manufacturing (with Annual Average Production of less one Tonne/Day - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen with Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+651,Small Scale Ice-Cream Manufacturing (with Annual Average Production of less one Tonne/Day - not connected to / Discharging Effluent into Public / Municipal / DJB Sewer and having Kitchen without Boiler,ORANGE,NO,II(b),YES,ETP,NO,,Active
+652,"Soap, Detergent Cake and Powder, Scouring Power and Bar (W/O Trade Effluent)",GREEN,NO,I,NO,,NO,,Active
+653,"Soap, Detergent Cake and Powder, Scouring Power and Bar (W/O Trade Effluent) with Boiler",ORANGE,NO,II(b),NO,,NO,,Active
+654,"Soap, Detergent Cake and Powder, Scouring Power and Bar (W/O Trade Effluent) with Furnace",ORANGE,NO,II(b),NO,,NO,,Active
+655,Sodium Silicate Industry (with Capacity Upto 1 Ton/Day),GREEN,NO,II(b),NO,,YES,Dust Collector/Channelization,Active
+656,Solar module non conventional energy apparatus manufacturing unit,WHITE,NO,,NO,,NO,,Active
+657,"Solar power generation through solar photovoltaic cell, wind power and mini hydel power (less than 25 MW)",WHITE,NO,,NO,,NO,,Active
+658,Solid Waste Disposal Facility (Landfill Site),RED,NO,II(a),YES,STP & ETP,NO,,Active
+659,Solid Waste Processing Facility (Compost Plant),RED,NO,II(a),NO,,NO,,Active
+660,Solid Waste Processing Facility (Waste to Energy Plant),RED,NO,II(a),YES,STP & ETP,NO,,Active
+661,Solid Waste Processing /Management Facility,RED,NO,II(a),YES,STP & ETP,NO,,Active
+662,Spectacles and Optical Frames (Plastic Products),GREEN,NO,I,NO,,NO,,Active
+663,Speedometer (assembly),WHITE,NO,,NO,,NO,,Active
+664,Spice Grinding,GREEN,NO,II(b),NO,,YES,Dust Collector,Active
+665,"Sports goods (dry process,light engg.work)",WHITE,NO,,NO,,NO,,Active
+666,"Spray Painting, Paint Baking, Paint Stripping",ORANGE,YES,II(b),NO,,YES,Paint Booth with Channelization,Active
+667,Stainless steel rerolling and anealling (with capacity less than 25 MT/ day),GREEN,NO,II(b),NO,,NO,,Active
+668,Stainless Steel Rerolling (Hot) (with capacity less than 25 MT/ day),GREEN,NO,II(b),NO,,NO,,Active
+669,Stamp pads (without trade effluent),GREEN,NO,I,NO,,NO,,Active
+670,Stamp pads (without trade effluent),WHITE,NO,,NO,,NO,,Active
+671,Stapler pins without plating & pickling,WHITE,NO,,NO,,NO,,Active
+672,Steel Re-Rolling Industry (less than 25 TPD),GREEN,NO,II(b),NO,,NO,,Active
+673,Steeping and Processing of Grains,GREEN,NO,II(b),NO,,NO,,Active
+674,Storage of Hazardous Waste from the Units at CETP Site,RED,YES,II(a),NO,,NO,,Active
+675,STP as per Yamuna Action Plan (YAP-III),RED,NO,II(a),YES,STP,NO,,Active
+676,Structural steel fabrications small scale less then 1 crore,WHITE,NO,,NO,,NO,,Active
+677,Supari (Betelnut) and Pan Masala Grinding,GREEN,NO,II(b),NO,,YES,Dust Collector,Active
+678,Surgical and medical products assembling only (not involving effluent / emission generating processes),WHITE,NO,,NO,,NO,,Active
+679,Surgical and Medical Products Involving Effluent/Emission Generating Processes,RED,YES,II(a),YES,ETP,YES,Wet Scrubber,Active
+680,Surgical and Medical Products Involving Prophylactics and Latex,ORANGE,NO,II(b),NO,,NO,,Active
+681,Surgical and Medical Products Involving Prophylactics and Latex with Boiler,ORANGE,NO,II(b),NO,,NO,,Active
+682,Surgical and Medical Products Involving Prophylactics and Latex with Furnace,ORANGE,NO,II(b),NO,,NO,,Active
+683,Synthetic Soap (Formulation Only) with Boiler and without trade effluent discharge,ORANGE,NO,II(b),NO,,NO,,Active
+684,Synthetic Soap (Formulation Only) with Furnace and without trade effluent discharge,ORANGE,NO,II(b),NO,,NO,,Active
+685,Synthetic Soap (Formulation Only) without trade effluent discharge,WHITE,NO,,NO,,NO,,Active
+686,"Tea/Coffee, Coffee Processing",ORANGE,NO,II(b),YES,ETP,NO,,Active
+687,"Tea/Coffee, Coffee Processing with Boiler",ORANGE,NO,II(b),YES,ETP,NO,,Active
+688,The Cinema halls/Multiplexes having kitchen/washing facility for washing of serving utensils connected to sewer,ORANGE,NO,II(a),YES,STP & ETP,YES,Channelization,Active
+689,The Cinema halls/Multiplexes having kitchen/washing facility for washing of serving utensils not connected to sewer,ORANGE,NO,II(a),YES,STP & ETP,YES,Channelization,Active
+690,The Cinema halls/Multiplexes not having kitchen/washing facility for washing of serving utensils,WHITE,NO,,NO,,NO,,Active
+691,Thermal Power Plant (Coal Based),RED,YES,II(a),YES,,YES,,Deactive
+692,Thermal Power Plant (Gas Based),RED,YES,II(a),YES,STP & ETP,YES,Wet Scrubber,Active
+693,Thermocol Manufacturing (with Boiler),ORANGE,NO,II(b),NO,,NO,,Active
+694,Thermocol Manufacturing (without boiler),WHITE,NO,,NO,,NO,,Active
+695,"Thermometer making, without trade effluent",GREEN,NO,II(b),NO,,NO,,Active
+696,Thermometer manufacturing,ORANGE,NO,II(b),YES,ETP,YES,Wet Scrubber,Active
+697,Tobbaco Products without Raw Tobacco Processing,WHITE,NO,,NO,,NO,,Active
+698,Toughening of Glass,ORANGE,NO,II(b),YES,ETP,NO,,Active
+699,Toys (only electronic & mechanical) manufacturing,WHITE,NO,,NO,,NO,,Active
+700,Transformer Assembly / Repairing,ORANGE,YES,II(b),NO,,NO,,Active
+701,Tyre Retreading (with Boiler),ORANGE,NO,II(b),NO,,NO,,Active
+702,Tyre Retreading (without Boiler),GREEN,NO,II(b),NO,,NO,,Active
+703,Used cooking oil(UCO) collection centers,WHITE,NO,,NO,,NO,,Active
+704,Use of Boiler (excluding Electric / Coal Fired),ORANGE,NO,II(b),NO,,NO,,Active
+705,Use of Furnace (excluding Cupola / Arc/Induction Furnace),ORANGE,NO,II(b),NO,,YES,Wet Scrubber,Active
+706,Vacuum Metalising without Trade Effluent Discharge,ORANGE,YES,II(b),NO,,NO,,Active
+707,Vacuum Metallising with Trade Effluent Discharge,RED,YES,II(a),YES,ETP,NO,,Active
+708,Varnish Coating without Furnace,GREEN,YES,II(b),NO,,NO,,Active
+709,"Vermicelli and Macroni, Badi, Papad and Similar Products with Trade Effluent Discharge",ORANGE,NO,II(b),YES,ETP,NO,,Active
+710,"Vermicelli and Macroni, Badi, Papad and Similar Products with Trade Effluent Discharge with Boiler",ORANGE,NO,II(b),YES,ETP,NO,,Active
+711,"Vermicelli and Macroni, Badi, Papad and Similar Products with Trade Effluent Discharge with Furnace",ORANGE,NO,II(b),YES,ETP,NO,,Active
+712,Warehousing,WHITE,NO,,NO,,NO,,Active
+713,Waste Electronical and Electronics Equipments Collection Segregation and Storage(without Dismantling and Recycling),WHITE,NO,,NO,,NO,,Deactive
+714,Water Softening and Demineralised Plants,GREEN,NO,II(b),YES,ETP,NO,,Active
+715,Water Treatment Plant of DJB,RED,NO,II(a),YES,ETP,NO,,Active
+716,Weaving of Calico and textile products,WHITE,NO,,NO,,NO,,Active
+717,Wire Drawing (Cold Process) and Bailing (with Metal Surface Treatment),RED,YES,II(a),YES,ETP,NO,,Active
+718,Wire Drawing (without Pickling/ Galvanizing),GREEN,NO,I,NO,,NO,,Active
+719,Wire netting (without Metal Surface Treatment),WHITE,NO,,NO,,NO,,Active
+720,Wooden Furniture (without Saw Milling),GREEN,NO,I,NO,,NO,,Active
+721,Wooden toys and assembly toys and assembly of all types of toys,GREEN,NO,I,NO,,NO,,Active
+722,Woven Lables,GREEN,NO,I,NO,,NO,,Active
+723,"Yarn and textile processing involving scouring, bleaching, dyeing, printing or any effluent/emission generating process. (upto 100 workers in all shifts, 1 acre of land, 100 Kld water)",RED,YES,II(a),YES,ETP,NO,,Active
+724,"Yarn and textile processing involving scouring, bleaching, dyeing, printing or any effluent/emission generating process. (upto 100 workers in all shifts, 1 acre of land, 100 Kld water) with Boiler",RED,YES,II(a),YES,ETP,NO,,Active
+725,"Yarn and textile processing involving scouring, bleaching, dyeing, printing or any effluent/emission generating process. (upto 100 workers in all shifts, 1 acre of land, 100 Kld water) with Furnace",RED,YES,II(a),YES,ETP,NO,,Active
