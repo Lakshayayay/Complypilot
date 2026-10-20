@@ -88,7 +88,7 @@ Each task has an ID and a track. Tick the box when its "done when" check passes.
 
 ### Stage 1: Design [UX] → design.md
 - [x] v1-UX-1 "Learn first" notes and user flows: firm sign-up → add clients → invite owner → factory questions → calendar → item thread → mark done. Done when every feature has a flow (approved by Lakshay 2026-10-20)
-- [ ] v1-UX-2 Screen list and wireframes (rough layouts) for both sides, desktop for the CA and phone for the owner. Done when every step of every flow has a screen
+- [x] v1-UX-2 Screen list and wireframes (rough layouts) for both sides, desktop for the CA and phone for the owner. Done when every step of every flow has a screen (approved by Lakshay 2026-10-20)
 - [ ] v1-UX-3 Brand and design basics: logo, app icon, favicon, colours, fonts, spacing, status chips. Status is never shown by colour alone. Done when text contrast passes WCAG AA (the standard readability check) and the logo reads at 16 px (brand added 2026-10-19)
 - [ ] v1-UX-4 Detailed calendar and item thread screens; agree the reminder days. Done when Lakshay can walk the demo story on the designs
 - [ ] v1-PM-12 **Gate:** Lakshay approves the design

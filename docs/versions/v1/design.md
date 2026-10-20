@@ -95,18 +95,19 @@ _Updated 2026-10-20 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [x] UX-1: 12 flows, demo story, edge cases. Approved by Lakshay (review point 1, 2026-10-20)
 - [x] Figma connection checked; six design skills switched on for this project (2026-10-20)
 
-**UX-2 Wireframes (drawn 2026-10-20; waiting for review point 2)**
+**UX-2 Wireframes (approved by Lakshay 2026-10-20)**
 - [x] App map agreed and drawn on the FigJam board
 - [x] Screen list and flow coverage: [screens.md](screens.md)
 - [x] Grey kit (16 parts) on `02 Wireframes`
 - [x] Wireframes for F-01 to F-11: 65 frames, a behaviour note on each
 - [x] Checks: flow-coverage script, text audit, heuristic self-check (UX-2 section)
-- [ ] Lakshay saves a named version in Figma: "UX-2 wireframes" (by hand)
-- [ ] Review point 2: Lakshay reviews the wireframes and the 7 proposals; fixes made
+- [x] Lakshay saves a named version in Figma (by hand, 2026-10-20)
+- [x] Review point 2: Lakshay approved the wireframes and all 7 proposals (2026-10-20). Feedback "too minimal" → study 2 opens UX-3
 - [ ] Optional: one CA looks at the wireframes for 15 minutes
-- [ ] Tick v1-UX-2 in the README; Cover and brief chips to "Done"; commit
+- [x] Tick v1-UX-2 in the README; Cover and brief chips to "Done"; commit
 
 **UX-3 Brand and design basics (started: interview question 1 asked)**
+- [ ] Study 2: Odoo (app and odoo.com), Tally and Winman as main references. Screenshots, a pattern table, a Figma section on `01 References`. Review point 2.5: Lakshay sets take / change / skip on each pattern
 - [ ] Brand interview, 8 questions, one at a time (review point 3). Where we are: UX-3 section below
 - [ ] Domain and trademark check (IP India and domains), with the date
 - [ ] Strategy: category, promise, one metaphor
@@ -167,13 +168,13 @@ _Drawn 2026-10-19. **Approved by Lakshay 2026-10-20** on the FigJam board._ The 
 - **Lesson for later Figma work:** don't move nodes made by the diagram tool, because their arrows keep their old routes. Place cards behind them instead.
 
 ## UX-2 Screens and wireframes
-_Drawn 2026-10-20. Waiting for Lakshay's review (review point 2)._
+_Drawn 2026-10-20. **Approved by Lakshay 2026-10-20** (review point 2): the journeys and screens are good. Feedback: the look is "too minimal", so study 2 (Odoo, Tally, Winman) opens UX-3, and its patterns go into the UX-3 components and the UX-4 screens._
 - **Screen list and flow coverage:** [screens.md](screens.md): 25 desktop screens, 12 phone screens, 7 emails and 21 extra states (65 frames). App map: on the FigJam board, card "App map (UX-2)".
 - **Figma:** page `02 Wireframes`. The `wf kit` section holds 16 grey parts (components with text properties). Then one section per flow, F-01 to F-11 (the F-12 demo path reuses their screens). Each frame has a yellow note on its behaviour. IDs are in figma-ledger.json.
 - **Check (passed 2026-10-20):** a script read flows.md, screens.md and the Figma frame names. All 138 flow steps are covered: 123 by a screen, 15 are decisions, system steps or outside the app. The 65 frames match the list exactly. A text audit found no clipped text boxes.
 - **Exception:** the grey kit uses a few fixed greys instead of variables, like the References page. Wireframes are thrown away after UX-4, and the colour variables only arrive in UX-3.
 
-**Proposals in the wireframes, for review point 2.** Lakshay accepts or changes each one.
+**Proposals in the wireframes.** All 7 accepted by Lakshay on 2026-10-20.
 | # | Proposal | Where | Why |
 |---|---|---|---|
 | 1 | The firm gets one reminder list each morning, not one email per item | EM-06 | 100 clients would mean hundreds of emails a day |
