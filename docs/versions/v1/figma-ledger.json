@@ -17,7 +17,8 @@
       "F-01": "27:724", "F-02": "27:727", "F-03": "27:730", "F-04": "27:733", "F-05": "27:736", "F-06": "27:739",
       "F-07": "27:742", "F-08": "27:745", "F-09": "27:748", "F-10": "27:751", "F-11": "27:754", "F-12": "27:757"
     },
-    "diagramIdPrefix": { "F-01": 15, "F-02": 16, "F-03": 17, "F-04": 18, "F-05": 19, "F-06": 20, "F-07": 21, "F-08": 22, "F-09": 23, "F-10": 24, "F-11": 25, "F-12": 26 }
+    "diagramIdPrefix": { "F-01": 15, "F-02": 16, "F-03": 17, "F-04": 18, "F-05": 19, "F-06": 20, "F-07": 21, "F-08": 22, "F-09": 23, "F-10": 24, "F-11": 25, "F-12": 26 },
+    "appMap": { "card": "30:850", "caption": "30:851", "diagramIdPrefix": 29, "note": "UX-2 app map (2026-10-20), right of F-12. Same rule: never move its diagram nodes; edit screens.md, delete prefix 29, redraw, re-place the card." }
   },
   "pages": {
     "Cover": "0:1",
@@ -30,7 +31,28 @@
   },
   "cover": {
     "sheet": "14:2",
-    "note": "Cover sheet made 2026-10-20: title, status, page index with status chips, decisions so far, status words. The stray Vector 1 line (7:2) was deleted the same day at Lakshay's request."
+    "note": "Cover sheet made 2026-10-20: title, status, page index with status chips, decisions so far, status words. The stray Vector 1 line (7:2) was deleted the same day at Lakshay's request.",
+    "chips": { "flows": "21:2", "wireframes": "14:31" }
+  },
+  "wireframes": {
+    "note": "UX-2, drawn 2026-10-20 on page 02 Wireframes. Screen list: screens.md. Frames sit directly inside one section per flow; positions inside a section are relative to it.",
+    "kitSection": "23:2",
+    "kit": {
+      "Button": "23:10", "Input": "23:21", "Select": "23:22", "Checkbox": "23:36", "Choice": "23:44", "Chip": "23:54", "Tag": "23:55", "FileChip": "23:57", "Toast": "23:63", "Note": "23:66",
+      "SideMenu": "25:117", "TabBar": "25:148", "PhoneHeader": "25:156", "CalendarCell": "25:193", "Message": "25:194", "Email": "25:209"
+    },
+    "sections": { "F-01": "26:2", "F-02": "28:53", "F-03": "28:261", "F-04": "30:509", "F-05": "30:819", "F-06": "32:887", "F-07": "33:1817", "F-08": "33:2267", "F-09": "35:2140", "F-10": "35:2810", "F-11": "37:2932" },
+    "frames": {
+      "CA-01": "26:5", "CA-01b": "26:24", "CA-01c": "26:38", "CA-02": "28:56", "CA-03": "28:92", "CA-03b": "28:119", "CA-04": "28:132", "CA-05": "28:175",
+      "CA-06": "28:264", "CA-06b": "28:525", "CA-07": "28:570", "CA-07b": "28:665", "CA-08": "28:765", "CA-09": "28:875", "CA-10": "28:920",
+      "CA-11": "30:512", "CA-11b": "30:661", "CA-12": "30:609", "CA-13": "30:973", "CA-13b": "30:1112", "CA-13c": "30:1233",
+      "CA-14": "32:890", "CA-14b": "32:1388", "CA-15": "32:1959", "CA-16": "33:1820", "CA-16b": "33:1999", "CA-17": "33:2037",
+      "CA-18": "33:2270", "CA-18b": "33:2381", "CA-19": "33:2495", "CA-20": "35:2143", "CA-20b": "35:2262", "CA-21": "35:2374", "CA-21b": "35:2471", "CA-21c": "35:2563",
+      "CA-22": "37:2475", "CA-23": "37:2548", "CA-24": "37:2627", "CA-24b": "37:2700", "CA-24c": "37:2795", "CA-25": "37:2878",
+      "OW-01": "26:67", "OW-01b": "26:81", "OW-01c": "26:92", "OW-02": "30:779", "OW-03": "30:822", "OW-04": "30:848", "OW-05": "30:869", "OW-06": "30:888", "OW-07": "30:946",
+      "OW-08": "32:2363", "OW-08b": "32:2409", "OW-09": "32:2436", "OW-10": "33:2125", "OW-10b": "33:2180", "OW-11": "35:2688", "OW-11b": "35:2727", "OW-12": "33:2200",
+      "EM-01": "26:53", "EM-02": "28:219", "EM-03": "30:765", "EM-04": "30:1390", "EM-05": "35:2674", "EM-06": "35:2813", "EM-07": "35:2827"
+    }
   },
   "pageBriefs": {
     "note": "A frame named page-brief at the top left of each empty page (made 2026-10-20): purpose, what goes there, rules, inputs, done-when. Replace or update it when the phase starts.",

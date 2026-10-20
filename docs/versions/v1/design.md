@@ -123,10 +123,36 @@ _Drawn 2026-10-19. **Approved by Lakshay 2026-10-20** on the FigJam board._ The 
 - **Lesson for later Figma work:** don't move nodes made by the diagram tool, because their arrows keep their old routes. Place cards behind them instead.
 
 ## UX-2 Screens and wireframes
-_Not started._ First guess at the screens (about 27), to be checked against the flows:
-- **CA, desktop:** sign-up, invite colleagues, clients, add client, CSV import and its bad-row report, client detail, invite owner, factory review and confirm, calendar month, client × filing grid (100 clients), item thread panel, mark done, licence tracker, add licence, CA tasks, override dates, settings, reminder email.
-- **Owner, phone:** email login, home, calendar, item thread with upload, factory questions, results (including "ask your CA" and "inform the board"), licence detail, reminder email.
-- Wireframes use a small grey kit (button, input, select, checkbox, text block, table row, calendar cell, side menu, phone tab bar, chip, card), real labels and demo data, one Figma section per flow.
+_Drawn 2026-10-20. Waiting for Lakshay's review (review point 2)._
+- **Screen list and flow coverage:** [screens.md](screens.md): 25 desktop screens, 12 phone screens, 7 emails and 21 extra states (65 frames). App map: on the FigJam board, card "App map (UX-2)".
+- **Figma:** page `02 Wireframes`. The `wf kit` section holds 16 grey parts (components with text properties). Then one section per flow, F-01 to F-11 (the F-12 demo path reuses their screens). Each frame has a yellow note on its behaviour. IDs are in figma-ledger.json.
+- **Check (passed 2026-10-20):** a script read flows.md, screens.md and the Figma frame names. All 138 flow steps are covered: 123 by a screen, 15 are decisions, system steps or outside the app. The 65 frames match the list exactly. A text audit found no clipped text boxes.
+- **Exception:** the grey kit uses a few fixed greys instead of variables, like the References page. Wireframes are thrown away after UX-4, and the colour variables only arrive in UX-3.
+
+**Proposals in the wireframes, for review point 2.** Lakshay accepts or changes each one.
+| # | Proposal | Where | Why |
+|---|---|---|---|
+| 1 | The firm gets one reminder list each morning, not one email per item | EM-06 | 100 clients would mean hundreds of emails a day |
+| 2 | A new client only gets items due from today on | CA-08 | Earlier items were handled before ComplyPilot; adding them would show false "overdue" |
+| 3 | In unsure cases the CA sees "You decide" and must choose before confirming; the owner sees "Ask your CA" | CA-13b | Nothing unsure reaches a calendar without the CA's choice |
+| 4 | Unconfirmed filings (PF, Forms 140/143/144, MSME Form-1, non-audit ITR) are listed but can't be ticked; the CA tracks them as own tasks for now | CA-08, CA-18 | ⚠️ dates stay out of the app (stage 0) |
+| 5 | Working status words: "N days late", Due soon / "N left", Waiting on owner, Upcoming, Done; licences: Expired, Renew soon, Details needed, Valid, Valid until cancelled | All | UX-3 settles the final set (at most 6 in one place), with icons |
+| 6 | A licence the CA confirmed but whose certificate isn't in yet shows "Details needed" | CA-16, OW-10 | A state the flows didn't name |
+| 7 | "Due this week" outlines the week and lists what is left beside the month | CA-14b | 48 GSTR-3B returns can't fit in one day box |
+
+**Heuristic self-check** ([NN/g's 10 usability heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/), 2026-10-20). Fixes marked UX-4 are made on the detailed screens.
+| Heuristic | Issue found | Fix |
+|---|---|---|
+| 1 Visibility of system status | No loading or saving states yet | UX-4: loading, saving and empty states on the detailed screens |
+| 2 Match with the real world | The factory review shows rule codes (FL-1, OSH-1) in "Why" | UX-4: plain reason first; the code moves into the source link |
+| 3 User control and freedom | "Mark done" can't be undone | UX-4: "Undo" in the done toast for a short time, and "Edit" on the done banner |
+| 4 Consistency and standards | One state, two names: "Waiting on owner" (CA) and "Needs you" (owner) | Keep both (different readers); UX-3 records the pair in the status system |
+| 5 Error prevention | "Confirm and add to calendars" commits several licences in one click | UX-4: put the count on the button, e.g. "Confirm 5 licences" |
+| 6 Recognition rather than recall | Month boxes show counts, not client names | By design: the panel (CA-14b) and the grid (CA-15) list the clients |
+| 7 Flexibility and efficiency | No bulk actions or keyboard shortcuts | Each filing needs its own ARN, so no bulk "done" in v1; shortcuts only if CAs ask in the demos |
+| 8 Aesthetic and minimalist design | The client grid (CA-15) is dense | Needed for 100 clients; UX-3's type scale and spacing make it calmer |
+| 9 Recognise and recover from errors | None: GSTIN, CSV rows, file type and size each say what to fix | — |
+| 10 Help and documentation | Owners get "What it is / Where to apply" (OW-12); CAs get no help on screens | Fine for v1 (CAs know the filings); revisit after the CA demos |
 
 ## UX-3 Brand and design basics
 _Not started._
