@@ -40,6 +40,7 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | 2026-10-20 | **Brand picked (review point 4):** direction C's colours and type (mulberry `#7A2E57`, teal `#0E7A79`, Anek Latin + Anek Devanagari) with direction B's logo (a calendar page with a tick), all mulberry with a white tick. Teal stays in the app, not in the logo. The three explorations stay on `03 Brand`, labelled "not picked". |
 | 2026-10-20 | **Status words approved** (10 statuses, table in UX-3) and **icons: Phosphor Bold**, one weight everywhere (Lakshay). |
 | 2026-10-20 | **Vision: a modern look** (rounder corners, soft floating shadows, gentle animations), applied in a **polish pass in UX-4**. Today's base stays until then. Corners are `Radius` variables and shadows are effect styles (with `shadow/float`), so the change is a value edit, not a redraw. Motion keeps the agreed rules (≤ 200 ms for frequent actions, ease-out, "reduce motion"), and the brand's "isn't" words still apply: no glow, no gradients, no animation everywhere. |
+| 2026-10-21 | **Tagline: "One calendar. No missed deadlines."** (Claude's pick, as Lakshay asked). **No Hindi in new design work** (Lakshay): boards, screens and the demo use Anek Latin only; the existing Hindi styles and samples stay until he says otherwise. Brand board pictures are drawn shapes, no AI images. |
 | 2026-10-20 | **Flows approved** (UX-1). **App map, as in the flows:** CA side menu Calendar (home) · Clients · Licences · Tasks · Settings (Firm, Team, Due-date changes, Privacy); an item opens its thread as a side panel. Owner bottom tabs Home ("What needs me") · Calendar · Licences; an item opens its thread full screen. The owner side is a phone web app opened from the email link ([idea.md](../../../idea.md): "Mobile-First Web App"), not an app-store app. |
 
 ## Design read
@@ -110,7 +111,7 @@ _Updated 2026-10-21 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [ ] Optional: one CA looks at the wireframes for 15 minutes
 - [x] Tick v1-UX-2 in the README; Cover and brief chips to "Done"; commit
 
-**UX-3 Brand and design basics (phases A to D done 2026-10-20; phase E next, in a new chat)**
+**UX-3 Brand and design basics (approved by Lakshay 2026-10-21)**
 - [x] Study 2 (light, 2026-10-20): Odoo as the main guide, plus Tally and Winman. Basic principles and a few images in [design-references.md](research/design-references.md#study-2-light-odoo-tally-winman). Guides, not rules
 - [x] Brand interview, 8 questions, one at a time (review point 3, done 2026-10-20). Answers: UX-3 section below
 - [ ] Domain and trademark check (IP India and domains), with the date. Lakshay does it later, by hand (wants complypilot.com)
@@ -121,9 +122,9 @@ _Updated 2026-10-21 at the wrap-up. Tick a box when its check passes. Figma IDs 
 - [x] Status system: at most 6 in one place, each a word + icon + colour; grayscale test; record pairs like "Waiting on owner" / "Needs you" (2026-10-20, `StatusChip`)
 - [x] Icons: Phosphor, one weight, as components (Bold 2.1.1, 47 icons, 2026-10-20)
 - [x] Components on `05`, in the order listed in UX-3 (38 sets in 5 groups, 2026-10-20)
-- [ ] Phase E: logo lockups with real cut-outs (they replace the white strokes in `LogoMark`), app icon, favicon (16, 32, 180, 512 px), 3×3 brand board with a tagline Lakshay picks from 3; the logo reads at 16 px and in one colour. Ask before any Figma AI image
+- [x] Phase E: real cut-outs in `LogoMark`, `Logo` lockups, app icon (512, 192, 180), favicon (32, 16), 3×3 brand board with the tagline; the logo reads at 16 px and in one colour (2026-10-21, results in UX-3 below)
 - [x] Lakshay: tabular numbers on the number styles (by hand; checked by read-back, 2026-10-20)
-- [ ] Review point 5: Lakshay approves the look and the parts; tick v1-UX-3
+- [x] Review point 5: Lakshay approved the look and the parts; v1-UX-3 ticked (2026-10-21)
 
 **UX-4 Detailed screens and the clickable demo**
 - [ ] Agree the reminder days (licences: 90/60/30 plus earlier ones where needed; filings)
@@ -294,7 +295,16 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 - **Slots** (areas a screen fills with its own content): `Menu` items, `CalendarDayCell` items, `ChatterPanel` thread and `Modal` body.
 - **Focus** is a `focus` on/off setting (a 2 px `border/focus` ring), not a variant, so the sets stay under 30 variants.
 - **Lessons:** a shared text setting gives every variant one default text, so it is used only where one default fits (`Button` "Button"); elsewhere each variant keeps its own words. A spacing step that isn't in the scale (`space/6`) is silently ignored and leaves 0 padding; the final check now tests every gap and padding.
-- **Final check (2026-10-20):** 38 sets and 50 icons: 0 typed-in colours, 0 loose corners, 0 unbound gaps or padding, all 682 texts styled and Anek, every set described. `LogoMark` still has white-stroke cut-outs until phase E.
+- **Final check (2026-10-20):** 38 sets and 50 icons: 0 typed-in colours, 0 loose corners, 0 unbound gaps or padding, all 682 texts styled and Anek, every set described. (`LogoMark`'s white strokes became real cut-outs in phase E.)
+
+**Logo files and brand board (phase E, built 2026-10-21).** Figma: `03 Brand`, sections `brand-files` ([open](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=86-53)) and `brand-board` ([open](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=93-98)). IDs in figma-ledger.json.
+- **Real cut-outs:** `LogoMark` is now one shape: body and rings, minus the ring gaps, the header line and the tick (made by script from the old white strokes). Fill `bg/brand`; one colour = `text/default`, reversed = `text/on-brand`. The side menu and phone header updated by themselves. Frame `logo-checks`: a tint and teal show through the holes; it reads at 16 px on light and dark.
+- **`Logo`** (6 variants): `layout` horizontal (32 px mark, `ca/title-m`) or stacked (48 px, `ca/title-s`) × `tone` brand, mono, reversed. The name stays live text, because Figma's SVG export turns text into shapes by default (`svgOutlineText`, Plugin API typings). Exports SVG and PNG 2×.
+- **`AppIcon`** 512: a full square, the white mark in a 288 px box inside the maskable safe circle (radius 40% of the width, [web.dev](https://web.dev/articles/maskable-icon), checked 2026-10-21). Exports 512 and 192; an instance at 180 is the Apple home-screen icon. Phones add their own rounded corners ([Evil Martians](https://evilmartians.com/chronicles/how-to-favicon-in-2021-six-files-that-fit-most-needs), updated 2026-01-21; `UNVERIFIED` on Apple's site, whose page didn't load).
+- **`Favicon`** 32: a `bg/brand` tile (`radius/sm`) with a 28 px white mark, so it shows on light and dark tabs. Exports SVG, 32 and 16. At 16 px the tick reads; the ring gaps blur, which is normal at that size.
+- **Brand board** (3×3, panels 560×420): cover · construction on the 32 px grid · browser tab and home-screen icon · tagline · colour (hex codes read from the variables) · type (Anek Latin only) · client file and visiting card · a factory at dusk with a "Renew soon" item · status chips, calendar items and buttons. Pictures are drawn shapes. No panel numbers: the taste skill bans numbered labels.
+- **Final check (2026-10-21):** both sections, 292 layers: 0 typed-in colours (216 bound), 0 loose corners, gaps or padding, all 72 texts styled and Anek Latin, no em-dashes, no clipped text.
+- **Export files** (.svg, .png, .ico) are not in the repo yet; stage 2 exports them from Figma into the app's public folder.
 
 ## UX-4 Detailed screens and demo
 _Not started._ Reminder days to agree: [licences.md](research/licences.md) notes that 90/60/30 days can be too late. The Delhi fire certificate must be renewed 6 months ahead, and the Delhi factory licence about 60 days ahead.

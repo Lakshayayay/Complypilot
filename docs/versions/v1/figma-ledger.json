@@ -1,6 +1,6 @@
 {
   "about": "Map from fixed names to Figma node IDs, so a new chat can pick up the Figma work. Claude updates it after each Figma step. See design.md, 'How we work in Figma'.",
-  "updated": "2026-10-20",
+  "updated": "2026-10-21",
   "file": {
     "name": "complypilot",
     "key": "wMTrpY84cAfQiI5a9lcr0f",
@@ -91,6 +91,24 @@
       "C": { "frame": "47:123", "logoBlock": "47:130", "palette": "49:168", "type": "49:239", "calendar": "50:301" }
     }
   },
+  "brandFiles": {
+    "note": "UX-3 phase E, 2026-10-21, page 03 Brand, right of brand-picked. LogoMark (71:219) is now one vector 'mark' (85:1191) with real cut-outs, fill bg/brand, constraints SCALE.",
+    "section": "86:53",
+    "logoChecks": "86:2",
+    "Logo": "90:35",
+    "LogoVariants": { "horizontal/brand": "90:11", "stacked/brand": "90:15", "horizontal/mono": "90:19", "stacked/mono": "90:23", "horizontal/reversed": "90:27", "stacked/reversed": "90:31" },
+    "logoReview": "90:36",
+    "AppIcon": "91:35",
+    "appleTouchIcon180": "91:46",
+    "Favicon": "91:38",
+    "iconChecks": "91:41"
+  },
+  "brandBoard": {
+    "note": "UX-3 phase E, 2026-10-21, page 03 Brand, right of brand-files. 3x3 board of 560x420 panels, all bound to variables and styles; pictures are drawn shapes.",
+    "section": "93:98",
+    "board": "93:47",
+    "panels": { "cover": "93:49", "construction": "93:50", "app-use": "93:51", "tagline": "93:53", "colour": "93:54", "type": "93:55", "physical-use": "93:57", "image": "93:58", "system-detail": "93:59" }
+  },
   "foundations": {
     "note": "UX-3 phase B, built 2026-10-20. Variables live in the file (not on a page). The sheet on page 04 Foundations shows them; everything on it is bound. Variable IDs: Primitives 54:3-54:23, Color 54:25-54:52, Spacing 54:54-54:65, Radius 54:67-54:70; look up by collection and name, not by ID.",
     "collections": { "Primitives": "VariableCollectionId:54:2", "Color": "VariableCollectionId:54:24", "Spacing": "VariableCollectionId:54:53", "Radius": "VariableCollectionId:54:66" },
@@ -124,6 +142,7 @@
     "2-navigation": {
       "section": "71:211",
       "LogoMark": "71:219",
+      "LogoMarkShape": "85:1191",
       "NavItem": "71:235",
       "SideMenu": "71:236",
       "MenuItem": "71:309",
