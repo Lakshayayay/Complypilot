@@ -140,8 +140,8 @@ _Updated 2026-10-21 at the second wrap-up (UX-3 closed; UX-4 demo-path batches A
 - [x] Apply the UX-4 fixes from the heuristic self-check (UX-2 section). Done: #2 plain reason first and #5 count on the button (CA-13), #3 Undo and Edit (CA-21c), #1 loading, saving and empty states: the skeleton frame CA-14c (66 frames) and the rules in [screens.md](screens.md) (2026-10-22)
 - [x] Check CA screens at 1366 px and owner screens at 360 px: done 2026-10-22, fixes and the CA-15 sideways-scroll rule in [screens.md](screens.md) ("Width checks")
 - [x] Polish pass, the modern look (Odoo and Notion), done 2026-10-22 (Claude's calls, Lakshay can change them at PM-12): **rounder corners** by editing the `Radius` variables (sm 6 → 8, md 10 → 12, lg 16 → 20; every corner followed, since all are bound); the soft **`shadow/float`** on the toast, modal, menu, thread panel and the due-date side panel (they used `shadow/lg` or `md`; cards keep `shadow/sm`); fixes: CA-03 privacy wording (no place named, a "Your rights" line that matches CA-25, no notice date), CA-08 (Form 140 added as an unchecked filing row and taken out of the "not on the calendar yet" note; advance tax was already listed). No `Textarea` is used on a CA screen, so its 16 px label needs no fix. Full read-back on all 66 frames afterwards: 9,244 layers, 0 typed-in colours (6,685 bound), 0 loose corners, gaps or padding, all 2,999 texts styled and Anek Latin, no dashes. A stray-frame check found five batch-6 frames outside their section; moved in.
-- [ ] Behaviour notes as Dev Mode annotations; Lakshay marks finished screens "Ready for dev" (by hand)
-- [ ] Clickable demo: demo path only, start point "Demo", agreed motion, motion review table
+- [x] Behaviour notes as Dev Mode annotations (2026-10-22): one note on each of the 66 frames, from the 56 wireframe notes plus new ones for the emails, CA-14c and the changes made in UX-4 (written by script; the Plugin API accepted and returned them on the Education plan). **Lakshay, by hand:** open one frame in Dev Mode to see whether the note shows there (`UNVERIFIED` until then), and mark finished screens "Ready for dev". If notes don't show, the same words are in [screens.md](screens.md) and the notes can be exported from the file
+- [x] Clickable demo (2026-10-22): the 22 demo frames linked in story order on their real buttons, flow start "Demo", motion and scrolling set; how to walk it and the motion review table are in "Clickable demo" below. Lakshay walks it at PM-12
 - [ ] Design QA: every item in "Checks" below; builder check by a fresh helper agent; fresh-eyes pass the next day
 - [ ] Gate v1-PM-12: Lakshay walks the 5-minute demo on the prototype; tick UX-4 and PM-12
 
@@ -343,3 +343,25 @@ _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screen
 - **Correction:** the UX-3 brand sample shows "PMT-06, 25 Oct". That's wrong: PMT-06 is paid only for the first two months of a quarter (CGST Rule 61(3)), and September is the third. It is not reused.
 
 **Batches A to E (all 22 demo frames, built 2026-10-21):** what each frame shows, the parts changed and the checks are in [screens.md](screens.md#ux-4-detailed-screens-demo-path).
+
+**Clickable demo (built 2026-10-22).** Only the demo path clicks; every other frame is static. In Figma: open `06 Screens`, select **CA-14**, press Present (the flow is named **Demo**). 21 links, read back by script: each frame leads to the next beat and the last one (EM-07) ends the story. Tall frames scroll (CA-13 is 1414 px high).
+| Beat | Click | Goes to |
+|---|---|---|
+| 1 to 2 | CA-14 "Filters" · CA-14b "Client grid" | CA-14b due this week · CA-15 client grid |
+| 3 | CA-15 "Add client" · CA-07 "Next: choose filings" · CA-08 "Save client" | CA-07 · CA-08 · CA-11 |
+| 4 | CA-11 "Invite owner" · CA-12 "Send invite" | CA-12 · EM-03 (the owner's email) |
+| 5 | EM-03 "Open ComplyPilot" · OW-02 "Start" · OW-03, OW-04, OW-05 "Next" · OW-06 "Send to Kapoor & Associates" | OW-02 to OW-07 |
+| 6 to 7 | OW-07: click anywhere (the story moves to the CA) · CA-13 "Confirm 5 licences" | CA-13 · CA-20b |
+| 8 to 9 | CA-20b: click anywhere (the story moves to the owner) · OW-11 "Upload purchase bills" | OW-11 · OW-11b |
+| 10 to 11 | OW-11b: click anywhere (back to the CA) · CA-20 "Mark done" · CA-21 "Mark done" (window) · CA-21c: click anywhere | CA-20 · CA-21 · CA-21c · EM-07 (the owner's Monday list) |
+"Click anywhere" is used where the story changes person; the real button there would not lead to the next beat.
+
+**Motion review table** (rules from the skills table: frequent actions at most 200 ms, ease-out; Mark done is the one richer moment, at most 450 ms).
+| Moment | Before | After | Why |
+|---|---|---|---|
+| Next screen in the same app (Next, Save client, Invite owner) | Instant cut | Dissolve, 150 ms, ease-out | A cut feels jumpy; under 200 ms stays quick for something done many times a day |
+| A window opens (Invite owner, Mark done) | Instant cut | Dissolve, 150 ms | No slide: the window is part of a frequent action |
+| The story changes person or device (owner to CA, email) | Instant cut | Dissolve, 200 ms | A short fade tells the audience it is someone else's screen |
+| Mark done to Done (CA-21 to CA-21c) | Instant cut | Smart animate, 400 ms, ease-out | The one moment of delight: the tick, the banner and the stages settle in |
+Not shown in Figma, for stage 2: the thread panel slides in from the right in 200 ms, ease-out (the Notion side peek); buttons shrink to 0.97 when pressed; with "reduce motion" every move becomes a plain fade or nothing.
+
