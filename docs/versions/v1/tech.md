@@ -1,6 +1,6 @@
 # v1 Build (stage 2)
 
-**Stage:** 2 Build [FS], planned 2026-10-21 with Lakshay; **build starts after design is done** (gate PM-12), or earlier on tasks that need no screens if Figma blocks again (README, Stage 2). **Tasks:** FS-1 to FS-16, QA-1 and gate PM-16, in the [README](README.md). **Decisions:** [docs/adr/](../../adr/) (0001 to 0009).
+**Stage:** 2 Build [FS], planned 2026-10-21 with Lakshay; **build starts after design is done** (gate PM-12), or earlier on tasks that need no screens if Figma blocks again (README, Stage 2). **Tasks:** FS-1 to FS-16, QA-1 and gate PM-16, in the [README](README.md). **Decisions:** [docs/adr/](../../adr/) (0001 to 0010).
 **Next step when this stage starts:** close FS-1 (Lakshay's by-hand steps below; Claude lists the training project's tables, Lakshay confirms, wipe), then QA-1 (the deploy pipeline), then FS-2 (tables, API shapes, RLS).
 
 ## Learn first
@@ -15,7 +15,7 @@ New ideas this stage uses. Sources opened 2026-10-21 unless marked.
 | Private files, signed links | Files sit in a private bucket; a link that works for a few minutes opens one file | Receipts and certificates open only for that firm and that owner | Links must be made on demand | [Supabase: Storage access control](https://supabase.com/docs/guides/storage/security/access-control) |
 | Migration | A numbered SQL file that changes the database, kept in git | Training and demo get the same tables, and history is kept | Never edit a file after it has run: add a new one | [Supabase: Database migrations](https://supabase.com/docs/guides/deployment/database-migrations) |
 | Generated types | The database describes itself, and a tool writes matching TypeScript types | A wrong column name fails at build, not in front of a user | Re-run it after each migration | [Supabase: Generating types](https://supabase.com/docs/guides/api/rest/generating-types) |
-| Env files and secrets | Settings and keys kept outside the code, in `.env.local` and in Vercel's and GitHub's settings | Keys never reach git (this repo is public) | You must set them in each place | [Next.js: Environment variables](https://nextjs.org/docs/app/guides/environment-variables) |
+| Env files and secrets | Settings and keys kept outside the code, in `.env.local` and in Vercel's and GitHub's settings | Keys never reach git (the repo is private from 2026-10-22, but a repo can leak) | You must set them in each place | [Next.js: Environment variables](https://nextjs.org/docs/app/guides/environment-variables) |
 | Timed job | Code that runs on a clock, like an alarm | Morning reminders and nightly backups | Hobby cron: once a day, only to the hour | [Vercel: Cron jobs](https://vercel.com/docs/cron-jobs) |
 | CI/CD and preview link | On every push a robot runs the checks (CI); if they pass, the site is published (CD). Each branch also gets its own test link | Broken code can't reach `main` | Checks take minutes | [Vercel: Deployments](https://vercel.com/docs/deployments) |
 | Branch rule | A GitHub setting: `main` accepts a change only when the checks pass | "Merge only when checks pass" (AGENTS.md) becomes a rule, not a habit | You can't push straight to `main` any more (docs-only changes keep going straight, see AGENTS.md) | [GitHub: Protected branches](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) |
@@ -41,7 +41,7 @@ All agreed with Lakshay on 2026-10-21, one at a time. "Options" are what Claude 
 | D11 | Timed jobs | Vercel for emails + GitHub for backups 路 GitHub for all 路 inside Supabase | **Vercel emails, GitHub backups** | [0009](../../adr/0009-timed-jobs-and-backups.md) |
 | D12 | Code layout | By feature 路 by type | **By feature** | below |
 | D13 | Build order | Logic now, screens later 路 README order as is | **Logic now, screens later** | below |
-**Claude's own calls (Lakshay can change them):** npm; Node 24 LTS; Nodemailer for email and Zod for input checks, each noted when first added; the backup file is encrypted because the repo is public ([0009](../../adr/0009-timed-jobs-and-backups.md)); the error hook sends at most one email per error per hour; each task's own design questions are asked when the task starts.
+**Claude's own calls (Lakshay can change them):** npm; Node 24 LTS; Nodemailer for email and Zod for input checks, each noted when first added; the backup file is encrypted (it was a public-repo precaution; kept now the repo is private, [0010](../../adr/0010-private-repository.md)); the error hook sends at most one email per error per hour; each task's own design questions are asked when the task starts.
 
 ## Environments
 | | Training | Demo / live |
@@ -76,7 +76,7 @@ Design agreed with Lakshay (one question at a time, options + recommendation) 鈫
 ## Order of work
 Agreed D13: logic that needs no screens comes first; screens follow in demo-story order after gate PM-12. Done = its "done when" in the README passes.
 **Before screens (needs no design):**
-- [ ] v1-FS-1 close-out: decisions are written (this file, ADRs 0001 to 0009). Left: Lakshay's by-hand steps; check the training project and wipe it
+- [ ] v1-FS-1 close-out: decisions are written (this file, ADRs 0001 to 0010). Left: Lakshay's by-hand steps; check the training project and wipe it
 - [ ] v1-QA-1 deploy pipeline: starter Next.js app in the layout above; GitHub Actions (lint, type check, Vitest); Lakshay connects the repo on Vercel and sets the Seoul region; the email-on-error hook; Lakshay turns on the branch rule. Done when a starter page deploys by itself
 - [ ] v1-FS-2 tables, API shapes, RLS and the cross-firm tests. Its own back-and-forth on the tables first
 - [ ] v1-FS-5 due-date engine (criterion 6)
@@ -91,6 +91,7 @@ Agreed D13: logic that needs no screens comes first; screens follow in demo-stor
 - [ ] Make the app's Gmail account, turn on 2-Step Verification, make an app password
 - [ ] Install Node 24 LTS
 - [ ] `gh auth login` in the terminal, so Claude can open pull requests and read check results
+- [ ] Make the GitHub repo private (done by Lakshay, 2026-10-22) and apply for GitHub Pro through the Student Developer Pack, so the branch rule can work on a private repo (ADR 0010)
 - [ ] Put keys into `.env.local` and into Vercel's and GitHub's settings yourself. Never paste a key in chat
 - [ ] At QA-1: connect the repo on Vercel (done before for other projects), set the function region to Seoul, switch on the branch rule for `main`
 - Already done: Supabase account and both projects; Vercel account.
@@ -130,13 +131,13 @@ Short fact-checks done 2026-10-21 are in the ADRs. Still open:
 - `UNVERIFIED` Google's own page for app passwords (third-party pages say 2-Step Verification is required)
 - `UNVERIFIED` Vercel Hobby may pick the Seoul region (`icn1` exists; the Hobby page says "single region"). Confirm at QA-1
 - `UNVERIFIED` whether `supabase db push` needs Docker. Try it at FS-2
-- `UNVERIFIED` that artifacts of a public repo are open to anyone (we encrypt backups anyway), and the 60-day pause of scheduled workflows
+- Repo visibility: the repo is private from 2026-10-22 ([ADR 0010](../../adr/0010-private-repository.md)); `UNVERIFIED` that Lakshay's account qualifies for GitHub Pro (student benefit), and Vercel's current rule for private repos on Hobby. Check at QA-1
 - `UNVERIFIED` Supabase's rate limit for custom SMTP (sources say 30 messages an hour, or 30 new users an hour); Supabase's current API key names
 - Package versions on npm on 2026-10-21: Next.js 16.4.2, React 19.3.1, Tailwind 4.3.3, shadcn 4.22.1, supabase-js 2.118.0, Vitest 5.0.5, Playwright 1.64.1, Nodemailer 10.1.7, Zod 4.6.7, TypeScript 7.0.2. QA-1 pins the versions it uses
 - Phosphor's code package name; Next.js `onRequestError` confirmed in the docs (it exists since Next.js 15)
 
 ## Watch out
-- **This repo is public.** Nothing secret goes in a commit, a doc or a chat. `.env*` files are ignored by git (checked 2026-10-21: none ever entered git history).
+- **The repo is private from 2026-10-22** ([ADR 0010](../../adr/0010-private-repository.md)), but nothing secret goes in a commit, a doc or a chat. `.env*` files are ignored by git (checked 2026-10-21: none ever entered git history).
 - The old `.env.example` on Lakshay's disk (not in git) holds a v0-era `NEXTAUTH_SECRET`: treat it as dead and don't reuse it. QA-1 writes a fresh names-only file.
 - Every table has RLS on from its first migration. No table ships without its cross-firm tests (criterion 2).
 - No application code before PM-12 that builds screens. Mocks are marked `// MOCK:` and listed in the README.

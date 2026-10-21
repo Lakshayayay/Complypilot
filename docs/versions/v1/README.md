@@ -100,7 +100,7 @@ Each task has an ID and a track. Tick the box when its "done when" check passes.
 ### Stage 2: Build [FS] → tech.md
 The stack, folder layout, naming and order of work were agreed with Lakshay on 2026-10-21 and are written in [tech.md](tech.md) and ADRs [0001](../../adr/0001-app-framework.md) to [0009](../../adr/0009-timed-jobs-and-backups.md). The deploy pipeline comes first.
 **Early start (2026-10-21, Lakshay):** the Figma limit reset the same day, so design finishes first (stage 1). Build then starts with the FS-1 close-out, QA-1, FS-2, FS-5 and the logic cores of FS-14, FS-10, FS-13 and FS-8 (pure rules with unit tests, no screens). If Figma blocks again, these may start earlier. Anything that builds screens waits for gate PM-12.
-- [ ] v1-FS-1 Choose the stack, one ADR (short decision record) each. **Decided 2026-10-21:** ADRs 0001 to 0009 (Next.js, Supabase, Vercel, Gmail email, Vitest and Playwright, and more); the old Supabase project becomes the training project; the demo project stays in Seoul and moves to Mumbai before real users. **Left:** Lakshay's by-hand steps (tech.md) and checking and wiping the training project
+- [ ] v1-FS-1 Choose the stack, one ADR (short decision record) each. **Decided 2026-10-21:** ADRs 0001 to 0010 (Next.js, Supabase, Vercel, Gmail email, Vitest and Playwright, and more); the old Supabase project becomes the training project; the demo project stays in Seoul and moves to Mumbai before real users. **Left:** Lakshay's by-hand steps (tech.md) and checking and wiping the training project
 - [ ] v1-QA-1 Deploy pipeline: automatic checks on every change (lint, type check, unit tests), preview deploys, production deploys from `main`, error alerts by email ([ADR 0006](../../adr/0006-error-alerts-by-email.md)), a branch rule so `main` takes only changes that pass. Done when a starter page deploys by itself
 - [ ] v1-FS-2 Data structure, API shapes (what the server sends and receives) and RLS rules (database rules that keep firms apart), with tests → criterion 2
 - [ ] v1-FS-3 Login, firm sign-up, consent, invite colleagues → criterion 1
@@ -174,7 +174,7 @@ A task is done only when its tests pass. v1 has no money calculations.
 | v1 data sits outside India (demo in Seoul, training in Tokyo) | Made-up data only; the screens name no place; move to Mumbai before real users ([ADR 0003](../../adr/0003-hosting-and-data-region.md)) |
 | Emails from a Gmail account land in spam, or hit its 500-a-day limit | Test with real inboxes at v1-FS-12; demo scale is far below the limit; a proper sender once a domain exists ([ADR 0005](../../adr/0005-email-through-gmail.md)) |
 | Vercel's free plan is for non-commercial use only | Fine for a college pitch; paid plan when paying CAs arrive ([ADR 0003](../../adr/0003-hosting-and-data-region.md)) |
-| The repository is public, so a leaked key or a backup would be public too | Keys only in env files and settings (checked: none in git history); backups encrypted ([ADR 0009](../../adr/0009-timed-jobs-and-backups.md)); secret scan in v1-QA-3 |
+| The repository is private from 2026-10-22, and GitHub's free plan can't enforce "merge only when checks pass" on a private repo | Lakshay applies for GitHub Pro through the Student Developer Pack (free while a student); until then the checks run but nothing blocks a merge ([ADR 0010](../../adr/0010-private-repository.md)). Keys only in env files and settings (none in git history); backups encrypted; secret scan in v1-QA-3 |
 
 ## Mocks & debt
 None. Any `// MOCK:` in the code must be listed here.

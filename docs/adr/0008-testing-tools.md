@@ -1,6 +1,6 @@
 # 0008 Testing tools: Vitest and Playwright
 
-**Status:** Accepted · **Date:** 2026-10-21 · **Decided by:** Lakshay (Claude recommended) · **Task:** v1-FS-1
+**Status:** Accepted; the public-repository points are replaced by [ADR 0010](0010-private-repository.md) · **Date:** 2026-10-21 · **Decided by:** Lakshay (Claude recommended) · **Task:** v1-FS-1
 
 ## Context
 AGENTS.md: unit-test money, compliance-rule, parser and auth logic; E2E only for critical flows. v1's README testing plan has unit, database (firm separation), integration, E2E and AI-eval levels. Criterion 2 needs automated tests that try to cross firms on every table and every file link.

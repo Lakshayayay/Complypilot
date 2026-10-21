@@ -1,6 +1,6 @@
 # 0009 Timed jobs and backups: Vercel Cron and GitHub Actions
 
-**Status:** Accepted · **Date:** 2026-10-21 · **Decided by:** Lakshay (Claude recommended; Claude added the encryption step) · **Task:** v1-FS-1, v1-FS-9, v1-FS-15
+**Status:** Accepted; the public-repository points are replaced by [ADR 0010](0010-private-repository.md) · **Date:** 2026-10-21 · **Decided by:** Lakshay (Claude recommended; Claude added the encryption step) · **Task:** v1-FS-1, v1-FS-9, v1-FS-15
 
 ## Context
 A timed job is code that runs on a clock, like an alarm: no one clicks anything. We need two kinds: the morning and Monday reminder emails (F10, criterion 12) and a daily backup (criterion 14). Supabase's free plan has **no automatic backups** ([pricing](https://supabase.com/pricing), 2026-10-21).
