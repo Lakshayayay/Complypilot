@@ -2,7 +2,7 @@
 
 Everything you need to carry on the v1 design work (stage 1) without the chat history: where we are, the plan stage by stage, the decisions, the user flows, the research, and the rules for working with Lakshay and with Figma.
 
-**Snapshot:** refreshed 2026-10-21 (end of the Figma day). If a file in `context/` differs from the same file under `docs/` in the repository, `docs/` is right.
+**Snapshot:** refreshed 2026-10-21, after commit `2331291` (design docs moved into `docs/versions/v1/design/`). If a file in `context/` differs from the same file under `docs/` in the repository, `docs/` is right.
 **Figma links:** Lakshay gives you these himself. (The file keys are also in `context/docs/versions/v1/design/figma-ledger.json`.)
 
 ## The product in one minute
@@ -14,11 +14,25 @@ Everything you need to carry on the v1 design work (stage 1) without the chat hi
 - **12 features (F1 to F12)** are listed in [the v1 plan](context/docs/versions/v1/README.md). Scope is locked; new ideas go to [idea.md](context/idea.md), not into v1.
 
 ## Where we are
-| | |
+**v1 · Stage 1 (Design) · task UX-4 (detailed screens) · near the end**
+
+| Stage | State | Gate |
+|---|---|---|
+| 0 Plan & Research | Done | PM-11 passed 2026-10-18 |
+| **1 Design** | **In progress, almost done** | PM-12: Lakshay walks the demo in Figma and approves |
+| 2 Build | Not started | PM-16 |
+| 3 AI | Not started | PM-17 |
+| 4 Test & Release | Not started | PM-18 |
+| 5 Checkpoint | Not started | PM-19 |
+
+| Inside Design | State |
 |---|---|
-| Stage 0, research | Done and approved 2026-10-18 (gate PM-11) |
-| **Stage 1, design** | **In progress, near the end.** UX-1 flows, UX-2 wireframes and UX-3 brand are approved; UX-4 detailed screens: 58 of 65 frames built on `06 Screens` |
-| Next | Batch 6 (7 settings frames), then width checks, polish pass, Dev Mode notes, clickable demo, design QA, then gate PM-12 |
+| Flows, wireframes, brand (UX-1 to UX-3) | Approved |
+| 22 demo-path screens | Built |
+| Other screens | 36 of 43 built; 7 left (settings CA-22 to CA-25 with CA-24b/c, and EM-06, the firm's morning email) |
+| Width checks, polish pass, Dev Mode notes, clickable demo, design QA | To do |
+
+**Next:** the 7 settings frames, in a new chat once the daily Figma limit resets. UX-4 runs to gate PM-12 without stopping (Lakshay, 2026-10-21).
 
 The stage 1 checklist (done and remaining) is in [design.md](context/docs/versions/v1/design/design.md), section "Stage 1 plan: done and remaining". What each built frame shows is in [screens.md](context/docs/versions/v1/design/screens.md).
 
