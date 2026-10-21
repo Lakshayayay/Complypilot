@@ -135,3 +135,21 @@ Batches A to D moved from [design.md](design.md), UX-4, on 2026-10-21. Built on 
 - **Cast:** the wireframes used other names (Rohit Sharma, Sharma & Associates, Anil Sharma); every frame now uses the demo cast. EM-07 follows the agreed reminder days (one Monday list), not the wireframe's single-item email.
 - **Heuristic fix #3 done:** Undo on the done toast, Edit on the done banner.
 - **Checks:** read-back on the 7 frames, 1,849 layers: 0 typed-in colours (1,315 bound), 0 loose corners, gaps or padding, all 540 texts styled and Anek Latin, no dashes, no cut-off text, no phone button under 44 px.
+
+## UX-4 the other 43 frames
+Built flow by flow on `06 Screens`, one section per batch below `demo-path`. Same cast and "today" as the demo.
+
+**Batch 1: sign-in and sign-up, F-01 and F-02 (13 frames, built 2026-10-21).** Section `batch-1 sign-in and sign-up`.
+| Frame | What it shows |
+|---|---|
+| CA-01, CA-01b, CA-01c | One calm card on the page colour (the Notion feel): logo, "Sign in", work email (focused), "Send sign-in link"; new emails go on to sign-up; owners use the invited email. 01b "Check your email" with "Send again in 30 s" (disabled, so no one floods an inbox) and "Use a different email". 01c "This link has expired" with "Send a new link" |
+| OW-01, OW-01b, OW-01c | The same three on the phone, owner text sizes, 48 px field and button; "Owners can't sign up on their own" |
+| EM-01 | Sign-in link email: one button, the link works once |
+| CA-02 | Step 1 of 2: firm name, your name, work email (locked, from sign-in), mobile, state (sets the default for clients); a note that factory owners don't sign up here |
+| CA-03 | Step 2 of 2: the privacy notice as 5 plain points from [privacy.md](research/privacy.md) (what we keep, why, who sees it, stored in India and never portal passwords, your rights), "Read the full notice (version 1.0)", the consent box, Decline and "Accept and continue", and "We save who accepted, when, and this notice version" (criterion 1) |
+| CA-03b | "You can't go on without accepting", nothing saved, "Read the notice again" or "Sign out" |
+| CA-04 | The empty month calendar with one card: "Your calendar is empty", "Add your first client", then "Import a CSV" and "Invite colleagues" |
+| CA-05 | Invite colleagues (window over CA-04): an email box ("separate several with commas"), "Same access for everyone" in v1 |
+| EM-02 | Colleague invite: "Join Kapoor & Associates", "Join the firm" |
+- **Checks:** read-back on the 13 frames, 714 layers: 0 typed-in colours (564 bound), 0 loose corners, gaps or padding, all 237 texts styled and Anek Latin, no dashes, no cut-off text, no phone button under 44 px.
+- **Review later (Lakshay):** the full privacy notice text is written in stage 2 from privacy.md; the card shows the summary.
