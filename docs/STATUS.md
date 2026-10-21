@@ -1,7 +1,7 @@
 # Status
 
 **Version:** v1 — Shared Compliance Calendar · **Stage:** 1 Design [UX], in progress (UX-4: the other 43 frames next) · **Last updated:** 2026-10-21
-**Where we stopped:** UX-3 is approved and closed. **All 22 demo-path screens are built (batches A to E).** UX-4 runs to gate PM-12 without stopping (Lakshay, 2026-10-21). Of the other 43 frames, **batches 1 to 3 (sign-in and sign-up 13, clients 5, client and review states 4) are built. Next: batch 4, licences and owner home (9).** Nothing is half-built.
+**Where we stopped:** UX-3 is approved and closed. **All 22 demo-path screens are built (batches A to E).** UX-4 runs to gate PM-12 without stopping (Lakshay, 2026-10-21). Of the other 43 frames, **batches 1 to 4 (35 frames) are built. Next: batch 5, tasks and thread states (5), then batch 6, settings and reminder email (7).** Nothing is half-built.
 **Plan for this version:** [v1 README](versions/v1/README.md) · **Stage doc, with the checklist, the UX-4 notes and every result:** [design.md](versions/v1/design.md) · **Figma IDs:** [figma-ledger.json](versions/v1/figma-ledger.json) · **Screens:** [screens.md](versions/v1/screens.md) · **Flows:** [flows.md](versions/v1/flows.md) · **Rules:** [AGENTS.md](../AGENTS.md)
 
 ## Done
@@ -13,7 +13,7 @@
 - **2026-10-21:** ARN format checked (the sample fits); Notion joined Odoo as a design reference (design-references.md, study 3). Everything is committed and pushed.
 
 ## Next (in this order)
-1. **The other 43 frames,** flow by flow, with empty, error, loading and saving states, in 6 batches: ~~sign-in and sign-up 13~~ · ~~clients 5~~ · ~~client and review states 4~~ (done) · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7.
+1. **The other 43 frames,** flow by flow, with empty, error, loading and saving states, in 6 batches: ~~sign-in and sign-up 13~~ · ~~clients 5~~ · ~~client and review states 4~~ · ~~licences and owner home 9~~ (done) · tasks and thread states 5 · settings and reminder email 7.
 2. Then 1366 and 360 px checks → polish pass (modern look; Odoo and Notion) → Dev Mode annotations → clickable demo → design QA → **gate PM-12 (ping Lakshay)**.
 3. Side task when Figma calls run out: check the ⚠️ tax dates below against primary sources.
 
@@ -24,6 +24,6 @@
 - `UNVERIFIED`: Code Connect (links Figma parts to code) and Dev Mode annotations on the Education plan. Check in stage 2, and when the first annotation is added.
 
 ## Watch out
-- **Figma:** 200 MCP calls a day and 10 a minute on your Education plan (Figma's rate-limits page, checked 2026-10-21); we count every call and aim for 150 a day (about 129 were used on 2026-10-21). Send at most 4 calls at once. A failed `use_figma` call is rolled back whole. Never move nodes made by `generate_diagram`. Load Figma's skills before drawing (figma-use and figma-generate-design for screens).
+- **Figma:** 200 MCP calls a day and 10 a minute on your Education plan (Figma's rate-limits page, checked 2026-10-21); we count every call and aim for 150 a day (about 135 were used on 2026-10-21). Send at most 4 calls at once. A failed `use_figma` call is rolled back whole. Never move nodes made by `generate_diagram`. Load Figma's skills before drawing (figma-use and figma-generate-design for screens).
 - **Build only from variables and styles** (a spacing step outside the scale is silently ignored). **Size a part before putting it into another part's slot**, or it is drawn at its old width. Clone a finished frame instead of rebuilding the shell. More in the memory note "Figma files".
 - v1 uses made-up demo data only, English only. No app code until stage 2; before any code we agree folders, files and naming together. New ideas go into idea.md, not into v1.

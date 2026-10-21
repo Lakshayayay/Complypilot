@@ -173,3 +173,19 @@ Built flow by flow on `06 Screens`, one section per batch below `demo-path`. Sam
 | EM-04 Licences confirmed | "5 licences are on your calendar": the five listed, "Upload your certificates so your CA can track the renewal dates", "See your licences" |
 - **Checks:** read-back on the 4 frames, 514 layers: 0 typed-in colours (393 bound), 0 loose corners, gaps or padding, all 195 texts styled and Anek Latin, no dashes, no cut-off text.
 - **For the polish pass:** the `Textarea` label is 16 px (owner size); on CA screens it should match the 14 px field labels.
+
+**Batch 4: licences and owner home, F-05 to F-07 (9 frames, built 2026-10-21).** Section `batch-4 licences and owner home`.
+| Frame | What it shows |
+|---|---|
+| CA-16 Licences, all clients | "236 licences for 100 clients"; "Needs action" cards: Shine Platers fire certificate Expired, Sharma Castings factory licence "Apply by 1 Dec" (the apply-by rule: Delhi factory licence 30 days before expiry), Sunrise Plastics hazardous waste Renew soon, Metro Beverages "Details needed" (5 licences confirmed, certificates still to come); then every licence, most urgent first, with number, office, expiry and status |
+| CA-16b Licences, empty | "No licences yet": they arrive when you confirm a client's factory answers; "Add a licence by hand" |
+| CA-17 Add licence (window) | Client, licence type, number, office, issued and expiry dates, "No expiry date (valid until cancelled)", the certificate file ("only your firm and this client's owner can open it") |
+| OW-08 Home, what needs me | "Good afternoon, Vikram"; Needs you: the purchase-bills task (Upload, Open thread) and "Add your licence certificates" (after EM-04); Coming up with "your CA files this" |
+| OW-08b Home, nothing needs you | "Nothing needs you right now", still shows what's coming up |
+| OW-09 Calendar | A small month: today filled, a dot on days with items (colour plus the list below, never colour alone); "This week": the task (Waiting on you), GSTR-3B and the tax audit report (Due soon). Every day is a 46 px tap target |
+| OW-10 Licences | Shown after Vikram uploads his certificates: boiler Renew soon (expires 30 Nov, in 42 days), pollution consent Details needed with "Upload certificate", factory licence and fire certificate Valid, registration Valid until cancelled; the ruled-out hazardous waste authorisation in one line |
+| OW-10b Licences, your CA will check | "Your CA is checking your answers. Nothing here is final until they do." |
+| OW-12 Licence detail | Boiler certificate: Renew soon, number, office, issued date, the certificate file, "What it is", "Where to apply", its source, "Upload the new certificate" |
+- **Owner pages that are taller than the phone** (OW-08, OW-10, OW-12) grow downwards, as a scrolling page does; the others stay 844 px with the tabs at the bottom.
+- **Checks:** read-back on the 9 frames, 1,050 layers: 0 typed-in colours (759 bound), 0 loose corners, gaps or padding, all 362 texts styled and Anek Latin, no dashes, no cut-off text or content, no phone button under 44 px.
+- **Review later (Lakshay):** licence numbers, offices and the Delhi fire certificate date are made-up demo data; "renew every year on e-District Delhi" comes from the UX-2 wireframe and should be rechecked against [licences.md](research/licences.md) in stage 2.
