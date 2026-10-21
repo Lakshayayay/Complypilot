@@ -20,7 +20,7 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | Prototype | Screens linked so a click moves to the next one, like the real app | We can walk the demo story before any code | Only the demo path clicks | [Figma: Guide to prototyping](https://help.figma.com/hc/en-us/articles/360040314193-Guide-to-prototyping-in-Figma) |
 | Skeleton screen (UX-4) | A grey outline of the page shown while it loads, shaped like the content that is coming | The calendar of 100 clients takes a moment; the CA sees the layout at once instead of a blank page | A spinner is still better for one small part, e.g. a file uploading | [NN/g: Skeleton Screens 101](https://www.nngroup.com/articles/skeleton-screens/) (Tankala, reviewed 2026-09-02; opened 2026-10-21) |
 | Dev Mode annotation (UX-4) | A note pinned to a layer that developers read in Figma's Dev Mode, e.g. "row click opens the thread panel" | Behaviour the picture can't show reaches stage 2 with the screen | Figma lists annotations for paid plans; whether Lakshay's Education plan counts is `UNVERIFIED` until the first one is added | [Figma: Add measurements and annotate designs](https://help.figma.com/hc/en-us/articles/20774752502935-Add-measurements-and-annotations-in-Dev-Mode) (opened 2026-10-21) |
-| Figma MCP | A connection that lets Claude read and change the Figma file through small scripts | Claude draws the design now and turns it into code in stage 2 | In beta: free now, paid later; about 200 calls a day | [Figma: write to canvas](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/) · [rate limits](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/) |
+| Figma MCP | A connection that lets Claude read and change the Figma file through small scripts | Claude draws the design now and turns it into code in stage 2 | Writing is in beta: free now, paid later. Your Education plan allows 200 calls a day and 10 a minute | [Figma: write to canvas](https://developers.figma.com/docs/figma-mcp-server/write-to-canvas/) · [rate limits](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/) |
 
 ## Decisions so far
 | Date | Decision |
@@ -77,7 +77,7 @@ The six non-Figma skills above are "only you can start them" in Lakshay's user s
 - Look before writing. Every layer gets a fixed, predictable name, and every call returns the IDs it made. The IDs are kept in [figma-ledger.json](figma-ledger.json) (a list from name to Figma ID), so a new chat can pick up where the last one stopped.
 - One writing call at a time; reading calls may run side by side.
 - Saving a named version before a phase (File → Save to version history) is optional, Lakshay's call. He skips it from 2026-10-20; Figma's own history still keeps changes.
-- At most about 150 calls a day, under the limit of 200. One screenshot per finished view, plus one after a fix.
+- At most about 150 calls a day, under the limit of 200, and no more than 10 in any one minute (Education plans have the same limits as Full seats on Professional; [rate limits](https://developers.figma.com/docs/figma-mcp-server/rate-limits-access/), checked 2026-10-21). The page says the limits apply to tools that read from Figma and does not list `use_figma` as exempt, so we count every call (`UNVERIFIED` whether `use_figma` counts). One screenshot per finished view, plus one after a fix.
 - Colours, spacing and corner sizes come from variables, never typed-in hex codes. Text uses text styles. Frames use auto layout. Repeated parts are components (at most 30 variants per set). Icons are SVG components, swapped with an instance-swap setting.
 - Made-up demo data only (the README data rule), with realistic Indian names.
 - Every phase ends the same way: screenshots → Lakshay reviews in Figma (comments pasted in chat) → fixes → this file and the README updated → docs commit → stop for approval.
@@ -95,7 +95,7 @@ The six non-Figma skills above are "only you can start them" in Lakshay's user s
 | PM-12 | Gate | | Lakshay approves the design |
 
 ## Stage 1 plan: done and remaining
-_Updated 2026-10-21 at the wrap-up. Tick a box when its check passes. Figma IDs are in [figma-ledger.json](figma-ledger.json). Review points stop the work until Lakshay answers._
+_Updated 2026-10-21 at the second wrap-up (UX-3 closed; UX-4 demo-path batches A to D done). Tick a box when its check passes. Figma IDs are in [figma-ledger.json](figma-ledger.json). Review points stop the work until Lakshay answers._
 
 **Setup and UX-1 (done)**
 - [x] Setup: 7 Figma pages, References board, fonts, ID ledger (2026-10-19)
@@ -131,8 +131,11 @@ _Updated 2026-10-21 at the wrap-up. Tick a box when its check passes. Figma IDs 
 
 **UX-4 Detailed screens and the clickable demo**
 - [x] Agree the reminder days: licences from an apply-by date, filings as a morning and a Monday list (Lakshay, 2026-10-21)
-- [ ] Demo-path screens first (the 11 demo beats), then the rest with empty, error and loading states and the 100-client frame
-- [ ] Apply the UX-4 fixes from the heuristic self-check (UX-2 section)
+- [ ] Demo-path screens: 22 frames in 5 batches by demo beat (section `demo-path` on `06 Screens`). Done: A beats 1 to 3 (3 frames) · B beat 4 (4) · C beats 5 and 6 (7) · D beat 7 (1). **Left: E beats 8 to 11 (7 frames: CA-20b, OW-11, OW-11b, CA-20, CA-21, CA-21c, EM-07)**
+- [ ] Before batch E: fact-check the ARN format; move the batch A to D notes to [screens.md](screens.md) (this file is near its 400-line cap); update the `06 Screens` page brief (`18:178`)
+- [ ] Review point 6: Lakshay reviews the 22 demo frames
+- [ ] The other 43 frames, flow by flow, with empty, error, loading and saving states and the 100-client frame (CA-06). Proposed 6 batches, to agree when this starts: sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7
+- [ ] Apply the UX-4 fixes from the heuristic self-check (UX-2 section). Done in CA-13: #2 plain reason first, #5 count on the button. Left: #3 Undo and Edit (batch E), #1 loading, saving and empty states (with the other 43 frames)
 - [ ] Check CA screens at 1366 px and owner screens at 360 px
 - [ ] Behaviour notes as Dev Mode annotations; Lakshay marks finished screens "Ready for dev" (by hand)
 - [ ] Clickable demo: demo path only, start point "Demo", agreed motion, motion review table
@@ -311,6 +314,15 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 
 ## UX-4 Detailed screens and demo
 _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screens` (batches A to E by demo beat, a short stop after A, then review point 6) → the other 43 frames with their states → width checks → polish pass → annotations → clickable demo → design QA → gate PM-12. About 150 Figma calls a day, so at least 3 Figma days.
+
+**Where we stopped (2026-10-21 wrap-up).** Batches A to D are built, read back and committed: 15 of the 22 demo frames. Batch E (beats 8 to 11: CA-20b, OW-11, OW-11b, CA-20, CA-21, CA-21c, EM-07) has not started. Before it: fact-check the ARN format (the sample "AA0710260012345" on the `Banner` part came from UX-3 and is unverified), move the batch notes below into [screens.md](screens.md), and update the `06 Screens` page brief (`18:178`, still the old text).
+**Open decisions for Lakshay (not answered yet).**
+| Question | Options offered | Recommendation |
+|---|---|---|
+| CA-13 button word: the 5th item is the labour-code registration, which the research calls "not a licence" | "Confirm 5 licences" (now; the approved plan's wording) · "Confirm 5" · "Confirm 5 items" | Keep "Confirm 5 licences": the app lists registration with the licences |
+| Chip words are about 8 px at 1024 px wide (a projector; the width is `UNVERIFIED`) | Change nothing now · raise the chip text size in one place later | Change nothing until a real projector test (Figma's presentation mode scales the frame to the screen) |
+| The other 43 frames in 6 batches: sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7 | Agree this split · another split | Agree it when that step starts, after review point 6 |
+- **Taken unless Lakshay objects:** the CA-13 status word "Waiting for your check" (blue `waiting` chip), and no confidence number on the AI card.
 
 **Reminder days (agreed by Lakshay 2026-10-21).** Facts from [licences.md](research/licences.md) (checked 2026-10-18).
 | Kind | Rule | Why |
