@@ -95,6 +95,7 @@ Each task has an ID and a track. Tick the box when its "done when" check passes.
 
 ### Stage 2: Build [FS] → tech.md
 Before any code, we agree the design together: folder and file structure, how the code is split, naming (see AGENTS.md). The deploy pipeline comes first.
+**Early start (2026-10-21, Lakshay):** FS-1, QA-1, FS-2 and FS-5 start while UX-4 waits for the Figma limit. Anything that builds screens waits for gate PM-12.
 - [ ] v1-FS-1 Choose the stack, one ADR (short decision record) each: app framework; database, login and file storage; hosting; India data region. Decide whether to reuse or reset the old Supabase project
 - [ ] v1-QA-1 Deploy pipeline: automatic checks on every change (lint, type check, unit tests), preview deploys, production deploys from `main`, error tracking. Done when a starter page deploys by itself
 - [ ] v1-FS-2 Data structure, API shapes (what the server sends and receives) and RLS rules (database rules that keep firms apart), with tests → criterion 2

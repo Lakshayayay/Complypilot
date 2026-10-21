@@ -1,7 +1,7 @@
 # Status
 
-**Version:** v1 — Shared Compliance Calendar · **Stage:** 1 Design [UX], in progress (UX-4: batch 6 next) · **Last updated:** 2026-10-21 (wrap up)
-**Where we stopped:** UX-3 is approved and closed. **All 22 demo-path screens are built**, and **36 of the other 43 frames** (batches 1 to 5). UX-4 runs to gate PM-12 without stopping (Lakshay, 2026-10-21). **Next, in a new chat once the Figma limit resets: batch 6, settings and the firm's reminder email (7 frames).** Nothing is half-built; everything is committed and pushed.
+**Version:** v1 — Shared Compliance Calendar · **Stage:** 1 Design [UX], in progress (UX-4: batch 6 next) + 2 Build [FS], early start (FS-1 next) · **Last updated:** 2026-10-21
+**Where we stopped:** UX-3 is approved and closed. **All 22 demo-path screens are built**, and **36 of the other 43 frames** (batches 1 to 5). UX-4 runs to gate PM-12 without stopping (Lakshay, 2026-10-21). **Next, in a new chat: start FS-1 (create tech.md with "Learn first", then the first decision: the app framework). Batch 6 (settings and the firm's reminder email, 7 frames) once the Figma limit resets.** Nothing is half-built; everything is committed and pushed.
 **Plan for this version:** [v1 README](versions/v1/README.md) (tasks and gates) · **Design stage folder** [design/](versions/v1/design/): [design.md](versions/v1/design/design.md) (step-by-step checklist, decisions, rules) · [screens.md](versions/v1/design/screens.md) (what each frame shows) · [flows.md](versions/v1/design/flows.md) · [figma-ledger.json](versions/v1/design/figma-ledger.json) (Figma IDs) · **Rules:** [AGENTS.md](../AGENTS.md)
 
 ## Done
@@ -12,8 +12,12 @@
 - **Frames on `06 Screens`, one section per batch** (IDs in the ledger, notes in screens.md): `demo-path` 22 frames (A to E) · `batch-1` sign-in and sign-up 13 · `batch-2` clients 5 · `batch-3` client and review states 4 · `batch-4` licences and owner home 9 · `batch-5` tasks and thread states 5. Every batch read back by script: 0 typed-in colours, all text styled, Anek Latin, no dashes, no phone button under 44 px.
 - **Tax dates:** Form 140 and advance tax are now ✅ from official pages (research/due-dates.md).
 - **Project structure (2026-10-21):** design docs moved into `v1/design/`; AGENTS.md rule: a stage with more than one file gets its own folder. **Gates added for every stage:** PM-16 build, PM-17 AI, PM-18 release, PM-19 v1 sign-off (README). The handoff folder is refreshed and **stays** (Lakshay). Finished stage folders become records.
+- **Early start of stage 2 (2026-10-21, Lakshay):** the Figma limit blocks design, so build work that doesn't depend on the screens starts now. New AGENTS.md rule "Early start"; the tasks are listed in the v1 README, Stage 2.
 
-## Next (in this order)
+## Next
+**Build track (now, no Figma needed):** FS-1 choose the tools, one ADR each → QA-1 deploy pipeline → FS-2 data, API shapes and RLS → FS-5 due-date engine. Start tech.md with "Learn first". No screen code before PM-12.
+
+**Design track (when Figma resets), in this order:**
 1. **Batch 6:** CA-22 firm settings, CA-23 team, CA-24 due-date changes with CA-24b preview and CA-24c applied, CA-25 privacy, EM-06 the firm's morning list. That completes all 65 frames.
 2. 1366 and 360 px checks → polish pass (modern look; Odoo and Notion; fix the 16 px `Textarea` label on CA screens; CA-08's "not on the calendar yet" note) → Dev Mode annotations → clickable demo → design QA → **gate PM-12 (ping Lakshay)**.
 
