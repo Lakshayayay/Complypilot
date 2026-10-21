@@ -132,11 +132,11 @@ _Updated 2026-10-21 at the second wrap-up (UX-3 closed; UX-4 demo-path batches A
 
 **UX-4 Detailed screens and the clickable demo**
 - [x] Agree the reminder days: licences from an apply-by date, filings as a morning and a Monday list (Lakshay, 2026-10-21)
-- [ ] Demo-path screens: 22 frames in 5 batches by demo beat (section `demo-path` on `06 Screens`). Done: A beats 1 to 3 (3 frames) · B beat 4 (4) · C beats 5 and 6 (7) · D beat 7 (1). **Left: E beats 8 to 11 (7 frames: CA-20b, OW-11, OW-11b, CA-20, CA-21, CA-21c, EM-07)**
+- [x] Demo-path screens: 22 frames in 5 batches by demo beat (section `demo-path` on `06 Screens`): A beats 1 to 3 (3 frames) · B beat 4 (4) · C beats 5 and 6 (7) · D beat 7 (1) · E beats 8 to 11 (7) (2026-10-21)
 - [x] Before batch E: ARN format checked (fits; UX-4 notes); batch A to D notes moved to [screens.md](screens.md); `06 Screens` page brief updated (2026-10-21)
 - [ ] Review point 6 (a heads-up since 2026-10-21, no stop): Lakshay looks at the 22 demo frames when he likes
 - [ ] The other 43 frames, flow by flow, with empty, error, loading and saving states and the 100-client frame (CA-06), in 6 batches: sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7
-- [ ] Apply the UX-4 fixes from the heuristic self-check (UX-2 section). Done in CA-13: #2 plain reason first, #5 count on the button. Left: #3 Undo and Edit (batch E), #1 loading, saving and empty states (with the other 43 frames)
+- [ ] Apply the UX-4 fixes from the heuristic self-check (UX-2 section). Done: #2 plain reason first and #5 count on the button (CA-13), #3 Undo and Edit (CA-21c). Left: #1 loading, saving and empty states (with the other 43 frames)
 - [ ] Check CA screens at 1366 px and owner screens at 360 px
 - [ ] Behaviour notes as Dev Mode annotations; Lakshay marks finished screens "Ready for dev" (by hand)
 - [ ] Clickable demo: demo path only, start point "Demo", agreed motion, motion review table
@@ -316,7 +316,7 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 ## UX-4 Detailed screens and demo
 _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screens` (batches A to E by demo beat, a short stop after A, then review point 6) → the other 43 frames with their states → width checks → polish pass → annotations → clickable demo → design QA → gate PM-12. About 150 Figma calls a day, so at least 3 Figma days.
 
-**Progress.** Batches A to D are built (15 of the 22 demo frames; notes in [screens.md](screens.md)). The `06 Screens` page brief was brought up to date on 2026-10-21. The other 43 frames follow in 6 batches: sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7.
+**Progress.** All 22 demo frames are built (batches A to E, 2026-10-21; notes in [screens.md](screens.md#ux-4-detailed-screens-demo-path)). The `06 Screens` page brief was brought up to date on 2026-10-21. The other 43 frames follow in 6 batches: sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7.
 
 **ARN (checked 2026-10-21).** The ARN (the acknowledgement number the GST portal gives after a filing) has 15 characters: 2 letters, the 2-digit state code, the month and year (MMYY), a system number and a check character, e.g. `AA070724000001Z` ([enkash](https://www.enkash.com/resources/blog/what-is-an-arn-number), [Masters India](https://www.mastersindia.co/blog/track-arn-status/), [kanakkupillai](https://www.kanakkupillai.com/learn/how-to-check-gst-registration-status-with-arn/)). Our sample `AA0710260012345` fits: Delhi (07), October 2026, so it stays. Only blogs describe the format, not GSTN: `UNVERIFIED`. **Stage 2:** accept the ARN as plain text; don't check its format strictly.
 
@@ -340,4 +340,4 @@ _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screen
 - **This fortnight:** GSTR-3B monthly 20 Oct (48 clients) · tax audit report 21 Oct (extended) · GSTR-3B quarterly 24 Oct (Delhi and Haryana) · TDS salary return, Form 138, 31 Oct · TDS deposit 7 Nov · GSTR-1 monthly 11 Nov · ITR for audit cases 21 Nov (extended).
 - **Correction:** the UX-3 brand sample shows "PMT-06, 25 Oct". That's wrong: PMT-06 is paid only for the first two months of a quarter (CGST Rule 61(3)), and September is the third. It is not reused.
 
-**Batches A to D (15 of the 22 demo frames, built 2026-10-21):** what each frame shows, the parts changed and the checks are in [screens.md](screens.md#ux-4-detailed-screens-demo-path-batches-a-to-d).
+**Batches A to E (all 22 demo frames, built 2026-10-21):** what each frame shows, the parts changed and the checks are in [screens.md](screens.md#ux-4-detailed-screens-demo-path).

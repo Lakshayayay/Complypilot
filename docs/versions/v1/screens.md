@@ -77,8 +77,8 @@ One line per flow. Step names are the node names in flows.md. `skip` = a decisio
 | F-11 | start=CA-22; changes=CA-24; pick=CA-24b; newDate=CA-24b; preview=CA-24b; applyIt=CA-24b; update=skip; done=CA-24c; cancel=CA-24 |
 | F-12 | b1=CA-14; b2=CA-14b; b3=CA-15; b4=CA-07,CA-08,CA-11,CA-12; b5=EM-03,OW-02,OW-03,OW-04,OW-05,OW-06; b6=OW-07; b7=CA-13; b8=CA-20b; b9=OW-11,OW-11b; b10=CA-20,CA-21,CA-21c; b11=EM-07 |
 
-## UX-4 detailed screens (demo path, batches A to D)
-Moved from [design.md](design.md), UX-4, on 2026-10-21. Built on Figma page `06 Screens`, section `demo-path`. Batch E (beats 8 to 11) will be added here when built.
+## UX-4 detailed screens (demo path)
+Batches A to D moved from [design.md](design.md), UX-4, on 2026-10-21. Built on Figma page `06 Screens`, section `demo-path`, frames left to right in beat order.
 
 **Batch A: demo beats 1 to 3 (built 2026-10-21).** Figma: `06 Screens`, section `demo-path` ([open](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=99-816)), frames left to right in beat order. IDs in figma-ledger.json.
 | Frame | What it shows |
@@ -121,3 +121,17 @@ Moved from [design.md](design.md), UX-4, on 2026-10-21. Built on Figma page `06 
 - **AI rules (AGENTS.md):** it shows the line it matched and its source, the CA confirms, and nothing reaches the owner's calendar before that. No confidence number is shown: it would be made up; stage 3's eval set gives a real one. The status word "Waiting for your check" (from the wireframe) uses the blue `waiting` chip.
 - **Height:** 1,414 px, because each licence line has three lines of text. At 900 px the AI card and the first three licences are visible; the clickable demo gets a scrolling frame (UX-4, step 7).
 - **Checks:** read-back, 168 layers: 0 typed-in colours (120 bound), 0 loose corners, gaps or padding, all 67 texts styled and Anek Latin, no dashes, no cut-off text; the 5 Required rows equal the "5" on the button.
+
+**Batch E: demo beats 8 to 11, the thread and Mark done (built 2026-10-21).** Same section, after CA-13. The 22 demo frames are complete. One item all the way through: Metro Beverages' GSTR-3B for September, due Tue 20 Oct; "today" is Mon 19 Oct.
+| Frame | What it shows |
+|---|---|
+| CA-20b Thread, task for the owner | CA-14b (due this week) with the thread panel open on the right, like Notion's side peek: the calendar stays visible, no dimming. Header "GSTR-3B · Metro Beverages", "Due soon", stages Open ✓ › **Waiting on owner** › Filed › Done. Thread: "Rakesh tagged this Need document", Rakesh's message (purchase bills by 5 pm), the event "Task for Vikram Malhotra (owner)…". Toast "Task sent. Vikram gets an email now." |
+| OW-11 Item thread | Vikram's phone, full screen (back arrow, no tabs): "Upload the purchase bills", a note "Your CA needs them by 5 pm today", Rakesh's message, one button "Upload purchase bills" |
+| OW-11b After the upload | "Bills sent", a green "Task done" note (sent and ticked at 3:06 pm), his file in the thread, "Back to home" |
+| CA-20 Thread, after the upload | The panel again: Vikram's file and "Vikram ticked the task done · 3:06 pm"; stages now at **Filed**; "Mark done" and "Tag Filed" |
+| CA-21 Mark done (window) | CA-20 dimmed, a window "Mark done: GSTR-3B (September 2026)": ARN `AA0710260012345` (format checked, UX-4 notes), the receipt as a file chip, "PDF, JPG or PNG, up to 10 MB.", Cancel and "Mark done" |
+| CA-21c Thread, done | The moment of delight: chip "Done", all four stages ticked, a green banner "Done · Mon 19 Oct, 4:20 pm" with **Edit**, the events "tagged Filed" and "marked done with the ARN and receipt", and a toast "Marked done. Vikram can see it now." with **Undo** |
+| EM-07 Owner's Monday list | The next Monday (26 Oct): "Your week at Metro Beverages: 1 filing due", TDS return, salary (Jul to Sep) due Sat 31 Oct, "Nothing is waiting on you", "Open ComplyPilot". Done items never appear (criterion 12) |
+- **Cast:** the wireframes used other names (Rohit Sharma, Sharma & Associates, Anil Sharma); every frame now uses the demo cast. EM-07 follows the agreed reminder days (one Monday list), not the wireframe's single-item email.
+- **Heuristic fix #3 done:** Undo on the done toast, Edit on the done banner.
+- **Checks:** read-back on the 7 frames, 1,849 layers: 0 typed-in colours (1,315 bound), 0 loose corners, gaps or padding, all 540 texts styled and Anek Latin, no dashes, no cut-off text, no phone button under 44 px.
