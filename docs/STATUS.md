@@ -13,7 +13,7 @@
 - Everything through batch D is committed on `main`.
 
 ## Next (in this order)
-1. **New chat, housekeeping first:** design.md is at 382 of 400 lines, so move the batch A to D notes (design.md, UX-4) into screens.md and leave one link. Update the `06 Screens` page brief (`18:178`), still the old text.
+1. ~~Housekeeping~~ done 2026-10-21: batch A to D notes moved to screens.md (design.md now 342 lines); `06 Screens` page brief updated.
 2. **Batch E, demo beats 8 to 11 (7 frames):** CA-20b (thread: "Need document" given to the owner as a task) · OW-11 and OW-11b (owner uploads, ticks) · CA-20 (thread after the upload) · CA-21 (Mark done: ARN and receipt) · CA-21c (done: the one moment of delight; Undo on the toast, Edit on the done banner) · EM-07 (the owner's Monday list email). **Fact-check the ARN format first:** the sample "AA0710260012345" is a guess. Demo cast and rules: design.md, UX-4.
 3. **Review point 6:** Lakshay reviews the 22 demo frames.
 4. **The other 43 frames,** flow by flow, with empty, error, loading and saving states. Proposed 6 batches (agree first): sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7. Then 1366 and 360 px checks → polish pass (modern look) → Dev Mode annotations → clickable demo → design QA → gate PM-12.

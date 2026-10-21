@@ -315,7 +315,7 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 ## UX-4 Detailed screens and demo
 _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screens` (batches A to E by demo beat, a short stop after A, then review point 6) → the other 43 frames with their states → width checks → polish pass → annotations → clickable demo → design QA → gate PM-12. About 150 Figma calls a day, so at least 3 Figma days.
 
-**Where we stopped (2026-10-21 wrap-up).** Batches A to D are built, read back and committed: 15 of the 22 demo frames. Batch E (beats 8 to 11: CA-20b, OW-11, OW-11b, CA-20, CA-21, CA-21c, EM-07) has not started. Before it: fact-check the ARN format (the sample "AA0710260012345" on the `Banner` part came from UX-3 and is unverified), move the batch notes below into [screens.md](screens.md), and update the `06 Screens` page brief (`18:178`, still the old text).
+**Where we stopped (2026-10-21 wrap-up).** Batches A to D are built, read back and committed: 15 of the 22 demo frames. Batch E (beats 8 to 11: CA-20b, OW-11, OW-11b, CA-20, CA-21, CA-21c, EM-07) has not started. Before it: fact-check the ARN format (the sample "AA0710260012345" on the `Banner` part came from UX-3 and is unverified), The batch A to D notes moved to [screens.md](screens.md) and the `06 Screens` page brief (`18:178`) was brought up to date on 2026-10-21.
 **Open decisions for Lakshay (not answered yet).**
 | Question | Options offered | Recommendation |
 |---|---|---|
@@ -339,44 +339,4 @@ _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screen
 - **This fortnight:** GSTR-3B monthly 20 Oct (48 clients) · tax audit report 21 Oct (extended) · GSTR-3B quarterly 24 Oct (Delhi and Haryana) · TDS salary return, Form 138, 31 Oct · TDS deposit 7 Nov · GSTR-1 monthly 11 Nov · ITR for audit cases 21 Nov (extended).
 - **Correction:** the UX-3 brand sample shows "PMT-06, 25 Oct". That's wrong: PMT-06 is paid only for the first two months of a quarter (CGST Rule 61(3)), and September is the third. It is not reused.
 
-**Batch A: demo beats 1 to 3 (built 2026-10-21).** Figma: `06 Screens`, section `demo-path` ([open](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=99-816)), frames left to right in beat order. IDs in figma-ledger.json.
-| Frame | What it shows |
-|---|---|
-| CA-14 Month | October 2026 for 100 clients: compact chips per day, most urgent first ("TDS deposit · 2" late, "GSTR-3B · 48" due soon, done ones quiet). Summary: 411 items, 8 late, 83 due this week, 259 done (the chips add up to it) |
-| CA-14b Due this week | The "Due this week" filter as a removable tag. The week of 19 to 25 Oct is outlined and shows only what is left; the other weeks show dates only. A side list "This week's items" groups by day and filing ("48 left", a few clients each, "Show 44 more") |
-| CA-15 Client grid | One row per client, one column per filing, then Licences; each cell is a status chip and its date. Rows by urgency (late first). Sunrise Plastics is highlighted: "Renew soon, hazardous waste, apply by 15 Jan" beside its GST items (beat 3) |
-- **Parts changed:** `ViewSwitch` is now Month · Client grid (the approved screen list has no Week or List view; "Due this week" is a filter). New `IconButton` (40 px, styled like the secondary `Button`) for the ‹ › arrows. Quarterly filings say "QRMP" (the CA term) so chips stay on one line.
-- **Checks:** read-back on all three frames, 1,162 layers: 0 typed-in colours (783 bound), 0 loose corners, gaps or padding, all 343 texts styled and Anek Latin, no dashes, no cut-off text. **Projector (1024 px, `UNVERIFIED` width):** dates, colours, icons and titles read; chip words shrink to about 8 px. Lakshay decides after seeing a real projector; Figma's presentation mode scales the frame to the screen.
-
-**Batch B: demo beat 4, add a client and invite the owner (built 2026-10-21).** Same section, after CA-15.
-| Frame | What it shows |
-|---|---|
-| CA-07 Add client, details | Step 1 of 2: a two-column form for Metro Beverages Pvt Ltd (legal and trade name, GSTIN and PAN with help text, state, GST scheme, income tax, the owner's name, email and mobile); Cancel, "Next: choose filings" |
-| CA-08 Add client, choose filings | Step 2 of 2: filings grouped as GST, TDS, ESIC and income tax, with checkboxes and their rule ("GSTR-3B · 20th of the next month"); a note that PF, TDS Forms 140/143/144, MSME Form-1 and non-audit ITRs are not on the calendar yet; beside it "What goes on the calendar" with the next 6 dates (from 20 Oct: proposal 2) |
-| CA-11 Client page | The client's summary and "Edit details"; Coming up (6 dates, the two due soon with chips); Licences empty ("They come from the factory answers…"); Owner (not invited yet, "Invite owner"); Factory answers (not started); Filings |
-| CA-12 Invite owner (window) | CA-11 behind a dimmed overlay; the window "Invite the owner of Metro Beverages" with name and email, a note "First, 8 questions about the factory", Cancel and "Send invite" |
-- **Facts settled:** the owner answers **8 questions**: the 8 answers the rules use in [applicability-delhi-haryana.md](research/applicability-delhi-haryana.md) (README says "about 10"). Batch C shows "Question N of 8".
-- **Checks:** read-back on the four frames, 510 layers: 0 typed-in colours (369 bound), 0 loose corners, gaps or padding, all 182 texts styled and Anek Latin, no dashes. A Figma quirk was found and fixed: a part resized to "fill" after it is put inside another part's slot keeps its old drawn width, so parts are sized before they go into a slot.
-
-**Batch C: demo beats 5 and 6, the owner's phone (built 2026-10-21).** Same section, after CA-12. Phone frames are 390 px wide; owner text is 16 to 28 px; every tap target is at least 44 px.
-| Frame | What it shows |
-|---|---|
-| EM-03 Owner invite email | "Kapoor & Associates invited you to ComplyPilot": the logo, "See Metro Beverages' deadlines in one place", what they get, "Open ComplyPilot", and what the one-time link does |
-| OW-02 Welcome | "Welcome, Vikram", three things they will see (with icons), "First, tell us about your factory", "Start the factory questions" and "Later" |
-| OW-03 Question with choices | "Question 1 of 8", "Where is your factory?", Delhi (chosen), Haryana, Another state, and what happens for other states |
-| OW-04 Question with a number | "Question 2 of 8", how many people work there, how to count, 120 |
-| OW-05 Question in own words | "Question 5 of 8", "What do you make?": "We make soft drinks and fruit juice, and we have a steam boiler." (the demo line), and that the CA checks the match |
-| OW-06 Check and send | All 8 answers, each with "Change"; "Nothing is final until your CA confirms"; "Send to Kapoor & Associates" |
-| OW-07 Your CA will check | "Sent to your CA", the "Your CA will check" note, what happens next in 3 steps, "Go to home", the bottom tabs |
-- **Parts changed:** `StepIndicator` now has 8 steps (each bar k/8, "Question k of 8"). New `ChoiceCard` (a 56 px tappable answer; chosen = tint, 2 px border and a filled radio, never colour alone) and `Textarea` (styled from `Input` lg, at least 120 px tall). New icon `chat-circle-text` (Phosphor Bold 2.1.1, from the same pinned package). The answers match test factory T3 (120 workers, boiler, no waste, 2,400 sq m).
-- **Checks:** read-back on the 7 frames, 216 layers: 0 typed-in colours (167 bound), 0 loose corners, gaps or padding, all 87 texts styled and Anek Latin, no dashes, no phone button under 44 px.
-
-**Batch D: demo beat 7, the CA's factory review (built 2026-10-21).** Same section, after OW-07.
-| Frame | What it shows |
-|---|---|
-| CA-13 Factory review | "Factory answers, Metro Beverages", answered by Vikram Malhotra on Mon 19 Oct; the status "Waiting for your check", "Edit answers" and "Confirm 5 licences". Left: the 8 answers, the same words as OW-06. Right: the AI's pollution category ("Orange", tagged "Suggested by AI") with the line it matched, the owner's own words, "Use this", "Choose another line" and "Source: DPCC list"; then the licence list: 5 Required and 1 Not required, each with a plain reason and its official source |
-- **Facts checked against the research:** the matched line is line 2 of Delhi's list, "Aerated Water and Fruit Beverage with Boiler" (Orange; [dpcc-activities-delhi.csv](research/data/dpcc-activities-delhi.csv), where line 1 is the same activity without a boiler). The six results are test factory T3 in [applicability-delhi-haryana.md](research/applicability-delhi-haryana.md): factory licence (FL-1), labour-code registration (OSH-1), pollution consent (PC-2), fire certificate (FN-1) and boiler certificate (BO-1) are Required; hazardous waste (HW-1) is Not required.
-- **Heuristic fixes made here:** the plain reason comes first and the rule code sits in the source line (the `LicenceResultRow` part already did this); the button carries the count. "5 licences" are the four licences, consents and certificates plus the labour-code registration, which the app lists with the licences (the research calls registration "not a licence"; Lakshay can ask for another word). A footnote says what confirming does.
-- **AI rules (AGENTS.md):** it shows the line it matched and its source, the CA confirms, and nothing reaches the owner's calendar before that. No confidence number is shown: it would be made up; stage 3's eval set gives a real one. The status word "Waiting for your check" (from the wireframe) uses the blue `waiting` chip.
-- **Height:** 1,414 px, because each licence line has three lines of text. At 900 px the AI card and the first three licences are visible; the clickable demo gets a scrolling frame (UX-4, step 7).
-- **Checks:** read-back, 168 layers: 0 typed-in colours (120 bound), 0 loose corners, gaps or padding, all 67 texts styled and Anek Latin, no dashes, no cut-off text; the 5 Required rows equal the "5" on the button.
+**Batches A to D (15 of the 22 demo frames, built 2026-10-21):** what each frame shows, the parts changed and the checks are in [screens.md](screens.md#ux-4-detailed-screens-demo-path-batches-a-to-d).
