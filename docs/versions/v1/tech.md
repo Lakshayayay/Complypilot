@@ -64,6 +64,7 @@ src/
 supabase/migrations/        SQL change files, numbered
 supabase/seed.sql           demo data (made up)
 tests/security/             firm A vs firm B, owner vs owner
+tests/e2e/                  Playwright click-through flows (stage 4)
 ```
 - **Layers:** screens → server actions (the only writers) → database (RLS is the wall). Rule logic (due dates, licence warnings, repeating tasks, factory rules, CSV parsing) is **pure**: same input, same answer, no database inside, so it is easy to test.
 - **Naming:** files in kebab-case (`due-date-engine.ts`); components in PascalCase, same name as Figma (`StatusChip`); database tables and columns in snake_case; tests beside the code (`*.test.ts`); every table has a `firm_id` that RLS checks.
@@ -100,6 +101,29 @@ Agreed D13: logic that needs no screens comes first; screens follow in demo-stor
 - **Component map:** a table here, filled as components are built: Figma set → code file → props (e.g. `StatusChip` → `components/ui/status-chip.tsx` → `status`, `size`). Code Connect would do this automatically but is `UNVERIFIED` on the Education plan ([Code Connect docs](https://developers.figma.com/docs/code-connect/)).
 - **Brand files:** logo, app icon and favicon are exported from Figma into `public/`.
 - The 65 frames, notes and cast: [screens.md](design/screens.md). Demo story: [flows.md](design/flows.md).
+
+## Builder check: open points for stage 2
+On 2026-10-22 a fresh helper agent read the design docs as a builder and listed 24 things it would have to guess. Three were contradictions and are corrected in the [README](README.md#corrections-after-the-scope-lock). The rest are below: **recommended defaults, not agreed**. Each is settled with Lakshay, one at a time, in the task named in the last column (AGENTS.md: agree data and API shapes before screens). **The biggest gap is the first group: what a calendar item is and how its status moves.** Decisions needed at the design gate are in [design.md](design/design.md) ("Decide at PM-12").
+| # | Point | Recommended default | Decide in |
+|---|---|---|---|
+| 1 | What a calendar item is, and its thread | Filings, licences and the firm's own tasks are items; each has one thread. An owner task is an item inside the filing's thread. On a thread: all firm staff and that client's owner. The "Notes" tab is CA-only (hidden from the owner by RLS); "Activity" is the event lines | FS-2 |
+| 2 | Stage and status | Stage goes Open, Waiting on owner, Filed, Done. Waiting on owner = an open owner task exists; the owner's tick moves it back to Open; the "Filed" tag moves it to Filed; Mark done = Done. Late and waiting at once: the stage chip plus "N days late". A day's badge shows the most urgent: late, waiting, soon, upcoming, done | FS-2 |
+| 3 | How items are stored | Stored rows, a rolling 12-month horizon, rebuilt by the pure engine when a client's filings or an override changes, and by the daily job | FS-2, FS-5 |
+| 4 | Due-date overrides | Filing + period + new date (+ optional state), per firm; applies to current and future clients; can be removed. The two CBDT changes in CA-24 are seed overrides | FS-2, FS-11 |
+| 5 | Licence facts | An owner's upload only attaches the file; "Details needed" stays until the CA enters number and dates, and the CA sees "Certificate uploaded". A `no_expiry` flag: empty expiry without it = "Details needed"; with it = "Valid until cancelled" | FS-2, FS-10 |
+| 6 | Undo and Edit on Mark done | Undo for 10 seconds restores the earlier state and keeps the file; Edit changes the ARN or receipt and writes an "edited" event | FS-7 |
+| 7 | Archive a client | Hides it from lists and the calendar, blocks the owner's login, keeps the data | FS-4 |
+| 8 | Accounts | One email belongs to one firm and one role; inviting an email already used shows a plain error; an owner has exactly one client | FS-3, FS-12 |
+| 9 | Chips and thresholds | "Due soon" = 7 days (as in the morning list). The licence chip stays "Renew soon" at 90, 60 and 30 days; only the emails differ. The Delhi fire certificate's 180 days is ⚠️, so use 0 until confirmed; the CA can edit the apply-by date | FS-5, FS-10 |
+| 10 | Reminder emails | Sent all 7 days; nothing sent when the list is empty; all dates are plain dates in Asia/Kolkata; a licence joins a list once its reminder day has passed since the last send (README criterion 12) | FS-15 |
+| 11 | Demo clock and numbers | Seed relative to a settable "today" used only in the demo; a small generator hits the frame numbers (411 items, 8 late, 83 this week, 100 clients, 236 licences) | FS-16 |
+| 12 | CA-13 before the AI exists | A pick-from-the-official-list card with no AI suggestion; any stub is marked `// MOCK:` and listed in the README until stage 3. The two category lists load from `research/data` by migration | FS-13, AI-3 |
+| 13 | CSV import | Dedupe on GSTIN only (one PAN can have several GSTINs): a repeated PAN is a warning, not an error, on the form too. UTF-8, at most 1,000 rows and 2 MB | FS-8 |
+| 14 | Sign-in link | Valid 1 hour, one use; works in any browser (the token goes to our own verify route); a plain "try again" when the send limit hits | FS-3 |
+| 15 | Which code sends which email | All seven emails through Nodemailer from our code; auth links from the Supabase admin API; templates are plain HTML strings in `features/*/emails`; subjects come from the Figma frames | FS-3, FS-15 |
+| 16 | Files | One private bucket, path `firm_id/client_id/...`; one rule for every file (PDF, JPG, PNG, up to 10 MB); signed links valid 5 minutes | FS-7 |
+| 17 | Libraries (each noted when first added) | `date-fns` or plain UTC dates; shadcn Table with a sticky first column for CA-15; react-hook-form with Zod; Sonner for toasts; a custom month grid; `tests/e2e` for Playwright | each task |
+| 18 | Glossary | Five lines (QRMP, CTE/CTO, ARN, "Ask your CA", "You decide", "Inform the board") written with the first screen task, so owner-facing words stay the same | FS-3 |
 
 ## Open checks
 Short fact-checks done 2026-10-21 are in the ADRs. Still open:

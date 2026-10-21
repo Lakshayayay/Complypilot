@@ -24,8 +24,8 @@ Tracks: [PM] product · [UX] design · [FS] full-stack · [AI] AI and data · [Q
 | F1 | Firm sign-up with privacy notice and consent; invite colleagues | UX · FS |
 | F2 | Add clients by hand or import a CSV file (a spreadsheet saved as plain text). Choose which filings apply to each client | UX · FS |
 | F3 | Invite the owner; the owner logs in with a link sent to their email | UX · FS |
-| F4 | **Factory questions:** about 10 simple questions (what it makes, where, workers, power, boiler, chemicals). Written rules suggest the licences that apply, each with its official source and a short plain-words note for the owner (what it is, which office gives it, where to apply). The CA checks the list before it goes on the calendar. Rules for **Delhi and Haryana** only; anywhere else the CA adds licences by hand, and an unknown case says "ask your CA" | PM · UX · FS |
-| F5 | **Due dates** worked out automatically: GST, TDS, PF, ESIC, income tax, MSME Form-1 ([due-dates.md](research/due-dates.md)). **Override dates:** when the government extends a date, change it once and every client updates | PM · FS |
+| F4 | **Factory questions:** 8 simple questions (where, workers, machines that use power, area, what it makes, steam boiler, hazardous waste, floor area; settled in UX-4). Written rules suggest the licences that apply, each with its official source and a short plain-words note for the owner (what it is, which office gives it, where to apply). The CA checks the list before it goes on the calendar. Rules for **Delhi and Haryana** only; anywhere else the CA adds licences by hand, and an unknown case says "ask your CA" | PM · UX · FS |
+| F5 | **Due dates** worked out automatically for the confirmed rows of [due-dates.md](research/due-dates.md) (GST, TDS, ESIC, income tax). PF, MSME Form-1 and the other unconfirmed dates stay out of the app until a CA confirms them (decision 2026-10-18); the CA tracks them as own tasks. **Override dates:** when the government extends a date, change it once and every client updates | PM · FS |
 | F6 | **Shared calendar:** the CA sees all clients (by month, with filters); the owner sees only their own | UX · FS |
 | F7 | **Licence tracker:** type, number, office, issue date, optional expiry date, certificate file, and an **apply-by date**: expiry minus how early the law wants you to apply (e.g. Delhi factory licence 30 days); the CA can edit it. Warnings at 90, 60 and 30 days before the apply-by date, then "Expired". No expiry date shows "Valid until cancelled" ([licences.md](research/licences.md); reminder days agreed 2026-10-21) | FS |
 | F8 | **CA's own tasks**, which can repeat monthly, quarterly or yearly | UX · FS |
@@ -45,6 +45,9 @@ Tracks: [PM] product · [UX] design · [FS] full-stack · [AI] AI and data · [Q
 | Late-fee warning, ROC/MCA company filings, professional tax, CA fee tracking, staff roles | Later |
 | Tally/Winman import ([import-formats.md](research/import-formats.md)), government portal data, GST certificate reader, calendar export to phone | Later |
 
+## Corrections after the scope lock
+2026-10-22, from a builder check of the design docs (a fresh reader found these contradictions): F4 says 8 questions (was "about 10", the designs have 8); F5 and criterion 6 cover only confirmed dates, as decided in PM-10 and PM-14 (they listed PF and MSME Form-1); criterion 12 says how a licence reaches the Monday list. Open points for stage 2 are in [tech.md](tech.md#builder-check-open-points-for-stage-2).
+
 ## Done when
 No sales goal: v1 is for engineering and a college/competition pitch. v1 is done when:
 1. every acceptance criterion below passes,
@@ -59,13 +62,13 @@ Each one is proven by a test or a check. All must pass at the checkpoint.
 3. **Import (F2):** a 100-row CSV with 5 bad rows saves 95 clients and lists the 5 bad rows with row number and reason.
 4. **Owner login (F3):** an invited owner logs in with the email link and sees only their own calendar.
 5. **Factory questions (F4):** for every test factory in the Delhi/Haryana research file, the rules give the expected licence list. Every suggestion shows its source. Nothing reaches the calendar until the CA confirms. A factory outside Delhi/Haryana gets "ask your CA", not an empty list.
-6. **Due dates (F5):** unit tests show the official date for every filing in due-dates.md and MSME Form-1, including the QRMP 22nd/24th split by state and the March TDS payment (due 30 April).
+6. **Due dates (F5):** unit tests show the official date for every confirmed (✅) filing in due-dates.md, including the QRMP 22nd/24th split by state and the March TDS payment (due 30 April).
 7. **Override (F5):** changing one due date updates it for every affected client.
 8. **Speed (F6):** the CA calendar with 100 clients × all filings for a month opens in under 2 seconds; filters respond in under 0.5 seconds.
 9. **Licences (F7):** tests at 90, 60 and 30 days before the apply-by date and at expiry, for a licence with a lead time (Delhi factory licence, 30 days) and one without, plus "no expiry date", each show the right warning.
 10. **Repeating tasks (F8):** unit tests show the right next dates for monthly, quarterly and yearly tasks, including month ends (a task on the 31st in February).
 11. **Thread (F9):** the CA and the owner can post messages and files on an item and set tags. Mark done saves the ARN, the receipt (PDF/JPG/PNG, max 10 MB), who did it and when. Files open only for that firm and that client's owner.
-12. **Reminders (F10):** the firm gets one email each morning listing late items and items due in the next 7 days. The owner gets one email each Monday listing their items due in the next 10 days and anything waiting on them, and an email right away when the CA gives them a task. Licences on a reminder day join both lists. Items already marked done never appear.
+12. **Reminders (F10):** the firm gets one email each morning listing late items and items due in the next 7 days. The owner gets one email each Monday listing their items due in the next 10 days and anything waiting on them, and an email right away when the CA gives them a task. A licence joins a list when its reminder day (90, 60 or 30 days before the apply-by date) has passed since that list was last sent, so the owner's Monday list never misses one. Items already marked done never appear.
 13. **AI (F11):** the matcher reaches its target on the eval set (a fixed set of test examples with known answers; target agreed in ai.md, draft 90%). Every answer shows the line it matched. Nothing is saved until the CA confirms.
 14. **Release:** every change to `main` deploys by itself once checks pass. Daily backups, and one test restore done. Error alerts reach Lakshay.
 15. **Demo (F12):** the "Done when" list above is met.
