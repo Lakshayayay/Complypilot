@@ -9,7 +9,7 @@ A shared workspace for Indian CAs (chartered accountants) and MSME factory owner
 - `docs/STATUS.md`: where we are right now and what's next.
 - `idea.md`: the product vision, plus a list of every decision and idea from our planning chats.
 - `docs/versions/`: one folder per version (v1–v5) with its plan, research, and stage docs.
-- `docs/adr/`: records of big decisions (created when the first one is written, in v1's Build stage).
+- `docs/adr/`: records of big decisions (0001 to 0009 are v1's tools: framework, database, hosting, email and more).
 
 ## The old prototype
 The earlier prototype is saved in git under the tag `v0-prototype`. To look at an old file: `git show v0-prototype:<path>`.

@@ -1,6 +1,6 @@
 # v1 — Shared Compliance Calendar
 
-**Stage:** 1 Design [UX] → [design.md](design/design.md) (stage 0 approved 2026-10-18). Scope locked 2026-10-17. Any change from here is written down in this file.
+**Stage:** 1 Design [UX] → [design.md](design/design.md) (stage 0 approved 2026-10-18); stage 2 Build is planned in [tech.md](tech.md) (decisions 2026-10-21, ADRs in [docs/adr/](../../adr/)). Scope locked 2026-10-17. Any change from here is written down in this file.
 **Time:** no deadlines or hour budgets. Progress = the task checklist below.
 **Vision and ideas:** [idea.md](../../../idea.md)
 
@@ -41,6 +41,7 @@ Tracks: [PM] product · [UX] design · [FS] full-stack · [AI] AI and data · [Q
 | WhatsApp messages, no-login upload link, AI sorting of documents | v2 |
 | Owner health score, document vault, factory questions for more states | v3 |
 | Export and delete a client (was FS-9 in privacy.md) | First version with real users |
+| Move the live data to India (a Mumbai project), and backups to private storage ([ADR 0003](../../adr/0003-hosting-and-data-region.md), [0009](../../adr/0009-timed-jobs-and-backups.md)) | First version with real users |
 | Late-fee warning, ROC/MCA company filings, professional tax, CA fee tracking, staff roles | Later |
 | Tally/Winman import ([import-formats.md](research/import-formats.md)), government portal data, GST certificate reader, calendar export to phone | Later |
 
@@ -94,10 +95,10 @@ Each task has an ID and a track. Tick the box when its "done when" check passes.
 - [ ] v1-PM-12 **Gate:** Lakshay approves the design
 
 ### Stage 2: Build [FS] → tech.md
-Before any code, we agree the design together: folder and file structure, how the code is split, naming (see AGENTS.md). The deploy pipeline comes first.
-**Early start (2026-10-21, Lakshay):** FS-1, QA-1, FS-2 and FS-5 start while UX-4 waits for the Figma limit. Anything that builds screens waits for gate PM-12.
-- [ ] v1-FS-1 Choose the stack, one ADR (short decision record) each: app framework; database, login and file storage; hosting; India data region. Decide whether to reuse or reset the old Supabase project
-- [ ] v1-QA-1 Deploy pipeline: automatic checks on every change (lint, type check, unit tests), preview deploys, production deploys from `main`, error tracking. Done when a starter page deploys by itself
+The stack, folder layout, naming and order of work were agreed with Lakshay on 2026-10-21 and are written in [tech.md](tech.md) and ADRs [0001](../../adr/0001-app-framework.md) to [0009](../../adr/0009-timed-jobs-and-backups.md). The deploy pipeline comes first.
+**Early start (2026-10-21, Lakshay):** the Figma limit reset the same day, so design finishes first (stage 1). Build then starts with the FS-1 close-out, QA-1, FS-2, FS-5 and the logic cores of FS-14, FS-10, FS-13 and FS-8 (pure rules with unit tests, no screens). If Figma blocks again, these may start earlier. Anything that builds screens waits for gate PM-12.
+- [ ] v1-FS-1 Choose the stack, one ADR (short decision record) each. **Decided 2026-10-21:** ADRs 0001 to 0009 (Next.js, Supabase, Vercel, Gmail email, Vitest and Playwright, and more); the old Supabase project becomes the training project; the demo project stays in Seoul and moves to Mumbai before real users. **Left:** Lakshay's by-hand steps (tech.md) and checking and wiping the training project
+- [ ] v1-QA-1 Deploy pipeline: automatic checks on every change (lint, type check, unit tests), preview deploys, production deploys from `main`, error alerts by email ([ADR 0006](../../adr/0006-error-alerts-by-email.md)), a branch rule so `main` takes only changes that pass. Done when a starter page deploys by itself
 - [ ] v1-FS-2 Data structure, API shapes (what the server sends and receives) and RLS rules (database rules that keep firms apart), with tests → criterion 2
 - [ ] v1-FS-3 Login, firm sign-up, consent, invite colleagues → criterion 1
 - [ ] v1-FS-4 Clients: add, edit, archive; choose the filings that apply
@@ -105,7 +106,7 @@ Before any code, we agree the design together: folder and file structure, how th
 - [ ] v1-FS-6 Shared calendar, CA view and owner view → criterion 8
 - [ ] v1-FS-7 Item thread: messages, tags, files in private storage, mark done with ARN and receipt → criterion 11
 - [ ] v1-FS-8 CSV import with a report of bad rows → criterion 3
-- [ ] v1-FS-9 Backups on, breach runbook (what to do if data leaks), demo data only guard
+- [ ] v1-FS-9 Backups on (nightly encrypted backup, [ADR 0009](../../adr/0009-timed-jobs-and-backups.md)), breach runbook (what to do if data leaks), demo data only guard
 - [ ] v1-FS-10 Licence tracker and "due soon" list → criterion 9
 - [ ] v1-FS-11 Override dates (settings screen) → criterion 7
 - [ ] v1-FS-12 Invite owner and email login → criterion 4
@@ -147,7 +148,7 @@ Before any code, we agree the design together: folder and file structure, how th
 | Level | What it covers | When it's written |
 |---|---|---|
 | Unit | Due-date engine, licence rules, licence warnings, repeating tasks, CSV parser, GSTIN/PAN checks | With each FS task |
-| Database | RLS: cross-firm and cross-owner access blocked on every table and file | From v1-FS-2, runs on every change |
+| Database | RLS: cross-firm and cross-owner access blocked on every table and file (Vitest against a throwaway Supabase on GitHub, [ADR 0008](../../adr/0008-testing-tools.md)) | From v1-FS-2, runs on every change |
 | Integration | API + real database with RLS on | From v1-FS-3 |
 | E2E | The 3 critical flows | v1-QA-2 |
 | AI eval | The factory type matcher against the eval set | v1-AI-4 |
@@ -166,7 +167,11 @@ A task is done only when its tests pass. v1 has no money calculations.
 | Due-date rules change (new Income-tax Act, labour codes, extensions) | Confirm every ⚠️ row in v1-PM-14; re-check before the demo (v1-PM-15); override dates; show new and old form names |
 | CTO (pollution consent to run) no longer expires | The licence tracker allows "no expiry date" |
 | Solo developer and student | One task at a time; cut scope, not quality |
-| The old Supabase project may still hold prototype data | v1-FS-1 decides whether to reuse or reset it |
+| The training Supabase project ("comply pilot") may still hold v0 prototype data | Decided 2026-10-21: Lakshay confirms the table list, then it is wiped (v1-FS-1) |
+| v1 data sits outside India (demo in Seoul, training in Tokyo) | Made-up data only; the screens name no place; move to Mumbai before real users ([ADR 0003](../../adr/0003-hosting-and-data-region.md)) |
+| Emails from a Gmail account land in spam, or hit its 500-a-day limit | Test with real inboxes at v1-FS-12; demo scale is far below the limit; a proper sender once a domain exists ([ADR 0005](../../adr/0005-email-through-gmail.md)) |
+| Vercel's free plan is for non-commercial use only | Fine for a college pitch; paid plan when paying CAs arrive ([ADR 0003](../../adr/0003-hosting-and-data-region.md)) |
+| The repository is public, so a leaked key or a backup would be public too | Keys only in env files and settings (checked: none in git history); backups encrypted ([ADR 0009](../../adr/0009-timed-jobs-and-backups.md)); secret scan in v1-QA-3 |
 
 ## Mocks & debt
 None. Any `// MOCK:` in the code must be listed here.

@@ -45,6 +45,7 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | 2026-10-21 | **Tagline: "One calendar. No missed deadlines."** (Claude's pick, as Lakshay asked). **No Hindi in new design work** (Lakshay): boards, screens and the demo use Anek Latin only; the existing Hindi styles and samples stay until he says otherwise. Brand board pictures are drawn shapes, no AI images. |
 | 2026-10-21 | **Reminder days** (Lakshay): licences count from an **apply-by date** (expiry minus the legal lead time), reminders 90/60/30 days before it. Filings: a **morning list** for the firm, a **Monday list** for the owner, plus a task email. Rules in UX-4 below; README F7, F10 and criteria 9 and 12 updated. |
 | 2026-10-21 | **Notion joins Odoo as a design reference** (Lakshay): feel and motion, side peek for the thread panel; brand and colours unchanged ([study 3](../research/design-references.md#study-3-light-notion)). **UX-4 runs to gate PM-12 without stopping** (Lakshay): review point 6 becomes a heads-up; Claude stops only for a question it can't settle, at the end of a Figma day, or at the gate. Small open points go on "Review later" (UX-4). |
+| 2026-10-21 | **Build decisions agreed** (Lakshay): one Next.js app, Supabase, Vercel free, Tailwind + shadcn/ui and more, all in [tech.md](../tech.md) and ADRs 0001 to 0009. Two effects on design: **the app doesn't name where data is kept** ("Kept safe on secure cloud servers", because v1's demo data sits in Seoul, [ADR 0003](../../../adr/0003-hosting-and-data-region.md)), so CA-03 and CA-25 change; and **the Figma variable CSS names are the token file's names**, so they must not change after UX-4. Figma's daily limit reset the same day, so design resumes before the build. |
 | 2026-10-20 | **Flows approved** (UX-1). **App map, as in the flows:** CA side menu Calendar (home) · Clients · Licences · Tasks · Settings (Firm, Team, Due-date changes, Privacy); an item opens its thread as a side panel. Owner bottom tabs Home ("What needs me") · Calendar · Licences; an item opens its thread full screen. The owner side is a phone web app opened from the email link ([idea.md](../../../../idea.md): "Mobile-First Web App"), not an app-store app. |
 
 ## Design read
@@ -138,6 +139,7 @@ _Updated 2026-10-21 at the second wrap-up (UX-3 closed; UX-4 demo-path batches A
 - [ ] The other 43 frames, flow by flow, with empty, error, loading and saving states and the 100-client frame (CA-06), in 6 batches (notes in [screens.md](screens.md#ux-4-the-other-43-frames)): ~~sign-in and sign-up 13~~ · ~~clients 5~~ · ~~client and review states 4~~ · ~~licences and owner home 9~~ · ~~tasks and thread states 5~~ (done 2026-10-21) · settings and reminder email 7
 - [ ] Apply the UX-4 fixes from the heuristic self-check (UX-2 section). Done: #2 plain reason first and #5 count on the button (CA-13), #3 Undo and Edit (CA-21c). Left: #1 loading, saving and empty states (with the other 43 frames)
 - [ ] Check CA screens at 1366 px and owner screens at 360 px
+- [ ] Polish pass, the modern look (Odoo and Notion): rounder corners by editing `Radius` values, `shadow/float` on the thread panel, modals, menus and toasts; fixes: the 16 px `Textarea` label on CA screens, CA-08's "not on the calendar yet" note (Form 140 and advance tax are ✅ now), **CA-03 privacy wording** (no place named, 2026-10-21), and anything the width checks find
 - [ ] Behaviour notes as Dev Mode annotations; Lakshay marks finished screens "Ready for dev" (by hand)
 - [ ] Clickable demo: demo path only, start point "Demo", agreed motion, motion review table
 - [ ] Design QA: every item in "Checks" below; builder check by a fresh helper agent; fresh-eyes pass the next day
@@ -161,7 +163,7 @@ The real app is built from this Figma file through the MCP. So during design:
 - Auto layout everywhere, so the MCP returns flexible layouts, not fixed positions.
 - Behaviour notes go on screens as Dev Mode annotations, e.g. "row click opens the thread panel". Lakshay marks finished screens "Ready for dev" by hand.
 
-How stage 2 uses it goes in tech.md. **Code Connect** (links each Figma component to its code version) is `UNVERIFIED` for our Education plan: Figma's [developer docs](https://developers.figma.com/docs/code-connect/) list Professional, Organization and Enterprise, but not Education. If we can't use it, a mapping table in tech.md does the same job.
+How stage 2 uses it is in [tech.md](../tech.md#figma-to-code). **Code Connect** (links each Figma component to its code version) is `UNVERIFIED` for our Education plan: Figma's [developer docs](https://developers.figma.com/docs/code-connect/) list Professional, Organization and Enterprise, but not Education. If we can't use it, a mapping table in tech.md does the same job.
 
 ## Setup (done 2026-10-19)
 - **Drawing test passed:** Claude can write to `complypilot`. The 7 pages exist; their IDs are in `figma-ledger.json`.

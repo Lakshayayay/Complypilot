@@ -32,7 +32,7 @@ Researched 2026-10-05.
 | **Private Document Storage** | Filing receipts and licence PDFs stored in private cloud buckets; accessible only via short-lived, signed URLs | v1-FS-7 |
 | **Right to Data Portability** | One-click export enabling a firm to download all metadata (JSON) and uploaded files (ZIP) for any client | v1-FS-9 |
 | **Right to Erasure** | Complete hard-delete cascading across client tables and object storage upon firm request | v1-FS-9 |
-| **Data Residency** | Deploy database and object storage in Indian cloud data centers (e.g. AWS Mumbai / Supabase India region) | v1-FS-1 |
+| **Data Residency** | Keep the database and object storage in Indian cloud data centers (e.g. AWS Mumbai / Supabase India region). **v1 exception (Lakshay, 2026-10-21):** v1 holds made-up data only, so the demo project stays in Seoul and the training project in Tokyo; the move to Mumbai comes before the first real client's data ([ADR 0003](../../../adr/0003-hosting-and-data-region.md)) | first real-user version |
 | **Breach Protocol** | Defined runbook establishing 72-hour incident evaluation and notification procedures | v1-FS-9 |
 
 ## Primary Sources
