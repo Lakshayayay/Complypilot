@@ -163,3 +163,13 @@ Built flow by flow on `06 Screens`, one section per batch below `demo-path`. Sam
 | CA-09 Import CSV | Three steps: download the template, fill it in (needed and optional columns from [import-formats.md](research/import-formats.md)), upload (a dashed drop area); the loading state is shown: "clients_october.csv, Uploading, 60%" |
 | CA-10 Import report | "95 clients added" (saved already) and "5 rows need fixing", a table of row, client, column and what to fix in plain words, "Download the 5 rows to fix" and "Go to clients" (criterion 3) |
 - **Checks:** read-back on the 5 frames, 922 layers: 0 typed-in colours (627 bound), 0 loose corners, gaps or padding, all 331 texts styled and Anek Latin, no dashes, no cut-off text.
+
+**Batch 3: client and review states, F-04 and F-05 (4 frames, built 2026-10-21).** Section `batch-3 client and review states`.
+| Frame | What it shows |
+|---|---|
+| CA-11b Client page, invite pending | CA-11 after "Send invite": the owner card says "Invite sent Mon 19 Oct, 10:40 am. Waiting for Vikram to sign in." with "Resend invite"; factory answers "Waiting for the owner"; a toast "Invite sent to vikram@metrobeverages.in" |
+| CA-13b Factory review, needs your decision | Test factory **T5 Kumar Garments** from [applicability-delhi-haryana.md](research/applicability-delhi-haryana.md) (25 workers, residential area, garments stitching, White, 300 sq m). Factory licence: **You decide** (rule FL-3) with Needed / Not needed; registration Required (OSH-1); pollution "inform the board" (PC-1); fire Required (FN-1); boiler and waste Not required. Status "Needs your decision"; "Confirm licences" stays off until the CA decides |
+| CA-13c Factory review, edit answers | CA-13 with a note "You are changing Vikram's answers" and the 8 answers as fields (selects, number, the owner's words in a text box), Cancel and "Save answers"; "Results update after you save"; Confirm is off while editing |
+| EM-04 Licences confirmed | "5 licences are on your calendar": the five listed, "Upload your certificates so your CA can track the renewal dates", "See your licences" |
+- **Checks:** read-back on the 4 frames, 514 layers: 0 typed-in colours (393 bound), 0 loose corners, gaps or padding, all 195 texts styled and Anek Latin, no dashes, no cut-off text.
+- **For the polish pass:** the `Textarea` label is 16 px (owner size); on CA screens it should match the 14 px field labels.
