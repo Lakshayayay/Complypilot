@@ -120,7 +120,9 @@
     "batch3Section": "137:4559",
     "batch3Frames": { "CA-11b": "137:4560", "CA-13b": "137:4723", "CA-13c": "138:4797", "EM-04": "137:4703" },
     "batch4Section": "140:4994",
-    "batch4Frames": { "CA-16": "140:4995", "CA-16b": "140:5470", "CA-17": "140:5570", "OW-08": "141:5492", "OW-08b": "141:5581", "OW-09": "141:5644", "OW-10": "141:5823", "OW-10b": "141:6011", "OW-12": "141:6071" }
+    "batch4Frames": { "CA-16": "140:4995", "CA-16b": "140:5470", "CA-17": "140:5570", "OW-08": "141:5492", "OW-08b": "141:5581", "OW-09": "141:5644", "OW-10": "141:5823", "OW-10b": "141:6011", "OW-12": "141:6071" },
+    "batch5Section": "144:5794",
+    "batch5Frames": { "CA-18": "144:5795", "CA-18b": "144:6077", "CA-19": "144:6220", "CA-21b": "144:6369", "EM-05": "144:6931" }
   },
   "foundations": {
     "note": "UX-3 phase B, built 2026-10-20. Variables live in the file (not on a page). The sheet on page 04 Foundations shows them; everything on it is bound. Variable IDs: Primitives 54:3-54:23, Color 54:25-54:52, Spacing 54:54-54:65, Radius 54:67-54:70; look up by collection and name, not by ID.",

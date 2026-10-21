@@ -189,3 +189,13 @@ Built flow by flow on `06 Screens`, one section per batch below `demo-path`. Sam
 - **Owner pages that are taller than the phone** (OW-08, OW-10, OW-12) grow downwards, as a scrolling page does; the others stay 844 px with the tabs at the bottom.
 - **Checks:** read-back on the 9 frames, 1,050 layers: 0 typed-in colours (759 bound), 0 loose corners, gaps or padding, all 362 texts styled and Anek Latin, no dashes, no cut-off text or content, no phone button under 44 px.
 - **Review later (Lakshay):** licence numbers, offices and the Delhi fire certificate date are made-up demo data; "renew every year on e-District Delhi" comes from the UX-2 wireframe and should be rechecked against [licences.md](research/licences.md) in stage 2.
+
+**Batch 5: tasks and thread states, F-08 and F-09 (5 frames, built 2026-10-21).** Section `batch-5 tasks and thread states`.
+| Frame | What it shows |
+|---|---|
+| CA-18 Tasks | The firm's own tasks (they show on the calendar as "Task: …"), soonest first: each with a tick box, client (or "No client", "48 clients"), due date and how it repeats. PF is tracked here because its date isn't confirmed in the app yet |
+| CA-18b After ticking a repeating task | The TDS-challan task now shows its next date, Wed 25 Nov ("Next one, made when the last was ticked"), and a toast "Done. The next one is due Wed 25 Nov." with Undo |
+| CA-19 New task (window) | Task, client (optional), first due date, repeats, with the month-end rule as help text: "A task on the 31st moves to the last day of shorter months, for example 30 June" and "Next dates: 31 Dec, 31 Mar, 30 Jun, 30 Sep" (criterion 10) |
+| CA-21b Mark done, file problem | The Mark done window with the receipt "GSTR3B_ack.heic" in the error state ("Wrong file type") and plain words: upload a PDF, JPG or PNG up to 10 MB, iPhone photos can be saved as JPG; "Mark done" stays off |
+| EM-05 Task email to the owner | "Task from your CA: Upload purchase bills for September", due today 5 pm, "Open the task" (opens OW-11) |
+- **Checks:** read-back on the 5 frames, 1,012 layers: 0 typed-in colours (740 bound), 0 loose corners, gaps or padding, all 321 texts styled and Anek Latin, no dashes. A clipped task column (cells left at a fixed height) was found by screenshot and fixed.

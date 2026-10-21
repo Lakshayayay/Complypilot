@@ -135,7 +135,7 @@ _Updated 2026-10-21 at the second wrap-up (UX-3 closed; UX-4 demo-path batches A
 - [x] Demo-path screens: 22 frames in 5 batches by demo beat (section `demo-path` on `06 Screens`): A beats 1 to 3 (3 frames) · B beat 4 (4) · C beats 5 and 6 (7) · D beat 7 (1) · E beats 8 to 11 (7) (2026-10-21)
 - [x] Before batch E: ARN format checked (fits; UX-4 notes); batch A to D notes moved to [screens.md](screens.md); `06 Screens` page brief updated (2026-10-21)
 - [ ] Review point 6 (a heads-up since 2026-10-21, no stop): Lakshay looks at the 22 demo frames when he likes
-- [ ] The other 43 frames, flow by flow, with empty, error, loading and saving states and the 100-client frame (CA-06), in 6 batches (notes in [screens.md](screens.md#ux-4-the-other-43-frames)): ~~sign-in and sign-up 13~~ · ~~clients 5~~ · ~~client and review states 4~~ · ~~licences and owner home 9~~ (done 2026-10-21) · tasks and thread states 5 · settings and reminder email 7
+- [ ] The other 43 frames, flow by flow, with empty, error, loading and saving states and the 100-client frame (CA-06), in 6 batches (notes in [screens.md](screens.md#ux-4-the-other-43-frames)): ~~sign-in and sign-up 13~~ · ~~clients 5~~ · ~~client and review states 4~~ · ~~licences and owner home 9~~ · ~~tasks and thread states 5~~ (done 2026-10-21) · settings and reminder email 7
 - [ ] Apply the UX-4 fixes from the heuristic self-check (UX-2 section). Done: #2 plain reason first and #5 count on the button (CA-13), #3 Undo and Edit (CA-21c). Left: #1 loading, saving and empty states (with the other 43 frames)
 - [ ] Check CA screens at 1366 px and owner screens at 360 px
 - [ ] Behaviour notes as Dev Mode annotations; Lakshay marks finished screens "Ready for dev" (by hand)
