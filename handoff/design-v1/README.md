@@ -3,7 +3,7 @@
 Everything you need to carry on the v1 design work (stage 1) without the chat history: where we are, the plan stage by stage, the decisions, the user flows, the research, and the rules for working with Lakshay and with Figma.
 
 **Snapshot:** refreshed 2026-10-21 (end of the Figma day). If a file in `context/` differs from the same file under `docs/` in the repository, `docs/` is right.
-**Figma links:** Lakshay gives you these himself. (The file keys are also in `context/docs/versions/v1/figma-ledger.json`.)
+**Figma links:** Lakshay gives you these himself. (The file keys are also in `context/docs/versions/v1/design/figma-ledger.json`.)
 
 ## The product in one minute
 - **ComplyPilot** is a shared compliance calendar between an Indian **CA firm** (chartered accountants) and its **factory-owner clients** (MSMEs, small and medium factories). It sits on top of Tally/Winman. It is not a ledger, a tax engine or an ERP.
@@ -20,15 +20,15 @@ Everything you need to carry on the v1 design work (stage 1) without the chat hi
 | **Stage 1, design** | **In progress, near the end.** UX-1 flows, UX-2 wireframes and UX-3 brand are approved; UX-4 detailed screens: 58 of 65 frames built on `06 Screens` |
 | Next | Batch 6 (7 settings frames), then width checks, polish pass, Dev Mode notes, clickable demo, design QA, then gate PM-12 |
 
-The stage 1 checklist (done and remaining) is in [design.md](context/docs/versions/v1/design.md), section "Stage 1 plan: done and remaining". What each built frame shows is in [screens.md](context/docs/versions/v1/screens.md).
+The stage 1 checklist (done and remaining) is in [design.md](context/docs/versions/v1/design/design.md), section "Stage 1 plan: done and remaining". What each built frame shows is in [screens.md](context/docs/versions/v1/design/screens.md).
 
 ## Read in this order
 1. This file.
 2. [context/docs/STATUS.md](context/docs/STATUS.md): the short "where are we" note.
 3. [context/docs/versions/v1/README.md](context/docs/versions/v1/README.md): the v1 plan (goal, features, acceptance criteria, tasks by stage).
-4. [context/docs/versions/v1/design.md](context/docs/versions/v1/design.md): the stage 1 doc (concepts, decisions, checklist, Figma rules, checks).
-   Then [screens.md](context/docs/versions/v1/screens.md): the screen list and what each built frame shows.
-5. [context/docs/versions/v1/flows.md](context/docs/versions/v1/flows.md): the 12 user flows, the demo story, the edge cases.
+4. [context/docs/versions/v1/design/design.md](context/docs/versions/v1/design/design.md): the stage 1 doc (concepts, decisions, checklist, Figma rules, checks).
+   Then [screens.md](context/docs/versions/v1/design/screens.md): the screen list and what each built frame shows.
+5. [context/docs/versions/v1/design/flows.md](context/docs/versions/v1/design/flows.md): the 12 user flows, the demo story, the edge cases.
 6. As needed: the research in [context/docs/versions/v1/research/](context/docs/versions/v1/research/) (see the table below), and [context/AGENTS.md](context/AGENTS.md), the project rules.
 
 ## What is in this folder
@@ -39,10 +39,10 @@ The stage 1 checklist (done and remaining) is in [design.md](context/docs/versio
 | `context/idea.md` | The vision and ideas log (v1 is drawn from it) |
 | `context/docs/STATUS.md` | Short status note |
 | `context/docs/versions/v1/README.md` | The v1 plan: goal, 12 features, acceptance criteria, tasks for stages 0 to 5, risks |
-| `context/docs/versions/v1/design.md` | The stage 1 doc |
-| `context/docs/versions/v1/flows.md` | User flows as text (the source for the FigJam board) |
-| `context/docs/versions/v1/screens.md` | The 65 screens, which flow step each covers, and what each built frame shows |
-| `context/docs/versions/v1/figma-ledger.json` | Figma file keys and the IDs of pages and frames |
+| `context/docs/versions/v1/design/design.md` | The stage 1 doc |
+| `context/docs/versions/v1/design/flows.md` | User flows as text (the source for the FigJam board) |
+| `context/docs/versions/v1/design/screens.md` | The 65 screens, which flow step each covers, and what each built frame shows |
+| `context/docs/versions/v1/design/figma-ledger.json` | Figma file keys and the IDs of pages and frames |
 | `context/docs/versions/v1/research/design-references.md` | The reference study: 16 pages, what we learned, what to avoid |
 | `context/docs/versions/v1/research/design-refs/` | The 16 full-page screenshots (kept out of git) |
 | `context/docs/versions/v1/research/applicability-delhi-haryana.md` | The licence rules behind the factory questions, with 9 test factories |

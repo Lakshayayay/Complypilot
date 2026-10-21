@@ -1,6 +1,6 @@
 # v1 — Shared Compliance Calendar
 
-**Stage:** 1 Design [UX] → [design.md](design.md) (stage 0 approved 2026-10-18). Scope locked 2026-10-17. Any change from here is written down in this file.
+**Stage:** 1 Design [UX] → [design.md](design/design.md) (stage 0 approved 2026-10-18). Scope locked 2026-10-17. Any change from here is written down in this file.
 **Time:** no deadlines or hour budgets. Progress = the task checklist below.
 **Vision and ideas:** [idea.md](../../../idea.md)
 

@@ -23,11 +23,12 @@ Each version README is the full plan we agree on together: goal, users, features
 
 Stages inside every version (in order; the next starts only after the gate is approved):
 0 Plan & Research [PM] → README.md, research/
-1 Design [UX]          → design.md
+1 Design [UX]          → design/ (design.md, flows.md, screens.md, figma-ledger.json)
 2 Build [FS]           → tech.md
 3 Intelligence [AI]    → ai.md
 4 Test & Release [QA]  → test.md
 5 Checkpoint           → review.md
+A stage with more than one file gets its own folder in the version (like design/); the stage doc keeps its name.
 
 - Every task has a track tag and an ID, e.g. v1-FS-3. [PM] product · [UX] UI/UX · [FS] full-stack & system design · [AI] AI/ML & data engineering · [QA] testing, CI/CD, deploy, monitoring.
 - Stage docs are created when their stage starts. Each opens with "Learn first": the concepts that stage needs, explained simply, with primary sources.

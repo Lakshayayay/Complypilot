@@ -1,6 +1,6 @@
 # v1 Design (stage 1)
 
-**Stage:** 1 Design [UX], started 2026-10-19. **Tasks:** UX-1 to UX-4 and the gate PM-12, in the [README](README.md). **Study:** [design-references.md](research/design-references.md).
+**Stage:** 1 Design [UX], started 2026-10-19. **Tasks:** UX-1 to UX-4 and the gate PM-12, in the [README](../README.md). **Study:** [design-references.md](../research/design-references.md).
 **Figma:** design file [complypilot](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot) · FigJam board [ComplyPilot v1 flows](https://www.figma.com/board/bZB8Y1uSb5rAIYV0BOQpRh) · **Flows:** [flows.md](flows.md).
 
 ## Learn first
@@ -44,8 +44,8 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | 2026-10-20 | **Vision: a modern look** (rounder corners, soft floating shadows, gentle animations), applied in a **polish pass in UX-4**. Today's base stays until then. Corners are `Radius` variables and shadows are effect styles (with `shadow/float`), so the change is a value edit, not a redraw. Motion keeps the agreed rules (≤ 200 ms for frequent actions, ease-out, "reduce motion"), and the brand's "isn't" words still apply: no glow, no gradients, no animation everywhere. |
 | 2026-10-21 | **Tagline: "One calendar. No missed deadlines."** (Claude's pick, as Lakshay asked). **No Hindi in new design work** (Lakshay): boards, screens and the demo use Anek Latin only; the existing Hindi styles and samples stay until he says otherwise. Brand board pictures are drawn shapes, no AI images. |
 | 2026-10-21 | **Reminder days** (Lakshay): licences count from an **apply-by date** (expiry minus the legal lead time), reminders 90/60/30 days before it. Filings: a **morning list** for the firm, a **Monday list** for the owner, plus a task email. Rules in UX-4 below; README F7, F10 and criteria 9 and 12 updated. |
-| 2026-10-21 | **Notion joins Odoo as a design reference** (Lakshay): feel and motion, side peek for the thread panel; brand and colours unchanged ([study 3](research/design-references.md#study-3-light-notion)). **UX-4 runs to gate PM-12 without stopping** (Lakshay): review point 6 becomes a heads-up; Claude stops only for a question it can't settle, at the end of a Figma day, or at the gate. Small open points go on "Review later" (UX-4). |
-| 2026-10-20 | **Flows approved** (UX-1). **App map, as in the flows:** CA side menu Calendar (home) · Clients · Licences · Tasks · Settings (Firm, Team, Due-date changes, Privacy); an item opens its thread as a side panel. Owner bottom tabs Home ("What needs me") · Calendar · Licences; an item opens its thread full screen. The owner side is a phone web app opened from the email link ([idea.md](../../../idea.md): "Mobile-First Web App"), not an app-store app. |
+| 2026-10-21 | **Notion joins Odoo as a design reference** (Lakshay): feel and motion, side peek for the thread panel; brand and colours unchanged ([study 3](../research/design-references.md#study-3-light-notion)). **UX-4 runs to gate PM-12 without stopping** (Lakshay): review point 6 becomes a heads-up; Claude stops only for a question it can't settle, at the end of a Figma day, or at the gate. Small open points go on "Review later" (UX-4). |
+| 2026-10-20 | **Flows approved** (UX-1). **App map, as in the flows:** CA side menu Calendar (home) · Clients · Licences · Tasks · Settings (Firm, Team, Due-date changes, Privacy); an item opens its thread as a side panel. Owner bottom tabs Home ("What needs me") · Calendar · Licences; an item opens its thread full screen. The owner side is a phone web app opened from the email link ([idea.md](../../../../idea.md): "Mobile-First Web App"), not an app-store app. |
 
 ## Design read
 From the design-taste-frontend skill: "Reading this as **a work tool for small Indian CA firms (desktop, dense) plus a phone companion for factory owners**, with a **calm, trust-first, crisp** language, leaning toward **Carbon-style data patterns and GOV.UK/UX4G plain-word status rules**. It's bold only in brand moments."
@@ -116,7 +116,7 @@ _Updated 2026-10-21 at the second wrap-up (UX-3 closed; UX-4 demo-path batches A
 - [x] Tick v1-UX-2 in the README; Cover and brief chips to "Done"; commit
 
 **UX-3 Brand and design basics (approved by Lakshay 2026-10-21)**
-- [x] Study 2 (light, 2026-10-20): Odoo as the main guide, plus Tally and Winman. Basic principles and a few images in [design-references.md](research/design-references.md#study-2-light-odoo-tally-winman). Guides, not rules
+- [x] Study 2 (light, 2026-10-20): Odoo as the main guide, plus Tally and Winman. Basic principles and a few images in [design-references.md](../research/design-references.md#study-2-light-odoo-tally-winman). Guides, not rules
 - [x] Brand interview, 8 questions, one at a time (review point 3, done 2026-10-20). Answers: UX-3 section below
 - [ ] Domain and trademark check (IP India and domains), with the date. Lakshay does it later, by hand (wants complypilot.com)
 - [x] Strategy: category, promise, one metaphor (confirmed by Lakshay 2026-10-20)
@@ -233,7 +233,7 @@ _Started 2026-10-20. Brand interview done the same day._
 - **Logo seeds:** two seats side by side; a date with a tick.
 - **Readers:** a small CA firm (~100 clients) on a desktop; owners of 45 to 55 and of 28 to 35 on a phone (big and simple, and quick); a college jury on a projector.
 - **Font candidates:** IBM Plex Sans + IBM Plex Sans Devanagari · Noto Sans + Noto Sans Devanagari (UX4G uses this pair) · Anek Latin + Anek Devanagari. All are in Figma (setup, 2026-10-19).
-- **Brand accent:** Odoo's palette is the main guide: a deep, muted main colour, a teal second colour, greys ([study 2](research/design-references.md#study-2-light-odoo-tally-winman)). Close to its feel, not a copy of its exact plum. Keep it apart from the status colours, and note the colours competitors use ([lesson 4](research/design-references.md#what-we-take-from-it)).
+- **Brand accent:** Odoo's palette is the main guide: a deep, muted main colour, a teal second colour, greys ([study 2](../research/design-references.md#study-2-light-odoo-tally-winman)). Close to its feel, not a copy of its exact plum. Keep it apart from the status colours, and note the colours competitors use ([lesson 4](../research/design-references.md#what-we-take-from-it)).
 - **Steps:** interview → strategy (category, promise, one metaphor) → 3 logo directions, each with its meaning and construction → Lakshay picks one → colour and a contrast table → type scale (tabular numbers on number styles) → spacing on a 4-point scale, one corner-size system, layout grids (CA 12 columns, owner 4) → status system (at most 6: word + icon + colour) → voice (plain words, no em-dashes, realistic Indian demo names) → motion → variables, styles and components in Figma → 3×3 brand board, logo, app icon, favicon (16/32/180/512).
 - **Components** (built in this order): icons → button → input, select, checkbox, radio → status chip → tag → avatar → file chip → side menu, phone tab bar, top bar → table row → calendar day cell and item chip → thread message → licence card → licence result row (Required / Not required / Inform / Ask CA, with its source) → step indicator → toast → modal → empty state.
 - **More study, done here:** a 10-heuristic audit of Jamku, Zoho Practice, Karbon and Winman, and phone references at 390 px (e.g. Typeform, a mobile import screen).
@@ -251,11 +251,11 @@ _Started 2026-10-20. Brand interview done the same day._
 
 Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#6B4200` on `#FDF0D2`, waiting `#1E4E79` on `#E4EEF8`, upcoming `#3F4A50` on `#EAEEF0`, done `#1B6137` with no background (lowest ratio 6.48).
 - **Contrast (WCAG AA):** a small script (Python, formula from WCAG 2.2; its black-on-white = 21:1 self-check passed) checked 16 pairs per direction: text needs 4.5:1, input borders 3:1. **All pass.** The script is not kept in the repo; the hex values here are enough to repeat it.
-- **Hue** (a colour's place on the colour wheel, in degrees): the nearest competitor colour ([lesson 4](research/design-references.md#what-we-take-from-it)) is 32° away for A (violet and blue), 30° for B (blue) and 34° for C (green). C's mulberry is also about 32° from the "late" red; the chip's word and icon carry the meaning, never colour alone.
+- **Hue** (a colour's place on the colour wheel, in degrees): the nearest competitor colour ([lesson 4](../research/design-references.md#what-we-take-from-it)) is 32° away for A (violet and blue), 30° for B (blue) and 34° for C (green). C's mulberry is also about 32° from the "late" red; the chip's word and icon carry the meaning, never colour alone.
 - **Logo at 16 px:** B reads clearly. A reads as two seat shapes, but is close to a generic "users" icon. C reads as a calendar with two dots; its seats are too small below about 24 px, so the favicon could drop them. All three work in one colour and reversed.
 - **Projector:** the calendar sample rendered at 1024 px wide still shows chip words, dates and client names clearly. 1024 px as a projector width is an assumption (`UNVERIFIED`); a real projector test is optional.
 - **Taste pre-flight:** one main and one second colour per direction, corner sizes 6 / 10 / 16 only, no em-dashes in copy, no small label above every section.
-- **Sample data:** dates use only ✅ rows of [due-dates.md](research/due-dates.md): GSTR-3B monthly 20 Oct, tax audit report 21 Oct (extended), ESIC 15 Oct (so "5 days late"), GSTR-3B quarterly for Delhi and Haryana 24 Oct, PMT-06 25 Oct. The licence and the two tasks are made-up demo items.
+- **Sample data:** dates use only ✅ rows of [due-dates.md](../research/due-dates.md): GSTR-3B monthly 20 Oct, tax audit report 21 Oct (extended), ESIC 15 Oct (so "5 days late"), GSTR-3B quarterly for Delhi and Haryana 24 Oct, PMT-06 25 Oct. The licence and the two tasks are made-up demo items.
 - **Exceptions (like the References page):** these frames use typed-in hex colours (variables come in phase B). The status icons are simple glyphs drawn for this sample (Phosphor icons arrive in phase C). The logo cut-outs are paper-coloured strokes; real cut-out shapes come with the logo files.
 
 **Foundations (phase B, built 2026-10-20).** Figma: `04 Foundations`, frame `foundations-sheet` ([open](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot?node-id=56-2)). Every colour, gap, corner and text on the sheet is bound to a variable or a style (read-back: 552 bound paints, 0 typed-in; 278 texts, all with a style, all Anek).
@@ -325,7 +325,7 @@ _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screen
 - Chip words are about 8 px on a 1024 px projector (`UNVERIFIED` width): no change until a real projector test.
 - CA-13 status word "Waiting for your check" (blue `waiting` chip), and no confidence number on the AI card.
 
-**Reminder days (agreed by Lakshay 2026-10-21).** Facts from [licences.md](research/licences.md) (checked 2026-10-18).
+**Reminder days (agreed by Lakshay 2026-10-21).** Facts from [licences.md](../research/licences.md) (checked 2026-10-18).
 | Kind | Rule | Why |
 |---|---|---|
 | Licence | **Apply by** = expiry minus the lead time: Delhi factory licence 30 days (✅ 25% late fee after that), Delhi fire certificate 180 days (⚠️ sources disagree), every other type 0. The CA can change it on the licence | A reminder that arrives after the late fee starts is too late |
@@ -334,7 +334,7 @@ _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screen
 | Owner | One email each Monday: their items due in the next 10 days, and anything waiting on them. Plus an email right away when the CA gives them a task (EM-05) | 6 to 8 filings a month per factory; per-item emails would be ignored |
 | Both | Licences on a reminder day join both lists. Done items never appear | Criterion 12 |
 
-**Demo cast** (made up; all screens use it, so the demo story stays consistent). "Today" = Monday 19 Oct 2026. Dates only from ✅ rows of [due-dates.md](research/due-dates.md). English only.
+**Demo cast** (made up; all screens use it, so the demo story stays consistent). "Today" = Monday 19 Oct 2026. Dates only from ✅ rows of [due-dates.md](../research/due-dates.md). English only.
 - **Firm:** Kapoor & Associates, Delhi, about 100 factory clients. Rakesh Kapoor (CA, partner) and Priya Malhotra (staff).
 - **Clients:** Verma Textiles (ESIC for September, due 15 Oct: 4 days late) · Sharma Castings, Delhi (factory licence expires 31 Dec 2026, apply by 1 Dec: Renew soon) · Singh Auto Parts (boiler certificate: Done) · Khanna Packaging (fire certificate scan: Waiting on owner) · Sunrise Plastics, Haryana, test factory T2 (hazardous waste authorisation expires 15 Jan 2027: Renew soon; owner Kavita Yadav) · Metro Beverages Pvt Ltd, Delhi, test factory T3 (the new client in beat 4; GSTIN 07AAECM4821K1Z3; owner Vikram Malhotra, as in the approved wireframes).
 - **This fortnight:** GSTR-3B monthly 20 Oct (48 clients) · tax audit report 21 Oct (extended) · GSTR-3B quarterly 24 Oct (Delhi and Haryana) · TDS salary return, Form 138, 31 Oct · TDS deposit 7 Nov · GSTR-1 monthly 11 Nov · ITR for audit cases 21 Nov (extended).

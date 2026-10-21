@@ -1,6 +1,6 @@
 # Design References (v1 Research, for Stage 1 Design)
 
-A study of 16 pages from similar or admired products: what to copy and what to avoid. Used by [design.md](../design.md).
+A study of 16 pages from similar or admired products: what to copy and what to avoid. Used by [design.md](../design/design.md).
 
 - **Captured 2026-10-19**, full page at 1440 px wide, with Playwright. The images are in [design-refs/](design-refs/) and stay out of git (they are other companies' pages).
 - **Checked 2026-10-19:** quoted words were matched against each live page's text; claims about images were checked by eye on the captures; colours were measured with ImageMagick (the top 1800 px of each page).

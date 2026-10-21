@@ -2,7 +2,7 @@
 
 **Version:** v1 — Shared Compliance Calendar · **Stage:** 1 Design [UX], in progress (UX-4: batch 6 next) · **Last updated:** 2026-10-21 (end of the Figma day)
 **Where we stopped:** UX-3 is approved and closed. **All 22 demo-path screens are built**, and **36 of the other 43 frames** (batches 1 to 5). UX-4 runs to gate PM-12 without stopping (Lakshay, 2026-10-21). **Next, in a new chat: batch 6, settings and the firm's reminder email (7 frames).** Nothing is half-built; everything is committed and pushed.
-**Plan for this version:** [v1 README](versions/v1/README.md) · **Stage doc, with the checklist, the UX-4 notes and every result:** [design.md](versions/v1/design.md) · **Figma IDs:** [figma-ledger.json](versions/v1/figma-ledger.json) · **Screens and what each frame shows:** [screens.md](versions/v1/screens.md) · **Flows:** [flows.md](versions/v1/flows.md) · **Rules:** [AGENTS.md](../AGENTS.md)
+**Plan for this version:** [v1 README](versions/v1/README.md) · **Stage doc, with the checklist, the UX-4 notes and every result:** [design.md](versions/v1/design/design.md) · **Figma IDs:** [figma-ledger.json](versions/v1/design/figma-ledger.json) · **Screens and what each frame shows:** [screens.md](versions/v1/design/screens.md) · **Flows:** [flows.md](versions/v1/design/flows.md) · **Rules:** [AGENTS.md](../AGENTS.md)
 
 ## Done
 - **Stage 0 approved 2026-10-18.** v1 scope is locked: 12 features F1–F12.

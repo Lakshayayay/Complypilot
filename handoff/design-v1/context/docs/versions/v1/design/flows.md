@@ -74,7 +74,7 @@ flowchart LR
 ```
 
 ## F-03 Add clients (F2, F5)
-By hand or by CSV. A CSV saves its good rows at once and reports the rest by row number and reason, e.g. a bad GSTIN or a PAN the firm already has ([import-formats.md](research/import-formats.md)). Saved clients get their due dates worked out.
+By hand or by CSV. A CSV saves its good rows at once and reports the rest by row number and reason, e.g. a bad GSTIN or a PAN the firm already has ([import-formats.md](../research/import-formats.md)). Saved clients get their due dates worked out.
 ```mermaid
 flowchart LR
     start([Clients page])
@@ -133,7 +133,7 @@ flowchart LR
 ```
 
 ## F-05 Factory questions and CA review (F4, F11)
-About 10 questions ([applicability-delhi-haryana.md](research/applicability-delhi-haryana.md)): state, workers, power, area type, what you make (in plain words, read by the AI matcher), boiler, waste, floor area. Each licence comes back as **Required, Not required, Inform the board, or Ask your CA**, with its source. Unsure cases give "Ask your CA": outside Delhi and Haryana (OT-1), workers in the grey band (FL-2), a Delhi factory outside a conforming industrial area (FL-3), a Red industry in Delhi (PC-3), a sector not on the list (PC-4). Nothing reaches a calendar until the CA confirms.
+About 10 questions ([applicability-delhi-haryana.md](../research/applicability-delhi-haryana.md)): state, workers, power, area type, what you make (in plain words, read by the AI matcher), boiler, waste, floor area. Each licence comes back as **Required, Not required, Inform the board, or Ask your CA**, with its source. Unsure cases give "Ask your CA": outside Delhi and Haryana (OT-1), workers in the grey band (FL-2), a Delhi factory outside a conforming industrial area (FL-3), a Red industry in Delhi (PC-3), a sector not on the list (PC-4). Nothing reaches a calendar until the CA confirms.
 ```mermaid
 flowchart LR
     subgraph ownerSide ["Owner, phone"]
@@ -176,7 +176,7 @@ flowchart LR
 ```
 
 ## F-06 Calendar (F6)
-The CA sees every client; the owner sees only their own items. A day shows its most urgent status (Carbon's rule, see the [study](research/design-references.md)).
+The CA sees every client; the owner sees only their own items. A day shows its most urgent status (Carbon's rule, see the [study](../research/design-references.md)).
 ```mermaid
 flowchart LR
     subgraph caSide ["CA, desktop"]
@@ -208,7 +208,7 @@ flowchart LR
 ```
 
 ## F-07 Licence tracker (F7)
-Warnings at 90, 60 and 30 days, then "Expired". No expiry date shows "Valid until cancelled" ([licences.md](research/licences.md)). Earlier reminder days for some licences are agreed in UX-4.
+Warnings at 90, 60 and 30 days, then "Expired". No expiry date shows "Valid until cancelled" ([licences.md](../research/licences.md)). Earlier reminder days for some licences are agreed in UX-4.
 ```mermaid
 flowchart LR
     start([Licences page])
@@ -315,7 +315,7 @@ flowchart LR
 ```
 
 ## F-11 Override dates (F5)
-When the government extends a date (e.g. CBDT Circular 07/2026 moved the AY 2026-27 audit dates, [due-dates.md](research/due-dates.md)), the CA changes it once and every affected client updates (acceptance criterion 7).
+When the government extends a date (e.g. CBDT Circular 07/2026 moved the AY 2026-27 audit dates, [due-dates.md](../research/due-dates.md)), the CA changes it once and every affected client updates (acceptance criterion 7).
 ```mermaid
 flowchart LR
     start([Settings])
@@ -359,7 +359,7 @@ flowchart LR
 ```
 
 ## Demo story (draft, about 5 minutes)
-Made-up data only. The two factories come from the research test set, so the licence results are already known ([test factories](research/applicability-delhi-haryana.md#test-factories-made-up-these-are-the-f4-tests)).
+Made-up data only. The two factories come from the research test set, so the licence results are already known ([test factories](../research/applicability-delhi-haryana.md#test-factories-made-up-these-are-the-f4-tests)).
 | # | Time | Who | What the audience sees |
 |---|---|---|---|
 | 1 | 0:00 | CA | Monday morning at a small Delhi CA firm: the month calendar for 100 factory clients. A few days show amber and red. |
@@ -379,16 +379,16 @@ Made-up data only. The two factories come from the research test set, so the lic
 |---|---|---|
 | Sign-in link expired | F-01 | design choice |
 | An owner who wasn't invited types their email | F-01, F-02 | design choice: sign-up tells owners to ask their CA |
-| Privacy notice not accepted | F-02 | [privacy.md](research/privacy.md) |
-| CSV rows with errors, or a GSTIN/PAN the firm already has | F-03 | [import-formats.md](research/import-formats.md) |
+| Privacy notice not accepted | F-02 | [privacy.md](../research/privacy.md) |
+| CSV rows with errors, or a GSTIN/PAN the firm already has | F-03 | [import-formats.md](../research/import-formats.md) |
 | Factory outside Delhi or Haryana | F-05 | OT-1 |
 | Workers in the grey band | F-05 | FL-2 |
 | Delhi factory outside a conforming industrial area | F-05 | FL-3 |
 | Red industry in Delhi | F-05 | PC-3 |
 | Sector not on the list | F-05 | PC-4 |
 | White exempt sector (inform the board) | F-05 | PC-1 |
-| Licence with no expiry date | F-07 | PC-5, [licences.md](research/licences.md) |
+| Licence with no expiry date | F-07 | PC-5, [licences.md](../research/licences.md) |
 | Receipt of the wrong type or over 10 MB | F-09 | README criterion 11 |
 | Repeating task on the 31st in a shorter month | F-08 | README criterion 10 |
 | No reminder for items already done | F-10 | README criterion 12 |
-| Government extends a due date | F-11 | [due-dates.md](research/due-dates.md) |
+| Government extends a due date | F-11 | [due-dates.md](../research/due-dates.md) |
