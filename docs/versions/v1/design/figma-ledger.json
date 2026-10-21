@@ -1,6 +1,6 @@
 {
   "about": "Map from fixed names to Figma node IDs, so a new chat can pick up the Figma work. Claude updates it after each Figma step. See design.md, 'How we work in Figma'.",
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "file": {
     "name": "complypilot",
     "key": "wMTrpY84cAfQiI5a9lcr0f",
@@ -122,7 +122,10 @@
     "batch4Section": "140:4994",
     "batch4Frames": { "CA-16": "140:4995", "CA-16b": "140:5470", "CA-17": "140:5570", "OW-08": "141:5492", "OW-08b": "141:5581", "OW-09": "141:5644", "OW-10": "141:5823", "OW-10b": "141:6011", "OW-12": "141:6071" },
     "batch5Section": "144:5794",
-    "batch5Frames": { "CA-18": "144:5795", "CA-18b": "144:6077", "CA-19": "144:6220", "CA-21b": "144:6369", "EM-05": "144:6931" }
+    "batch5Frames": { "CA-18": "144:5795", "CA-18b": "144:6077", "CA-19": "144:6220", "CA-21b": "144:6369", "EM-05": "144:6931" },
+    "batch6Section": "152:6826",
+    "batch6Frames": { "CA-22": "152:6827", "CA-23": "153:6734", "CA-24": "153:6932", "CA-24b": "155:6997", "CA-24c": "155:7095", "CA-25": "153:7118", "EM-06": "156:7247" },
+    "batch6Parts": { "settings-nav (in CA-22)": "152:6964", "side-panel (in CA-24b)": "155:7031", "toast (in CA-24c)": "155:7210" }
   },
   "foundations": {
     "note": "UX-3 phase B, built 2026-10-20. Variables live in the file (not on a page). The sheet on page 04 Foundations shows them; everything on it is bound. Variable IDs: Primitives 54:3-54:23, Color 54:25-54:52, Spacing 54:54-54:65, Radius 54:67-54:70; look up by collection and name, not by ID.",
