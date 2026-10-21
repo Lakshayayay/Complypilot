@@ -297,7 +297,7 @@ flowchart LR
 ```
 
 ## F-10 Email reminders (F10)
-Reminder days are agreed in UX-4. Items already marked done get no reminder (acceptance criterion 12).
+Reminder days agreed 2026-10-21 ([design.md](design.md), UX-4): the firm gets one list each morning (late items and the next 7 days); the owner gets one list each Monday (the next 10 days and anything waiting on them) and an email when the CA gives them a task. Licences count from their apply-by date. Items already marked done never appear (acceptance criterion 12).
 ```mermaid
 flowchart LR
     start([Every morning])

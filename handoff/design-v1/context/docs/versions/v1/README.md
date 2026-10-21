@@ -27,10 +27,10 @@ Tracks: [PM] product · [UX] design · [FS] full-stack · [AI] AI and data · [Q
 | F4 | **Factory questions:** about 10 simple questions (what it makes, where, workers, power, boiler, chemicals). Written rules suggest the licences that apply, each with its official source and a short plain-words note for the owner (what it is, which office gives it, where to apply). The CA checks the list before it goes on the calendar. Rules for **Delhi and Haryana** only; anywhere else the CA adds licences by hand, and an unknown case says "ask your CA" | PM · UX · FS |
 | F5 | **Due dates** worked out automatically: GST, TDS, PF, ESIC, income tax, MSME Form-1 ([due-dates.md](research/due-dates.md)). **Override dates:** when the government extends a date, change it once and every client updates | PM · FS |
 | F6 | **Shared calendar:** the CA sees all clients (by month, with filters); the owner sees only their own | UX · FS |
-| F7 | **Licence tracker:** type, number, office, issue date, optional expiry date, certificate file. Warnings at 90, 60 and 30 days, then "Expired". No expiry date shows "Valid until cancelled" ([licences.md](research/licences.md)) | FS |
+| F7 | **Licence tracker:** type, number, office, issue date, optional expiry date, certificate file, and an **apply-by date**: expiry minus how early the law wants you to apply (e.g. Delhi factory licence 30 days); the CA can edit it. Warnings at 90, 60 and 30 days before the apply-by date, then "Expired". No expiry date shows "Valid until cancelled" ([licences.md](research/licences.md); reminder days agreed 2026-10-21) | FS |
 | F8 | **CA's own tasks**, which can repeat monthly, quarterly or yearly | UX · FS |
 | F9 | **Item thread:** each calendar item has one thread with the people on it, messages, files and fixed tags (Need document / Question / Filed). **Mark done** here, with the ARN (the government's acknowledgement number) and the receipt file | UX · FS |
-| F10 | **Email reminders** before a due date, to the firm and the owner | FS · QA |
+| F10 | **Email reminders** before a due date: one list each morning for the firm, one list each Monday for the owner (agreed 2026-10-21, criterion 12) | FS · QA |
 | F11 | **AI factory type matcher:** the owner describes the factory in plain words; AI finds its official pollution category (red/orange/green/white/blue, from CPCB, the central pollution board; blue was added in February 2025, see [pollution-categories.md](research/pollution-categories.md)) and shows the line it matched. The CA confirms | AI · UX |
 | F12 | **Demo:** a realistic demo data set and a 5-minute demo story | PM · QA |
 | — | **Setup:** auto-deploy, firms can't see each other's data, error alerts, backups | FS · QA |
@@ -61,10 +61,10 @@ Each one is proven by a test or a check. All must pass at the checkpoint.
 6. **Due dates (F5):** unit tests show the official date for every filing in due-dates.md and MSME Form-1, including the QRMP 22nd/24th split by state and the March TDS payment (due 30 April).
 7. **Override (F5):** changing one due date updates it for every affected client.
 8. **Speed (F6):** the CA calendar with 100 clients × all filings for a month opens in under 2 seconds; filters respond in under 0.5 seconds.
-9. **Licences (F7):** tests at 90, 60, 30 and 0 days left, plus "no expiry date", each show the right warning.
+9. **Licences (F7):** tests at 90, 60 and 30 days before the apply-by date and at expiry, for a licence with a lead time (Delhi factory licence, 30 days) and one without, plus "no expiry date", each show the right warning.
 10. **Repeating tasks (F8):** unit tests show the right next dates for monthly, quarterly and yearly tasks, including month ends (a task on the 31st in February).
 11. **Thread (F9):** the CA and the owner can post messages and files on an item and set tags. Mark done saves the ARN, the receipt (PDF/JPG/PNG, max 10 MB), who did it and when. Files open only for that firm and that client's owner.
-12. **Reminders (F10):** a reminder email goes out on the agreed days before a due date, to the firm and the owner. No reminder for items already marked done.
+12. **Reminders (F10):** the firm gets one email each morning listing late items and items due in the next 7 days. The owner gets one email each Monday listing their items due in the next 10 days and anything waiting on them, and an email right away when the CA gives them a task. Licences on a reminder day join both lists. Items already marked done never appear.
 13. **AI (F11):** the matcher reaches its target on the eval set (a fixed set of test examples with known answers; target agreed in ai.md, draft 90%). Every answer shows the line it matched. Nothing is saved until the CA confirms.
 14. **Release:** every change to `main` deploys by itself once checks pass. Daily backups, and one test restore done. Error alerts reach Lakshay.
 15. **Demo (F12):** the "Done when" list above is met.
@@ -87,9 +87,9 @@ Each task has an ID and a track. Tick the box when its "done when" check passes.
 - [x] v1-PM-11 **Gate:** Lakshay approves stage 0 (approved 2026-10-18)
 
 ### Stage 1: Design [UX] → design.md
-- [ ] v1-UX-1 "Learn first" notes and user flows: firm sign-up → add clients → invite owner → factory questions → calendar → item thread → mark done. Done when every feature has a flow
-- [ ] v1-UX-2 Screen list and wireframes (rough layouts) for both sides, desktop for the CA and phone for the owner. Done when every step of every flow has a screen
-- [ ] v1-UX-3 Brand and design basics: logo, app icon, favicon, colours, fonts, spacing, status chips. Status is never shown by colour alone. Done when text contrast passes WCAG AA (the standard readability check) and the logo reads at 16 px (brand added 2026-10-19)
+- [x] v1-UX-1 "Learn first" notes and user flows: firm sign-up → add clients → invite owner → factory questions → calendar → item thread → mark done. Done when every feature has a flow (approved by Lakshay 2026-10-20)
+- [x] v1-UX-2 Screen list and wireframes (rough layouts) for both sides, desktop for the CA and phone for the owner. Done when every step of every flow has a screen (approved by Lakshay 2026-10-20)
+- [x] v1-UX-3 Brand and design basics: logo, app icon, favicon, colours, fonts, spacing, status chips. Status is never shown by colour alone. Done when text contrast passes WCAG AA (the standard readability check) and the logo reads at 16 px (brand added 2026-10-19; approved by Lakshay 2026-10-21)
 - [ ] v1-UX-4 Detailed calendar and item thread screens; agree the reminder days. Done when Lakshay can walk the demo story on the designs
 - [ ] v1-PM-12 **Gate:** Lakshay approves the design
 
@@ -112,12 +112,14 @@ Before any code, we agree the design together: folder and file structure, how th
 - [ ] v1-FS-14 CA's own repeating tasks → criterion 10
 - [ ] v1-FS-15 Email reminders → criterion 12
 - [ ] v1-FS-16 Demo data set: sample firms, factories, owners and threads
+- [ ] v1-PM-16 **Gate:** Lakshay approves the build. Done when the app is on a preview link with demo data, every FS task is ticked, the automatic checks pass, and Lakshay walks the demo story in the real app
 
 ### Stage 3: Intelligence [AI] → ai.md
 - [ ] v1-AI-1 "Learn first" notes. Check the data is clean. Pick the numbers we watch, e.g. how often the CA accepts or changes a suggestion
 - [ ] v1-AI-2 Eval set: plain-words factory descriptions with the correct category, built from the official CPCB list. Agree the target score
 - [ ] v1-AI-3 The matcher: plain words → category, showing the matched line; the CA confirms. It's a new service, so write an ADR first
 - [ ] v1-AI-4 Run the eval and ship only if it reaches the target → criterion 13
+- [ ] v1-PM-17 **Gate:** Lakshay approves the AI. Done when the eval score meets the agreed target, every suggestion shows its matched line and source, and nothing reaches a calendar before the CA confirms
 
 ### Stage 4: Test & Release [QA] → test.md
 - [ ] v1-QA-2 E2E tests (automated tests that click through the app like a user) for 3 flows: sign-up → add client → mark done; CSV import; owner reply in a thread
@@ -127,6 +129,7 @@ Before any code, we agree the design together: folder and file structure, how th
 - [ ] v1-PM-15 Re-check the licence rules and due dates on their official sources just before the demo (rules change, e.g. Haryana's labour rules were still a draft in May 2026). Done when every "checked on" date is refreshed
 - [ ] v1-PM-13 Pitch: 5-minute demo script and slides
 - [ ] v1-QA-6 Show the demo to 2 CAs and write down their feedback
+- [ ] v1-PM-18 **Gate:** Lakshay approves the release. Done when the E2E, security and speed checks pass, monitoring is on, production is live, and the CA feedback is written down
 
 ### Stage 5: Checkpoint → review.md
 - [ ] All acceptance criteria pass (review.md links the proof for each)
@@ -137,6 +140,7 @@ Before any code, we agree the design together: folder and file structure, how th
 - [ ] Tagged `v1.0.0` + CHANGELOG entry
 - [ ] Retro written; v2 planned
 - [ ] v1 folder frozen; anything still true moved into SYSTEM.md
+- [ ] v1-PM-19 **Gate:** Lakshay signs off v1. Done when every box above is ticked; then v2 planning starts
 
 ## Testing plan
 | Level | What it covers | When it's written |

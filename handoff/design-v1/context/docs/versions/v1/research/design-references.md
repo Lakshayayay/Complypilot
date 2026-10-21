@@ -34,14 +34,33 @@ A study of 16 pages from similar or admired products: what to copy and what to a
 4. **Colours already taken** (measured): blue (Winman, ClearTax), green (Zoho, EnvironDesk), indigo or violet (PracticeStacks, Jamku, Vanta, UX4G, DigiLocker), coral (Karbon); Stripe uses a purple, pink and orange gradient. Green, amber, red and blue are also needed for status. So **the brand accent must come from outside these.**
 5. Avoid the template look we saw: a small label above every section, numbered sections, indigo gradients, three identical cards.
 
+## Study 2 (light): Odoo, Tally, Winman
+Added 2026-10-20 after the UX-2 review ("too minimal"). **Odoo is the main guide** for colours and elements. These are basic principles to steer UX-3 and UX-4, not rules. New references can join any time.
+- **Odoo colours:** one deep, muted main colour (plum `#714B67`), a teal second colour (`#017E84`) and a grey (`#8F8F8F`), used sparingly on a calm, light base ([Odoo brand assets](https://www.odoo.com/page/brand-assets)).
+- **Odoo elements:** a search bar with **Filters, Group By and Favorites** ([docs](https://www.odoo.com/documentation/19.0/applications/essentials/search.html)); the same records as a list, as cards or on a calendar; a **"chatter"** beside each record with messages, internal notes and activities ([docs](https://www.odoo.com/documentation/19.0/applications/productivity/discuss/chatter.html)); a stage bar on records.
+- **Odoo tone:** the app is formal; the website is quirky (doodle arrows, lines like "No corporate bullsh*t"). For us: formal work screens, quirky brand moments.
+- **Tally** (`21-tally-reports`, `22-tally-sales-register`, `23-tally-keyboard-first`): keyboard first. Alt+G "Go To" opens any screen from anywhere, a button bar runs down the right, and since release 2.0.1 a bottom bar shows the shortcuts. Dense reports with one highlighted row.
+- **Winman** (`24-winman-caerp`, plus `05-winman` from study 1): dense tables in one window, "No navigation through multiple windows. Tables expands as you make entries!"
+- odoo.com blocks automated browsers (403, 2026-10-20), so Odoo images come from Lakshay when handy (row O1 below). Optional, and it doesn't hold anything up.
+
+## Study 3 (light): Notion
+Added 2026-10-21 (Lakshay): Notion is close to what we do, so it joins Odoo as a second guide, mainly for **feel and motion**. Our colours and brand stay as they are.
+- **Calm base:** a light page, lots of space, colour used only where it means something. This matches our "trust through calm design" point above.
+- **Side peek:** a record opens as a panel on the right while the list stays visible; each view can choose side peek, centre peek or full page ([Notion release notes, 2022-07-20](https://www.notion.com/releases/2022-07-20)). For us: the thread panel (CA-20) slides over the calendar the same way.
+- **Quiet rows:** controls appear on hover, so busy lists stay clean. For us: row actions on the client grid and lists.
+- **Gentle, quick motion:** small fades and slides, nothing bouncy. For us: the UX-4 polish pass, inside the agreed motion rules.
+
+**Why we keep references:** Lakshay plans a public case study (LinkedIn, Figma) showing which industry software was studied and which principles shaped each screen, so each reference names what it feeds.
+
 ## Screens Lakshay captures by hand
 These sites block automated browsers, or need an account or a phone. Save as `NN-app-window.png` in [design-refs/](design-refs/). Phone screenshots are fine.
 | # | App | Exact window | Why |
 |---|---|---|---|
+| O1 | Odoo (free "One App Free": install only the Project app, not Studio, or it becomes paid) | A list with the search menu open · one task with its chatter · the cards view | Colours and elements (study 2) |
 | M1 | Linear (free account) | Issue list grouped by status · one issue open with comments and activity | Status icons, thread |
 | M2 | TaxDome (taxdome.com, in a normal browser) | Home page product images · the "Client portal" or mobile app page | Owner-side portal |
 | M3 | Google Calendar (your own) | A busy month view with "+3 more" · one event's detail popup | Calendar overflow |
-| M4 | Notion Calendar (free, web) | Month view | Calendar calm |
+| M4 | Notion (free, web) | Calendar month view · a database with one page open in side peek | Calendar calm, thread panel (study 3) |
 | M5 | WhatsApp (phone) | A chat with a PDF and a photo, showing ticks · the attach menu | Owner thread |
 | M6 | Google Pay or PhonePe (phone) | Home screen · transaction history list | Owner home, big tap targets |
 | M7 | DigiLocker app (phone) | "Issued documents" list · one document open | Licence cards |

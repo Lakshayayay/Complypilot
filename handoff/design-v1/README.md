@@ -2,7 +2,7 @@
 
 Everything you need to carry on the v1 design work (stage 1) without the chat history: where we are, the plan stage by stage, the decisions, the user flows, the research, and the rules for working with Lakshay and with Figma.
 
-**Snapshot:** 2026-10-20, repo commit `ad60e7e`. If a file in `context/` differs from the same file under `docs/` in the repository, `docs/` is right.
+**Snapshot:** refreshed 2026-10-21 (end of the Figma day). If a file in `context/` differs from the same file under `docs/` in the repository, `docs/` is right.
 **Figma links:** Lakshay gives you these himself. (The file keys are also in `context/docs/versions/v1/figma-ledger.json`.)
 
 ## The product in one minute
@@ -16,32 +16,32 @@ Everything you need to carry on the v1 design work (stage 1) without the chat hi
 ## Where we are
 | | |
 |---|---|
-| Stage 0, research | Done and approved 2026-10-18 |
-| **Stage 1, design** | **In progress** (started 2026-10-19) |
-| Done in stage 1 | Stage doc, 16-page reference study, competitor re-check, Figma setup, **user flows drawn** (UX-1) |
-| Waiting | Lakshay's review of the flows (review point 1) |
-| Next | Phase 3 (UX-2): the app's map, the screen list, grey wireframes |
+| Stage 0, research | Done and approved 2026-10-18 (gate PM-11) |
+| **Stage 1, design** | **In progress, near the end.** UX-1 flows, UX-2 wireframes and UX-3 brand are approved; UX-4 detailed screens: 58 of 65 frames built on `06 Screens` |
+| Next | Batch 6 (7 settings frames), then width checks, polish pass, Dev Mode notes, clickable demo, design QA, then gate PM-12 |
 
-The full stage-wise plan, with every task, status, review point and check, is in [PLAN.md](PLAN.md).
+The stage 1 checklist (done and remaining) is in [design.md](context/docs/versions/v1/design.md), section "Stage 1 plan: done and remaining". What each built frame shows is in [screens.md](context/docs/versions/v1/screens.md).
 
 ## Read in this order
-1. This file, then [PLAN.md](PLAN.md).
+1. This file.
 2. [context/docs/STATUS.md](context/docs/STATUS.md): the short "where are we" note.
 3. [context/docs/versions/v1/README.md](context/docs/versions/v1/README.md): the v1 plan (goal, features, acceptance criteria, tasks by stage).
-4. [context/docs/versions/v1/design.md](context/docs/versions/v1/design.md): the stage 1 doc (concepts, decisions, Figma rules, checks).
+4. [context/docs/versions/v1/design.md](context/docs/versions/v1/design.md): the stage 1 doc (concepts, decisions, checklist, Figma rules, checks).
+   Then [screens.md](context/docs/versions/v1/screens.md): the screen list and what each built frame shows.
 5. [context/docs/versions/v1/flows.md](context/docs/versions/v1/flows.md): the 12 user flows, the demo story, the edge cases.
 6. As needed: the research in [context/docs/versions/v1/research/](context/docs/versions/v1/research/) (see the table below), and [context/AGENTS.md](context/AGENTS.md), the project rules.
 
 ## What is in this folder
 | Path | What it is |
 |---|---|
-| `README.md`, `PLAN.md` | This guide, and the stage-wise design plan with status, decisions, checks and procedures |
+| `README.md` | This guide |
 | `context/AGENTS.md` | The project rules (working agreement, engineering and documentation rules) |
 | `context/idea.md` | The vision and ideas log (v1 is drawn from it) |
 | `context/docs/STATUS.md` | Short status note |
 | `context/docs/versions/v1/README.md` | The v1 plan: goal, 12 features, acceptance criteria, tasks for stages 0 to 5, risks |
 | `context/docs/versions/v1/design.md` | The stage 1 doc |
 | `context/docs/versions/v1/flows.md` | User flows as text (the source for the FigJam board) |
+| `context/docs/versions/v1/screens.md` | The 65 screens, which flow step each covers, and what each built frame shows |
 | `context/docs/versions/v1/figma-ledger.json` | Figma file keys and the IDs of pages and frames |
 | `context/docs/versions/v1/research/design-references.md` | The reference study: 16 pages, what we learned, what to avoid |
 | `context/docs/versions/v1/research/design-refs/` | The 16 full-page screenshots (kept out of git) |
@@ -67,7 +67,7 @@ These come from [AGENTS.md](context/AGENTS.md). Follow them even if your tools a
 - **Docs:** short; update docs in the same commit as the change; link, don't duplicate. Docs-only changes go straight to `main`; code goes on a branch. Commit messages follow Conventional Commits (`docs: ...`, `feat: ...`).
 
 ## Working in Figma
-The full procedure is in [PLAN.md](PLAN.md), section "How we work in Figma". In short:
+The full rules are in design.md ("How we work in Figma") and the Watch out list in STATUS.md. In short:
 - Look before you write. Give every layer a fixed name. Record the IDs you create in `figma-ledger.json`.
 - Colours, spacing and corner sizes come from variables, never typed-in hex codes. Frames use auto layout. Repeated parts are components.
 - One writing call at a time. About 150 calls a day at most (the Figma limit for our plan is 200).

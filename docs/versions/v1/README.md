@@ -112,12 +112,14 @@ Before any code, we agree the design together: folder and file structure, how th
 - [ ] v1-FS-14 CA's own repeating tasks → criterion 10
 - [ ] v1-FS-15 Email reminders → criterion 12
 - [ ] v1-FS-16 Demo data set: sample firms, factories, owners and threads
+- [ ] v1-PM-16 **Gate:** Lakshay approves the build. Done when the app is on a preview link with demo data, every FS task is ticked, the automatic checks pass, and Lakshay walks the demo story in the real app
 
 ### Stage 3: Intelligence [AI] → ai.md
 - [ ] v1-AI-1 "Learn first" notes. Check the data is clean. Pick the numbers we watch, e.g. how often the CA accepts or changes a suggestion
 - [ ] v1-AI-2 Eval set: plain-words factory descriptions with the correct category, built from the official CPCB list. Agree the target score
 - [ ] v1-AI-3 The matcher: plain words → category, showing the matched line; the CA confirms. It's a new service, so write an ADR first
 - [ ] v1-AI-4 Run the eval and ship only if it reaches the target → criterion 13
+- [ ] v1-PM-17 **Gate:** Lakshay approves the AI. Done when the eval score meets the agreed target, every suggestion shows its matched line and source, and nothing reaches a calendar before the CA confirms
 
 ### Stage 4: Test & Release [QA] → test.md
 - [ ] v1-QA-2 E2E tests (automated tests that click through the app like a user) for 3 flows: sign-up → add client → mark done; CSV import; owner reply in a thread
@@ -127,6 +129,7 @@ Before any code, we agree the design together: folder and file structure, how th
 - [ ] v1-PM-15 Re-check the licence rules and due dates on their official sources just before the demo (rules change, e.g. Haryana's labour rules were still a draft in May 2026). Done when every "checked on" date is refreshed
 - [ ] v1-PM-13 Pitch: 5-minute demo script and slides
 - [ ] v1-QA-6 Show the demo to 2 CAs and write down their feedback
+- [ ] v1-PM-18 **Gate:** Lakshay approves the release. Done when the E2E, security and speed checks pass, monitoring is on, production is live, and the CA feedback is written down
 
 ### Stage 5: Checkpoint → review.md
 - [ ] All acceptance criteria pass (review.md links the proof for each)
@@ -137,6 +140,7 @@ Before any code, we agree the design together: folder and file structure, how th
 - [ ] Tagged `v1.0.0` + CHANGELOG entry
 - [ ] Retro written; v2 planned
 - [ ] v1 folder frozen; anything still true moved into SYSTEM.md
+- [ ] v1-PM-19 **Gate:** Lakshay signs off v1. Done when every box above is ticked; then v2 planning starts
 
 ## Testing plan
 | Level | What it covers | When it's written |

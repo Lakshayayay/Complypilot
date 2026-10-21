@@ -1,28 +1,29 @@
 # Status
 
-**Version:** v1 — Shared Compliance Calendar · **Stage:** 1 Design [UX], in progress. User flows (UX-1) are drawn and **wait for Lakshay's review** · **Last updated:** 2026-10-20
-**Plan for this version:** [v1 README](versions/v1/README.md) · **Stage doc:** [design.md](versions/v1/design.md) · **Flows:** [flows.md](versions/v1/flows.md) · **Vision and ideas:** [idea.md](../idea.md) · **Rules:** [AGENTS.md](../AGENTS.md)
+**Version:** v1 — Shared Compliance Calendar · **Stage:** 1 Design [UX], in progress (UX-4: batch 6 next) · **Last updated:** 2026-10-21 (end of the Figma day)
+**Where we stopped:** UX-3 is approved and closed. **All 22 demo-path screens are built**, and **36 of the other 43 frames** (batches 1 to 5). UX-4 runs to gate PM-12 without stopping (Lakshay, 2026-10-21). **Next, in a new chat: batch 6, settings and the firm's reminder email (7 frames).** Nothing is half-built; everything is committed and pushed.
+**Plan for this version:** [v1 README](versions/v1/README.md) · **Stage doc, with the checklist, the UX-4 notes and every result:** [design.md](versions/v1/design.md) · **Figma IDs:** [figma-ledger.json](versions/v1/figma-ledger.json) · **Screens and what each frame shows:** [screens.md](versions/v1/screens.md) · **Flows:** [flows.md](versions/v1/flows.md) · **Rules:** [AGENTS.md](../AGENTS.md)
 
 ## Done
-- **Stage 0 (research) approved 2026-10-18.** v1 scope is locked: 12 features F1–F12.
-- **Stage 1 started 2026-10-19.** Order agreed: flows → grey wireframes → brand and design basics → detailed screens and demo → gate PM-12.
-  - Docs: [design.md](versions/v1/design.md) ("Learn first", decisions, Figma rules), [design-references.md](versions/v1/research/design-references.md) (16-page study), competitor re-check in [competitors.md](versions/v1/research/competitors.md).
-  - **Figma set up:** design file [complypilot](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot) with 7 pages and a References board (26 study windows). Fonts checked. IDs are in [figma-ledger.json](versions/v1/figma-ledger.json).
-  - **UX-1 drawn:** 12 flows, a demo story and 15 edge cases in [flows.md](versions/v1/flows.md), and on the FigJam board [ComplyPilot v1 flows](https://www.figma.com/board/bZB8Y1uSb5rAIYV0BOQpRh).
-- **Decisions (2026-10-19):** one email-link login for CA and owner · the owner answers the factory questions and the CA can correct them · the owner sees "Your CA will check" until the CA confirms · the owner ticks only tasks the CA gives them · prototype = demo path only · the real app is built from Figma through the MCP.
+- **Stage 0 approved 2026-10-18.** v1 scope is locked: 12 features F1–F12.
+- **UX-1 flows and UX-2 wireframes approved (2026-10-19/20).** Figma file [complypilot](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot) and the FigJam board [ComplyPilot v1 flows](https://www.figma.com/board/bZB8Y1uSb5rAIYV0BOQpRh).
+- **UX-3 approved 2026-10-21.** Brand: mulberry `#7A2E57`, teal `#0E7A79`, Anek Latin; 38 component sets; logo, app icon, brand board. Tagline: "One calendar. No missed deadlines." No Hindi in new work.
+- **UX-4 (2026-10-21):** reminder days agreed; ARN format checked (the sample fits); **Notion joined Odoo** as a design reference (feel, motion, side peek).
+- **Frames on `06 Screens`, one section per batch** (IDs in the ledger, notes in screens.md): `demo-path` 22 frames (A to E) · `batch-1` sign-in and sign-up 13 · `batch-2` clients 5 · `batch-3` client and review states 4 · `batch-4` licences and owner home 9 · `batch-5` tasks and thread states 5. Every batch read back by script: 0 typed-in colours, all text styled, Anek Latin, no dashes, no phone button under 44 px.
+- **Tax dates (2026-10-21):** Form 140 (31 Jul, 31 Oct, 31 Jan, 31 May) and advance tax (15 Jun, Sep, Dec, Mar) are now ✅ from official pages (research/due-dates.md).
 
 ## Next (in this order)
-1. **Review point 1:** Lakshay reviews the flows and the demo story on the FigJam board. Fix what he says, then tick v1-UX-1 in the README.
-2. **Phase 3 (UX-2):** the app's map (CA side menu, owner tabs), the screen list (about 27 screens), then grey wireframes in Figma page `02 Wireframes`.
-3. **Then UX-3 (brand interview, logo, colours, fonts, components) and UX-4 (detailed screens, clickable demo, reminder days),** then the PM-12 gate. The full plan is in `design.md`.
+1. **Batch 6:** CA-22 firm settings, CA-23 team, CA-24 due-date changes with CA-24b preview and CA-24c applied, CA-25 privacy, EM-06 the firm's morning list. That completes all 65 frames.
+2. 1366 and 360 px checks → polish pass (modern look; Odoo and Notion; fix the 16 px `Textarea` label on CA screens) → Dev Mode annotations → clickable demo → design QA → **gate PM-12 (ping Lakshay)**.
 
 ## Open questions
-- Lakshay saves a named version in Figma by hand (File → Save to version history) when we move on, before the wireframes. Not now. The stray "Vector 1" line on `Cover` is deleted (2026-10-20).
-- Still ⚠️ and out of the app: TDS forms 140/143/144, advance tax 15 Sep/15 Dec, non-audit ITR dates, PF 15th, MSME Form-1 dates. Haryana boiler office, fire portal and licence validity not found ("ask your CA").
-- Code Connect (links Figma parts to code) is `UNVERIFIED` on the Education plan. Check it in stage 2.
+- **Review later (Lakshay)**, defaults taken so work keeps moving: "Confirm 5 licences", projector chip size, the CA-13 status word (design.md, UX-4); the full privacy notice text (stage 2); demo licence numbers and "renew on e-District Delhi" (recheck in stage 2) (screens.md).
+- **New:** Form 140 and advance tax are now ✅, so stage 2 can put them on the calendar (FS-5 writes ✅ rows). CA-08's note still lists Form 140 as "not on the calendar yet": fix in the polish pass.
+- Still ⚠️ and out of the app: Forms 143/144, non-audit ITR dates (Finance Bill 2026 says 31 Aug, secondary sources only), PF 15th and MSME Form-1 (CAs confirm in the demo calls, Lakshay's choice). Haryana boiler office, fire portal and licence validity not found. Delhi fire certificate validity: sources disagree.
+- **Lakshay, later and by hand:** complypilot.com and the trademark (IP India). Optional: Odoo and Notion screenshots (design-references.md, rows O1, M4).
+- `UNVERIFIED`: Code Connect and Dev Mode annotations on the Education plan.
 
 ## Watch out
-- **Figma:** about 200 MCP calls a day. Writing through the MCP is free in beta and paid later. Never move nodes made by `generate_diagram`: their arrows keep old routes (put cards behind them). Load Figma's skills before drawing. A new chat can read `figma-ledger.json` to find every ID.
-- The reference screenshots in `research/design-refs/` stay out of git (other companies' pages).
-- v1 uses made-up demo data only. No app code until stage 2, and before any code we agree the folders, files and naming together.
-- New ideas go into idea.md, not into v1.
+- **Figma:** 200 MCP calls a day and 10 a minute (Education plan); aim for 150 a day. **About 142 were used on 2026-10-21**, so the next Figma work starts the next day. Send at most 4 calls at once. A failed `use_figma` call is rolled back whole.
+- **Build only from variables and styles.** Size a part before putting it into a slot. Clone a finished frame instead of rebuilding the shell. Load a text's font before changing any of its settings. Table cells in a row must hug their height. Owner pages taller than the phone grow downwards (content hugs). More in the memory note "Figma files".
+- v1 uses made-up demo data only, English only. No app code until stage 2; before any code we agree folders, files and naming together. New ideas go into idea.md, not into v1.
