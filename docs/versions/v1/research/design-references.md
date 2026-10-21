@@ -43,6 +43,15 @@ Added 2026-10-20 after the UX-2 review ("too minimal"). **Odoo is the main guide
 - **Winman** (`24-winman-caerp`, plus `05-winman` from study 1): dense tables in one window, "No navigation through multiple windows. Tables expands as you make entries!"
 - odoo.com blocks automated browsers (403, 2026-10-20), so Odoo images come from Lakshay when handy (row O1 below). Optional, and it doesn't hold anything up.
 
+## Study 3 (light): Notion
+Added 2026-10-21 (Lakshay): Notion is close to what we do, so it joins Odoo as a second guide, mainly for **feel and motion**. Our colours and brand stay as they are.
+- **Calm base:** a light page, lots of space, colour used only where it means something. This matches our "trust through calm design" point above.
+- **Side peek:** a record opens as a panel on the right while the list stays visible; each view can choose side peek, centre peek or full page ([Notion release notes, 2022-07-20](https://www.notion.com/releases/2022-07-20)). For us: the thread panel (CA-20) slides over the calendar the same way.
+- **Quiet rows:** controls appear on hover, so busy lists stay clean. For us: row actions on the client grid and lists.
+- **Gentle, quick motion:** small fades and slides, nothing bouncy. For us: the UX-4 polish pass, inside the agreed motion rules.
+
+**Why we keep references:** Lakshay plans a public case study (LinkedIn, Figma) showing which industry software was studied and which principles shaped each screen, so each reference names what it feeds.
+
 ## Screens Lakshay captures by hand
 These sites block automated browsers, or need an account or a phone. Save as `NN-app-window.png` in [design-refs/](design-refs/). Phone screenshots are fine.
 | # | App | Exact window | Why |
@@ -51,7 +60,7 @@ These sites block automated browsers, or need an account or a phone. Save as `NN
 | M1 | Linear (free account) | Issue list grouped by status · one issue open with comments and activity | Status icons, thread |
 | M2 | TaxDome (taxdome.com, in a normal browser) | Home page product images · the "Client portal" or mobile app page | Owner-side portal |
 | M3 | Google Calendar (your own) | A busy month view with "+3 more" · one event's detail popup | Calendar overflow |
-| M4 | Notion Calendar (free, web) | Month view | Calendar calm |
+| M4 | Notion (free, web) | Calendar month view · a database with one page open in side peek | Calendar calm, thread panel (study 3) |
 | M5 | WhatsApp (phone) | A chat with a PDF and a photo, showing ticks · the attach menu | Owner thread |
 | M6 | Google Pay or PhonePe (phone) | Home screen · transaction history list | Owner home, big tap targets |
 | M7 | DigiLocker app (phone) | "Issued documents" list · one document open | Licence cards |

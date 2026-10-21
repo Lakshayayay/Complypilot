@@ -14,12 +14,12 @@
 
 ## Next (in this order)
 1. ~~Housekeeping~~ done 2026-10-21: batch A to D notes moved to screens.md (design.md now 342 lines); `06 Screens` page brief updated.
-2. **Batch E, demo beats 8 to 11 (7 frames):** CA-20b (thread: "Need document" given to the owner as a task) · OW-11 and OW-11b (owner uploads, ticks) · CA-20 (thread after the upload) · CA-21 (Mark done: ARN and receipt) · CA-21c (done: the one moment of delight; Undo on the toast, Edit on the done banner) · EM-07 (the owner's Monday list email). **Fact-check the ARN format first:** the sample "AA0710260012345" is a guess. Demo cast and rules: design.md, UX-4.
-3. **Review point 6:** Lakshay reviews the 22 demo frames.
+2. **Batch E, demo beats 8 to 11 (7 frames):** CA-20b (thread: "Need document" given to the owner as a task) · OW-11 and OW-11b (owner uploads, ticks) · CA-20 (thread after the upload) · CA-21 (Mark done: ARN and receipt) · CA-21c (done: the one moment of delight; Undo on the toast, Edit on the done banner) · EM-07 (the owner's Monday list email). ARN checked 2026-10-21: the sample fits the format. Demo cast and rules: design.md, UX-4.
+3. **Review point 6** is a heads-up now: UX-4 runs to gate PM-12 without stopping (Lakshay, 2026-10-21). Notion joined Odoo as a design reference.
 4. **The other 43 frames,** flow by flow, with empty, error, loading and saving states. Proposed 6 batches (agree first): sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7. Then 1366 and 360 px checks → polish pass (modern look) → Dev Mode annotations → clickable demo → design QA → gate PM-12.
 
 ## Open questions
-- **Lakshay:** CA-13 says "Confirm 5 licences", but the 5th item is the labour-code registration (not legally a licence). Keep it, or "Confirm 5" / "Confirm 5 items"? I recommend keeping it. Chip words look small at 1024 px (projector): change nothing until a real projector test.
+- **Review later (Lakshay):** defaults taken so work keeps moving, listed in design.md, UX-4 ("Confirm 5 licences", projector chip size, CA-13 status word).
 - **Lakshay, later and by hand:** check complypilot.com and the trademark (IP India). Optional: 3 Odoo screenshots (design-references.md, row O1).
 - Still ⚠️ and out of the app: TDS forms 140/143/144, advance tax 15 Sep/15 Dec, non-audit ITR dates, PF 15th, MSME Form-1 dates. Haryana boiler office, fire portal and licence validity not found ("ask your CA"). Delhi fire certificate validity: sources disagree.
 - `UNVERIFIED`: Code Connect (links Figma parts to code) and Dev Mode annotations on the Education plan. Check in stage 2, and when the first annotation is added.

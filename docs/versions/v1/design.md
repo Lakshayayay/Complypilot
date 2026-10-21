@@ -44,6 +44,7 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | 2026-10-20 | **Vision: a modern look** (rounder corners, soft floating shadows, gentle animations), applied in a **polish pass in UX-4**. Today's base stays until then. Corners are `Radius` variables and shadows are effect styles (with `shadow/float`), so the change is a value edit, not a redraw. Motion keeps the agreed rules (≤ 200 ms for frequent actions, ease-out, "reduce motion"), and the brand's "isn't" words still apply: no glow, no gradients, no animation everywhere. |
 | 2026-10-21 | **Tagline: "One calendar. No missed deadlines."** (Claude's pick, as Lakshay asked). **No Hindi in new design work** (Lakshay): boards, screens and the demo use Anek Latin only; the existing Hindi styles and samples stay until he says otherwise. Brand board pictures are drawn shapes, no AI images. |
 | 2026-10-21 | **Reminder days** (Lakshay): licences count from an **apply-by date** (expiry minus the legal lead time), reminders 90/60/30 days before it. Filings: a **morning list** for the firm, a **Monday list** for the owner, plus a task email. Rules in UX-4 below; README F7, F10 and criteria 9 and 12 updated. |
+| 2026-10-21 | **Notion joins Odoo as a design reference** (Lakshay): feel and motion, side peek for the thread panel; brand and colours unchanged ([study 3](research/design-references.md#study-3-light-notion)). **UX-4 runs to gate PM-12 without stopping** (Lakshay): review point 6 becomes a heads-up; Claude stops only for a question it can't settle, at the end of a Figma day, or at the gate. Small open points go on "Review later" (UX-4). |
 | 2026-10-20 | **Flows approved** (UX-1). **App map, as in the flows:** CA side menu Calendar (home) · Clients · Licences · Tasks · Settings (Firm, Team, Due-date changes, Privacy); an item opens its thread as a side panel. Owner bottom tabs Home ("What needs me") · Calendar · Licences; an item opens its thread full screen. The owner side is a phone web app opened from the email link ([idea.md](../../../idea.md): "Mobile-First Web App"), not an app-store app. |
 
 ## Design read
@@ -132,9 +133,9 @@ _Updated 2026-10-21 at the second wrap-up (UX-3 closed; UX-4 demo-path batches A
 **UX-4 Detailed screens and the clickable demo**
 - [x] Agree the reminder days: licences from an apply-by date, filings as a morning and a Monday list (Lakshay, 2026-10-21)
 - [ ] Demo-path screens: 22 frames in 5 batches by demo beat (section `demo-path` on `06 Screens`). Done: A beats 1 to 3 (3 frames) · B beat 4 (4) · C beats 5 and 6 (7) · D beat 7 (1). **Left: E beats 8 to 11 (7 frames: CA-20b, OW-11, OW-11b, CA-20, CA-21, CA-21c, EM-07)**
-- [ ] Before batch E: fact-check the ARN format; move the batch A to D notes to [screens.md](screens.md) (this file is near its 400-line cap); update the `06 Screens` page brief (`18:178`)
-- [ ] Review point 6: Lakshay reviews the 22 demo frames
-- [ ] The other 43 frames, flow by flow, with empty, error, loading and saving states and the 100-client frame (CA-06). Proposed 6 batches, to agree when this starts: sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7
+- [x] Before batch E: ARN format checked (fits; UX-4 notes); batch A to D notes moved to [screens.md](screens.md); `06 Screens` page brief updated (2026-10-21)
+- [ ] Review point 6 (a heads-up since 2026-10-21, no stop): Lakshay looks at the 22 demo frames when he likes
+- [ ] The other 43 frames, flow by flow, with empty, error, loading and saving states and the 100-client frame (CA-06), in 6 batches: sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7
 - [ ] Apply the UX-4 fixes from the heuristic self-check (UX-2 section). Done in CA-13: #2 plain reason first, #5 count on the button. Left: #3 Undo and Edit (batch E), #1 loading, saving and empty states (with the other 43 frames)
 - [ ] Check CA screens at 1366 px and owner screens at 360 px
 - [ ] Behaviour notes as Dev Mode annotations; Lakshay marks finished screens "Ready for dev" (by hand)
@@ -315,14 +316,14 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 ## UX-4 Detailed screens and demo
 _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screens` (batches A to E by demo beat, a short stop after A, then review point 6) → the other 43 frames with their states → width checks → polish pass → annotations → clickable demo → design QA → gate PM-12. About 150 Figma calls a day, so at least 3 Figma days.
 
-**Where we stopped (2026-10-21 wrap-up).** Batches A to D are built, read back and committed: 15 of the 22 demo frames. Batch E (beats 8 to 11: CA-20b, OW-11, OW-11b, CA-20, CA-21, CA-21c, EM-07) has not started. Before it: fact-check the ARN format (the sample "AA0710260012345" on the `Banner` part came from UX-3 and is unverified), The batch A to D notes moved to [screens.md](screens.md) and the `06 Screens` page brief (`18:178`) was brought up to date on 2026-10-21.
-**Open decisions for Lakshay (not answered yet).**
-| Question | Options offered | Recommendation |
-|---|---|---|
-| CA-13 button word: the 5th item is the labour-code registration, which the research calls "not a licence" | "Confirm 5 licences" (now; the approved plan's wording) · "Confirm 5" · "Confirm 5 items" | Keep "Confirm 5 licences": the app lists registration with the licences |
-| Chip words are about 8 px at 1024 px wide (a projector; the width is `UNVERIFIED`) | Change nothing now · raise the chip text size in one place later | Change nothing until a real projector test (Figma's presentation mode scales the frame to the screen) |
-| The other 43 frames in 6 batches: sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7 | Agree this split · another split | Agree it when that step starts, after review point 6 |
-- **Taken unless Lakshay objects:** the CA-13 status word "Waiting for your check" (blue `waiting` chip), and no confidence number on the AI card.
+**Progress.** Batches A to D are built (15 of the 22 demo frames; notes in [screens.md](screens.md)). The `06 Screens` page brief was brought up to date on 2026-10-21. The other 43 frames follow in 6 batches: sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7.
+
+**ARN (checked 2026-10-21).** The ARN (the acknowledgement number the GST portal gives after a filing) has 15 characters: 2 letters, the 2-digit state code, the month and year (MMYY), a system number and a check character, e.g. `AA070724000001Z` ([enkash](https://www.enkash.com/resources/blog/what-is-an-arn-number), [Masters India](https://www.mastersindia.co/blog/track-arn-status/), [kanakkupillai](https://www.kanakkupillai.com/learn/how-to-check-gst-registration-status-with-arn/)). Our sample `AA0710260012345` fits: Delhi (07), October 2026, so it stays. Only blogs describe the format, not GSTN: `UNVERIFIED`. **Stage 2:** accept the ARN as plain text; don't check its format strictly.
+
+**Review later (Lakshay).** Defaults taken so the work keeps moving; Lakshay can change any of them later.
+- CA-13 keeps "Confirm 5 licences", although the 5th item is the labour-code registration (the research calls it "not a licence").
+- Chip words are about 8 px on a 1024 px projector (`UNVERIFIED` width): no change until a real projector test.
+- CA-13 status word "Waiting for your check" (blue `waiting` chip), and no confidence number on the AI card.
 
 **Reminder days (agreed by Lakshay 2026-10-21).** Facts from [licences.md](research/licences.md) (checked 2026-10-18).
 | Kind | Rule | Why |
