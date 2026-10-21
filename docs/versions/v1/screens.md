@@ -153,3 +153,13 @@ Built flow by flow on `06 Screens`, one section per batch below `demo-path`. Sam
 | EM-02 | Colleague invite: "Join Kapoor & Associates", "Join the firm" |
 - **Checks:** read-back on the 13 frames, 714 layers: 0 typed-in colours (564 bound), 0 loose corners, gaps or padding, all 237 texts styled and Anek Latin, no dashes, no cut-off text, no phone button under 44 px.
 - **Review later (Lakshay):** the full privacy notice text is written in stage 2 from privacy.md; the card shows the summary.
+
+**Batch 2: clients, F-03 (5 frames, built 2026-10-21).** Section `batch-2 clients`.
+| Frame | What it shows |
+|---|---|
+| CA-06 Clients (100 clients) | The heavy-data frame: a search by name, GSTIN or PAN, "100 clients, most urgent first", a table of 20 rows (client and trade name, state, GSTIN, filings, owner status, next due, status chip), late first, then waiting, due soon and upcoming; "1 to 20 of 100" with page arrows; "Import CSV" |
+| CA-06b Clients, empty | One card: "No clients yet", "Add client", then "Import a CSV" and "Download the template" |
+| CA-07b Add client, fix errors | CA-07 with an error box at the top ("2 things to fix before you go on") and two fields in the error state with plain messages: GSTIN has 14 characters, the owner's mobile has 9 digits. A thicker red border plus words, never colour alone |
+| CA-09 Import CSV | Three steps: download the template, fill it in (needed and optional columns from [import-formats.md](research/import-formats.md)), upload (a dashed drop area); the loading state is shown: "clients_october.csv, Uploading, 60%" |
+| CA-10 Import report | "95 clients added" (saved already) and "5 rows need fixing", a table of row, client, column and what to fix in plain words, "Download the 5 rows to fix" and "Go to clients" (criterion 3) |
+- **Checks:** read-back on the 5 frames, 922 layers: 0 typed-in colours (627 bound), 0 loose corners, gaps or padding, all 331 texts styled and Anek Latin, no dashes, no cut-off text.
