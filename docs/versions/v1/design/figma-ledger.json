@@ -125,7 +125,9 @@
     "batch5Frames": { "CA-18": "144:5795", "CA-18b": "144:6077", "CA-19": "144:6220", "CA-21b": "144:6369", "EM-05": "144:6931" },
     "batch6Section": "152:6826",
     "batch6Frames": { "CA-22": "152:6827", "CA-23": "153:6734", "CA-24": "153:6932", "CA-24b": "155:6997", "CA-24c": "155:7095", "CA-25": "153:7118", "EM-06": "156:7247" },
-    "batch6Parts": { "settings-nav (in CA-22)": "152:6964", "side-panel (in CA-24b)": "155:7031", "toast (in CA-24c)": "155:7210" }
+    "batch6Parts": { "settings-nav (in CA-22)": "152:6964", "side-panel (in CA-24b)": "155:7031", "toast (in CA-24c)": "155:7210" },
+    "batch7Section": "159:7253",
+    "batch7Frames": { "CA-14c": "159:7254" }
   },
   "foundations": {
     "note": "UX-3 phase B, built 2026-10-20. Variables live in the file (not on a page). The sheet on page 04 Foundations shows them; everything on it is bound. Variable IDs: Primitives 54:3-54:23, Color 54:25-54:52, Spacing 54:54-54:65, Radius 54:67-54:70; look up by collection and name, not by ID.",
