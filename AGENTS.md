@@ -60,4 +60,4 @@ Early start: if a stage is blocked (e.g. a tool limit), the next stage may start
 - The v0 prototype is reference only: `git show v0-prototype:<path>`.
 
 ## Stack
-Decided 2026-10-21 (v1 FS-1): one Next.js app in TypeScript, Supabase (Postgres, email-link login, private files), Vercel, Tailwind + shadcn/ui, Vitest + Playwright. Read docs/versions/v1/tech.md and docs/adr/ before writing code. No screen code before gate PM-12; the first code is the starter app in v1-QA-1.
+Decided 2026-10-21 (v1 FS-1): one Next.js app in TypeScript, Supabase (Postgres, email-link login, private files), Vercel, Tailwind + shadcn/ui, Vitest + Playwright. Read docs/versions/v1/build/tech.md and docs/adr/ before writing code. No screen code before gate PM-12; the first code is the starter app in v1-QA-1.

@@ -3,7 +3,7 @@
 **Status:** Accepted · **Date:** 2026-10-21 · **Decided by:** Lakshay (Claude recommended hosting; Lakshay chose the region) · **Task:** v1-FS-1
 
 ## Context
-v1 must be live online and deploy by itself. The money rule is "fully free" ([tech.md](../versions/v1/tech.md#decision-log), D1). Lakshay already has a Vercel account and deploys from GitHub. His two Supabase projects are in Tokyo (ap-northeast-1) and Seoul (ap-northeast-2); neither is in India, and a project's region can't be changed.
+v1 must be live online and deploy by itself. The money rule is "fully free" ([tech.md](../versions/v1/build/tech.md#decision-log), D1). Lakshay already has a Vercel account and deploys from GitHub. His two Supabase projects are in Tokyo (ap-northeast-1) and Seoul (ap-northeast-2); neither is in India, and a project's region can't be changed.
 
 ## Options
 | Question | Options |

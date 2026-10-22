@@ -1,6 +1,6 @@
 # v1 — Shared Compliance Calendar
 
-**Stage:** 2 Build [FS] → [tech.md](tech.md) (decisions 2026-10-21, ADRs in [docs/adr/](../../adr/)). Stage 0 approved 2026-10-18; stage 1 Design approved 2026-10-22 ([design.md](design/design.md)). Scope locked 2026-10-17. Any change from here is written down in this file.
+**Stage:** 2 Build [FS] → [tech.md](build/tech.md) and the step plan [build-plan.md](build/build-plan.md) (decisions 2026-10-21, ADRs in [docs/adr/](../../adr/)). Stage 0 approved 2026-10-18; stage 1 Design approved 2026-10-22 ([design.md](design/design.md)). Scope locked 2026-10-17. Any change from here is written down in this file.
 **Time:** no deadlines or hour budgets. Progress = the task checklist below.
 **Vision and ideas:** [idea.md](../../../idea.md)
 
@@ -48,7 +48,7 @@ Tracks: [PM] product · [UX] design · [FS] full-stack · [AI] AI and data · [Q
 | Tally/Winman import ([import-formats.md](research/import-formats.md)), government portal data, GST certificate reader, calendar export to phone | Later |
 
 ## Corrections after the scope lock
-2026-10-22, from a builder check of the design docs (a fresh reader found these contradictions): F4 says 8 questions (was "about 10", the designs have 8); F5 and criterion 6 cover only confirmed dates, as decided in PM-10 and PM-14 (they listed PF and MSME Form-1); criterion 12 says how a licence reaches the Monday list. Open points for stage 2 are in [tech.md](tech.md#builder-check-open-points-for-stage-2).
+2026-10-22, from a builder check of the design docs (a fresh reader found these contradictions): F4 says 8 questions (was "about 10", the designs have 8); F5 and criterion 6 cover only confirmed dates, as decided in PM-10 and PM-14 (they listed PF and MSME Form-1); criterion 12 says how a licence reaches the Monday list. Open points for stage 2 are in [tech.md](build/tech.md#builder-check-open-points-for-stage-2).
 
 ## Done when
 No sales goal: v1 is for engineering and a college/competition pitch. v1 is done when:
@@ -99,10 +99,10 @@ Each task has an ID and a track. Tick the box when its "done when" check passes.
 - [x] v1-UX-4 Detailed calendar and item thread screens; agree the reminder days. Done when Lakshay can walk the demo story on the designs (66 frames; walked and approved 2026-10-22)
 - [x] v1-PM-12 **Gate:** Lakshay approves the design (approved 2026-10-22, no changes)
 
-### Stage 2: Build [FS] → tech.md
-The stack, folder layout, naming and order of work were agreed with Lakshay on 2026-10-21 and are written in [tech.md](tech.md) and ADRs [0001](../../adr/0001-app-framework.md) to [0011](../../adr/0011-email-from-personal-gmail.md) (index: [docs/adr/](../../adr/README.md)). The starter app on Vercel comes first (QA-1).
+### Stage 2: Build [FS] → build/ (tech.md, build-plan.md)
+The stack, folder layout, naming and order of work were agreed with Lakshay on 2026-10-21 and are written in [tech.md](build/tech.md) and ADRs [0001](../../adr/0001-app-framework.md) to [0011](../../adr/0011-email-from-personal-gmail.md) (index: [docs/adr/](../../adr/README.md)). The starter app on Vercel comes first (QA-1). Step by step, with each task's design questions: [build-plan.md](build/build-plan.md).
 **Gate PM-12 passed 2026-10-22.** Build starts with the FS-1 close-out, QA-1, FS-2, FS-5 and the logic cores of FS-14, FS-10, FS-13 and FS-8 (pure rules with unit tests, no screens); screens follow in demo order, built from Figma's design-to-code tool (tech.md, D14).
-- [ ] v1-FS-1 Choose the stack, one ADR (short decision record) each. **Decided 2026-10-21:** ADRs 0001 to 0011 (Next.js, Supabase, Vercel, Gmail email, Vitest and Playwright, and more); the old Supabase project becomes the training project; the demo project stays in Seoul and moves to Mumbai before real users. **Left:** Lakshay's by-hand steps (tech.md) and checking and wiping the training project
+- [x] v1-FS-1 Choose the stack, one ADR (short decision record) each. **Decided 2026-10-21:** ADRs 0001 to 0011 (Next.js, Supabase, Vercel, Gmail email, Vitest and Playwright, and more); the old Supabase project becomes the training project; the demo project stays in Seoul and moves to Mumbai before real users. **Closed 2026-10-22:** the training project checked and wiped
 - [ ] v1-QA-1 Starter app on Vercel: the empty Next.js app in the agreed folder layout; Lakshay connects the repo, and Vercel publishes `main` and a preview link per branch by itself (decided 2026-10-22: no separate deploy planning). Done when a starter page is live. The automatic checks (lint, type check, unit tests) and the branch rule join at FS-2; error alerts by email ([ADR 0006](../../adr/0006-error-alerts-by-email.md)) come at QA-5
 - [ ] v1-FS-2 Data structure, API shapes (what the server sends and receives) and RLS rules (database rules that keep firms apart), with tests; the automatic checks on every change start here → criterion 2
 - [ ] v1-FS-3 Login, firm sign-up, consent, invite colleagues → criterion 1
@@ -172,7 +172,7 @@ A task is done only when its tests pass. v1 has no money calculations.
 | Due-date rules change (new Income-tax Act, labour codes, extensions) | Confirm every ⚠️ row in v1-PM-14; re-check before the demo (v1-PM-15); override dates; show new and old form names |
 | CTO (pollution consent to run) no longer expires | The licence tracker allows "no expiry date" |
 | Solo developer and student | One task at a time; cut scope, not quality |
-| The training Supabase project ("comply pilot") may still hold v0 prototype data | Decided 2026-10-21: Lakshay confirms the table list, then it is wiped (v1-FS-1) |
+| Old v0 keys for the training project ("comply pilot") may still work | Its v0 tables were wiped 2026-10-22 (v1-FS-1); Lakshay resets the old keys before QA-1 ([build-plan.md](build/build-plan.md), step 0) |
 | v1 data sits outside India (demo in Seoul, training in Tokyo) | Made-up data only; the screens name no place; move to Mumbai before real users ([ADR 0003](../../adr/0003-hosting-and-data-region.md)) |
 | Emails from a Gmail account land in spam, or hit its 500-a-day limit | Test with real inboxes at v1-FS-12; demo scale is far below the limit; a proper sender once a domain exists; the sender is Lakshay's personal Gmail ([ADR 0005](../../adr/0005-email-through-gmail.md), [0011](../../adr/0011-email-from-personal-gmail.md)) |
 | Vercel's free plan is for non-commercial use only | Fine for a college pitch; paid plan when paying CAs arrive ([ADR 0003](../../adr/0003-hosting-and-data-region.md)) |
