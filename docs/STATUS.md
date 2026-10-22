@@ -1,7 +1,7 @@
 # Status
 
 **Version:** v1 — Shared Compliance Calendar · **Stage:** 2 Build [FS], task **FS-1 close-out** (gate PM-12 passed 2026-10-22) · **Last updated:** 2026-10-22 (setup done, waiting for the Supabase sign-in)
-**First thing next session:** Lakshay runs `/mcp`, picks supabase, signs in, and starts a new chat (the Supabase tool was pointed at "comply pilot" for this folder only, and reconnects at chat start). Then Claude checks `get_project_url` = `weywbysvdcdjcciqgrqw`, lists the training project's tables (read only), Lakshay confirms, and Claude wipes them after asking again.
+**First thing next session:** Lakshay starts a new chat, runs `/mcp`, picks supabase and chooses Authenticate (or disconnects and reconnects it). The saved setting already points at "comply pilot" for this folder only, but the 2026-10-22 chat was still connected to the old project and the new address "needs authentication". Then Claude checks `get_project_url` = `weywbysvdcdjcciqgrqw`, lists the training project's tables (read only), Lakshay confirms, and Claude wipes them after asking again.
 **Plan for this version:** [v1 README](versions/v1/README.md) (tasks and gates) · **Build** [tech.md](versions/v1/tech.md) (decisions D1 to D16, order of work, Figma to code, "Smooth and subtle") · ADRs [adr/](adr/README.md) (0001 to 0011) · **Design (frozen)** [design/](versions/v1/design/) · **Rules:** [AGENTS.md](../AGENTS.md)
 
 ## Done
