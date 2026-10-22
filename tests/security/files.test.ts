@@ -92,6 +92,8 @@ describe("deleting", () => {
     const byOwner = await a.owner.from("files").update({ deleted_at: now() }).eq("id", file.id).select("id");
     expect(byOwner.error).toBeNull();
     expect(byOwner.data).toHaveLength(1);
+    const staffDownload = await a.staff.storage.from("files").download(file.storage_path as string);
+    expect(staffDownload.data).toBeNull();
     const removed = await a.owner.storage.from("files").remove([file.storage_path as string]);
     expect(removed.error).toBeNull();
     expect(removed.data).toHaveLength(1);

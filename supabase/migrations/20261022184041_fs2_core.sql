@@ -597,11 +597,15 @@ from public, anon, authenticated;
 insert into storage.buckets (id, name, public, file_size_limit, allowed_mime_types)
 values ('files', 'files', false, 10485760, array['application/pdf', 'image/jpeg', 'image/png']);
 
+-- A deleted file stays visible to its uploader only, because removing the stored object needs
+-- the object to be visible (Postgres checks the read rule before a delete).
 create policy "files: read when its row is visible" on storage.objects for select to authenticated
   using (
     bucket_id = 'files'
     and exists (
-      select 1 from public.files f where f.storage_path = objects.name and f.deleted_at is null
+      select 1 from public.files f
+      where f.storage_path = objects.name
+        and (f.deleted_at is null or f.uploaded_by = (select auth.uid()))
     )
   );
 
