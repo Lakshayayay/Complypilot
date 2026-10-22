@@ -1,6 +1,6 @@
 # v1 Build (stage 2)
 
-**Stage:** 2 Build [FS], planned 2026-10-21 with Lakshay; **started 2026-10-22, after gate PM-12 (design approved)**. **Tasks:** FS-1 to FS-16, QA-1 and gate PM-16, in the [README](README.md). **Decisions:** [docs/adr/](../../adr/) (0001 to 0010).
+**Stage:** 2 Build [FS], planned 2026-10-21 with Lakshay; **started 2026-10-22, after gate PM-12 (design approved)**. **Tasks:** FS-1 to FS-16, QA-1 and gate PM-16, in the [README](README.md). **Decisions:** [docs/adr/](../../adr/README.md) (0001 to 0011).
 **Next step:** close FS-1 (Lakshay's by-hand steps below; Claude lists the training project's tables, Lakshay confirms, wipe), then QA-1 (the starter app on Vercel), then FS-2 (tables, API shapes, RLS, and the automatic checks).
 
 ## Learn first
@@ -45,12 +45,14 @@ All agreed with Lakshay on 2026-10-21, one at a time. "Options" are what Claude 
 | D13 | Build order | Logic now, screens later 路 README order as is | **Logic now, screens later** | below |
 | D14 | Figma to code (2026-10-22) | Figma's own design-to-code tool 路 a one-click plugin (Anima, Locofy, Builder.io) 路 Figma Make | **Figma's own tool.** Plugins are paid (breaks "fully free"); Make's Supabase link is key-value only and needs an Organization plan | below, "Figma to code" |
 | D15 | Deploy planning (2026-10-22) | A planned pipeline task 路 starter app and Vercel's own auto-deploy | **No separate deploy planning.** Lakshay has deployed on Vercel's free plan before; once the repo is connected it publishes `main` and a preview link per branch by itself | README QA-1 |
+| D16 | Email account (2026-10-22) | A separate Gmail account for the app (Claude's recommendation) 路 Lakshay's personal Gmail | **Personal Gmail** (a leaked app password could reach his own mail; see the ADR) | [0011](../../adr/0011-email-from-personal-gmail.md) |
 **Claude's own calls (Lakshay can change them):** npm; Node 24 LTS; Nodemailer for email and Zod for input checks, each noted when first added; the backup file is encrypted (it was a public-repo precaution; kept now the repo is private, [0010](../../adr/0010-private-repository.md)); the error hook sends at most one email per error per hour; each task's own design questions are asked when the task starts.
 
 ## Environments
 | | Training | Demo / live |
 |---|---|---|
 | Supabase project | **comply pilot** (Tokyo, ap-northeast-1; old v0 data to wipe) | **comply-pilot-new** (Seoul, ap-northeast-2; empty) |
+| Project ID (not secret; it is in the project's web address) | `weywbysvdcdjcciqgrqw` | `wewudhskurjdqqrhsfho` |
 | Used by | The Mac, tests, Vercel preview links | Vercel production (`main`) and the demo |
 | Backups | Not needed | Nightly, encrypted ([0009](../../adr/0009-timed-jobs-and-backups.md)) |
 **Setting names (names only, never values; final at QA-1, and Supabase's current key names are checked then):** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY` (server only), `NEXT_PUBLIC_APP_URL`, `GMAIL_USER`, `GMAIL_APP_PASSWORD`, `ALERT_EMAIL_TO`, `CRON_SECRET`; GitHub secrets: `SUPABASE_DB_URL`, `BACKUP_PASSPHRASE`. A names-only `.env.example` is made at QA-1 (the current `.gitignore` hides every `.env.*` file, so it gets an exception).
@@ -80,9 +82,9 @@ Design agreed with Lakshay (one question at a time, options + recommendation) 鈫
 ## Order of work
 Agreed D13: logic that needs no screens comes first; screens follow in demo-story order after gate PM-12. Done = its "done when" in the README passes.
 **Before screens (needs no design):**
-- [ ] v1-FS-1 close-out: decisions are written (this file, ADRs 0001 to 0010). Left: Lakshay's by-hand steps; check the training project and wipe it
+- [ ] v1-FS-1 close-out: decisions are written (this file, ADRs 0001 to 0011). Left: sign in to the Supabase tool once; check the training project and wipe it
 - [ ] v1-QA-1 starter app on Vercel (D15): the empty Next.js app in the layout above; Lakshay connects the repo on Vercel and tries the Seoul region. Done when a starter page is live. The GitHub Actions checks (lint, type check, Vitest) and the branch rule join at FS-2; the email-on-error hook comes at QA-5
-- [ ] v1-FS-2 tables, API shapes, RLS and the cross-firm tests; the automatic checks (GitHub Actions) start here, and the branch rule once GitHub Pro arrives. Its own back-and-forth on the tables first
+- [ ] v1-FS-2 tables, API shapes, RLS and the cross-firm tests; the automatic checks (GitHub Actions) start here, and the branch rule only if GitHub Pro is added later. Its own back-and-forth on the tables first
 - [ ] v1-FS-5 due-date engine (criterion 6)
 - [ ] Logic cores, each pure with unit tests: v1-FS-14 next dates (criterion 10) 路 v1-FS-10 licence warnings (criterion 9) 路 v1-FS-13 factory rules (criterion 5) 路 v1-FS-8 CSV parser and bad-row report (criterion 3)
 
@@ -92,13 +94,13 @@ Agreed D13: logic that needs no screens comes first; screens follow in demo-stor
 - [ ] v1-PM-16 **Gate:** the app on a preview link with demo data, every FS task ticked, checks pass, Lakshay walks the demo story
 
 ## Lakshay does by hand (Claude can't)
-- [ ] When "comply pilot" has finished restoring, tell Claude. Claude then shows the address its Supabase tool points at; Lakshay compares it with the dashboard address of "comply pilot". If they differ, tell Claude
-- [ ] Make the app's Gmail account, turn on 2-Step Verification, make an app password (needed before FS-3, the first email)
-- [ ] Install Node 24 LTS (checked 2026-10-22: this Mac has Node 25.6.1, which stopped getting security fixes on 2026-06-01, [endoflife.date](https://endoflife.date/nodejs); Vercel's default is 24.x, [Vercel docs](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions)). Node 26 becomes LTS around 2026-10-28; whether Vercel offers it yet is `UNVERIFIED`
-- [ ] `gh auth login` in the terminal, so Claude can open pull requests and read check results (not logged in on 2026-10-22)
-- [ ] Make the GitHub repo private (done by Lakshay, 2026-10-22) and apply for GitHub Pro through the Student Developer Pack, so the branch rule can work on a private repo (ADR 0010)
+- [x] "comply pilot" restored (2026-10-22). Claude's Supabase tool pointed at another project (`bqprlhfixgcpfhxthrss`, neither of ours), so Claude set a local entry for this folder only, pointing at "comply pilot". **Left, by hand:** run `/mcp`, choose supabase and sign in, then start a new chat. Claude then checks the address and lists the tables
+- [ ] Gmail: Lakshay's personal account ([ADR 0011](../../adr/0011-email-from-personal-gmail.md)). Before FS-3, the first email: turn on 2-Step Verification and make an app password; it goes only into `.env.local` and the settings pages, never into chat
+- [x] Node 24 LTS installed by Claude (2026-10-22): Homebrew `node@24` (24.22.1), put first on the PATH by one line at the end of `~/.zshrc` (undo = delete that line). The Mac had Node 25.6.1, which stopped getting security fixes on 2026-06-01 ([endoflife.date](https://endoflife.date/nodejs)); Vercel's default is 24.x ([Vercel docs](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions)). **Side effect, fixed:** installing it updated a shared Homebrew library, which broke the old Homebrew Node 25 (and `mongosh`), so Claude ran `brew upgrade node`: Homebrew's own `node` is now 26.12.1 (mongosh 2.13.0). Shells use Node 24; Node 26 only serves Homebrew's own tools. Node 26 becomes LTS around 2026-10-28; whether Vercel offers it yet is `UNVERIFIED`
+- [x] `gh auth login` done (2026-10-22): Claude can open pull requests and read check results from the terminal
+- [x] Make the GitHub repo private (done by Lakshay, 2026-10-22); GitHub Pro **not now** (Lakshay, 2026-10-22): checks still run on every change, nothing blocks a merge, and Claude merges only when the checks pass (ADR 0010)
 - [ ] Put keys into `.env.local` and into Vercel's and GitHub's settings yourself. Never paste a key in chat
-- [ ] At QA-1: connect the repo on Vercel (done before for other projects) and try the function region Seoul. At FS-2: switch on the branch rule for `main`
+- [ ] At QA-1: connect the repo on Vercel (done before for other projects) and try the function region Seoul. The branch rule for `main` waits for GitHub Pro
 - Already done: Supabase account and both projects; Vercel account.
 
 ## Figma to code
@@ -147,7 +149,7 @@ Short fact-checks done 2026-10-21 are in the ADRs. Still open:
 - `UNVERIFIED` Google's own page for app passwords (third-party pages say 2-Step Verification is required)
 - `UNVERIFIED` Vercel Hobby may pick the Seoul region (`icn1` exists; the Hobby page says "single region"). Confirm at QA-1
 - `UNVERIFIED` whether `supabase db push` needs Docker. Try it at FS-2
-- Repo visibility: the repo is private from 2026-10-22 ([ADR 0010](../../adr/0010-private-repository.md)); `UNVERIFIED` that Lakshay's account qualifies for GitHub Pro (student benefit), and Vercel's current rule for private repos on Hobby. Check at QA-1
+- Repo visibility: the repo is private from 2026-10-22 ([ADR 0010](../../adr/0010-private-repository.md)); GitHub Pro is not wanted for now (2026-10-22); `UNVERIFIED` Vercel's current rule for private repos on Hobby. Check at QA-1
 - `UNVERIFIED` Supabase's rate limit for custom SMTP (sources say 30 messages an hour, or 30 new users an hour); Supabase's current API key names
 - Package versions on npm on 2026-10-21: Next.js 16.4.2, React 19.3.1, Tailwind 4.3.3, shadcn 4.22.1, supabase-js 2.118.0, Vitest 5.0.5, Playwright 1.64.1, Nodemailer 10.1.7, Zod 4.6.7, TypeScript 7.0.2. QA-1 pins the versions it uses
 - Phosphor's code package name; Next.js `onRequestError` confirmed in the docs (it exists since Next.js 15)
