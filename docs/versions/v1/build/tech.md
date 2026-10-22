@@ -51,7 +51,7 @@ All agreed with Lakshay on 2026-10-21, one at a time. "Options" are what Claude 
 | D18 | Lint tool (2026-10-22) | ESLint · Biome | **ESLint.** Checked 2026-10-22 in the [create-next-app docs](https://nextjs.org/docs/app/api-reference/cli/create-next-app) (updated 2026-09-29): still offered (`--eslint`); Next.js 16.4.2 installed, minimum Node 20.9 | below |
 | D19 | Old v0 env files (2026-10-22) | Delete + new Supabase keys · move out of the folder · leave | **Delete them and reset the old keys** (v0 used "comply pilot", so its old keys may still work). Files deleted 2026-10-22; the key swap is still open (see "by hand") | below |
 | D20 | Deploy timing (2026-10-22) | Vercel and the pipeline at the start of Build (QA-1) · deploy at the end, on Lakshay's terms | **Deploy at the end.** QA-1 became "app skeleton, local only". Unchecked until then: Vercel Seoul region and private repos on the free plan, Node 26 on Vercel | README QA-1, criterion 14 |
-| D21 | Generator settings (2026-10-22) | Keep the generator's defaults · change them | Kept: **Cache Components** and **Partial Prefetching** (data is dynamic unless we mark it cached; the docs say both become the only mode in the next major release). Set `agentRules: false` so `next dev` never rewrites our shared AGENTS.md. `typecheck` script runs `next typegen` first, because `.next/` (git-ignored) holds the route types. **Open: Lakshay confirms Cache Components** | [Cache Components](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents) |
+| D21 | Generator settings (2026-10-22) | Keep the generator's defaults · change them | Kept: **Cache Components** and **Partial Prefetching** (data is dynamic unless we mark it cached; the docs say both become the only mode in the next major release). Set `agentRules: false` so `next dev` never rewrites our shared AGENTS.md. `typecheck` script runs `next typegen` first, because `.next/` (git-ignored) holds the route types. **Confirmed by Lakshay 2026-10-23** | [Cache Components](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents) |
 **Claude's own calls (Lakshay can change them):** npm; Node 24 LTS; Nodemailer for email and Zod for input checks, each noted when first added; the backup file is encrypted (it was a public-repo precaution; kept now the repo is private, [0010](../../../adr/0010-private-repository.md)); the error hook sends at most one email per error per hour; each task's own design questions are asked when the task starts.
 
 ## Environments
@@ -123,6 +123,44 @@ Sources checked 2026-10-22 (supabase.com/docs; no page shows a date): [CLI getti
 **Logic cores** (pure functions, tests beside the code in `src/features/<feature>/`, each starts with its own short design talk): FS-5 due dates ([due-dates.md](../research/due-dates.md), criterion 6) · FS-14 repeating tasks (criterion 10) · FS-10 licence warnings ([licences.md](../research/licences.md), criterion 9) · FS-13 factory rules ([applicability-delhi-haryana.md](../research/applicability-delhi-haryana.md), criterion 5) · FS-8 CSV parser ([import-formats.md](../research/import-formats.md), criterion 3).
 **The look in code** (once, at the start of FS-3): Figma variables into one CSS token file · the 38 parts on `05 Components` into `src/components/ui/` (shadcn, restyled) · one Code Connect test call (`UNVERIFIED` on the Education plan) · brand files into `public/`.
 **How each step is checked:** FS-2: migrations run on training, advisors show no RLS warnings, cross-firm tests pass on GitHub. Logic cores: `npx vitest run`. Screens: compared with the picture Figma returns; the demo story is walked at PM-16.
+
+## FS-2 tables and server actions (approved by Lakshay 2026-10-23)
+Built only from the decisions above and the frames. **S** = staff of that firm, **O** = that client's owner. Every table has `id`, `created_at` and (except `firms`) a `firm_id`. Names are snake_case.
+
+| Table | Key columns | Who can do what (RLS) |
+|---|---|---|
+| `firms` | name, city, contact_email, mobile, default_state | S read and edit their own firm. Made only by the sign-up action |
+| `members` | user_id (the login), firm_id, role (`staff` or `owner`), client_id (owners only), name, email | Everyone reads their own row; S read their firm's members. Written only by the server on sign-up and invite accept. One row per login = one email, one firm, one role |
+| `invites` | email, role, client_id, invited_by, accepted_at | S create and read their firm's. Accepted by the server |
+| `consents` | user_id, notice_version, accepted_at | S read their firm's, add their own. **Never changed or deleted** |
+| `clients` | name, trade_name, gstin, pan, state, gst_scheme, tds / pf / esic flags, income_tax_type, contact_name, contact_phone, archived_at | S all in their firm. O read their own (not if archived). Unique (firm_id, gstin) |
+| `client_filings` | client_id, filing_code | S all. O read their own |
+| `calendar_items` | client_id, kind (`filing` / `licence` / `task`), filing_code, period_start, period_label, official_due_date, due_date, due_date_change_id, licence_id, title, filed_at / by, done_at / by, arn, receipt_file_id | S read and update. O read their own. Rows are made and rebuilt by server code. Unique (client_id, filing_code, period_start) |
+| `due_date_changes` | filing_code, period_start, state (optional), new_due_date, source, created_by, removed_at, removed_by | S only, own firm. O never read directly (they see the moved date on the item) |
+| `licences` | client_id, licence_type, number, office, issued_on, expires_on, no_expiry, apply_by_date, certificate_file_id, source (`factory_rules` / `manual`), confirmed_at | S all. O read their own and attach a certificate file only. Status (Valid, Renew soon, Expired, Details needed, Valid until cancelled) is worked out when shown |
+| `owner_tasks` | calendar_item_id, title, note, created_by, done_at, done_by | S create and read. O read their own and tick them done |
+| `thread_entries` | calendar_item_id, kind (`message` / `note` / `event`), author_id, body, tag (`need_document` / `question` / `filed`), event_type, file_id | S read all, write messages and notes. **O read messages and events, never notes**; O write messages only. Events are written by the database itself, nobody types one |
+| `files` | calendar_item_id or licence_id, storage_path (`firm_id/client_id/…`), file_name, mime_type, size_bytes, uploaded_by, deleted_at | S and O read and upload for their own client. The uploader can delete, except a file used as a done item's receipt |
+
+**Rules across all tables**
+- **Composite foreign keys:** a child row carries `firm_id` and points at its parent with both ids, for example (client_id, firm_id) to `clients`. A row then cannot sit under another firm's client, even through a bug (a "foreign key" is the database's link from one row to another).
+- **Helper functions** `my_firm_id()`, `my_role()`, `my_client_id()` in a private schema that the app cannot call directly; every policy uses them. Policies say `TO authenticated`, check `firm_id`, and never read `user_metadata` (a user can edit it).
+- **Events by trigger:** "Rakesh marked this done", "Vikram removed a file" and the like are written by database triggers when the real change happens, so they can't be faked or forgotten.
+- **Not in FS-2** (each arrives with its task, with RLS and cross-firm tests in the same change): `firm_tasks` (FS-14), factory answers and licence suggestions (FS-13), `reminder_runs` (FS-15).
+
+**Server actions (the only writers).** Each checks its input with a schema (Zod) and returns a typed result; errors are plain sentences.
+| Task | Action: input → output |
+|---|---|
+| FS-3 | `createFirm({firmName, city, email, mobile, noticeVersion})` → firm + consent saved · `inviteColleague({email})` → invite · `acceptInvite(token)` → member |
+| FS-4 | `createClient`, `updateClient`, `archiveClient(id)`, `unarchiveClient(id)` · `setClientFilings(clientId, filingCodes[])` → items rebuilt |
+| FS-8 | `importClients(csvText)` → `{saved: n, badRows: [{row, field, reason}]}` |
+| FS-12 | `inviteOwner({clientId, email})` → invite sent |
+| FS-6 | `listCalendarItems({from, to, clientId?, filingCode?, status?})` → items with worked-out status and days late · `getCalendarItem(id)` → item, thread, owner tasks |
+| FS-7 | `postMessage({itemId, body, tag?, fileId?})` · `postNote({itemId, body})` (S) · `giveOwnerTask({itemId, title, note?})` (S) · `tickOwnerTask(id)` (O) · `tagFiled(itemId)` · `markDone({itemId, arn, receiptFileId})` · `editDone(...)` · `undoDone(itemId)` (10 seconds) · `requestUpload({itemId or licenceId, fileName, mimeType, size})` → `{fileId, uploadUrl}` · `deleteFile(fileId)` |
+| FS-10 | `saveLicence({...})` (S) · `attachCertificate({licenceId, fileId})` (O) |
+| FS-11 | `previewDueDateChange({filingCode, periodStart, state?, newDate})` → `{itemsMoved, alreadyDone, firstClients[]}` · `applyDueDateChange(...)` · `removeDueDateChange(id)` |
+
+**Three small points, confirmed 2026-10-23:** (a) filing codes (`gstr1`, `gstr3b`, `pmt06`, `cmp08`, `gstr4`, `gstr9`, `tds_deposit`, `tds_return_salary`, `tds_return_other`, `advance_tax`, `tax_audit`, `itr_audit`, `esic`) are plain text with a CHECK list, not a lookup table; (b) removing a due-date change keeps the row with `removed_at` (history stays); (c) events come from database triggers, as above.
 
 ## Lakshay does by hand (Claude can't)
 - [x] "comply pilot" restored (2026-10-22). Claude's Supabase tool pointed at another project (`bqprlhfixgcpfhxthrss`, neither of ours), so Claude set a local entry for this folder only, pointing at "comply pilot". Signed in on 2026-10-22; the address was checked (`weywbysvdcdjcciqgrqw`)
