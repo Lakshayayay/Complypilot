@@ -72,7 +72,7 @@ Each one is proven by a test or a check. All must pass at the checkpoint.
 11. **Thread (F9):** the CA and the owner can post messages and files on an item and set tags. Mark done saves the ARN, the receipt (PDF/JPG/PNG, max 10 MB), who did it and when. Files open only for that firm and that client's owner.
 12. **Reminders (F10):** the firm gets one email each morning listing late items and items due in the next 7 days. The owner gets one email each Monday listing their items due in the next 10 days and anything waiting on them, and an email right away when the CA gives them a task. A licence joins a list when its reminder day (90, 60 or 30 days before the apply-by date) has passed since that list was last sent, so the owner's Monday list never misses one. Items already marked done never appear.
 13. **AI (F11):** the matcher reaches its target on the eval set (a fixed set of test examples with known answers; target agreed in ai.md, draft 90%). Every answer shows the line it matched. Nothing is saved until the CA confirms.
-14. **Release:** every change to `main` deploys by itself once checks pass. Daily backups, and one test restore done. Error alerts reach Lakshay.
+14. **Release:** every change to `main` deploys by itself once checks pass. Daily backups, and one test restore done. Error alerts reach Lakshay. *(Deploying starts at the end of Build, when Lakshay sets it up; D20.)*
 15. **Demo (F12):** the "Done when" list above is met.
 
 ## Tasks by stage
@@ -100,10 +100,10 @@ Each task has an ID and a track. Tick the box when its "done when" check passes.
 - [x] v1-PM-12 **Gate:** Lakshay approves the design (approved 2026-10-22, no changes)
 
 ### Stage 2: Build [FS] → build/ (tech.md, build-plan.md)
-The stack, folder layout, naming and order of work were agreed with Lakshay on 2026-10-21 and are written in [tech.md](build/tech.md) and ADRs [0001](../../adr/0001-app-framework.md) to [0011](../../adr/0011-email-from-personal-gmail.md) (index: [docs/adr/](../../adr/README.md)). The starter app on Vercel comes first (QA-1). Step by step, with each task's design questions: [build-plan.md](build/build-plan.md).
+The stack, folder layout, naming and order of work were agreed with Lakshay on 2026-10-21 and are written in [tech.md](build/tech.md) and ADRs [0001](../../adr/0001-app-framework.md) to [0011](../../adr/0011-email-from-personal-gmail.md) (index: [docs/adr/](../../adr/README.md)). The app skeleton on the Mac comes first (QA-1); deploying waits until the end (D20). Step by step, with each task's design questions: [build-plan.md](build/build-plan.md).
 **Gate PM-12 passed 2026-10-22.** Build starts with the FS-1 close-out, QA-1, FS-2, FS-5 and the logic cores of FS-14, FS-10, FS-13 and FS-8 (pure rules with unit tests, no screens); screens follow in demo order, built from Figma's design-to-code tool (tech.md, D14).
 - [x] v1-FS-1 Choose the stack, one ADR (short decision record) each. **Decided 2026-10-21:** ADRs 0001 to 0011 (Next.js, Supabase, Vercel, Gmail email, Vitest and Playwright, and more); the old Supabase project becomes the training project; the demo project stays in Seoul and moves to Mumbai before real users. **Closed 2026-10-22:** the training project checked and wiped
-- [ ] v1-QA-1 Starter app on Vercel: the empty Next.js app in the agreed folder layout; Lakshay connects the repo, and Vercel publishes `main` and a preview link per branch by itself (decided 2026-10-22: no separate deploy planning). Done when a starter page is live. The automatic checks (lint, type check, unit tests) and the branch rule join at FS-2; error alerts by email ([ADR 0006](../../adr/0006-error-alerts-by-email.md)) come at QA-5
+- [x] v1-QA-1 App skeleton, on the Mac only: the empty Next.js app with one starter page; folders are made when their first file arrives. **Changed 2026-10-22 (tech.md D20):** no Vercel and no deploy pipeline now; Lakshay deploys the whole project at the end, on his own terms. Closed 2026-10-22: lint, type check and build pass. The automatic checks (lint, type check, unit tests) and the branch rule join at FS-2; error alerts by email ([ADR 0006](../../adr/0006-error-alerts-by-email.md)) come at QA-5
 - [ ] v1-FS-2 Data structure, API shapes (what the server sends and receives) and RLS rules (database rules that keep firms apart), with tests; the automatic checks on every change start here → criterion 2
 - [ ] v1-FS-3 Login, firm sign-up, consent, invite colleagues → criterion 1
 - [ ] v1-FS-4 Clients: add, edit, archive; choose the filings that apply
@@ -119,7 +119,7 @@ The stack, folder layout, naming and order of work were agreed with Lakshay on 2
 - [ ] v1-FS-14 CA's own repeating tasks → criterion 10
 - [ ] v1-FS-15 Email reminders → criterion 12
 - [ ] v1-FS-16 Demo data set: sample firms, factories, owners and threads
-- [ ] v1-PM-16 **Gate:** Lakshay approves the build. Done when the app is on a preview link with demo data, every FS task is ticked, the automatic checks pass, and Lakshay walks the demo story in the real app
+- [ ] v1-PM-16 **Gate:** Lakshay approves the build. Done when the app is on a preview link with demo data (Lakshay deploys it for this gate, D20), every FS task is ticked, the automatic checks pass, and Lakshay walks the demo story in the real app
 
 ### Stage 3: Intelligence [AI] → ai.md
 - [ ] v1-AI-1 "Learn first" notes. Check the data is clean. Pick the numbers we watch, e.g. how often the CA accepts or changes a suggestion

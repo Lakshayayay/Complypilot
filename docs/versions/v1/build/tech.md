@@ -1,7 +1,7 @@
 # v1 Build (stage 2)
 
 **Stage:** 2 Build [FS], planned 2026-10-21 with Lakshay; **started 2026-10-22, after gate PM-12 (design approved)**. **Tasks:** FS-1 to FS-16, QA-1 and gate PM-16, in the [README](../README.md). **Decisions:** [docs/adr/](../../../adr/README.md) (0001 to 0011).
-**Next step:** QA-1 (the starter app on Vercel), then FS-2 (tables, API shapes, RLS, and the automatic checks). The step-by-step plan, with each task's design questions and where we stopped: [build-plan.md](build-plan.md).
+**Next step:** FS-2 (tables, API shapes, RLS, and the automatic checks). QA-1 (the app skeleton, on the Mac only) closed 2026-10-22; Vercel and the deploy wait until the end (D20). The step-by-step plan, with each task's design questions and where we stopped: [build-plan.md](build-plan.md).
 
 ## Learn first
 New ideas this stage uses. Sources opened 2026-10-21 unless marked.
@@ -44,11 +44,13 @@ All agreed with Lakshay on 2026-10-21, one at a time. "Options" are what Claude 
 | D12 | Code layout | By feature · by type | **By feature** | below |
 | D13 | Build order | Logic now, screens later · README order as is | **Logic now, screens later** | below |
 | D14 | Figma to code (2026-10-22) | Figma's own design-to-code tool · a one-click plugin (Anima, Locofy, Builder.io) · Figma Make | **Figma's own tool.** Plugins are paid (breaks "fully free"); Make's Supabase link is key-value only and needs an Organization plan | below, "Figma to code" |
-| D15 | Deploy planning (2026-10-22) | A planned pipeline task · starter app and Vercel's own auto-deploy | **No separate deploy planning.** Lakshay has deployed on Vercel's free plan before; once the repo is connected it publishes `main` and a preview link per branch by itself | README QA-1 |
+| D15 | Deploy planning (2026-10-22; **replaced by D20**) | A planned pipeline task · starter app and Vercel's own auto-deploy | **No separate deploy planning.** Lakshay has deployed on Vercel's free plan before; once the repo is connected it publishes `main` and a preview link per branch by itself | README QA-1 |
 | D16 | Email account (2026-10-22) | A separate Gmail account for the app (Claude's recommendation) · Lakshay's personal Gmail | **Personal Gmail** (a leaked app password could reach his own mail; see the ADR) | [0011](../../../adr/0011-email-from-personal-gmail.md) |
 | D17 | Make the starter app (2026-10-22) | The official generator (`create-next-app`) · write the files by hand | **Official generator**, run in a temporary folder and copied in (the repo root already has files) | [build-plan.md](build-plan.md) |
-| D18 | Lint tool (2026-10-22) | ESLint · Biome | **ESLint** (the generator's current options are checked in the Next.js docs at QA-1) | [build-plan.md](build-plan.md) |
-| D19 | Old v0 env files (2026-10-22) | Delete + new Supabase keys · move out of the folder · leave | **Delete them and reset the old keys** (v0 used "comply pilot", so its old keys may still work) | [build-plan.md](build-plan.md) |
+| D18 | Lint tool (2026-10-22) | ESLint · Biome | **ESLint.** Checked 2026-10-22 in the [create-next-app docs](https://nextjs.org/docs/app/api-reference/cli/create-next-app) (updated 2026-09-29): still offered (`--eslint`); Next.js 16.4.2 installed, minimum Node 20.9 | [build-plan.md](build-plan.md) |
+| D19 | Old v0 env files (2026-10-22) | Delete + new Supabase keys · move out of the folder · leave | **Delete them and reset the old keys** (v0 used "comply pilot", so its old keys may still work). Files deleted 2026-10-22; the key swap is still open (see "by hand") | [build-plan.md](build-plan.md) |
+| D20 | Deploy timing (2026-10-22) | Vercel and the pipeline at the start of Build (QA-1) · deploy at the end, on Lakshay's terms | **Deploy at the end.** QA-1 became "app skeleton, local only". Unchecked until then: Vercel Seoul region and private repos on the free plan, Node 26 on Vercel | README QA-1, criterion 14 |
+| D21 | Generator settings (2026-10-22) | Keep the generator's defaults · change them | Kept: **Cache Components** and **Partial Prefetching** (data is dynamic unless we mark it cached; the docs say both become the only mode in the next major release). Set `agentRules: false` so `next dev` never rewrites our shared AGENTS.md. `typecheck` script runs `next typegen` first, because `.next/` (git-ignored) holds the route types. **Open: Lakshay confirms Cache Components** | [Cache Components](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents) |
 **Claude's own calls (Lakshay can change them):** npm; Node 24 LTS; Nodemailer for email and Zod for input checks, each noted when first added; the backup file is encrypted (it was a public-repo precaution; kept now the repo is private, [0010](../../../adr/0010-private-repository.md)); the error hook sends at most one email per error per hour; each task's own design questions are asked when the task starts.
 
 ## Environments
@@ -58,7 +60,7 @@ All agreed with Lakshay on 2026-10-21, one at a time. "Options" are what Claude 
 | Project ID (not secret; it is in the project's web address) | `weywbysvdcdjcciqgrqw` | `wewudhskurjdqqrhsfho` |
 | Used by | The Mac, tests, Vercel preview links | Vercel production (`main`) and the demo |
 | Backups | Not needed | Nightly, encrypted ([0009](../../../adr/0009-timed-jobs-and-backups.md)) |
-**Setting names (names only, never values; final at QA-1, and Supabase's current key names are checked then):** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY` (server only), `NEXT_PUBLIC_APP_URL`, `GMAIL_USER`, `GMAIL_APP_PASSWORD`, `ALERT_EMAIL_TO`, `CRON_SECRET`; GitHub secrets: `SUPABASE_DB_URL`, `BACKUP_PASSPHRASE`. A names-only `.env.example` is made at QA-1 (the current `.gitignore` hides every `.env.*` file, so it gets an exception).
+**Setting names (names only, never values; final at QA-1, and Supabase's current key names are checked then):** `NEXT_PUBLIC_SUPABASE_URL`, `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `SUPABASE_SECRET_KEY` (server only), `NEXT_PUBLIC_APP_URL`, `GMAIL_USER`, `GMAIL_APP_PASSWORD`, `ALERT_EMAIL_TO`, `CRON_SECRET`; GitHub secrets: `SUPABASE_DB_URL`, `BACKUP_PASSPHRASE`. The names-only `.env.example` was made at QA-1 (`.gitignore` hides every `.env.*` file except it).
 
 ## Code layout and naming
 Agreed by feature (D12). Pages stay in `src/app/` because Next.js turns folders there into web addresses ([project structure](https://nextjs.org/docs/app/getting-started/project-structure)).
@@ -86,7 +88,7 @@ Design agreed with Lakshay (one question at a time, options + recommendation) �
 Agreed D13: logic that needs no screens comes first; screens follow in demo-story order after gate PM-12. Done = its "done when" in the README passes. Step by step, with each task's design questions: [build-plan.md](build-plan.md).
 **Before screens (needs no design):**
 - [x] v1-FS-1 close-out (2026-10-22): decisions written (this file, ADRs 0001 to 0011); the Supabase tool signed in; the training project checked (8 v0 tables, a few test rows, no logins or files) and wiped by Lakshay in the SQL Editor. Supabase's own `rls_auto_enable()` helper was kept: it turns RLS on for every new table in `public`
-- [ ] v1-QA-1 starter app on Vercel (D15): the empty Next.js app in the layout above; Lakshay connects the repo on Vercel and tries the Seoul region. Done when a starter page is live. The GitHub Actions checks (lint, type check, Vitest) and the branch rule join at FS-2; the email-on-error hook comes at QA-5
+- [x] v1-QA-1 app skeleton, on the Mac only (D20; closed 2026-10-22): one starter page; `npm run lint`, `npm run typecheck` and `npm run build` pass; `next dev` serves the page. Exact versions pinned (`.npmrc`), `engines` Node 24.x, `.nvmrc`. The GitHub Actions checks (lint, type check, Vitest) and the branch rule join at FS-2; the email-on-error hook comes at QA-5
 - [ ] v1-FS-2 tables, API shapes, RLS and the cross-firm tests; the automatic checks (GitHub Actions) start here, and the branch rule only if GitHub Pro is added later. Its own back-and-forth on the tables first
 - [ ] v1-FS-5 due-date engine (criterion 6)
 - [ ] Logic cores, each pure with unit tests: v1-FS-14 next dates (criterion 10) · v1-FS-10 licence warnings (criterion 9) · v1-FS-13 factory rules (criterion 5) · v1-FS-8 CSV parser and bad-row report (criterion 3)
@@ -94,17 +96,18 @@ Agreed D13: logic that needs no screens comes first; screens follow in demo-stor
 **Screens, in demo-story order (PM-12 passed 2026-10-22):**
 - [ ] FS-3 login, sign-up, consent, invite colleagues · FS-4 clients · FS-8 import screens · FS-6 calendar · FS-12 invite owner and owner login · FS-7 thread and Mark done · FS-10 licence screens · FS-13 factory questions screens · FS-14 task screens · FS-11 override dates · FS-15 reminders · FS-9 backups on, breach runbook, demo-data guard · FS-16 demo data
 - **Small screens with no frame (decided at PM-12, built from existing parts):** edit and archive a client (FS-4) · edit a licence and its apply-by date (FS-10) · edit and delete a task (FS-14) · "session expired" and "not allowed" (FS-3)
-- [ ] v1-PM-16 **Gate:** the app on a preview link with demo data, every FS task ticked, checks pass, Lakshay walks the demo story
+- [ ] v1-PM-16 **Gate:** the app on a preview link with demo data (Lakshay deploys it, D20), every FS task ticked, checks pass, Lakshay walks the demo story
 
 ## Lakshay does by hand (Claude can't)
 - [x] "comply pilot" restored (2026-10-22). Claude's Supabase tool pointed at another project (`bqprlhfixgcpfhxthrss`, neither of ours), so Claude set a local entry for this folder only, pointing at "comply pilot". Signed in on 2026-10-22; the address was checked (`weywbysvdcdjcciqgrqw`)
-- [ ] Before QA-1: delete the three old v0 env files and reset the old Supabase keys (D19, [build-plan.md](build-plan.md) step 0)
+- [x] The three old v0 env files are deleted (2026-10-22, D19)
+- [ ] Supabase keys: new ones were made on "comply pilot", but a secret key value was shared in chat, so turn that one off and make another. Check the old v0 keys are off too. Values only into `.env.local`, never chat (D19, [build-plan.md](build-plan.md) step 0.3)
 - [ ] Gmail: Lakshay's personal account ([ADR 0011](../../../adr/0011-email-from-personal-gmail.md)). Before FS-3, the first email: turn on 2-Step Verification and make an app password; it goes only into `.env.local` and the settings pages, never into chat
 - [x] Node 24 LTS installed by Claude (2026-10-22): Homebrew `node@24` (24.22.1), put first on the PATH by one line at the end of `~/.zshrc` (undo = delete that line). The Mac had Node 25.6.1, which stopped getting security fixes on 2026-06-01 ([endoflife.date](https://endoflife.date/nodejs)); Vercel's default is 24.x ([Vercel docs](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions)). **Side effect, fixed:** installing it updated a shared Homebrew library, which broke the old Homebrew Node 25 (and `mongosh`), so Claude ran `brew upgrade node`: Homebrew's own `node` is now 26.12.1 (mongosh 2.13.0). Shells use Node 24; Node 26 only serves Homebrew's own tools. Node 26 becomes LTS around 2026-10-28; whether Vercel offers it yet is `UNVERIFIED`
 - [x] `gh auth login` done (2026-10-22): Claude can open pull requests and read check results from the terminal
 - [x] Make the GitHub repo private (done by Lakshay, 2026-10-22); GitHub Pro **not now** (Lakshay, 2026-10-22): checks still run on every change, nothing blocks a merge, and Claude merges only when the checks pass (ADR 0010)
 - [ ] Put keys into `.env.local` and into Vercel's and GitHub's settings yourself. Never paste a key in chat
-- [ ] At QA-1: connect the repo on Vercel (done before for other projects) and try the function region Seoul. The branch rule for `main` waits for GitHub Pro
+- [ ] At the end of Build (D20): connect the repo on Vercel, set the keys there, try the function region Seoul. The branch rule for `main` waits for GitHub Pro
 - Already done: Supabase account and both projects; Vercel account.
 
 ## Figma to code
