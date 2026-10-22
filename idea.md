@@ -170,3 +170,4 @@ One line per idea: date · idea → where it goes. To add an idea, add one line.
 - 2026-10-17 · Company filings (ROC/MCA), professional tax, CA fee tracking, staff roles, GST certificate reader, calendar export to phone/Google → later
 - 2026-10-17 · **v1 is for engineering and a college/competition pitch.** Made-up demo data only; no sales goal → v1
 - 2026-10-18 · **Watch official pages for rule changes automatically** (new notices, date extensions) so licence rules and due dates stay fresh → later
+- 2026-10-22 · **Richer owner phone features.** The owner screens are simple on purpose in v1; Lakshay wants more later (said at gate PM-12) → later

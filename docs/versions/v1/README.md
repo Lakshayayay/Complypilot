@@ -1,6 +1,6 @@
 # v1 — Shared Compliance Calendar
 
-**Stage:** 1 Design [UX] → [design.md](design/design.md) (stage 0 approved 2026-10-18); stage 2 Build is planned in [tech.md](tech.md) (decisions 2026-10-21, ADRs in [docs/adr/](../../adr/)). Scope locked 2026-10-17. Any change from here is written down in this file.
+**Stage:** 2 Build [FS] → [tech.md](tech.md) (decisions 2026-10-21, ADRs in [docs/adr/](../../adr/)). Stage 0 approved 2026-10-18; stage 1 Design approved 2026-10-22 ([design.md](design/design.md)). Scope locked 2026-10-17. Any change from here is written down in this file.
 **Time:** no deadlines or hour budgets. Progress = the task checklist below.
 **Vision and ideas:** [idea.md](../../../idea.md)
 
@@ -41,6 +41,8 @@ Tracks: [PM] product · [UX] design · [FS] full-stack · [AI] AI and data · [Q
 | WhatsApp messages, no-login upload link, AI sorting of documents | v2 |
 | Owner health score, document vault, factory questions for more states | v3 |
 | Export and delete a client (was FS-9 in privacy.md) | First version with real users |
+| Consent for colleagues and owners: only the firm's sign-up records consent in v1 (decided at PM-12). Before real data, each person accepts the notice on first sign-in | First version with real users |
+| Richer owner phone features (the owner screens are simple on purpose in v1) | Later (Lakshay, PM-12) |
 | Move the live data to India (a Mumbai project), and backups to private storage ([ADR 0003](../../adr/0003-hosting-and-data-region.md), [0009](../../adr/0009-timed-jobs-and-backups.md)) | First version with real users |
 | Late-fee warning, ROC/MCA company filings, professional tax, CA fee tracking, staff roles | Later |
 | Tally/Winman import ([import-formats.md](research/import-formats.md)), government portal data, GST certificate reader, calendar export to phone | Later |
@@ -94,15 +96,15 @@ Each task has an ID and a track. Tick the box when its "done when" check passes.
 - [x] v1-UX-1 "Learn first" notes and user flows: firm sign-up → add clients → invite owner → factory questions → calendar → item thread → mark done. Done when every feature has a flow (approved by Lakshay 2026-10-20)
 - [x] v1-UX-2 Screen list and wireframes (rough layouts) for both sides, desktop for the CA and phone for the owner. Done when every step of every flow has a screen (approved by Lakshay 2026-10-20)
 - [x] v1-UX-3 Brand and design basics: logo, app icon, favicon, colours, fonts, spacing, status chips. Status is never shown by colour alone. Done when text contrast passes WCAG AA (the standard readability check) and the logo reads at 16 px (brand added 2026-10-19; approved by Lakshay 2026-10-21)
-- [ ] v1-UX-4 Detailed calendar and item thread screens; agree the reminder days. Done when Lakshay can walk the demo story on the designs
-- [ ] v1-PM-12 **Gate:** Lakshay approves the design
+- [x] v1-UX-4 Detailed calendar and item thread screens; agree the reminder days. Done when Lakshay can walk the demo story on the designs (66 frames; walked and approved 2026-10-22)
+- [x] v1-PM-12 **Gate:** Lakshay approves the design (approved 2026-10-22, no changes)
 
 ### Stage 2: Build [FS] → tech.md
 The stack, folder layout, naming and order of work were agreed with Lakshay on 2026-10-21 and are written in [tech.md](tech.md) and ADRs [0001](../../adr/0001-app-framework.md) to [0009](../../adr/0009-timed-jobs-and-backups.md). The deploy pipeline comes first.
-**Early start (2026-10-21, Lakshay):** the Figma limit reset the same day, so design finishes first (stage 1). Build then starts with the FS-1 close-out, QA-1, FS-2, FS-5 and the logic cores of FS-14, FS-10, FS-13 and FS-8 (pure rules with unit tests, no screens). If Figma blocks again, these may start earlier. Anything that builds screens waits for gate PM-12.
+**Gate PM-12 passed 2026-10-22.** Build starts with the FS-1 close-out, QA-1, FS-2, FS-5 and the logic cores of FS-14, FS-10, FS-13 and FS-8 (pure rules with unit tests, no screens); screens follow in demo order, built from Figma's design-to-code tool (tech.md, D14).
 - [ ] v1-FS-1 Choose the stack, one ADR (short decision record) each. **Decided 2026-10-21:** ADRs 0001 to 0010 (Next.js, Supabase, Vercel, Gmail email, Vitest and Playwright, and more); the old Supabase project becomes the training project; the demo project stays in Seoul and moves to Mumbai before real users. **Left:** Lakshay's by-hand steps (tech.md) and checking and wiping the training project
-- [ ] v1-QA-1 Deploy pipeline: automatic checks on every change (lint, type check, unit tests), preview deploys, production deploys from `main`, error alerts by email ([ADR 0006](../../adr/0006-error-alerts-by-email.md)), a branch rule so `main` takes only changes that pass. Done when a starter page deploys by itself
-- [ ] v1-FS-2 Data structure, API shapes (what the server sends and receives) and RLS rules (database rules that keep firms apart), with tests → criterion 2
+- [ ] v1-QA-1 Starter app on Vercel: the empty Next.js app in the agreed folder layout; Lakshay connects the repo, and Vercel publishes `main` and a preview link per branch by itself (decided 2026-10-22: no separate deploy planning). Done when a starter page is live. The automatic checks (lint, type check, unit tests) and the branch rule join at FS-2; error alerts by email ([ADR 0006](../../adr/0006-error-alerts-by-email.md)) come at QA-5
+- [ ] v1-FS-2 Data structure, API shapes (what the server sends and receives) and RLS rules (database rules that keep firms apart), with tests; the automatic checks on every change start here → criterion 2
 - [ ] v1-FS-3 Login, firm sign-up, consent, invite colleagues → criterion 1
 - [ ] v1-FS-4 Clients: add, edit, archive; choose the filings that apply
 - [ ] v1-FS-5 Due-date engine: write the ✅ rows (confirmed in v1-PM-14) as a pure function (same inputs, same answer) → criterion 6

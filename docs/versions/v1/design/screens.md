@@ -87,7 +87,7 @@ Batches A to D moved from [design.md](design.md), UX-4, on 2026-10-21. Built on 
 | CA-14b Due this week | The "Due this week" filter as a removable tag. The week of 19 to 25 Oct is outlined and shows only what is left; the other weeks show dates only. A side list "This week's items" groups by day and filing ("48 left", a few clients each, "Show 44 more") |
 | CA-15 Client grid | One row per client, one column per filing, then Licences; each cell is a status chip and its date. Rows by urgency (late first). Sunrise Plastics is highlighted: "Renew soon, hazardous waste, apply by 15 Jan" beside its GST items (beat 3) |
 - **Parts changed:** `ViewSwitch` is now Month · Client grid (the approved screen list has no Week or List view; "Due this week" is a filter). New `IconButton` (40 px, styled like the secondary `Button`) for the ‹ › arrows. Quarterly filings say "QRMP" (the CA term) so chips stay on one line.
-- **Checks:** read-back on all three frames, 1,162 layers: 0 typed-in colours (783 bound), 0 loose corners, gaps or padding, all 343 texts styled and Anek Latin, no dashes, no cut-off text. **Projector (1024 px, `UNVERIFIED` width):** dates, colours, icons and titles read; chip words shrink to about 8 px. Lakshay decides after seeing a real projector; Figma's presentation mode scales the frame to the screen.
+- **Checks:** read-back on all three frames, 1,162 layers: 0 typed-in colours (783 bound), 0 loose corners, gaps or padding, all 343 texts styled and Anek Latin, no dashes, no cut-off text. **Projector (1024 px, `UNVERIFIED` width):** dates, colours, icons and titles read; chip words shrink to about 8 px. Dropped at PM-12 (2026-10-22): no projector sizing, the app follows normal desktop sizes.
 
 **Batch B: demo beat 4, add a client and invite the owner (built 2026-10-21).** Same section, after CA-15.
 | Frame | What it shows |
@@ -152,7 +152,7 @@ Built flow by flow on `06 Screens`, one section per batch below `demo-path`. Sam
 | CA-05 | Invite colleagues (window over CA-04): an email box ("separate several with commas"), "Same access for everyone" in v1 |
 | EM-02 | Colleague invite: "Join Kapoor & Associates", "Join the firm" |
 - **Checks:** read-back on the 13 frames, 714 layers: 0 typed-in colours (564 bound), 0 loose corners, gaps or padding, all 237 texts styled and Anek Latin, no dashes, no cut-off text, no phone button under 44 px.
-- **Review later (Lakshay):** the full privacy notice text is written in stage 2 from privacy.md; the card shows the summary.
+- **Review later (accepted at PM-12, 2026-10-22):** the full privacy notice text is written in stage 2 from privacy.md; the card shows the summary.
 
 **Batch 2: clients, F-03 (5 frames, built 2026-10-21).** Section `batch-2 clients`.
 | Frame | What it shows |
@@ -188,7 +188,7 @@ Built flow by flow on `06 Screens`, one section per batch below `demo-path`. Sam
 | OW-12 Licence detail | Boiler certificate: Renew soon, number, office, issued date, the certificate file, "What it is", "Where to apply", its source, "Upload the new certificate" |
 - **Owner pages that are taller than the phone** (OW-08, OW-10, OW-12) grow downwards, as a scrolling page does; the others stay 844 px with the tabs at the bottom.
 - **Checks:** read-back on the 9 frames, 1,050 layers: 0 typed-in colours (759 bound), 0 loose corners, gaps or padding, all 362 texts styled and Anek Latin, no dashes, no cut-off text or content, no phone button under 44 px.
-- **Review later (Lakshay):** licence numbers, offices and the Delhi fire certificate date are made-up demo data; "renew every year on e-District Delhi" comes from the UX-2 wireframe and should be rechecked against [licences.md](../research/licences.md) in stage 2.
+- **Review later (accepted at PM-12, 2026-10-22):** licence numbers, offices and the Delhi fire certificate date are made-up demo data; "renew every year on e-District Delhi" comes from the UX-2 wireframe and should be rechecked against [licences.md](../research/licences.md) in stage 2.
 
 **Batch 5: tasks and thread states, F-08 and F-09 (5 frames, built 2026-10-21).** Section `batch-5 tasks and thread states`.
 | Frame | What it shows |
@@ -228,4 +228,4 @@ Built flow by flow on `06 Screens`, one section per batch below `demo-path`. Sam
 - **CA-15 client grid** (8 columns, status chips in each) is 52 px too wide at 1366. Rule for stage 2: a table wider than its card scrolls sideways inside the card, with the first column fixed. Nothing else scrolls.
 - **Owner screens at 360 px:** 16 of 17 fit. OW-09: the 7 day boxes now share the row width (45 px wide and 46 px tall at 360, 49 px at 390), still over the 44 px target size.
 - **Tables in code:** columns are as wide as their content; exactly one column takes the leftover width and may wrap onto a second line (at 1366: a filing name or a client name).
-- **Review later (Lakshay):** (1) everyone in the firm gets the morning list; there is no per-person setting in v1. (2) The GSTR-3B extension in CA-24b and CA-24c is invented and labelled "Example"; a real extension would carry a real notification. (3) and (4) are done in the polish pass: CA-03's "Your rights" line now matches CA-25 (v1 has no export and delete yet), and its notice date, which was after the demo's "today", is gone. (5) The morning list says "around 7:30 am" because Vercel's free timer runs once a day within an hour ([ADR 0009](../../../adr/0009-timed-jobs-and-backups.md)).
+- **Review later (accepted at PM-12, 2026-10-22):** (1) everyone in the firm gets the morning list; there is no per-person setting in v1. (2) The GSTR-3B extension in CA-24b and CA-24c is invented and labelled "Example"; a real extension would carry a real notification. (3) and (4) are done in the polish pass: CA-03's "Your rights" line now matches CA-25 (v1 has no export and delete yet), and its notice date, which was after the demo's "today", is gone. (5) The morning list says "around 7:30 am" because Vercel's free timer runs once a day within an hour ([ADR 0009](../../../adr/0009-timed-jobs-and-backups.md)).

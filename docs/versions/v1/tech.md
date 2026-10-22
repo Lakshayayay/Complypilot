@@ -1,7 +1,7 @@
 # v1 Build (stage 2)
 
-**Stage:** 2 Build [FS], planned 2026-10-21 with Lakshay; **build starts after design is done** (gate PM-12), or earlier on tasks that need no screens if Figma blocks again (README, Stage 2). **Tasks:** FS-1 to FS-16, QA-1 and gate PM-16, in the [README](README.md). **Decisions:** [docs/adr/](../../adr/) (0001 to 0010).
-**Next step when this stage starts:** close FS-1 (Lakshay's by-hand steps below; Claude lists the training project's tables, Lakshay confirms, wipe), then QA-1 (the deploy pipeline), then FS-2 (tables, API shapes, RLS).
+**Stage:** 2 Build [FS], planned 2026-10-21 with Lakshay; **started 2026-10-22, after gate PM-12 (design approved)**. **Tasks:** FS-1 to FS-16, QA-1 and gate PM-16, in the [README](README.md). **Decisions:** [docs/adr/](../../adr/) (0001 to 0010).
+**Next step:** close FS-1 (Lakshay's by-hand steps below; Claude lists the training project's tables, Lakshay confirms, wipe), then QA-1 (the starter app on Vercel), then FS-2 (tables, API shapes, RLS, and the automatic checks).
 
 ## Learn first
 New ideas this stage uses. Sources opened 2026-10-21 unless marked.
@@ -21,6 +21,8 @@ New ideas this stage uses. Sources opened 2026-10-21 unless marked.
 | Branch rule | A GitHub setting: `main` accepts a change only when the checks pass | "Merge only when checks pass" (AGENTS.md) becomes a rule, not a habit | You can't push straight to `main` any more (docs-only changes keep going straight, see AGENTS.md) | [GitHub: Protected branches](https://docs.github.com/repositories/configuring-branches-and-merges-in-your-repository/defining-the-mergeability-of-pull-requests/about-protected-branches) |
 | Unit, security and E2E tests | Unit = one function; security = "can firm A see firm B?"; E2E = a robot clicks through the app | Catch different mistakes | Each kind takes time to write | [Vitest](https://vitest.dev/guide/) · [Playwright](https://playwright.dev/docs/intro) |
 | Design tokens in code | The Figma variables, as CSS variables in one file | Change a colour once, everywhere | Names must match Figma | [Tailwind: Theme variables](https://tailwindcss.com/docs/theme) |
+| Design-to-code tool | Figma's own tool (`get_design_context`) reads a frame's real structure (layout, spacing, variables, parts, icons) and returns React + Tailwind code as a starting point, plus a picture of the frame | Screens come from the design data, not from copying a screenshot by eye | It writes web code to adapt, not finished code: data, login and rules are ours | [Figma: server returning web code](https://developers.figma.com/docs/figma-mcp-server/server-returning-web-code) (opened 2026-10-22) |
+| Code Connect | A link from each Figma part to its code file, so Figma's code uses our own parts | Less swapping per screen | Figma lists it for Organization and Enterprise plans; the Education plan is `UNVERIFIED`, one test call decides | [Figma: Code Connect](https://help.figma.com/hc/en-us/articles/23920389749655-Code-Connect) (opened 2026-10-22) |
 
 ## Decision log
 All agreed with Lakshay on 2026-10-21, one at a time. "Options" are what Claude offered.
@@ -41,6 +43,8 @@ All agreed with Lakshay on 2026-10-21, one at a time. "Options" are what Claude 
 | D11 | Timed jobs | Vercel for emails + GitHub for backups · GitHub for all · inside Supabase | **Vercel emails, GitHub backups** | [0009](../../adr/0009-timed-jobs-and-backups.md) |
 | D12 | Code layout | By feature · by type | **By feature** | below |
 | D13 | Build order | Logic now, screens later · README order as is | **Logic now, screens later** | below |
+| D14 | Figma to code (2026-10-22) | Figma's own design-to-code tool · a one-click plugin (Anima, Locofy, Builder.io) · Figma Make | **Figma's own tool.** Plugins are paid (breaks "fully free"); Make's Supabase link is key-value only and needs an Organization plan | below, "Figma to code" |
+| D15 | Deploy planning (2026-10-22) | A planned pipeline task · starter app and Vercel's own auto-deploy | **No separate deploy planning.** Lakshay has deployed on Vercel's free plan before; once the repo is connected it publishes `main` and a preview link per branch by itself | README QA-1 |
 **Claude's own calls (Lakshay can change them):** npm; Node 24 LTS; Nodemailer for email and Zod for input checks, each noted when first added; the backup file is encrypted (it was a public-repo precaution; kept now the repo is private, [0010](../../adr/0010-private-repository.md)); the error hook sends at most one email per error per hour; each task's own design questions are asked when the task starts.
 
 ## Environments
@@ -77,31 +81,43 @@ Design agreed with Lakshay (one question at a time, options + recommendation) �
 Agreed D13: logic that needs no screens comes first; screens follow in demo-story order after gate PM-12. Done = its "done when" in the README passes.
 **Before screens (needs no design):**
 - [ ] v1-FS-1 close-out: decisions are written (this file, ADRs 0001 to 0010). Left: Lakshay's by-hand steps; check the training project and wipe it
-- [ ] v1-QA-1 deploy pipeline: starter Next.js app in the layout above; GitHub Actions (lint, type check, Vitest); Lakshay connects the repo on Vercel and sets the Seoul region; the email-on-error hook; Lakshay turns on the branch rule. Done when a starter page deploys by itself
-- [ ] v1-FS-2 tables, API shapes, RLS and the cross-firm tests. Its own back-and-forth on the tables first
+- [ ] v1-QA-1 starter app on Vercel (D15): the empty Next.js app in the layout above; Lakshay connects the repo on Vercel and tries the Seoul region. Done when a starter page is live. The GitHub Actions checks (lint, type check, Vitest) and the branch rule join at FS-2; the email-on-error hook comes at QA-5
+- [ ] v1-FS-2 tables, API shapes, RLS and the cross-firm tests; the automatic checks (GitHub Actions) start here, and the branch rule once GitHub Pro arrives. Its own back-and-forth on the tables first
 - [ ] v1-FS-5 due-date engine (criterion 6)
 - [ ] Logic cores, each pure with unit tests: v1-FS-14 next dates (criterion 10) · v1-FS-10 licence warnings (criterion 9) · v1-FS-13 factory rules (criterion 5) · v1-FS-8 CSV parser and bad-row report (criterion 3)
 
-**After PM-12, screens in demo-story order:**
+**Screens, in demo-story order (PM-12 passed 2026-10-22):**
 - [ ] FS-3 login, sign-up, consent, invite colleagues · FS-4 clients · FS-8 import screens · FS-6 calendar · FS-12 invite owner and owner login · FS-7 thread and Mark done · FS-10 licence screens · FS-13 factory questions screens · FS-14 task screens · FS-11 override dates · FS-15 reminders · FS-9 backups on, breach runbook, demo-data guard · FS-16 demo data
+- **Small screens with no frame (decided at PM-12, built from existing parts):** edit and archive a client (FS-4) · edit a licence and its apply-by date (FS-10) · edit and delete a task (FS-14) · "session expired" and "not allowed" (FS-3)
 - [ ] v1-PM-16 **Gate:** the app on a preview link with demo data, every FS task ticked, checks pass, Lakshay walks the demo story
 
 ## Lakshay does by hand (Claude can't)
 - [ ] When "comply pilot" has finished restoring, tell Claude. Claude then shows the address its Supabase tool points at; Lakshay compares it with the dashboard address of "comply pilot". If they differ, tell Claude
-- [ ] Make the app's Gmail account, turn on 2-Step Verification, make an app password
-- [ ] Install Node 24 LTS
-- [ ] `gh auth login` in the terminal, so Claude can open pull requests and read check results
+- [ ] Make the app's Gmail account, turn on 2-Step Verification, make an app password (needed before FS-3, the first email)
+- [ ] Install Node 24 LTS (checked 2026-10-22: this Mac has Node 25.6.1, which stopped getting security fixes on 2026-06-01, [endoflife.date](https://endoflife.date/nodejs); Vercel's default is 24.x, [Vercel docs](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions)). Node 26 becomes LTS around 2026-10-28; whether Vercel offers it yet is `UNVERIFIED`
+- [ ] `gh auth login` in the terminal, so Claude can open pull requests and read check results (not logged in on 2026-10-22)
 - [ ] Make the GitHub repo private (done by Lakshay, 2026-10-22) and apply for GitHub Pro through the Student Developer Pack, so the branch rule can work on a private repo (ADR 0010)
 - [ ] Put keys into `.env.local` and into Vercel's and GitHub's settings yourself. Never paste a key in chat
-- [ ] At QA-1: connect the repo on Vercel (done before for other projects), set the function region to Seoul, switch on the branch rule for `main`
+- [ ] At QA-1: connect the repo on Vercel (done before for other projects) and try the function region Seoul. At FS-2: switch on the branch rule for `main`
 - Already done: Supabase account and both projects; Vercel account.
 
 ## Figma to code
-- **Tokens:** every Figma variable has a CSS name (design.md, Foundations table). QA-1's first screen task reads them from Figma and writes the one token file.
-- **Per screen:** load the `figma-design-to-code` skill, read the frame's design data and its Dev Mode notes, build from our components, compare with a Figma screenshot.
-- **Component map:** a table here, filled as components are built: Figma set → code file → props (e.g. `StatusChip` → `components/ui/status-chip.tsx` → `status`, `size`). Code Connect would do this automatically but is `UNVERIFIED` on the Education plan ([Code Connect docs](https://developers.figma.com/docs/code-connect/)).
+Decided D14 (2026-10-22): screens come from Figma's own design-to-code tool, not from copying screenshots and not from a paid plugin or Figma Make.
+1. **Once, the look:** the Figma variables (colours, spacing, corners, fonts) are read with `get_variable_defs` and written as one CSS token file. Every variable has a CSS name (design.md, Foundations table); the names must not change.
+2. **Once, the parts:** the 38 parts on `05 Components` become code components (shadcn as the base, restyled). **Code Connect test:** one call, at the first part, to see if the Education plan allows linking Figma parts to code files; if it does, all parts are linked; if not, the component map below does the same job. `UNVERIFIED` until tried.
+3. **Per screen:** load the `figma-design-to-code` skill, call `get_design_context` on the frame (layout, spacing, variables, parts, icons; code plus a picture), read the frame's Dev Mode notes, swap in our parts, connect data, buttons and states. The picture it returns is the look check; a Figma screenshot is taken only to settle a doubt.
+4. **Not in Figma, so ours:** data, login, security rules, due dates and emails (steps FS-2 to FS-5 and the screen tasks).
+- **Component map:** a table here, filled as components are built: Figma set → code file → props (e.g. `StatusChip` → `components/ui/status-chip.tsx` → `status`, `size`).
 - **Brand files:** logo, app icon and favicon are exported from Figma into `public/`.
-- The 65 frames, notes and cast: [screens.md](design/screens.md). Demo story: [flows.md](design/flows.md).
+- The 66 frames, notes and cast: [screens.md](design/screens.md). Demo story: [flows.md](design/flows.md).
+
+## Smooth and subtle
+Lakshay's direction at PM-12 (2026-10-22): proper screens, subtle animation, a smooth feel.
+- **Motion** follows the agreed rules (design.md, "Motion review table"): frequent actions 200 ms or less, ease-out; Mark done is the one richer moment (450 ms at most); the thread panel slides in over 200 ms; buttons shrink a little when pressed; "reduce motion" is respected.
+- **No blank waits:** a grey outline of the page (a skeleton, as in CA-14c) shows while it loads.
+- **Feels instant:** a change shows at once and saves in the background; if the save fails, it rolls back with a message (an "optimistic update").
+- **Sizes** follow normal desktop software (CA text 14 px, small labels 12 px). No projector sizing.
+- **Open question for the first screen task (FS-3):** CSS and shadcn's own animations only, or also an animation library for the richer moments. Recommendation then: CSS first.
 
 ## Builder check: open points for stage 2
 On 2026-10-22 a fresh helper agent read the design docs as a builder and listed 24 things it would have to guess. Three were contradictions and are corrected in the [README](README.md#corrections-after-the-scope-lock). The rest are below: **recommended defaults, not agreed**. Each is settled with Lakshay, one at a time, in the task named in the last column (AGENTS.md: agree data and API shapes before screens). **The biggest gap is the first group: what a calendar item is and how its status moves.** Decisions needed at the design gate are in [design.md](design/design.md) ("Decide at PM-12").
@@ -140,6 +156,6 @@ Short fact-checks done 2026-10-21 are in the ADRs. Still open:
 - **The repo is private from 2026-10-22** ([ADR 0010](../../adr/0010-private-repository.md)), but nothing secret goes in a commit, a doc or a chat. `.env*` files are ignored by git (checked 2026-10-21: none ever entered git history).
 - The old `.env.example` on Lakshay's disk (not in git) holds a v0-era `NEXTAUTH_SECRET`: treat it as dead and don't reuse it. QA-1 writes a fresh names-only file.
 - Every table has RLS on from its first migration. No table ships without its cross-firm tests (criterion 2).
-- No application code before PM-12 that builds screens. Mocks are marked `// MOCK:` and listed in the README.
+- Gate PM-12 passed on 2026-10-22, so screens may be built, one task at a time. Mocks are marked `// MOCK:` and listed in the README.
 - v1 uses made-up data only; the privacy line names no place ([0003](../../adr/0003-hosting-and-data-region.md)).
 - v0 is reference only: `git show v0-prototype:<path>`.

@@ -31,8 +31,8 @@
   },
   "cover": {
     "sheet": "14:2",
-    "note": "Cover sheet made 2026-10-20: title, status, page index with status chips, decisions so far, status words. The stray Vector 1 line (7:2) was deleted the same day at Lakshay's request.",
-    "chips": { "flows": "21:2", "wireframes": "14:31" }
+    "note": "Cover sheet made 2026-10-20: title, status, page index with status chips, decisions so far, status words. The stray Vector 1 line (7:2) was deleted the same day at Lakshay's request. At PM-12 (2026-10-22) the chips for pages 03 to 06 were replaced by copies of the Done chip (new IDs below).",
+    "chips": { "flows": "21:2", "wireframes": "14:31", "brand": "178:2", "foundations": "178:4", "components": "178:6", "screens": "178:8" }
   },
   "wireframes": {
     "note": "UX-2, drawn 2026-10-20 on page 02 Wireframes. Screen list: screens.md. Frames sit directly inside one section per flow; positions inside a section are relative to it.",
