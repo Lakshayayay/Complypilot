@@ -11,9 +11,12 @@ Questions already answered today:
 | The old v0 env files | delete + new Supabase keys · move out of the folder · leave | **Delete + new keys** (D19) |
 | How design questions run | one table per task · one at a time · Claude decides small ones | **One at a time** |
 | Where this plan lives | inside tech.md · a new build-plan.md (tech.md moves into build/) · outside the repo | **build-plan.md** |
+| Folders: all now, or each with its first file | all now · with the first file | **With the first file** |
+| Supabase packages: now or at FS-2 | now · FS-2 | **FS-2** |
+| Vercel and the deploy pipeline at QA-1 | at QA-1 · at the end | **At the end, on Lakshay's terms** (tech.md D20) |
 
-**Next:** Lakshay does step 0 (by hand). Then QA-1 starts with its question 1 (below). Not asked yet.
-**Not checked yet:** that `create-next-app` still offers ESLint and our other options (the doc check was stopped on 2026-10-22; do it first at QA-1).
+**QA-1 closed (2026-10-22):** the app skeleton runs on the Mac (details in Step 1 below).
+**Next:** FS-2, starting with "what is a calendar item". Still open: step 0.3 (the Supabase key swap) and the Cache Components question (tech.md D21).
 
 ## Direction
 ```
@@ -30,8 +33,8 @@ The base (database walls, automatic checks) comes first, because everything sits
 
 ## Checklist
 - [x] FS-1 closed: training project checked and wiped (2026-10-22)
-- [ ] Step 0: housekeeping
-- [ ] Step 1: QA-1 starter app live on Vercel
+- [ ] Step 0: housekeeping (0.1 and 0.2 done; 0.3 the key swap is open)
+- [x] Step 1: QA-1 app skeleton, on the Mac only (2026-10-22)
 - [ ] Step 2: FS-2 tables, API shapes, RLS, cross-firm tests, automatic checks
 - [ ] Step 3: logic cores FS-5, FS-14, FS-10, FS-13, FS-8
 - [ ] Step 4: the look in code (tokens, 38 parts)
@@ -41,28 +44,16 @@ The base (database walls, automatic checks) comes first, because everything sits
 ## Step 0: housekeeping (Lakshay by hand, about 10 minutes)
 | # | What | Done when |
 |---|---|---|
-| 0.1 | Reload VS Code (Cmd+Shift+P → "Developer: Reload Window") so Claude's shell picks up the Node 24 line in `~/.zshrc`. On 2026-10-22 it still showed Node 26.12.1; Node 24.22.1 is installed at `/opt/homebrew/opt/node@24/bin`. Fallback: Claude puts that path first in each command | Claude's `node -v` shows 24.22.1 |
-| 0.2 | Delete `.env.local`, `.env.v0-backend` and `.env.example` from the project folder. Claude never opens them | `ls -a` lists none of them |
+| 0.1 ✓ | Reload VS Code (Cmd+Shift+P → "Developer: Reload Window") so Claude's shell picks up the Node 24 line in `~/.zshrc`. On 2026-10-22 it still showed Node 26.12.1; Node 24.22.1 is installed at `/opt/homebrew/opt/node@24/bin`. Fallback: Claude puts that path first in each command | Claude's `node -v` shows 24.22.1 |
+| 0.2 ✓ | Delete `.env.local`, `.env.v0-backend` and `.env.example` from the project folder. Claude never opens them | `ls -a` lists none of them |
 | 0.3 | Supabase dashboard → "comply pilot" → API keys: turn off the old keys v0 used, make a new publishable key and a new secret key. The same on "comply-pilot-new" if v0 ever used it. Claude checks Supabase's docs for the screen names first (`UNVERIFIED`) | Old keys disabled, new ones exist; values never in chat |
 
-## Step 1: QA-1, the starter app on Vercel
-**Branch:** `chore/v1-starter-app`. **Done when:** a starter page is live on Vercel, and a branch gets its own preview link.
+## Step 1: QA-1, the app skeleton (done 2026-10-22, on the Mac only)
+**Changed from the first plan:** Vercel and the deploy pipeline moved to the end of Build (tech.md D20, Lakshay's call). **Branch:** `chore/v1-starter-app`.
 
-Questions, one at a time (Claude's recommendation in brackets):
-1. Make all the agreed folders now, or each one when its first file arrives? [When its first file arrives: git can't store empty folders, and nothing is built "for later"]
-2. Add the Supabase packages now or at FS-2? [At FS-2, when the first database code needs them]
-3. A names-only `.env.example`, with a `!.env.example` exception in `.gitignore` and the names from tech.md "Environments"? [Yes]
-4. What the starter page says? [One line, "ComplyPilot", plus "Coming soon". No Figma work yet]
+What was built: `create-next-app` (checked in the [Next.js docs](https://nextjs.org/docs/app/api-reference/cli/create-next-app), updated 2026-09-29) run in a temporary folder with `--ts --tailwind --eslint --app --src-dir --import-alias "@/*" --use-npm`, then copied in. Exact versions pinned (`.npmrc`), `engines` Node 24.x, `.nvmrc`, one starter page ("ComplyPilot" / "Coming soon"), a names-only `.env.example`, `agentRules: false` so `next dev` leaves our AGENTS.md alone (D21). The generator's own AGENTS.md was not copied. Folders arrive with their first file; Supabase packages arrive at FS-2.
 
-Claude's steps:
-1. Check the Next.js docs for `create-next-app`'s current options (TypeScript, Tailwind, ESLint, App Router, `src/` folder, npm, `@/*` import alias). Cite the page and the date.
-2. Run it in the scratchpad folder (the repo root already has files), then copy the app in, merging `.gitignore` and keeping our `README.md`.
-3. Pin exact versions (no `^`) and commit `package-lock.json`. Add `"engines": { "node": "24.x" }` and a `.nvmrc` with `24`, so the Mac and Vercel use the same Node.
-4. Cut the sample page and images down to the one starter page.
-5. Local checks: `npm run lint`, `npx tsc --noEmit` (type check), `npm run build`.
-6. Push the branch and open a pull request with `gh`.
-
-Lakshay by hand: on Vercel, import `Lakshayayay/Complypilot`. Try the Seoul function region (`icn1`) and confirm the free plan takes a private repo (both `UNVERIFIED` in tech.md; the result goes there). The starter page needs no keys. Then merge to `main`; Vercel publishes it by itself (D15).
+Checks that passed: `npm run lint`, `npm run typecheck`, `npm run build`, and `next dev` serving the page.
 
 ## Step 2: FS-2, tables, API shapes, RLS and the automatic checks (the big one)
 **Done when:** every table has RLS from its first migration, the cross-firm tests pass, and GitHub Actions runs lint, the type check and the tests on every push (criterion 2).
@@ -93,13 +84,13 @@ Figma variables → one CSS token file (names as in [design.md](../design/design
 FS-3 login, sign-up, consent, invite (criterion 1) → FS-4 clients → FS-8 import screens → FS-6 calendar (criterion 8) → FS-12 owner invite and login (criterion 4) → FS-7 thread and Mark done (criterion 11) → FS-10 licence screens → FS-13 factory questions → FS-14 task screens → FS-11 overrides (criterion 7) → FS-15 reminders (criterion 12) → FS-9 backups and runbook → FS-16 demo data. Each follows tech.md "Figma to code" step 3. **Before FS-3, Lakshay:** 2-Step Verification on the personal Gmail and an app password (into `.env.local` and Vercel only).
 
 ## Step 6: gate PM-16, then beyond
-The app on a preview link with demo data, every FS task ticked, checks green, Lakshay walks the demo story. Then stage 3 (the AI matcher; eval set and ADR first), stage 4 (E2E, security, speed, monitoring, CA demos) and the checkpoint. Each is planned when it starts.
+**Deploy first (D20):** Lakshay connects the repo on Vercel on his own terms: keys into Vercel's settings, the Seoul function region and private-repo check (both `UNVERIFIED`), Node version. Then the app on a preview link with demo data, every FS task ticked, checks green, Lakshay walks the demo story. Then stage 3 (the AI matcher; eval set and ADR first), stage 4 (E2E, security, speed, monitoring, CA demos) and the checkpoint. Each is planned when it starts.
 
 ## Risks
 - **Supabase changes through Claude's tool may be refused** (seen 2026-10-22): use migration files and the command-line tool, or the SQL Editor.
 - **The free GitHub plan can't block a merge** ([ADR 0010](../../../adr/0010-private-repository.md)): Claude merges only when the checks are green.
 - **Node 26 vs 24:** fixed by step 0.1, plus `engines` and `.nvmrc`.
-- **Unchecked facts:** Vercel Seoul and private repos on the free plan, `db push` and Docker, Supabase key screen names. Each is checked at its step and written into tech.md.
+- **Unchecked facts** (Vercel items wait for the deploy, D20): Vercel Seoul and private repos on the free plan, `db push` and Docker, Supabase key screen names. Each is checked at its step and written into tech.md.
 
 ## How we check each step
 - Step 0: `node -v` = 24.22.1; the env files are gone; a read-only Supabase check shows the project still empty.

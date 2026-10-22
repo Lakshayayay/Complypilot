@@ -2,7 +2,7 @@
 
 A shared workspace for Indian CAs (chartered accountants) and MSME factory owners. It tracks filings, collects documents over WhatsApp, and warns about factory licence renewals. It works alongside Tally and Winman; it doesn't replace them.
 
-**Status:** v1, the shared compliance calendar ([plan](docs/versions/v1/README.md)). The design was approved on 2026-10-22 and the Build stage is starting. There's no application code yet.
+**Status:** v1, the shared compliance calendar ([plan](docs/versions/v1/README.md)). The design was approved on 2026-10-22 and the Build stage has started. The code is an empty Next.js app skeleton so far (run it with `npm install`, then `npm run dev`; it needs Node 24). It isn't deployed yet.
 
 ## Where things are
 - `AGENTS.md`: the rules every AI assistant follows (Claude loads them through `CLAUDE.md`).
