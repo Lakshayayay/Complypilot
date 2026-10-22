@@ -1,6 +1,6 @@
 {
   "about": "Map from fixed names to Figma node IDs, so a new chat can pick up the Figma work. Claude updates it after each Figma step. See design.md, 'How we work in Figma'.",
-  "updated": "2026-10-21",
+  "updated": "2026-10-22",
   "file": {
     "name": "complypilot",
     "key": "wMTrpY84cAfQiI5a9lcr0f",
@@ -31,8 +31,8 @@
   },
   "cover": {
     "sheet": "14:2",
-    "note": "Cover sheet made 2026-10-20: title, status, page index with status chips, decisions so far, status words. The stray Vector 1 line (7:2) was deleted the same day at Lakshay's request.",
-    "chips": { "flows": "21:2", "wireframes": "14:31" }
+    "note": "Cover sheet made 2026-10-20: title, status, page index with status chips, decisions so far, status words. The stray Vector 1 line (7:2) was deleted the same day at Lakshay's request. At PM-12 (2026-10-22) the chips for pages 03 to 06 were replaced by copies of the Done chip (new IDs below).",
+    "chips": { "flows": "21:2", "wireframes": "14:31", "brand": "178:2", "foundations": "178:4", "components": "178:6", "screens": "178:8" }
   },
   "wireframes": {
     "note": "UX-2, drawn 2026-10-20 on page 02 Wireframes. Screen list: screens.md. Frames sit directly inside one section per flow; positions inside a section are relative to it.",
@@ -122,7 +122,12 @@
     "batch4Section": "140:4994",
     "batch4Frames": { "CA-16": "140:4995", "CA-16b": "140:5470", "CA-17": "140:5570", "OW-08": "141:5492", "OW-08b": "141:5581", "OW-09": "141:5644", "OW-10": "141:5823", "OW-10b": "141:6011", "OW-12": "141:6071" },
     "batch5Section": "144:5794",
-    "batch5Frames": { "CA-18": "144:5795", "CA-18b": "144:6077", "CA-19": "144:6220", "CA-21b": "144:6369", "EM-05": "144:6931" }
+    "batch5Frames": { "CA-18": "144:5795", "CA-18b": "144:6077", "CA-19": "144:6220", "CA-21b": "144:6369", "EM-05": "144:6931" },
+    "batch6Section": "152:6826",
+    "batch6Frames": { "CA-22": "152:6827", "CA-23": "153:6734", "CA-24": "153:6932", "CA-24b": "155:6997", "CA-24c": "155:7095", "CA-25": "153:7118", "EM-06": "156:7247" },
+    "batch6Parts": { "settings-nav (in CA-22)": "152:6964", "side-panel (in CA-24b)": "155:7031", "toast (in CA-24c)": "155:7210" },
+    "batch7Section": "159:7253",
+    "batch7Frames": { "CA-14c": "159:7254" }
   },
   "foundations": {
     "note": "UX-3 phase B, built 2026-10-20. Variables live in the file (not on a page). The sheet on page 04 Foundations shows them; everything on it is bound. Variable IDs: Primitives 54:3-54:23, Color 54:25-54:52, Spacing 54:54-54:65, Radius 54:67-54:70; look up by collection and name, not by ID.",

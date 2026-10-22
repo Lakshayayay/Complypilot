@@ -1,6 +1,6 @@
 # v1 Design (stage 1)
 
-**Stage:** 1 Design [UX], started 2026-10-19. **Tasks:** UX-1 to UX-4 and the gate PM-12, in the [README](../README.md). **Study:** [design-references.md](../research/design-references.md).
+**Stage:** 1 Design [UX], started 2026-10-19, **approved at gate PM-12 on 2026-10-22**. **Tasks:** UX-1 to UX-4 and the gate PM-12, in the [README](../README.md). **Study:** [design-references.md](../research/design-references.md).
 **Figma:** design file [complypilot](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot) · FigJam board [ComplyPilot v1 flows](https://www.figma.com/board/bZB8Y1uSb5rAIYV0BOQpRh) · **Flows:** [flows.md](flows.md).
 
 ## Learn first
@@ -45,7 +45,9 @@ New ideas this stage uses. All sources opened 2026-10-19.
 | 2026-10-21 | **Tagline: "One calendar. No missed deadlines."** (Claude's pick, as Lakshay asked). **No Hindi in new design work** (Lakshay): boards, screens and the demo use Anek Latin only; the existing Hindi styles and samples stay until he says otherwise. Brand board pictures are drawn shapes, no AI images. |
 | 2026-10-21 | **Reminder days** (Lakshay): licences count from an **apply-by date** (expiry minus the legal lead time), reminders 90/60/30 days before it. Filings: a **morning list** for the firm, a **Monday list** for the owner, plus a task email. Rules in UX-4 below; README F7, F10 and criteria 9 and 12 updated. |
 | 2026-10-21 | **Notion joins Odoo as a design reference** (Lakshay): feel and motion, side peek for the thread panel; brand and colours unchanged ([study 3](../research/design-references.md#study-3-light-notion)). **UX-4 runs to gate PM-12 without stopping** (Lakshay): review point 6 becomes a heads-up; Claude stops only for a question it can't settle, at the end of a Figma day, or at the gate. Small open points go on "Review later" (UX-4). |
+| 2026-10-21 | **Build decisions agreed** (Lakshay): one Next.js app, Supabase, Vercel free, Tailwind + shadcn/ui and more, all in [tech.md](../tech.md) and ADRs 0001 to 0010. Two effects on design: **the app doesn't name where data is kept** ("Kept safe on secure cloud servers", because v1's demo data sits in Seoul, [ADR 0003](../../../adr/0003-hosting-and-data-region.md)), so CA-03 and CA-25 change; and **the Figma variable CSS names are the token file's names**, so they must not change after UX-4. Figma's daily limit reset the same day, so design resumes before the build. |
 | 2026-10-20 | **Flows approved** (UX-1). **App map, as in the flows:** CA side menu Calendar (home) · Clients · Licences · Tasks · Settings (Firm, Team, Due-date changes, Privacy); an item opens its thread as a side panel. Owner bottom tabs Home ("What needs me") · Calendar · Licences; an item opens its thread full screen. The owner side is a phone web app opened from the email link ([idea.md](../../../../idea.md): "Mobile-First Web App"), not an app-store app. |
+| 2026-10-22 | **Gate PM-12: design approved, no changes** (Lakshay). The owner's phone screens are simple on purpose for v1; richer owner features come later. **Projector sizing dropped:** the app follows normal desktop software sizes (interview answer 7 and the projector checks are superseded). **Both PM-12 decisions kept at their defaults** (consent and the small screens, see "Decide at PM-12" below). All "Review later" points accepted. No Figma comments. **Direction for the build:** proper screens with subtle animation and a smooth feel ([tech.md](../tech.md), "Smooth and subtle"). Dev Mode: Lakshay reported no notes to add; whether the notes show there was not confirmed, and it isn't needed (Claude reads them by script, and the words are in [screens.md](screens.md)). |
 
 ## Design read
 From the design-taste-frontend skill: "Reading this as **a work tool for small Indian CA firms (desktop, dense) plus a phone companion for factory owners**, with a **calm, trust-first, crisp** language, leaning toward **Carbon-style data patterns and GOV.UK/UX4G plain-word status rules**. It's bold only in brand moments."
@@ -112,13 +114,13 @@ _Updated 2026-10-21 at the second wrap-up (UX-3 closed; UX-4 demo-path batches A
 - [x] Checks: flow-coverage script, text audit, heuristic self-check (UX-2 section)
 - [x] Lakshay saves a named version in Figma (by hand, 2026-10-20)
 - [x] Review point 2: Lakshay approved the wireframes and all 7 proposals (2026-10-20). Feedback "too minimal" → study 2 opens UX-3
-- [ ] Optional: one CA looks at the wireframes for 15 minutes
+- [x] ~~Optional: one CA looks at the wireframes for 15 minutes~~ (dropped; CAs see the demo at v1-QA-6)
 - [x] Tick v1-UX-2 in the README; Cover and brief chips to "Done"; commit
 
 **UX-3 Brand and design basics (approved by Lakshay 2026-10-21)**
 - [x] Study 2 (light, 2026-10-20): Odoo as the main guide, plus Tally and Winman. Basic principles and a few images in [design-references.md](../research/design-references.md#study-2-light-odoo-tally-winman). Guides, not rules
 - [x] Brand interview, 8 questions, one at a time (review point 3, done 2026-10-20). Answers: UX-3 section below
-- [ ] Domain and trademark check (IP India and domains), with the date. Lakshay does it later, by hand (wants complypilot.com)
+- [x] ~~Domain and trademark check (IP India and domains), with the date~~ moved to later: v1 has no domain (tech.md D1). Lakshay does it by hand when he wants complypilot.com
 - [x] Strategy: category, promise, one metaphor (confirmed by Lakshay 2026-10-20)
 - [x] 3 brand directions, each with a logo idea, accent colour, font pair and calendar sample. Drawn 2026-10-20 (section `brand-directions` on `03 Brand`; results in UX-3 below). Review point 4 (2026-10-20): C's colours and type with B's logo, drawn as `brand/picked`
 - [x] Foundations on `04`: variables (Primitives, Color, Spacing, Radius) with scopes and CSS names; text styles; shadows; grids (2026-10-20)
@@ -134,14 +136,15 @@ _Updated 2026-10-21 at the second wrap-up (UX-3 closed; UX-4 demo-path batches A
 - [x] Agree the reminder days: licences from an apply-by date, filings as a morning and a Monday list (Lakshay, 2026-10-21)
 - [x] Demo-path screens: 22 frames in 5 batches by demo beat (section `demo-path` on `06 Screens`): A beats 1 to 3 (3 frames) · B beat 4 (4) · C beats 5 and 6 (7) · D beat 7 (1) · E beats 8 to 11 (7) (2026-10-21)
 - [x] Before batch E: ARN format checked (fits; UX-4 notes); batch A to D notes moved to [screens.md](screens.md); `06 Screens` page brief updated (2026-10-21)
-- [ ] Review point 6 (a heads-up since 2026-10-21, no stop): Lakshay looks at the 22 demo frames when he likes
-- [ ] The other 43 frames, flow by flow, with empty, error, loading and saving states and the 100-client frame (CA-06), in 6 batches (notes in [screens.md](screens.md#ux-4-the-other-43-frames)): ~~sign-in and sign-up 13~~ · ~~clients 5~~ · ~~client and review states 4~~ · ~~licences and owner home 9~~ · ~~tasks and thread states 5~~ (done 2026-10-21) · settings and reminder email 7
-- [ ] Apply the UX-4 fixes from the heuristic self-check (UX-2 section). Done: #2 plain reason first and #5 count on the button (CA-13), #3 Undo and Edit (CA-21c). Left: #1 loading, saving and empty states (with the other 43 frames)
-- [ ] Check CA screens at 1366 px and owner screens at 360 px
-- [ ] Behaviour notes as Dev Mode annotations; Lakshay marks finished screens "Ready for dev" (by hand)
-- [ ] Clickable demo: demo path only, start point "Demo", agreed motion, motion review table
-- [ ] Design QA: every item in "Checks" below; builder check by a fresh helper agent; fresh-eyes pass the next day
-- [ ] Gate v1-PM-12: Lakshay walks the 5-minute demo on the prototype; tick UX-4 and PM-12
+- [x] Review point 6: Lakshay walked the demo and looked at all the frames; nothing to change (2026-10-22)
+- [x] The other 43 frames, flow by flow, with empty, error, loading and saving states and the 100-client frame (CA-06), in 6 batches (notes in [screens.md](screens.md#ux-4-the-other-43-frames)): ~~sign-in and sign-up 13~~ · ~~clients 5~~ · ~~client and review states 4~~ · ~~licences and owner home 9~~ · ~~tasks and thread states 5~~ (done 2026-10-21) · ~~settings and reminder email 7~~ (done 2026-10-22). **All 65 frames are built.**
+- [x] Apply the UX-4 fixes from the heuristic self-check (UX-2 section). Done: #2 plain reason first and #5 count on the button (CA-13), #3 Undo and Edit (CA-21c), #1 loading, saving and empty states: the skeleton frame CA-14c (66 frames) and the rules in [screens.md](screens.md) (2026-10-22)
+- [x] Check CA screens at 1366 px and owner screens at 360 px: done 2026-10-22, fixes and the CA-15 sideways-scroll rule in [screens.md](screens.md) ("Width checks")
+- [x] Polish pass, the modern look (Odoo and Notion), done 2026-10-22 (Claude's calls, Lakshay can change them at PM-12): **rounder corners** by editing the `Radius` variables (sm 6 → 8, md 10 → 12, lg 16 → 20; every corner followed, since all are bound); the soft **`shadow/float`** on the toast, modal, menu, thread panel and the due-date side panel (they used `shadow/lg` or `md`; cards keep `shadow/sm`); fixes: CA-03 privacy wording (no place named, a "Your rights" line that matches CA-25, no notice date), CA-08 (Form 140 added as an unchecked filing row and taken out of the "not on the calendar yet" note; advance tax was already listed). No `Textarea` is used on a CA screen, so its 16 px label needs no fix. Full read-back on all 66 frames afterwards: 9,244 layers, 0 typed-in colours (6,685 bound), 0 loose corners, gaps or padding, all 2,999 texts styled and Anek Latin, no dashes. A stray-frame check found five batch-6 frames outside their section; moved in.
+- [x] Behaviour notes as Dev Mode annotations (2026-10-22): one note on each of the 66 frames, from the 56 wireframe notes plus new ones for the emails, CA-14c and the changes made in UX-4 (written by script; the Plugin API accepted and returned them on the Education plan). **Lakshay, by hand:** open one frame in Dev Mode to see whether the note shows there (`UNVERIFIED` until then), and mark finished screens "Ready for dev". If notes don't show, the same words are in [screens.md](screens.md) and the notes can be exported from the file
+- [x] Clickable demo (2026-10-22): the 22 demo frames linked in story order on their real buttons, flow start "Demo", motion and scrolling set; how to walk it and the motion review table are in "Clickable demo" below. Lakshay walked it at PM-12 (2026-10-22)
+- [x] Design QA (closed 2026-10-22 at PM-12; the fresh-eyes pass was dropped because the design was approved without changes, and stage 2 compares every screen with Figma): every item in "Checks" below; builder check by a fresh helper agent; fresh-eyes pass the next day. **Done 2026-10-22:** read-back of all 66 frames, grayscale and contrast (UX-3), content checks (148 weekday-and-date pairs match the calendar; no stale names, Hindi, dashes or placeholders), screen IDs match the wireframes, width checks, the builder check (24 findings; the contradictions are corrected in the README, the rest is an agenda in [tech.md](../tech.md#builder-check-open-points-for-stage-2)). **Left:** nothing (the fresh-eyes pass was dropped, see above)
+- [x] Gate v1-PM-12: Lakshay walked the 5-minute demo on the prototype and approved the design (2026-10-22); UX-4 and PM-12 ticked in the README
 
 ## Checks
 - Every reference has a link and a "checked on" date. Anything unchecked is marked `UNVERIFIED`.
@@ -161,7 +164,7 @@ The real app is built from this Figma file through the MCP. So during design:
 - Auto layout everywhere, so the MCP returns flexible layouts, not fixed positions.
 - Behaviour notes go on screens as Dev Mode annotations, e.g. "row click opens the thread panel". Lakshay marks finished screens "Ready for dev" by hand.
 
-How stage 2 uses it goes in tech.md. **Code Connect** (links each Figma component to its code version) is `UNVERIFIED` for our Education plan: Figma's [developer docs](https://developers.figma.com/docs/code-connect/) list Professional, Organization and Enterprise, but not Education. If we can't use it, a mapping table in tech.md does the same job.
+How stage 2 uses it is in [tech.md](../tech.md#figma-to-code). **Code Connect** (links each Figma component to its code version) is `UNVERIFIED` for our Education plan: Figma's [developer docs](https://developers.figma.com/docs/code-connect/) list Professional, Organization and Enterprise, but not Education. If we can't use it, a mapping table in tech.md does the same job.
 
 ## Setup (done 2026-10-19)
 - **Drawing test passed:** Claude can write to `complypilot`. The 7 pages exist; their IDs are in `figma-ledger.json`.
@@ -222,7 +225,7 @@ _Started 2026-10-20. Brand interview done the same day._
 | 4 | What does "Pilot" mean to you? | **A co-pilot beside you:** it watches the dates and nudges, but the CA stays in charge and confirms (Lakshay, 2026-10-20) |
 | 5 | Symbols and colours you like, or want off-limits | **Symbols:** two seats side by side (the CA and the owner, the co-pilot idea) and a date with a tick. **Colours:** in Odoo's spirit (deep muted main colour, teal, warm greys); 3 palettes come with the 3 brand directions and Lakshay picks one at review point 4 (Lakshay, 2026-10-20) |
 | 6 | May owner copy use Hinglish (EnvironDesk does)? | **Plain English only** in v1; Hindi can come in a later version (Lakshay, 2026-10-20) |
-| 7 | The pitch: who is the audience, and what is the room like? | **A college jury, on a projector:** professors or judges in a classroom or hall, so demo text and statuses must read from the back row (Lakshay, 2026-10-20) |
+| 7 | The pitch: who is the audience, and what is the room like? | **A college jury, on a projector:** professors or judges in a classroom or hall, so demo text and statuses must read from the back row (Lakshay, 2026-10-20). **Superseded 2026-10-22 (PM-12):** no projector sizing; normal desktop software sizes |
 | 8 | Domain and trademark: names you'd want. Claude then checks IP India and domains, with the date | **complypilot.com.** Lakshay checks the domain and the trademark later, by hand (2026-10-20) |
 
 **Strategy (from the interview; confirmed by Lakshay 2026-10-20):**
@@ -253,7 +256,7 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 - **Contrast (WCAG AA):** a small script (Python, formula from WCAG 2.2; its black-on-white = 21:1 self-check passed) checked 16 pairs per direction: text needs 4.5:1, input borders 3:1. **All pass.** The script is not kept in the repo; the hex values here are enough to repeat it.
 - **Hue** (a colour's place on the colour wheel, in degrees): the nearest competitor colour ([lesson 4](../research/design-references.md#what-we-take-from-it)) is 32° away for A (violet and blue), 30° for B (blue) and 34° for C (green). C's mulberry is also about 32° from the "late" red; the chip's word and icon carry the meaning, never colour alone.
 - **Logo at 16 px:** B reads clearly. A reads as two seat shapes, but is close to a generic "users" icon. C reads as a calendar with two dots; its seats are too small below about 24 px, so the favicon could drop them. All three work in one colour and reversed.
-- **Projector:** the calendar sample rendered at 1024 px wide still shows chip words, dates and client names clearly. 1024 px as a projector width is an assumption (`UNVERIFIED`); a real projector test is optional.
+- **Projector:** the calendar sample rendered at 1024 px wide still shows chip words, dates and client names clearly. 1024 px as a projector width is an assumption (`UNVERIFIED`). Dropped at PM-12 (2026-10-22): no projector sizing.
 - **Taste pre-flight:** one main and one second colour per direction, corner sizes 6 / 10 / 16 only, no em-dashes in copy, no small label above every section.
 - **Sample data:** dates use only ✅ rows of [due-dates.md](../research/due-dates.md): GSTR-3B monthly 20 Oct, tax audit report 21 Oct (extended), ESIC 15 Oct (so "5 days late"), GSTR-3B quarterly for Delhi and Haryana 24 Oct, PMT-06 25 Oct. The licence and the two tasks are made-up demo items.
 - **Exceptions (like the References page):** these frames use typed-in hex colours (variables come in phase B). The status icons are simple glyphs drawn for this sample (Phosphor icons arrive in phase C). The logo cut-outs are paper-coloured strokes; real cut-out shapes come with the logo files.
@@ -264,7 +267,7 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 | `Primitives` (Default) | 21 raw shades, only the ones in use: `mulberry/50, 500, 700, 800`, `teal/700`, `grey/0, 50, 200, 500, 600, 900`, `red`, `amber`, `blue`, `slate`, `green` (50 and 700; amber 800). New: hover `mulberry/800` `#642647`, focus ring `mulberry/500` `#975C7C` (mixed by script) | none (hidden) | `var(--mulberry-700)` |
 | `Color` (Light) | 28 meanings, each pointing to a primitive: `bg/page, surface, subtle, brand, brand-hover`; `text/default, muted, on-brand, brand, link`; `border/default, strong, focus`; `status/<late, soon, waiting, upcoming, done>/<bg, text, icon>` | fills, text or strokes | `var(--color-bg-page)` |
 | `Spacing` (Default) | `space/0, 2, 4, 8, 12, 16, 20, 24, 32, 40, 48, 64` | gap and padding | `var(--space-16)` |
-| `Radius` (Default) | `radius/sm` 6, `md` 10, `lg` 16, `full` 999 | corner radius | `var(--radius-md)` |
+| `Radius` (Default) | `radius/sm` 8, `md` 12, `lg` 20, `full` 999 (rounder in the 2026-10-22 polish pass; was 6, 10, 16) | corner radius | `var(--radius-md)` |
 - **Contrast:** a script (same WCAG 2.2 formula) checked 27 pairs: every text colour on every background it meets, the two borders, and each status text on its chip and on white. **All pass.** The lowest are `text/link` on `bg/page` 4.87 and `border/strong` on `bg/page` 3.48 (needs 3). The full table is on the sheet.
 - **Text styles (17):** CA desktop `ca/caption` 12, `ca/label` 14 Medium, `ca/body` 14, `ca/body-lg` 16, `ca/title-s` 20, `ca/title-m` 24, `ca/title-l` 32; owner phone `owner/body` 16, `owner/label` 16 Medium, `owner/body-lg` 18, `owner/title` 22, `owner/title-l` 28; `demo/heading` 40 (projector); `num/body` 14, `num/title` 24; Hindi `hi/body` 16, `hi/title` 28. Line height 140 to 145% for body text, 115 to 125% for titles.
 - **Fact-checks (font files from the official [google/fonts](https://github.com/google/fonts) repo, read by script 2026-10-20):** Anek Latin has tabular numbers (`tnum`), but its default digits have different widths, so **Lakshay turns on tabular numbers by hand on `num/body` and `num/title`** (the API can't). Anek Devanagari's own line height is 171% of the font size (Latin: 110%), so the Hindi styles use 170% and 160%.
@@ -316,14 +319,15 @@ Status colours are shared by all three: late `#9B1C1C` on `#FCE9E7`, due soon `#
 ## UX-4 Detailed screens and demo
 _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screens` (batches A to E by demo beat, a short stop after A, then review point 6) → the other 43 frames with their states → width checks → polish pass → annotations → clickable demo → design QA → gate PM-12. About 150 Figma calls a day, so at least 3 Figma days.
 
-**Progress.** All 22 demo frames are built (batches A to E, 2026-10-21; notes in [screens.md](screens.md#ux-4-detailed-screens-demo-path)). The `06 Screens` page brief was brought up to date on 2026-10-21. The other 43 frames follow in 6 batches: sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7.
+**Progress.** All 22 demo frames are built (batches A to E, 2026-10-21; notes in [screens.md](screens.md#ux-4-detailed-screens-demo-path)). The `06 Screens` page brief was brought up to date on 2026-10-21. The other 43 frames were built in 6 batches and are all done (batch 6, settings and the firm's morning email, on 2026-10-22): sign-in and sign-up 13 · clients 5 · client and review states 4 · licences and owner home 9 · tasks and thread states 5 · settings and reminder email 7. **All 65 frames exist**, plus the loading frame CA-14c. Width checks, the polish pass, notes, the clickable demo and design QA were done on 2026-10-22, and the design was approved at PM-12.
 
 **ARN (checked 2026-10-21).** The ARN (the acknowledgement number the GST portal gives after a filing) has 15 characters: 2 letters, the 2-digit state code, the month and year (MMYY), a system number and a check character, e.g. `AA070724000001Z` ([enkash](https://www.enkash.com/resources/blog/what-is-an-arn-number), [Masters India](https://www.mastersindia.co/blog/track-arn-status/), [kanakkupillai](https://www.kanakkupillai.com/learn/how-to-check-gst-registration-status-with-arn/)). Our sample `AA0710260012345` fits: Delhi (07), October 2026, so it stays. Only blogs describe the format, not GSTN: `UNVERIFIED`. **Stage 2:** accept the ARN as plain text; don't check its format strictly.
 
-**Review later (Lakshay).** Defaults taken so the work keeps moving; Lakshay can change any of them later.
-- CA-13 keeps "Confirm 5 licences", although the 5th item is the labour-code registration (the research calls it "not a licence").
-- Chip words are about 8 px on a 1024 px projector (`UNVERIFIED` width): no change until a real projector test.
-- CA-13 status word "Waiting for your check" (blue `waiting` chip), and no confidence number on the AI card.
+**Review later (Lakshay).** Closed at PM-12 on 2026-10-22: all accepted as they stood, except the projector point, which was dropped.
+- CA-13 keeps "Confirm 5 licences", although the 5th item is the labour-code registration (the research calls it "not a licence"). Accepted.
+- ~~Chip words are about 8 px on a 1024 px projector~~: dropped. The app follows normal desktop software sizes (CA text 14 px, small labels 12 px).
+- CA-13 status word "Waiting for your check" (blue `waiting` chip), and no confidence number on the AI card. Accepted.
+- **Decided at PM-12 (2026-10-22): both kept at their defaults.** (1) **Consent.** Only the firm's first sign-up (CA-03) records consent. Default for v1: that is enough, because the data is made up; colleagues and owners accept the notice on their first sign-in before any real data goes in (a one-step screen reusing the CA-03 card, to design then). (2) **Small screens without a frame**: edit client, archive client, edit licence and its apply-by date, edit or delete a task, session expired, "not allowed". Default: built in stage 2 from the existing parts (the add forms reused for edits; archive hides a client from lists and the calendar, blocks the owner's login and keeps the data).
 
 **Reminder days (agreed by Lakshay 2026-10-21).** Facts from [licences.md](../research/licences.md) (checked 2026-10-18).
 | Kind | Rule | Why |
@@ -332,7 +336,7 @@ _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screen
 | Licence | Reminders 90, 60 and 30 days before the apply-by date. "Renew soon" from the first reminder until expiry (the chip can say "Apply by 1 Dec"), then "Expired". No expiry date: "Valid until cancelled", no reminders | Keeps the familiar 90/60/30 |
 | Firm | One email each morning: late items, and items due in the next 7 days | Proposal 1 (UX-2): one list, not hundreds of emails |
 | Owner | One email each Monday: their items due in the next 10 days, and anything waiting on them. Plus an email right away when the CA gives them a task (EM-05) | 6 to 8 filings a month per factory; per-item emails would be ignored |
-| Both | Licences on a reminder day join both lists. Done items never appear | Criterion 12 |
+| Both | A licence joins a list when its reminder day has passed since that list was last sent (so a Monday-only owner list never misses one). Done items never appear | Criterion 12 |
 
 **Demo cast** (made up; all screens use it, so the demo story stays consistent). "Today" = Monday 19 Oct 2026. Dates only from ✅ rows of [due-dates.md](../research/due-dates.md). English only.
 - **Firm:** Kapoor & Associates, Delhi, about 100 factory clients. Rakesh Kapoor (CA, partner) and Priya Malhotra (staff).
@@ -341,3 +345,25 @@ _Started 2026-10-21._ Order: reminder days → 22 demo-path frames on `06 Screen
 - **Correction:** the UX-3 brand sample shows "PMT-06, 25 Oct". That's wrong: PMT-06 is paid only for the first two months of a quarter (CGST Rule 61(3)), and September is the third. It is not reused.
 
 **Batches A to E (all 22 demo frames, built 2026-10-21):** what each frame shows, the parts changed and the checks are in [screens.md](screens.md#ux-4-detailed-screens-demo-path).
+
+**Clickable demo (built 2026-10-22).** Only the demo path clicks; every other frame is static. In Figma: open `06 Screens`, select **CA-14**, press Present (the flow is named **Demo**). 21 links, read back by script: each frame leads to the next beat and the last one (EM-07) ends the story. Tall frames scroll (CA-13 is 1414 px high).
+| Beat | Click | Goes to |
+|---|---|---|
+| 1 to 2 | CA-14 "Filters" · CA-14b "Client grid" | CA-14b due this week · CA-15 client grid |
+| 3 | CA-15 "Add client" · CA-07 "Next: choose filings" · CA-08 "Save client" | CA-07 · CA-08 · CA-11 |
+| 4 | CA-11 "Invite owner" · CA-12 "Send invite" | CA-12 · EM-03 (the owner's email) |
+| 5 | EM-03 "Open ComplyPilot" · OW-02 "Start" · OW-03, OW-04, OW-05 "Next" · OW-06 "Send to Kapoor & Associates" | OW-02 to OW-07 |
+| 6 to 7 | OW-07: click anywhere (the story moves to the CA) · CA-13 "Confirm 5 licences" | CA-13 · CA-20b |
+| 8 to 9 | CA-20b: click anywhere (the story moves to the owner) · OW-11 "Upload purchase bills" | OW-11 · OW-11b |
+| 10 to 11 | OW-11b: click anywhere (back to the CA) · CA-20 "Mark done" · CA-21 "Mark done" (window) · CA-21c: click anywhere | CA-20 · CA-21 · CA-21c · EM-07 (the owner's Monday list) |
+"Click anywhere" is used where the story changes person; the real button there would not lead to the next beat.
+
+**Motion review table** (rules from the skills table: frequent actions at most 200 ms, ease-out; Mark done is the one richer moment, at most 450 ms).
+| Moment | Before | After | Why |
+|---|---|---|---|
+| Next screen in the same app (Next, Save client, Invite owner) | Instant cut | Dissolve, 150 ms, ease-out | A cut feels jumpy; under 200 ms stays quick for something done many times a day |
+| A window opens (Invite owner, Mark done) | Instant cut | Dissolve, 150 ms | No slide: the window is part of a frequent action |
+| The story changes person or device (owner to CA, email) | Instant cut | Dissolve, 200 ms | A short fade tells the audience it is someone else's screen |
+| Mark done to Done (CA-21 to CA-21c) | Instant cut | Smart animate, 400 ms, ease-out | The one moment of delight: the tick, the banner and the stages settle in |
+Not shown in Figma, for stage 2: the thread panel slides in from the right in 200 ms, ease-out (the Notion side peek); buttons shrink to 0.97 when pressed; with "reduce motion" every move becomes a plain fade or nothing.
+

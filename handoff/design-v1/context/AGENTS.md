@@ -29,6 +29,7 @@ Stages inside every version (in order; the next starts only after the gate is ap
 4 Test & Release [QA]  → test.md
 5 Checkpoint           → review.md
 A stage with more than one file gets its own folder in the version (like design/); the stage doc keeps its name.
+Early start: if a stage is blocked (e.g. a tool limit), the next stage may start on tasks that don't depend on the open gate. Lakshay agrees; the version README lists those tasks and what waits for the gate.
 
 - Every task has a track tag and an ID, e.g. v1-FS-3. [PM] product · [UX] UI/UX · [FS] full-stack & system design · [AI] AI/ML & data engineering · [QA] testing, CI/CD, deploy, monitoring.
 - Stage docs are created when their stage starts. Each opens with "Learn first": the concepts that stage needs, explained simply, with primary sources.
@@ -59,4 +60,4 @@ A stage with more than one file gets its own folder in the version (like design/
 - The v0 prototype is reference only: `git show v0-prototype:<path>`.
 
 ## Stack
-Decided in v1 stage 2 via ADRs. No application code until then.
+Decided 2026-10-21 (v1 FS-1): one Next.js app in TypeScript, Supabase (Postgres, email-link login, private files), Vercel, Tailwind + shadcn/ui, Vitest + Playwright. Read docs/versions/v1/tech.md and docs/adr/ before writing code. No screen code before gate PM-12; the first code is the starter app in v1-QA-1.

@@ -1,6 +1,6 @@
 # v1 — Shared Compliance Calendar
 
-**Stage:** 1 Design [UX] → [design.md](design/design.md) (stage 0 approved 2026-10-18). Scope locked 2026-10-17. Any change from here is written down in this file.
+**Stage:** 2 Build [FS] → [tech.md](tech.md) (decisions 2026-10-21, ADRs in [docs/adr/](../../adr/)). Stage 0 approved 2026-10-18; stage 1 Design approved 2026-10-22 ([design.md](design/design.md)). Scope locked 2026-10-17. Any change from here is written down in this file.
 **Time:** no deadlines or hour budgets. Progress = the task checklist below.
 **Vision and ideas:** [idea.md](../../../idea.md)
 
@@ -24,8 +24,8 @@ Tracks: [PM] product · [UX] design · [FS] full-stack · [AI] AI and data · [Q
 | F1 | Firm sign-up with privacy notice and consent; invite colleagues | UX · FS |
 | F2 | Add clients by hand or import a CSV file (a spreadsheet saved as plain text). Choose which filings apply to each client | UX · FS |
 | F3 | Invite the owner; the owner logs in with a link sent to their email | UX · FS |
-| F4 | **Factory questions:** about 10 simple questions (what it makes, where, workers, power, boiler, chemicals). Written rules suggest the licences that apply, each with its official source and a short plain-words note for the owner (what it is, which office gives it, where to apply). The CA checks the list before it goes on the calendar. Rules for **Delhi and Haryana** only; anywhere else the CA adds licences by hand, and an unknown case says "ask your CA" | PM · UX · FS |
-| F5 | **Due dates** worked out automatically: GST, TDS, PF, ESIC, income tax, MSME Form-1 ([due-dates.md](research/due-dates.md)). **Override dates:** when the government extends a date, change it once and every client updates | PM · FS |
+| F4 | **Factory questions:** 8 simple questions (where, workers, machines that use power, area, what it makes, steam boiler, hazardous waste, floor area; settled in UX-4). Written rules suggest the licences that apply, each with its official source and a short plain-words note for the owner (what it is, which office gives it, where to apply). The CA checks the list before it goes on the calendar. Rules for **Delhi and Haryana** only; anywhere else the CA adds licences by hand, and an unknown case says "ask your CA" | PM · UX · FS |
+| F5 | **Due dates** worked out automatically for the confirmed rows of [due-dates.md](research/due-dates.md) (GST, TDS, ESIC, income tax). PF, MSME Form-1 and the other unconfirmed dates stay out of the app until a CA confirms them (decision 2026-10-18); the CA tracks them as own tasks. **Override dates:** when the government extends a date, change it once and every client updates | PM · FS |
 | F6 | **Shared calendar:** the CA sees all clients (by month, with filters); the owner sees only their own | UX · FS |
 | F7 | **Licence tracker:** type, number, office, issue date, optional expiry date, certificate file, and an **apply-by date**: expiry minus how early the law wants you to apply (e.g. Delhi factory licence 30 days); the CA can edit it. Warnings at 90, 60 and 30 days before the apply-by date, then "Expired". No expiry date shows "Valid until cancelled" ([licences.md](research/licences.md); reminder days agreed 2026-10-21) | FS |
 | F8 | **CA's own tasks**, which can repeat monthly, quarterly or yearly | UX · FS |
@@ -41,8 +41,14 @@ Tracks: [PM] product · [UX] design · [FS] full-stack · [AI] AI and data · [Q
 | WhatsApp messages, no-login upload link, AI sorting of documents | v2 |
 | Owner health score, document vault, factory questions for more states | v3 |
 | Export and delete a client (was FS-9 in privacy.md) | First version with real users |
+| Consent for colleagues and owners: only the firm's sign-up records consent in v1 (decided at PM-12). Before real data, each person accepts the notice on first sign-in | First version with real users |
+| Richer owner phone features (the owner screens are simple on purpose in v1) | Later (Lakshay, PM-12) |
+| Move the live data to India (a Mumbai project), and backups to private storage ([ADR 0003](../../adr/0003-hosting-and-data-region.md), [0009](../../adr/0009-timed-jobs-and-backups.md)) | First version with real users |
 | Late-fee warning, ROC/MCA company filings, professional tax, CA fee tracking, staff roles | Later |
 | Tally/Winman import ([import-formats.md](research/import-formats.md)), government portal data, GST certificate reader, calendar export to phone | Later |
+
+## Corrections after the scope lock
+2026-10-22, from a builder check of the design docs (a fresh reader found these contradictions): F4 says 8 questions (was "about 10", the designs have 8); F5 and criterion 6 cover only confirmed dates, as decided in PM-10 and PM-14 (they listed PF and MSME Form-1); criterion 12 says how a licence reaches the Monday list. Open points for stage 2 are in [tech.md](tech.md#builder-check-open-points-for-stage-2).
 
 ## Done when
 No sales goal: v1 is for engineering and a college/competition pitch. v1 is done when:
@@ -58,13 +64,13 @@ Each one is proven by a test or a check. All must pass at the checkpoint.
 3. **Import (F2):** a 100-row CSV with 5 bad rows saves 95 clients and lists the 5 bad rows with row number and reason.
 4. **Owner login (F3):** an invited owner logs in with the email link and sees only their own calendar.
 5. **Factory questions (F4):** for every test factory in the Delhi/Haryana research file, the rules give the expected licence list. Every suggestion shows its source. Nothing reaches the calendar until the CA confirms. A factory outside Delhi/Haryana gets "ask your CA", not an empty list.
-6. **Due dates (F5):** unit tests show the official date for every filing in due-dates.md and MSME Form-1, including the QRMP 22nd/24th split by state and the March TDS payment (due 30 April).
+6. **Due dates (F5):** unit tests show the official date for every confirmed (✅) filing in due-dates.md, including the QRMP 22nd/24th split by state and the March TDS payment (due 30 April).
 7. **Override (F5):** changing one due date updates it for every affected client.
 8. **Speed (F6):** the CA calendar with 100 clients × all filings for a month opens in under 2 seconds; filters respond in under 0.5 seconds.
 9. **Licences (F7):** tests at 90, 60 and 30 days before the apply-by date and at expiry, for a licence with a lead time (Delhi factory licence, 30 days) and one without, plus "no expiry date", each show the right warning.
 10. **Repeating tasks (F8):** unit tests show the right next dates for monthly, quarterly and yearly tasks, including month ends (a task on the 31st in February).
 11. **Thread (F9):** the CA and the owner can post messages and files on an item and set tags. Mark done saves the ARN, the receipt (PDF/JPG/PNG, max 10 MB), who did it and when. Files open only for that firm and that client's owner.
-12. **Reminders (F10):** the firm gets one email each morning listing late items and items due in the next 7 days. The owner gets one email each Monday listing their items due in the next 10 days and anything waiting on them, and an email right away when the CA gives them a task. Licences on a reminder day join both lists. Items already marked done never appear.
+12. **Reminders (F10):** the firm gets one email each morning listing late items and items due in the next 7 days. The owner gets one email each Monday listing their items due in the next 10 days and anything waiting on them, and an email right away when the CA gives them a task. A licence joins a list when its reminder day (90, 60 or 30 days before the apply-by date) has passed since that list was last sent, so the owner's Monday list never misses one. Items already marked done never appear.
 13. **AI (F11):** the matcher reaches its target on the eval set (a fixed set of test examples with known answers; target agreed in ai.md, draft 90%). Every answer shows the line it matched. Nothing is saved until the CA confirms.
 14. **Release:** every change to `main` deploys by itself once checks pass. Daily backups, and one test restore done. Error alerts reach Lakshay.
 15. **Demo (F12):** the "Done when" list above is met.
@@ -90,21 +96,22 @@ Each task has an ID and a track. Tick the box when its "done when" check passes.
 - [x] v1-UX-1 "Learn first" notes and user flows: firm sign-up → add clients → invite owner → factory questions → calendar → item thread → mark done. Done when every feature has a flow (approved by Lakshay 2026-10-20)
 - [x] v1-UX-2 Screen list and wireframes (rough layouts) for both sides, desktop for the CA and phone for the owner. Done when every step of every flow has a screen (approved by Lakshay 2026-10-20)
 - [x] v1-UX-3 Brand and design basics: logo, app icon, favicon, colours, fonts, spacing, status chips. Status is never shown by colour alone. Done when text contrast passes WCAG AA (the standard readability check) and the logo reads at 16 px (brand added 2026-10-19; approved by Lakshay 2026-10-21)
-- [ ] v1-UX-4 Detailed calendar and item thread screens; agree the reminder days. Done when Lakshay can walk the demo story on the designs
-- [ ] v1-PM-12 **Gate:** Lakshay approves the design
+- [x] v1-UX-4 Detailed calendar and item thread screens; agree the reminder days. Done when Lakshay can walk the demo story on the designs (66 frames; walked and approved 2026-10-22)
+- [x] v1-PM-12 **Gate:** Lakshay approves the design (approved 2026-10-22, no changes)
 
 ### Stage 2: Build [FS] → tech.md
-Before any code, we agree the design together: folder and file structure, how the code is split, naming (see AGENTS.md). The deploy pipeline comes first.
-- [ ] v1-FS-1 Choose the stack, one ADR (short decision record) each: app framework; database, login and file storage; hosting; India data region. Decide whether to reuse or reset the old Supabase project
-- [ ] v1-QA-1 Deploy pipeline: automatic checks on every change (lint, type check, unit tests), preview deploys, production deploys from `main`, error tracking. Done when a starter page deploys by itself
-- [ ] v1-FS-2 Data structure, API shapes (what the server sends and receives) and RLS rules (database rules that keep firms apart), with tests → criterion 2
+The stack, folder layout, naming and order of work were agreed with Lakshay on 2026-10-21 and are written in [tech.md](tech.md) and ADRs [0001](../../adr/0001-app-framework.md) to [0011](../../adr/0011-email-from-personal-gmail.md) (index: [docs/adr/](../../adr/README.md)). The starter app on Vercel comes first (QA-1).
+**Gate PM-12 passed 2026-10-22.** Build starts with the FS-1 close-out, QA-1, FS-2, FS-5 and the logic cores of FS-14, FS-10, FS-13 and FS-8 (pure rules with unit tests, no screens); screens follow in demo order, built from Figma's design-to-code tool (tech.md, D14).
+- [ ] v1-FS-1 Choose the stack, one ADR (short decision record) each. **Decided 2026-10-21:** ADRs 0001 to 0011 (Next.js, Supabase, Vercel, Gmail email, Vitest and Playwright, and more); the old Supabase project becomes the training project; the demo project stays in Seoul and moves to Mumbai before real users. **Left:** Lakshay's by-hand steps (tech.md) and checking and wiping the training project
+- [ ] v1-QA-1 Starter app on Vercel: the empty Next.js app in the agreed folder layout; Lakshay connects the repo, and Vercel publishes `main` and a preview link per branch by itself (decided 2026-10-22: no separate deploy planning). Done when a starter page is live. The automatic checks (lint, type check, unit tests) and the branch rule join at FS-2; error alerts by email ([ADR 0006](../../adr/0006-error-alerts-by-email.md)) come at QA-5
+- [ ] v1-FS-2 Data structure, API shapes (what the server sends and receives) and RLS rules (database rules that keep firms apart), with tests; the automatic checks on every change start here → criterion 2
 - [ ] v1-FS-3 Login, firm sign-up, consent, invite colleagues → criterion 1
 - [ ] v1-FS-4 Clients: add, edit, archive; choose the filings that apply
 - [ ] v1-FS-5 Due-date engine: write the ✅ rows (confirmed in v1-PM-14) as a pure function (same inputs, same answer) → criterion 6
 - [ ] v1-FS-6 Shared calendar, CA view and owner view → criterion 8
 - [ ] v1-FS-7 Item thread: messages, tags, files in private storage, mark done with ARN and receipt → criterion 11
 - [ ] v1-FS-8 CSV import with a report of bad rows → criterion 3
-- [ ] v1-FS-9 Backups on, breach runbook (what to do if data leaks), demo data only guard
+- [ ] v1-FS-9 Backups on (nightly encrypted backup, [ADR 0009](../../adr/0009-timed-jobs-and-backups.md)), breach runbook (what to do if data leaks), demo data only guard
 - [ ] v1-FS-10 Licence tracker and "due soon" list → criterion 9
 - [ ] v1-FS-11 Override dates (settings screen) → criterion 7
 - [ ] v1-FS-12 Invite owner and email login → criterion 4
@@ -146,7 +153,7 @@ Before any code, we agree the design together: folder and file structure, how th
 | Level | What it covers | When it's written |
 |---|---|---|
 | Unit | Due-date engine, licence rules, licence warnings, repeating tasks, CSV parser, GSTIN/PAN checks | With each FS task |
-| Database | RLS: cross-firm and cross-owner access blocked on every table and file | From v1-FS-2, runs on every change |
+| Database | RLS: cross-firm and cross-owner access blocked on every table and file (Vitest against a throwaway Supabase on GitHub, [ADR 0008](../../adr/0008-testing-tools.md)) | From v1-FS-2, runs on every change |
 | Integration | API + real database with RLS on | From v1-FS-3 |
 | E2E | The 3 critical flows | v1-QA-2 |
 | AI eval | The factory type matcher against the eval set | v1-AI-4 |
@@ -165,7 +172,11 @@ A task is done only when its tests pass. v1 has no money calculations.
 | Due-date rules change (new Income-tax Act, labour codes, extensions) | Confirm every ⚠️ row in v1-PM-14; re-check before the demo (v1-PM-15); override dates; show new and old form names |
 | CTO (pollution consent to run) no longer expires | The licence tracker allows "no expiry date" |
 | Solo developer and student | One task at a time; cut scope, not quality |
-| The old Supabase project may still hold prototype data | v1-FS-1 decides whether to reuse or reset it |
+| The training Supabase project ("comply pilot") may still hold v0 prototype data | Decided 2026-10-21: Lakshay confirms the table list, then it is wiped (v1-FS-1) |
+| v1 data sits outside India (demo in Seoul, training in Tokyo) | Made-up data only; the screens name no place; move to Mumbai before real users ([ADR 0003](../../adr/0003-hosting-and-data-region.md)) |
+| Emails from a Gmail account land in spam, or hit its 500-a-day limit | Test with real inboxes at v1-FS-12; demo scale is far below the limit; a proper sender once a domain exists; the sender is Lakshay's personal Gmail ([ADR 0005](../../adr/0005-email-through-gmail.md), [0011](../../adr/0011-email-from-personal-gmail.md)) |
+| Vercel's free plan is for non-commercial use only | Fine for a college pitch; paid plan when paying CAs arrive ([ADR 0003](../../adr/0003-hosting-and-data-region.md)) |
+| The repository is private from 2026-10-22, and GitHub's free plan can't enforce "merge only when checks pass" on a private repo | GitHub Pro is not wanted for now (Lakshay, 2026-10-22): the checks run on every change but nothing blocks a merge, and Claude merges only when they pass ([ADR 0010](../../adr/0010-private-repository.md)). Keys only in env files and settings (none in git history); backups encrypted; secret scan in v1-QA-3 |
 
 ## Mocks & debt
 None. Any `// MOCK:` in the code must be listed here.
