@@ -234,6 +234,7 @@ Short fact-checks done 2026-10-21 are in the ADRs. Still open:
 - Phosphor's code package name; Next.js `onRequestError` confirmed in the docs (it exists since Next.js 15)
 
 ## Watch out
+- **A Cloudflare Workers project ("complypilot") is still connected to the GitHub repo**, probably from v0. It builds every push and fails ("Workers Builds" on PR #1, 2026-10-23). It is not one of our checks; Lakshay can disconnect it in the Cloudflare dashboard. Our checks are `checks` and `security`.
 - **The repo is private from 2026-10-22** ([ADR 0010](../../../adr/0010-private-repository.md)), but nothing secret goes in a commit, a doc or a chat. `.env*` files are ignored by git (checked 2026-10-21: none ever entered git history).
 - The old v0 env files on Lakshay's disk (not in git) are deleted before QA-1 (D19); their keys are dead and never reused. QA-1 writes a fresh names-only file.
 - **The Supabase tool can't run deletes in our sessions:** on 2026-10-22, three `drop` commands sent through it were refused (read-only queries work). Lakshay ran the wipe in the SQL Editor. Migrations go through files and the Supabase command-line tool, or the SQL Editor.
