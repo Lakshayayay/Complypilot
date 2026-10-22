@@ -3,7 +3,7 @@
 **Status:** Accepted · **Date:** 2026-10-21 · **Decided by:** Lakshay (Claude recommended) · **Task:** v1-FS-1, v1-QA-1
 
 ## Context
-Acceptance criterion 14: "Error alerts reach Lakshay." Lakshay first chose "Vercel logs only", which doesn't alert anyone; after Claude pointed out the clash he chose the email hook. Money rule: free ([tech.md](../versions/v1/tech.md#decision-log), D1).
+Acceptance criterion 14: "Error alerts reach Lakshay." Lakshay first chose "Vercel logs only", which doesn't alert anyone; after Claude pointed out the clash he chose the email hook. Money rule: free ([tech.md](../versions/v1/build/tech.md#decision-log), D1).
 
 ## Options
 | Option | For | Against |

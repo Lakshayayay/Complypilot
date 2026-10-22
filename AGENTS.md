@@ -34,7 +34,7 @@ Early start: if a stage is blocked (e.g. a tool limit), the next stage may start
 - Every task has a track tag and an ID, e.g. v1-FS-3. [PM] product · [UX] UI/UX · [FS] full-stack & system design · [AI] AI/ML & data engineering · [QA] testing, CI/CD, deploy, monitoring.
 - Stage docs are created when their stage starts. Each opens with "Learn first": the concepts that stage needs, explained simply, with primary sources.
 - Scope freezes at the end of stage 0; new ideas go to idea.md. No deadlines or hour budgets: we track progress with the task checklist. Cut scope, not quality.
-- Unit tests are written during Build; the deploy pipeline is set up at the start of Build.
+- Unit tests are written during Build; the deploy pipeline is set up by Lakshay at the end of Build (his call, 2026-10-22).
 - Checkpoint = acceptance criteria pass, no unlisted mocks, deployed, feedback collected (from pilots or a demo), SYSTEM.md updated, tag vN.0.0, CHANGELOG, retro, then plan the next version.
 
 ## Engineering rules
@@ -60,4 +60,4 @@ Early start: if a stage is blocked (e.g. a tool limit), the next stage may start
 - The v0 prototype is reference only: `git show v0-prototype:<path>`.
 
 ## Stack
-Decided 2026-10-21 (v1 FS-1): one Next.js app in TypeScript, Supabase (Postgres, email-link login, private files), Vercel, Tailwind + shadcn/ui, Vitest + Playwright. Read docs/versions/v1/tech.md and docs/adr/ before writing code. No screen code before gate PM-12; the first code is the starter app in v1-QA-1.
+Decided 2026-10-21 (v1 FS-1): one Next.js app in TypeScript, Supabase (Postgres, email-link login, private files), Vercel, Tailwind + shadcn/ui, Vitest + Playwright. Read docs/versions/v1/build/tech.md and docs/adr/ before writing code. No screen code before gate PM-12; the first code is the starter app in v1-QA-1.

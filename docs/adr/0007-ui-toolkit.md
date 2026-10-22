@@ -16,7 +16,7 @@ The app is built from the Figma file `complypilot` (design decision 2026-10-19):
 **Tailwind CSS v4 + shadcn/ui.** Setup follows [shadcn/ui for Next.js](https://ui.shadcn.com/docs/installation/next) (checked 2026-10-21: with Tailwind v4 the config field in `components.json` stays empty). Components live in `src/components/ui/`.
 - **Tokens:** the Figma variables have CSS names (e.g. `--color-bg-page`, `--space-16`, `--radius-md`, `--shadow-md`). One token file holds them and feeds Tailwind's theme, so every colour is defined once. No typed-in hex codes in code.
 - **Fonts:** Anek Latin through Next.js's font loader. **Icons:** Phosphor Bold, one weight (package name checked at the first screen).
-- **From Figma to code:** per screen, Claude reads Figma's design data with the `figma-design-to-code` skill, builds from our components, then compares with a Figma screenshot. Figma's Code Connect (links Figma parts to code parts) is `UNVERIFIED` on the Education plan, so a mapping table in [tech.md](../versions/v1/tech.md#figma-to-code) does that job.
+- **From Figma to code:** per screen, Claude reads Figma's design data with the `figma-design-to-code` skill, builds from our components, then compares with a Figma screenshot. Figma's Code Connect (links Figma parts to code parts) is `UNVERIFIED` on the Education plan, so a mapping table in [tech.md](../versions/v1/build/tech.md#figma-to-code) does that job.
 
 ## Consequences
 - Each Figma component gets a code twin with the same name (`StatusChip`, `status="late"`).

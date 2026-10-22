@@ -5,13 +5,14 @@ node_modules/
 .next/
 out/
 dist/
-build/
+/build/
 *.tsbuildinfo
 next-env.d.ts
 
 # Environment files (secrets)
 .env
 .env.*
+!.env.example
 
 # Editor / OS
 .vscode/
@@ -25,3 +26,8 @@ repomix-output.xml
 
 # Local / non-project folders
 College_Notes/
+
+# Added at QA-1 (from create-next-app)
+/coverage
+*.pem
+.vercel
