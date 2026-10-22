@@ -1,8 +1,8 @@
 # Status
 
 **Version:** v1 — Shared Compliance Calendar · **Stage:** 2 Build [FS], next task **QA-1 starter app** (FS-1 closed 2026-10-22) · **Last updated:** 2026-10-22 (training project wiped; build plan saved)
-**First thing next session:** read [build-plan.md](versions/v1/build/build-plan.md), "Where we stopped". Lakshay does step 0 by hand: reload VS Code so Claude's shell uses Node 24, delete the 3 old v0 env files, reset the old Supabase keys. Then QA-1 starts with its question 1 (folders now or with their first file), one question at a time.
-**Plan for this version:** [v1 README](versions/v1/README.md) (tasks and gates) · **Build** [build/](versions/v1/build/): [tech.md](versions/v1/build/tech.md) (decisions D1 to D19, layout, Figma to code, "Smooth and subtle") and [build-plan.md](versions/v1/build/build-plan.md) (steps, each task's questions, where we stopped) · ADRs [adr/](adr/README.md) (0001 to 0011) · **Design (frozen)** [design/](versions/v1/design/) · **Rules:** [AGENTS.md](../AGENTS.md)
+**First thing next session:** read [tech.md](versions/v1/build/tech.md), "FS-2 decisions" (build-plan.md was deleted 2026-10-22). Lakshay does step 0 by hand: reload VS Code so Claude's shell uses Node 24, delete the 3 old v0 env files, reset the old Supabase keys. Then QA-1 starts with its question 1 (folders now or with their first file), one question at a time.
+**Plan for this version:** [v1 README](versions/v1/README.md) (tasks and gates) · **Build** [build/](versions/v1/build/): [tech.md](versions/v1/build/tech.md) (decisions D1 to D19, layout, Figma to code, "Smooth and subtle") · ADRs [adr/](adr/README.md) (0001 to 0011) · **Design (frozen)** [design/](versions/v1/design/) · **Rules:** [AGENTS.md](../AGENTS.md)
 
 ## Done
 - **Stage 0 approved 2026-10-18; stage 1 Design approved 2026-10-22** (PM-12): 66 frames, a clickable demo, notes on every frame. Figma [complypilot](https://www.figma.com/design/wMTrpY84cAfQiI5a9lcr0f/complypilot), FigJam [flows](https://www.figma.com/board/bZB8Y1uSb5rAIYV0BOQpRh).

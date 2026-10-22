@@ -1,7 +1,8 @@
 # v1 Build (stage 2)
 
 **Stage:** 2 Build [FS], planned 2026-10-21 with Lakshay; **started 2026-10-22, after gate PM-12 (design approved)**. **Tasks:** FS-1 to FS-16, QA-1 and gate PM-16, in the [README](../README.md). **Decisions:** [docs/adr/](../../../adr/README.md) (0001 to 0011).
-**Next step:** FS-2 (tables, API shapes, RLS, and the automatic checks). QA-1 (the app skeleton, on the Mac only) closed 2026-10-22; Vercel and the deploy wait until the end (D20). The step-by-step plan, with each task's design questions and where we stopped: [build-plan.md](build-plan.md).
+**Next step:** FS-2 (tables, API shapes, RLS, and the automatic checks). QA-1 (the app skeleton, on the Mac only) closed 2026-10-22; Vercel and the deploy wait until the end (D20).
+FS-2's decisions and steps are in "FS-2 decisions" below.
 
 ## Learn first
 New ideas this stage uses. Sources opened 2026-10-21 unless marked.
@@ -46,9 +47,9 @@ All agreed with Lakshay on 2026-10-21, one at a time. "Options" are what Claude 
 | D14 | Figma to code (2026-10-22) | Figma's own design-to-code tool · a one-click plugin (Anima, Locofy, Builder.io) · Figma Make | **Figma's own tool.** Plugins are paid (breaks "fully free"); Make's Supabase link is key-value only and needs an Organization plan | below, "Figma to code" |
 | D15 | Deploy planning (2026-10-22; **replaced by D20**) | A planned pipeline task · starter app and Vercel's own auto-deploy | **No separate deploy planning.** Lakshay has deployed on Vercel's free plan before; once the repo is connected it publishes `main` and a preview link per branch by itself | README QA-1 |
 | D16 | Email account (2026-10-22) | A separate Gmail account for the app (Claude's recommendation) · Lakshay's personal Gmail | **Personal Gmail** (a leaked app password could reach his own mail; see the ADR) | [0011](../../../adr/0011-email-from-personal-gmail.md) |
-| D17 | Make the starter app (2026-10-22) | The official generator (`create-next-app`) · write the files by hand | **Official generator**, run in a temporary folder and copied in (the repo root already has files) | [build-plan.md](build-plan.md) |
-| D18 | Lint tool (2026-10-22) | ESLint · Biome | **ESLint.** Checked 2026-10-22 in the [create-next-app docs](https://nextjs.org/docs/app/api-reference/cli/create-next-app) (updated 2026-09-29): still offered (`--eslint`); Next.js 16.4.2 installed, minimum Node 20.9 | [build-plan.md](build-plan.md) |
-| D19 | Old v0 env files (2026-10-22) | Delete + new Supabase keys · move out of the folder · leave | **Delete them and reset the old keys** (v0 used "comply pilot", so its old keys may still work). Files deleted 2026-10-22; the key swap is still open (see "by hand") | [build-plan.md](build-plan.md) |
+| D17 | Make the starter app (2026-10-22) | The official generator (`create-next-app`) · write the files by hand | **Official generator**, run in a temporary folder and copied in (the repo root already has files) | below |
+| D18 | Lint tool (2026-10-22) | ESLint · Biome | **ESLint.** Checked 2026-10-22 in the [create-next-app docs](https://nextjs.org/docs/app/api-reference/cli/create-next-app) (updated 2026-09-29): still offered (`--eslint`); Next.js 16.4.2 installed, minimum Node 20.9 | below |
+| D19 | Old v0 env files (2026-10-22) | Delete + new Supabase keys · move out of the folder · leave | **Delete them and reset the old keys** (v0 used "comply pilot", so its old keys may still work). Files deleted 2026-10-22; the key swap is still open (see "by hand") | below |
 | D20 | Deploy timing (2026-10-22) | Vercel and the pipeline at the start of Build (QA-1) · deploy at the end, on Lakshay's terms | **Deploy at the end.** QA-1 became "app skeleton, local only". Unchecked until then: Vercel Seoul region and private repos on the free plan, Node 26 on Vercel | README QA-1, criterion 14 |
 | D21 | Generator settings (2026-10-22) | Keep the generator's defaults · change them | Kept: **Cache Components** and **Partial Prefetching** (data is dynamic unless we mark it cached; the docs say both become the only mode in the next major release). Set `agentRules: false` so `next dev` never rewrites our shared AGENTS.md. `typecheck` script runs `next typegen` first, because `.next/` (git-ignored) holds the route types. **Open: Lakshay confirms Cache Components** | [Cache Components](https://nextjs.org/docs/app/api-reference/config/next-config-js/cacheComponents) |
 **Claude's own calls (Lakshay can change them):** npm; Node 24 LTS; Nodemailer for email and Zod for input checks, each noted when first added; the backup file is encrypted (it was a public-repo precaution; kept now the repo is private, [0010](../../../adr/0010-private-repository.md)); the error hook sends at most one email per error per hour; each task's own design questions are asked when the task starts.
@@ -85,11 +86,11 @@ tests/e2e/                  Playwright click-through flows (stage 4)
 Design agreed with Lakshay (one question at a time, options + recommendation) → branch `<type>/v1-<slug>` → code and tests → checks pass → merge → docs updated in the same change → tick the box in the README. Docs-only changes go straight to `main`.
 
 ## Order of work
-Agreed D13: logic that needs no screens comes first; screens follow in demo-story order after gate PM-12. Done = its "done when" in the README passes. Step by step, with each task's design questions: [build-plan.md](build-plan.md).
+Agreed D13: logic that needs no screens comes first; screens follow in demo-story order after gate PM-12. Done = its "done when" in the README passes.
 **Before screens (needs no design):**
 - [x] v1-FS-1 close-out (2026-10-22): decisions written (this file, ADRs 0001 to 0011); the Supabase tool signed in; the training project checked (8 v0 tables, a few test rows, no logins or files) and wiped by Lakshay in the SQL Editor. Supabase's own `rls_auto_enable()` helper was kept: it turns RLS on for every new table in `public`
 - [x] v1-QA-1 app skeleton, on the Mac only (D20; closed 2026-10-22): one starter page; `npm run lint`, `npm run typecheck` and `npm run build` pass; `next dev` serves the page. Exact versions pinned (`.npmrc`), `engines` Node 24.x, `.nvmrc`. The GitHub Actions checks (lint, type check, Vitest) and the branch rule join at FS-2; the email-on-error hook comes at QA-5
-- [ ] v1-FS-2 tables, API shapes, RLS and the cross-firm tests; the automatic checks (GitHub Actions) start here, and the branch rule only if GitHub Pro is added later. Its own back-and-forth on the tables first
+- [ ] v1-FS-2 tables, API shapes, RLS and the cross-firm tests; the automatic checks (GitHub Actions) start here, and the branch rule only if GitHub Pro is added later. Decisions agreed 2026-10-22: see "FS-2 decisions" below
 - [ ] v1-FS-5 due-date engine (criterion 6)
 - [ ] Logic cores, each pure with unit tests: v1-FS-14 next dates (criterion 10) · v1-FS-10 licence warnings (criterion 9) · v1-FS-13 factory rules (criterion 5) · v1-FS-8 CSV parser and bad-row report (criterion 3)
 
@@ -98,10 +99,35 @@ Agreed D13: logic that needs no screens comes first; screens follow in demo-stor
 - **Small screens with no frame (decided at PM-12, built from existing parts):** edit and archive a client (FS-4) · edit a licence and its apply-by date (FS-10) · edit and delete a task (FS-14) · "session expired" and "not allowed" (FS-3)
 - [ ] v1-PM-16 **Gate:** the app on a preview link with demo data (Lakshay deploys it, D20), every FS task ticked, checks pass, Lakshay walks the demo story
 
+## FS-2 decisions (2026-10-22, Lakshay; one question at a time, options plus a recommendation)
+| # | Point | Decision |
+|---|---|---|
+| 1 | Calendar item | Filings, licence renewals and the firm's own tasks are items; each has one thread. An **owner task** is a to-do attached to an item and shares its thread |
+| 1b | Thread visibility | Firm staff see all. The client's owner sees Messages and Activity, **never Notes** (RLS). Other firms and owners see nothing |
+| 2 | Stage and status | **Save actions only:** `filed_at/by`, `done_at/by`, ARN, receipt. Worked out when shown: Waiting on owner (an open owner task), Late, Due soon (7 days), Upcoming |
+| 3 | Item storage | **Saved rows**, one per filing per period, 12 months ahead; rebuilt when a client's filings or a due-date change is edited; a daily job adds the next month |
+| 4 | Due-date changes | Per firm (CA-24): filing, period, optional state, new date, source, who, when. **Removable:** removing puts the official date back; done items stay done |
+| 5 | Licence facts | **Only the CA** types number and dates; the owner only uploads the certificate. An explicit `no_expiry` flag; empty expiry without it = "Details needed" |
+| 8 | Accounts | **One email = one firm + one role** (staff or owner); an owner has exactly one client; a reused email gets a plain error |
+| 7 | Archive | `archived_at`: hidden from lists, calendar and emails; no new items; owner login blocked; data kept; **Unarchive** restores it |
+| 16 | Files | One private bucket, path `firm_id/client_id/…`; PDF/JPG/PNG up to 10 MB; signed links 5 min. **The uploader can delete their own file** (an Activity line records it), **except a done item's receipt** (only Edit on Mark done replaces it). Needs a small delete control built from existing parts (not in the frames) |
+| T1 | Migrations | **Supabase CLI as a pinned npm dev package.** Lakshay runs `npx supabase login` and `link` once (password typed by him). Claude runs `db push --dry-run`, then `db push`. Fallback: the SQL Editor |
+| T2 | Security tests | **GitHub only** (ADR 0004/0008): a throwaway Supabase on GitHub's runner. The Mac runs lint, typecheck and unit tests |
+| T3 | Types | Claude's call: `supabase gen types --lang typescript --linked` into `src/lib/supabase/database.types.ts`, committed, re-run after each migration |
+
+Sources checked 2026-10-22 (supabase.com/docs; no page shows a date): [CLI getting started](https://supabase.com/docs/guides/local-development/cli/getting-started), [db push](https://supabase.com/docs/reference/cli/supabase-db-push), [gen types](https://supabase.com/docs/reference/cli/supabase-gen-types), [testing in CI](https://supabase.com/docs/guides/deployment/ci/testing), [API keys](https://supabase.com/docs/guides/api/api-keys). `supabase start` and `db pull` need Docker; `db push` is not said to (`UNVERIFIED`, try once). Legacy `anon`/`service_role` keys stay valid until switched off in the dashboard.
+
+**FS-2 build steps** (branch `feat/v1-fs2-data`; load the `supabase` and `supabase-postgres-best-practices` skills before any SQL; stop after each step that needs Lakshay):
+1. Draft of tables and API shapes in this file, for Lakshay to review. 2. Tooling: `supabase` CLI and Vitest as pinned dev packages, `supabase init`; Lakshay runs `login` and `link`. 3. Migration 0001: helper functions for "my firm / my role / my client" (private schema), tables, RLS on every table (`TO authenticated`, a `firm_id` check, never `user_metadata`), the storage bucket and its rules; `db push --dry-run`, then `db push`; read-only advisors show no RLS warnings. 4. Generated types. 5. `src/lib/supabase/`: `supabase-js` and `@supabase/ssr` (pinned), a server client acting as the user, a browser client, a `server-only` secret-key client. 6. `tests/security/`: made-up firms A and B and an owner of each; every table read, insert, update, delete across firms and owners; Notes hidden from owners; owners can't edit licence facts; file reads across firms blocked; deletes only by the uploader, never a done receipt. 7. GitHub Actions: lint, typecheck, unit tests; then `supabase/setup-cli`, `supabase start`, security tests. 8. Merge when green; tick FS-2 in the README.
+
+**Logic cores** (pure functions, tests beside the code in `src/features/<feature>/`, each starts with its own short design talk): FS-5 due dates ([due-dates.md](../research/due-dates.md), criterion 6) · FS-14 repeating tasks (criterion 10) · FS-10 licence warnings ([licences.md](../research/licences.md), criterion 9) · FS-13 factory rules ([applicability-delhi-haryana.md](../research/applicability-delhi-haryana.md), criterion 5) · FS-8 CSV parser ([import-formats.md](../research/import-formats.md), criterion 3).
+**The look in code** (once, at the start of FS-3): Figma variables into one CSS token file · the 38 parts on `05 Components` into `src/components/ui/` (shadcn, restyled) · one Code Connect test call (`UNVERIFIED` on the Education plan) · brand files into `public/`.
+**How each step is checked:** FS-2: migrations run on training, advisors show no RLS warnings, cross-firm tests pass on GitHub. Logic cores: `npx vitest run`. Screens: compared with the picture Figma returns; the demo story is walked at PM-16.
+
 ## Lakshay does by hand (Claude can't)
 - [x] "comply pilot" restored (2026-10-22). Claude's Supabase tool pointed at another project (`bqprlhfixgcpfhxthrss`, neither of ours), so Claude set a local entry for this folder only, pointing at "comply pilot". Signed in on 2026-10-22; the address was checked (`weywbysvdcdjcciqgrqw`)
 - [x] The three old v0 env files are deleted (2026-10-22, D19)
-- [ ] Supabase keys: new ones were made on "comply pilot", but a secret key value was shared in chat, so turn that one off and make another. Check the old v0 keys are off too. Values only into `.env.local`, never chat (D19, [build-plan.md](build-plan.md) step 0.3)
+- [ ] Supabase keys: new ones were made on "comply pilot", but a secret key value was shared in chat, so turn that one off and make another. Check the old v0 keys are off too. Values only into `.env.local`, never chat (D19)
 - [ ] Gmail: Lakshay's personal account ([ADR 0011](../../../adr/0011-email-from-personal-gmail.md)). Before FS-3, the first email: turn on 2-Step Verification and make an app password; it goes only into `.env.local` and the settings pages, never into chat
 - [x] Node 24 LTS installed by Claude (2026-10-22): Homebrew `node@24` (24.22.1), put first on the PATH by one line at the end of `~/.zshrc` (undo = delete that line). The Mac had Node 25.6.1, which stopped getting security fixes on 2026-06-01 ([endoflife.date](https://endoflife.date/nodejs)); Vercel's default is 24.x ([Vercel docs](https://vercel.com/docs/functions/runtimes/node-js/node-js-versions)). **Side effect, fixed:** installing it updated a shared Homebrew library, which broke the old Homebrew Node 25 (and `mongosh`), so Claude ran `brew upgrade node`: Homebrew's own `node` is now 26.12.1 (mongosh 2.13.0). Shells use Node 24; Node 26 only serves Homebrew's own tools. Node 26 becomes LTS around 2026-10-28; whether Vercel offers it yet is `UNVERIFIED`
 - [x] `gh auth login` done (2026-10-22): Claude can open pull requests and read check results from the terminal
@@ -154,9 +180,9 @@ On 2026-10-22 a fresh helper agent read the design docs as a builder and listed 
 ## Open checks
 Short fact-checks done 2026-10-21 are in the ADRs. Still open:
 - `UNVERIFIED` Google's own page for app passwords (third-party pages say 2-Step Verification is required)
-- `UNVERIFIED` Vercel Hobby may pick the Seoul region (`icn1` exists; the Hobby page says "single region"). Confirm at QA-1
-- `UNVERIFIED` whether `supabase db push` needs Docker. Try it at FS-2
-- Repo visibility: the repo is private from 2026-10-22 ([ADR 0010](../../../adr/0010-private-repository.md)); GitHub Pro is not wanted for now (2026-10-22); `UNVERIFIED` Vercel's current rule for private repos on Hobby. Check at QA-1
+- `UNVERIFIED` Vercel Hobby may pick the Seoul region (`icn1` exists; the Hobby page says "single region"). Confirm at deploy (D20)
+- `UNVERIFIED` whether `supabase db push` needs Docker (the docs don't say; checked 2026-10-22). Try it once at FS-2
+- Repo visibility: the repo is private from 2026-10-22 ([ADR 0010](../../../adr/0010-private-repository.md)); GitHub Pro is not wanted for now (2026-10-22); `UNVERIFIED` Vercel's current rule for private repos on Hobby. Check at deploy (D20)
 - `UNVERIFIED` Supabase's rate limit for custom SMTP (sources say 30 messages an hour, or 30 new users an hour); Supabase's current API key names
 - Package versions on npm on 2026-10-21: Next.js 16.4.2, React 19.3.1, Tailwind 4.3.3, shadcn 4.22.1, supabase-js 2.118.0, Vitest 5.0.5, Playwright 1.64.1, Nodemailer 10.1.7, Zod 4.6.7, TypeScript 7.0.2. QA-1 pins the versions it uses
 - Phosphor's code package name; Next.js `onRequestError` confirmed in the docs (it exists since Next.js 15)
