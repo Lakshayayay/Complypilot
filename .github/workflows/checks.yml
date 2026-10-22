@@ -1,0 +1,39 @@
+# Runs on every push. Claude merges only when both jobs are green (ADR 0010: no branch rule on the free plan).
+name: checks
+
+on: push
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - run: npm run lint
+      - run: npm run typecheck
+      - run: npm run test:unit
+
+  # Firm separation (criterion 2) against a throwaway Supabase (ADR 0004, 0008).
+  security:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      - uses: actions/setup-node@v7
+        with:
+          node-version-file: .nvmrc
+          cache: npm
+      - run: npm ci
+      - name: Start a throwaway Supabase (only the parts the tests use)
+        run: npx supabase start -x studio,imgproxy,edge-runtime,logflare,vector,supavisor,mailpit,realtime,postgres-meta
+      - name: Share its address and keys with the tests
+        run: npx supabase status -o env | sed 's/"//g' >> "$GITHUB_ENV"
+      - name: Every public table has RLS on
+        run: |
+          off=$(docker exec "$(docker ps -qf name=supabase_db)" psql -U postgres -tAc \
+            "select string_agg(relname, ', ') from pg_class where relnamespace = 'public'::regnamespace and relkind = 'r' and not relrowsecurity")
+          if [ -n "$off" ]; then echo "RLS is off on: $off"; exit 1; fi
+      - run: npm run test:security
