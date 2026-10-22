@@ -1,7 +1,7 @@
 # v1 Build (stage 2)
 
 **Stage:** 2 Build [FS], planned 2026-10-21 with Lakshay; **started 2026-10-22, after gate PM-12 (design approved)**. **Tasks:** FS-1 to FS-16, QA-1 and gate PM-16, in the [README](../README.md). **Decisions:** [docs/adr/](../../../adr/README.md) (0001 to 0011).
-**Next step:** FS-2 (tables, API shapes, RLS, and the automatic checks). QA-1 (the app skeleton, on the Mac only) closed 2026-10-22; Vercel and the deploy wait until the end (D20).
+**Next step:** FS-5 (the due-date engine), then the other logic cores. FS-2 (tables, RLS, security tests, GitHub checks) closed 2026-10-23; QA-1 (the app skeleton, on the Mac only) closed 2026-10-22; Vercel and the deploy wait until the end (D20).
 FS-2's decisions and steps are in "FS-2 decisions" below.
 
 ## Learn first
@@ -90,7 +90,7 @@ Agreed D13: logic that needs no screens comes first; screens follow in demo-stor
 **Before screens (needs no design):**
 - [x] v1-FS-1 close-out (2026-10-22): decisions written (this file, ADRs 0001 to 0011); the Supabase tool signed in; the training project checked (8 v0 tables, a few test rows, no logins or files) and wiped by Lakshay in the SQL Editor. Supabase's own `rls_auto_enable()` helper was kept: it turns RLS on for every new table in `public`
 - [x] v1-QA-1 app skeleton, on the Mac only (D20; closed 2026-10-22): one starter page; `npm run lint`, `npm run typecheck` and `npm run build` pass; `next dev` serves the page. Exact versions pinned (`.npmrc`), `engines` Node 24.x, `.nvmrc`. The GitHub Actions checks (lint, type check, Vitest) and the branch rule join at FS-2; the email-on-error hook comes at QA-5
-- [ ] v1-FS-2 tables, API shapes, RLS and the cross-firm tests; the automatic checks (GitHub Actions) start here, and the branch rule only if GitHub Pro is added later. Decisions agreed 2026-10-22: see "FS-2 decisions" below
+- [x] v1-FS-2 (closed 2026-10-23): two migrations in `supabase/migrations/` (12 tables, RLS on every one, explicit grants, no anonymous access, composite foreign keys, owner guards, database-written events, a private `files` bucket); 80 security tests in `tests/security/` pass on GitHub; on training, `db push` applied both and Supabase's security advisor shows no warnings. GitHub Actions (`.github/workflows/checks.yml`) runs lint, typecheck, unit tests and the security tests on every push
 - [ ] v1-FS-5 due-date engine (criterion 6)
 - [ ] Logic cores, each pure with unit tests: v1-FS-14 next dates (criterion 10) · v1-FS-10 licence warnings (criterion 9) · v1-FS-13 factory rules (criterion 5) · v1-FS-8 CSV parser and bad-row report (criterion 3)
 
@@ -111,14 +111,22 @@ Agreed D13: logic that needs no screens comes first; screens follow in demo-stor
 | 8 | Accounts | **One email = one firm + one role** (staff or owner); an owner has exactly one client; a reused email gets a plain error |
 | 7 | Archive | `archived_at`: hidden from lists, calendar and emails; no new items; owner login blocked; data kept; **Unarchive** restores it |
 | 16 | Files | One private bucket, path `firm_id/client_id/…`; PDF/JPG/PNG up to 10 MB; signed links 5 min. **The uploader can delete their own file** (an Activity line records it), **except a done item's receipt** (only Edit on Mark done replaces it). Needs a small delete control built from existing parts (not in the frames) |
-| T1 | Migrations | **Supabase CLI as a pinned npm dev package.** Lakshay runs `npx supabase login` and `link` once (password typed by him). Claude runs `db push --dry-run`, then `db push`. Fallback: the SQL Editor |
+| T1 | Migrations | **Supabase CLI as a pinned npm dev package.** Lakshay runs `npx supabase login` and `link` once (password typed by him). Claude runs `db push --dry-run`, then `db push`. **`db push` works without Docker** (2026-10-23) |
 | T2 | Security tests | **GitHub only** (ADR 0004/0008): a throwaway Supabase on GitHub's runner. The Mac runs lint, typecheck and unit tests |
-| T3 | Types | Claude's call: `supabase gen types --lang typescript --linked` into `src/lib/supabase/database.types.ts`, committed, re-run after each migration |
+| T3 | Types | Claude's call: `supabase gen types --lang typescript --linked` into `src/lib/supabase/database.types.ts`, committed, re-run by hand after each migration (GitHub doesn't diff it: the local and cloud generators lay the same types out differently) |
 
 Sources checked 2026-10-22 (supabase.com/docs; no page shows a date): [CLI getting started](https://supabase.com/docs/guides/local-development/cli/getting-started), [db push](https://supabase.com/docs/reference/cli/supabase-db-push), [gen types](https://supabase.com/docs/reference/cli/supabase-gen-types), [testing in CI](https://supabase.com/docs/guides/deployment/ci/testing), [API keys](https://supabase.com/docs/guides/api/api-keys). `supabase start` and `db pull` need Docker; `db push` is not said to (`UNVERIFIED`, try once). Legacy `anon`/`service_role` keys stay valid until switched off in the dashboard.
 
 **FS-2 build steps** (branch `feat/v1-fs2-data`; load the `supabase` and `supabase-postgres-best-practices` skills before any SQL; stop after each step that needs Lakshay):
 1. Draft of tables and API shapes in this file, for Lakshay to review. 2. Tooling: `supabase` CLI and Vitest as pinned dev packages, `supabase init`; Lakshay runs `login` and `link`. 3. Migration 0001: helper functions for "my firm / my role / my client" (private schema), tables, RLS on every table (`TO authenticated`, a `firm_id` check, never `user_metadata`), the storage bucket and its rules; `db push --dry-run`, then `db push`; read-only advisors show no RLS warnings. 4. Generated types. 5. `src/lib/supabase/`: `supabase-js` and `@supabase/ssr` (pinned), a server client acting as the user, a browser client, a `server-only` secret-key client. 6. `tests/security/`: made-up firms A and B and an owner of each; every table read, insert, update, delete across firms and owners; Notes hidden from owners; owners can't edit licence facts; file reads across firms blocked; deletes only by the uploader, never a done receipt. 7. GitHub Actions: lint, typecheck, unit tests; then `supabase/setup-cli`, `supabase start`, security tests. 8. Merge when green; tick FS-2 in the README.
+
+**What FS-2 built, and what it taught us (2026-10-23)**
+- **Grants:** Supabase stops exposing new tables to the Data API by itself on 2026-10-30 ([changelog](https://supabase.com/changelog/45329-breaking-change-tables-not-exposed-to-data-and-graphql-api-automatically)). Every migration grants each new table to `authenticated` and `service_role` and revokes `anon`; the local copy runs with `auto_expose_new_tables = false` to prove it.
+- **Storage reads follow the files table:** an object can be read only if its `files` row is visible. A deleted file stays visible to its uploader alone, because Postgres checks the read rule before a delete.
+- **Supabase's own `rls_auto_enable()`** was callable by anyone through the API; the second migration closes that (the event trigger still works).
+- **Moved to FS-3, their first use:** `@supabase/ssr` and the server and browser clients. FS-2's only app file is `src/lib/supabase/database.types.ts`.
+- **Versions pinned:** `supabase` CLI 2.121.0, Vitest 5.0.5, `@supabase/supabase-js` 2.118.0, `@types/node` 24.19.2 (was 20, which Vitest 5 refuses).
+- **New table checklist:** a migration with RLS and grants, a case in `tests/security/firms-apart.test.ts` and the `TABLES` list (the coverage test fails otherwise), re-run `gen types`, then `db push` only after GitHub is green.
 
 **Logic cores** (pure functions, tests beside the code in `src/features/<feature>/`, each starts with its own short design talk): FS-5 due dates ([due-dates.md](../research/due-dates.md), criterion 6) · FS-14 repeating tasks (criterion 10) · FS-10 licence warnings ([licences.md](../research/licences.md), criterion 9) · FS-13 factory rules ([applicability-delhi-haryana.md](../research/applicability-delhi-haryana.md), criterion 5) · FS-8 CSV parser ([import-formats.md](../research/import-formats.md), criterion 3).
 **The look in code** (once, at the start of FS-3): Figma variables into one CSS token file · the 38 parts on `05 Components` into `src/components/ui/` (shadcn, restyled) · one Code Connect test call (`UNVERIFIED` on the Education plan) · brand files into `public/`.
@@ -133,7 +141,7 @@ Built only from the decisions above and the frames. **S** = staff of that firm, 
 | `members` | user_id (the login), firm_id, role (`staff` or `owner`), client_id (owners only), name, email | Everyone reads their own row; S read their firm's members. Written only by the server on sign-up and invite accept. One row per login = one email, one firm, one role |
 | `invites` | email, role, client_id, invited_by, accepted_at | S create and read their firm's. Accepted by the server |
 | `consents` | user_id, notice_version, accepted_at | S read their firm's, add their own. **Never changed or deleted** |
-| `clients` | name, trade_name, gstin, pan, state, gst_scheme, tds / pf / esic flags, income_tax_type, contact_name, contact_phone, archived_at | S all in their firm. O read their own (not if archived). Unique (firm_id, gstin) |
+| `clients` | name, trade_name, gstin, pan, state, gst_scheme, contact_name, contact_phone, archived_at (no TDS/PF/ESIC flags or income-tax type: `client_filings` is the one record of which filings apply; the CSV import turns those columns into filings. Approved 2026-10-23) | S all in their firm. O read their own (not if archived). Unique (firm_id, gstin) |
 | `client_filings` | client_id, filing_code | S all. O read their own |
 | `calendar_items` | client_id, kind (`filing` / `licence` / `task`), filing_code, period_start, period_label, official_due_date, due_date, due_date_change_id, licence_id, title, filed_at / by, done_at / by, arn, receipt_file_id | S read and update. O read their own. Rows are made and rebuilt by server code. Unique (client_id, filing_code, period_start) |
 | `due_date_changes` | filing_code, period_start, state (optional), new_due_date, source, created_by, removed_at, removed_by | S only, own firm. O never read directly (they see the moved date on the item) |
@@ -219,9 +227,9 @@ On 2026-10-22 a fresh helper agent read the design docs as a builder and listed 
 Short fact-checks done 2026-10-21 are in the ADRs. Still open:
 - `UNVERIFIED` Google's own page for app passwords (third-party pages say 2-Step Verification is required)
 - `UNVERIFIED` Vercel Hobby may pick the Seoul region (`icn1` exists; the Hobby page says "single region"). Confirm at deploy (D20)
-- `UNVERIFIED` whether `supabase db push` needs Docker (the docs don't say; checked 2026-10-22). Try it once at FS-2
+- Confirmed 2026-10-23: `supabase db push` needs no Docker. `supabase status -o env` (CLI 2.121.0) prints `API_URL`, `PUBLISHABLE_KEY`, `SECRET_KEY`, `DB_URL`, plus the legacy `ANON_KEY` and `SERVICE_ROLE_KEY`
 - Repo visibility: the repo is private from 2026-10-22 ([ADR 0010](../../../adr/0010-private-repository.md)); GitHub Pro is not wanted for now (2026-10-22); `UNVERIFIED` Vercel's current rule for private repos on Hobby. Check at deploy (D20)
-- `UNVERIFIED` Supabase's rate limit for custom SMTP (sources say 30 messages an hour, or 30 new users an hour); Supabase's current API key names
+- `UNVERIFIED` Supabase's rate limit for custom SMTP (sources say 30 messages an hour, or 30 new users an hour)
 - Package versions on npm on 2026-10-21: Next.js 16.4.2, React 19.3.1, Tailwind 4.3.3, shadcn 4.22.1, supabase-js 2.118.0, Vitest 5.0.5, Playwright 1.64.1, Nodemailer 10.1.7, Zod 4.6.7, TypeScript 7.0.2. QA-1 pins the versions it uses
 - Phosphor's code package name; Next.js `onRequestError` confirmed in the docs (it exists since Next.js 15)
 
