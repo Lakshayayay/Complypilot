@@ -1,8 +1,8 @@
 # v1 Build (stage 2)
 
 **Stage:** 2 Build [FS], planned 2026-10-21 with Lakshay; **started 2026-10-22, after gate PM-12 (design approved)**. **Tasks:** FS-1 to FS-16, QA-1 and gate PM-16, in the [README](../README.md). **Decisions:** [docs/adr/](../../../adr/README.md) (0001 to 0011).
-**Next step:** the other logic cores (FS-14, FS-10, FS-13, FS-8). FS-5 (the due-date engine) closed 2026-10-24; FS-2 (tables, RLS, security tests, GitHub checks) closed 2026-10-23; QA-1 (the app skeleton, on the Mac only) closed 2026-10-22; Vercel and the deploy wait until the end (D20).
-FS-2's decisions and steps are in "FS-2 decisions" below; FS-5's are in "FS-5 decisions".
+**Next step:** the other logic cores (FS-10, FS-13, FS-8). The FS-14 core (next dates for repeating tasks) was built 2026-10-24; FS-5 (the due-date engine) closed 2026-10-24; FS-2 (tables, RLS, security tests, GitHub checks) closed 2026-10-23; QA-1 (the app skeleton, on the Mac only) closed 2026-10-22; Vercel and the deploy wait until the end (D20).
+FS-2's decisions and steps are in "FS-2 decisions" below; FS-5's are in "FS-5 decisions"; FS-14's in "FS-14 decisions".
 
 ## Learn first
 New ideas this stage uses. Sources opened 2026-10-21 unless marked.
@@ -24,6 +24,7 @@ New ideas this stage uses. Sources opened 2026-10-21 unless marked.
 | Design tokens in code | The Figma variables, as CSS variables in one file | Change a colour once, everywhere | Names must match Figma | [Tailwind: Theme variables](https://tailwindcss.com/docs/theme) |
 | Design-to-code tool | Figma's own tool (`get_design_context`) reads a frame's real structure (layout, spacing, variables, parts, icons) and returns React + Tailwind code as a starting point, plus a picture of the frame | Screens come from the design data, not from copying a screenshot by eye | It writes web code to adapt, not finished code: data, login and rules are ours | [Figma: server returning web code](https://developers.figma.com/docs/figma-mcp-server/server-returning-web-code) (opened 2026-10-22) |
 | Code Connect | A link from each Figma part to its code file, so Figma's code uses our own parts | Less swapping per screen | Figma lists it for Organization and Enterprise plans; the Education plan is `UNVERIFIED`, one test call decides | [Figma: Code Connect](https://help.figma.com/hc/en-us/articles/23920389749655-Code-Connect) (opened 2026-10-22) |
+| Anchor day | The day of the month a repeating task remembers (from its first due date). Each next date uses it; a shorter month gets its last day instead | A task on the 31st never slides to the 30th for good (criterion 10) | The calendar standard **skips** a date that does not exist ("MUST be ignored"); we move it back to the month's last day instead, because a skipped month is a missed deadline | [RFC 5545, section 3.3.10](https://www.rfc-editor.org/rfc/rfc5545#section-3.3.10) (opened 2026-10-24) |
 
 ## Decision log
 All agreed with Lakshay on 2026-10-21, one at a time. "Options" are what Claude offered.
@@ -92,7 +93,8 @@ Agreed D13: logic that needs no screens comes first; screens follow in demo-stor
 - [x] v1-QA-1 app skeleton, on the Mac only (D20; closed 2026-10-22): one starter page; `npm run lint`, `npm run typecheck` and `npm run build` pass; `next dev` serves the page. Exact versions pinned (`.npmrc`), `engines` Node 24.x, `.nvmrc`. The GitHub Actions checks (lint, type check, Vitest) and the branch rule join at FS-2; the email-on-error hook comes at QA-5
 - [x] v1-FS-2 (closed 2026-10-23): two migrations in `supabase/migrations/` (12 tables, RLS on every one, explicit grants, no anonymous access, composite foreign keys, owner guards, database-written events, a private `files` bucket); 80 security tests in `tests/security/` pass on GitHub; on training, `db push` applied both and Supabase's security advisor shows no warnings. GitHub Actions (`.github/workflows/checks.yml`) runs lint, typecheck, unit tests and the security tests on every push
 - [x] v1-FS-5 due-date engine (closed 2026-10-24, criterion 6): pure code in `src/features/due-dates/`, `src/features/calendar/item-status.ts` and `src/lib/` (`dates.ts`, `states.ts`); 106 unit tests, one per ✅ row of due-dates.md plus the rules below
-- [ ] Logic cores, each pure with unit tests: v1-FS-14 next dates (criterion 10) · v1-FS-10 licence warnings (criterion 9) · v1-FS-13 factory rules (criterion 5) · v1-FS-8 CSV parser and bad-row report (criterion 3)
+- [x] v1-FS-14 core, next dates for repeating tasks (built 2026-10-24, criterion 10): `src/features/tasks/repeating-tasks.ts`, 11 unit tests; the table and screens come with the FS-14 screen task
+- [ ] Logic cores, each pure with unit tests: v1-FS-10 licence warnings (criterion 9) · v1-FS-13 factory rules (criterion 5) · v1-FS-8 CSV parser and bad-row report (criterion 3)
 
 **Screens, in demo-story order (PM-12 passed 2026-10-22):**
 - [ ] FS-3 login, sign-up, consent, invite colleagues · FS-4 clients · FS-8 import screens · FS-6 calendar · FS-12 invite owner and owner login · FS-7 thread and Mark done · FS-10 licence screens · FS-13 factory questions screens · FS-14 task screens · FS-11 override dates · FS-15 reminders · FS-9 backups on, breach runbook, demo-data guard · FS-16 demo data
@@ -188,6 +190,17 @@ Also settled: advance tax is 4 instalments for every client (a presumptive clien
 - **Tests:** 106 unit tests (`npm run test:unit`). The engine tests open a one-day window on each ✅ date and expect exactly that item. Three deliberate breaks (March TDS, the QRMP state split, the window using the official date) each made tests fail. A guard test compares the engine's 13 filing codes with the migration's CHECK list.
 - **Known limits (v1):** the client's current GST scheme applies to every period (a mid-year switch is not handled). Periods are tried from 3 years before the window (`ponytail:` note in the code). Left out on purpose: government deductors (7 April) and the 30-day challan-cum-statement TDS cases, which are not factory-client cases. Tax audit and audit-case return items exist only for years in due-dates.md; the CA adds later years as tasks until they are confirmed.
 - **Used by:** FS-4 (`filingsFor`, `ruleText`, then `workOutItems` to save items), FS-11 (`workOutItems` with changes, for the preview), FS-6/FS-7/FS-15 (`itemStatus`, `DUE_SOON_DAYS`), FS-8 and FS-10/FS-14 (`lib/dates.ts`, `lib/states.ts`).
+
+## FS-14 decisions (2026-10-24, Lakshay; one question at a time, options plus a recommendation)
+**Already set by the approved design:** a task repeats monthly, quarterly or yearly (F8); the series keeps its **anchor day** and a shorter month gets its last day: 31 Dec, 31 Mar, 30 Jun, 30 Sep, 31 Dec (CA-19, criterion 10); the next one is made only when the last one is ticked (CA-18b).
+| # | Point | Decision |
+|---|---|---|
+| D1 | Ticked late | **The next one in the series**, never skipped: due 25 Oct, ticked on 30 Dec → 25 Nov, which shows late. The core never reads the clock |
+| D2 | One task moved by hand | **The series keeps its day:** the next date counts from the ticked item's series date (`official_due_date`), not its moved `due_date`. 25 Nov moved to 27 Nov → the next is 25 Dec. To change every later date, the CA edits the repeat |
+| D3 | Code shape | **One file, one function:** `nextDueDate({firstDueDate, repeat, after})` in `features/tasks/repeating-tasks.ts`, tests beside it. CA-19's "Next dates" preview calls it a few times in a row. The month-end helper stays in that file until a second feature needs it, then moves to `lib/dates.ts` |
+
+**What the FS-14 core built (2026-10-24):** 11 unit tests (the 31st in February, leap years, the CA-19 and CA-18b examples, 24 months without drift, D1, D2, bad input). A deliberate break (counting from the last date instead of the anchor day) made 6 of them fail.
+**Left for the FS-14 screen task:** the `firm_tasks` table (title, client, first due date, repeat) with RLS and security tests; what CA-18's "48 clients" task means when an item has one client; Undo on tick; the "how it repeats" words on CA-18. Not planned: an end date for a series, and a series started on the 30th meaning "month end" (the CA picks a 31st).
 
 ## Lakshay does by hand (Claude can't)
 - [x] "comply pilot" restored (2026-10-22). Claude's Supabase tool pointed at another project (`bqprlhfixgcpfhxthrss`, neither of ours), so Claude set a local entry for this folder only, pointing at "comply pilot". Signed in on 2026-10-22; the address was checked (`weywbysvdcdjcciqgrqw`)
