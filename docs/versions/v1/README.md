@@ -107,7 +107,7 @@ The stack, folder layout, naming and order of work were agreed with Lakshay on 2
 - [x] v1-FS-2 Data structure, API shapes (what the server sends and receives) and RLS rules (database rules that keep firms apart), with tests; the automatic checks on every change start here; decisions agreed 2026-10-22 (tech.md) → criterion 2. **Closed 2026-10-23:** 12 tables with RLS on training, 80 security tests green on GitHub, checks on every push
 - [ ] v1-FS-3 Login, firm sign-up, consent, invite colleagues → criterion 1
 - [ ] v1-FS-4 Clients: add, edit, archive; choose the filings that apply
-- [ ] v1-FS-5 Due-date engine: write the ✅ rows (confirmed in v1-PM-14) as a pure function (same inputs, same answer) → criterion 6
+- [x] v1-FS-5 Due-date engine: write the ✅ rows (confirmed in v1-PM-14) as a pure function (same inputs, same answer) → criterion 6. **Closed 2026-10-24:** 106 unit tests, one per ✅ row; decisions in tech.md, "FS-5 decisions"
 - [ ] v1-FS-6 Shared calendar, CA view and owner view → criterion 8
 - [ ] v1-FS-7 Item thread: messages, tags, files in private storage, mark done with ARN and receipt → criterion 11
 - [ ] v1-FS-8 CSV import with a report of bad rows → criterion 3
