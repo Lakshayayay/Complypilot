@@ -1,8 +1,8 @@
 # v1 Build (stage 2)
 
 **Stage:** 2 Build [FS], planned 2026-10-21 with Lakshay; **started 2026-10-22, after gate PM-12 (design approved)**. **Tasks:** FS-1 to FS-16, QA-1 and gate PM-16, in the [README](../README.md). **Decisions:** [docs/adr/](../../../adr/README.md) (0001 to 0011).
-**Next step:** the other logic cores (FS-10, FS-13, FS-8). The FS-14 core (next dates for repeating tasks) was built 2026-10-24; FS-5 (the due-date engine) closed 2026-10-24; FS-2 (tables, RLS, security tests, GitHub checks) closed 2026-10-23; QA-1 (the app skeleton, on the Mac only) closed 2026-10-22; Vercel and the deploy wait until the end (D20).
-FS-2's decisions and steps are in "FS-2 decisions" below; FS-5's are in "FS-5 decisions"; FS-14's in "FS-14 decisions".
+**Next step:** the other logic cores (FS-13, FS-8). The FS-14 core (next dates for repeating tasks) and the FS-10 core (licence status and apply-by dates) were built 2026-10-24; FS-5 (the due-date engine) closed 2026-10-24; FS-2 (tables, RLS, security tests, GitHub checks) closed 2026-10-23; QA-1 (the app skeleton, on the Mac only) closed 2026-10-22; Vercel and the deploy wait until the end (D20).
+FS-2's decisions and steps are in "FS-2 decisions" below; FS-5's are in "FS-5 decisions"; FS-14's in "FS-14 decisions"; FS-10's in "FS-10 decisions".
 
 ## Learn first
 New ideas this stage uses. Sources opened 2026-10-21 unless marked.
@@ -94,7 +94,8 @@ Agreed D13: logic that needs no screens comes first; screens follow in demo-stor
 - [x] v1-FS-2 (closed 2026-10-23): two migrations in `supabase/migrations/` (12 tables, RLS on every one, explicit grants, no anonymous access, composite foreign keys, owner guards, database-written events, a private `files` bucket); 80 security tests in `tests/security/` pass on GitHub; on training, `db push` applied both and Supabase's security advisor shows no warnings. GitHub Actions (`.github/workflows/checks.yml`) runs lint, typecheck, unit tests and the security tests on every push
 - [x] v1-FS-5 due-date engine (closed 2026-10-24, criterion 6): pure code in `src/features/due-dates/`, `src/features/calendar/item-status.ts` and `src/lib/` (`dates.ts`, `states.ts`); 106 unit tests, one per ✅ row of due-dates.md plus the rules below
 - [x] v1-FS-14 core, next dates for repeating tasks (built 2026-10-24, criterion 10): `src/features/tasks/repeating-tasks.ts`, 11 unit tests; the table and screens come with the FS-14 screen task
-- [ ] Logic cores, each pure with unit tests: v1-FS-10 licence warnings (criterion 9) · v1-FS-13 factory rules (criterion 5) · v1-FS-8 CSV parser and bad-row report (criterion 3)
+- [x] v1-FS-10 core, licence status and apply-by dates (built 2026-10-24, criterion 9): `src/features/licences/licence-status.ts`, 27 unit tests, plus `addMonths` in `lib/dates.ts`; the screens come with the FS-10 screen task
+- [ ] Logic cores, each pure with unit tests: v1-FS-13 factory rules (criterion 5) · v1-FS-8 CSV parser and bad-row report (criterion 3)
 
 **Screens, in demo-story order (PM-12 passed 2026-10-22):**
 - [ ] FS-3 login, sign-up, consent, invite colleagues · FS-4 clients · FS-8 import screens · FS-6 calendar · FS-12 invite owner and owner login · FS-7 thread and Mark done · FS-10 licence screens · FS-13 factory questions screens · FS-14 task screens · FS-11 override dates · FS-15 reminders · FS-9 backups on, breach runbook, demo-data guard · FS-16 demo data
@@ -197,10 +198,23 @@ Also settled: advance tax is 4 instalments for every client (a presumptive clien
 |---|---|---|
 | D1 | Ticked late | **The next one in the series**, never skipped: due 25 Oct, ticked on 30 Dec → 25 Nov, which shows late. The core never reads the clock |
 | D2 | One task moved by hand | **The series keeps its day:** the next date counts from the ticked item's series date (`official_due_date`), not its moved `due_date`. 25 Nov moved to 27 Nov → the next is 25 Dec. To change every later date, the CA edits the repeat |
-| D3 | Code shape | **One file, one function:** `nextDueDate({firstDueDate, repeat, after})` in `features/tasks/repeating-tasks.ts`, tests beside it. CA-19's "Next dates" preview calls it a few times in a row. The month-end helper stays in that file until a second feature needs it, then moves to `lib/dates.ts` |
+| D3 | Code shape | **One file, one function:** `nextDueDate({firstDueDate, repeat, after})` in `features/tasks/repeating-tasks.ts`, tests beside it. CA-19's "Next dates" preview calls it a few times in a row. The month-end helper stays in that file until a second feature needs it, then moves to `lib/dates.ts` (moved as `addMonths` in FS-10) |
 
 **What the FS-14 core built (2026-10-24):** 11 unit tests (the 31st in February, leap years, the CA-19 and CA-18b examples, 24 months without drift, D1, D2, bad input). A deliberate break (counting from the last date instead of the anchor day) made 6 of them fail.
 **Left for the FS-14 screen task:** the `firm_tasks` table (title, client, first due date, repeat) with RLS and security tests; what CA-18's "48 clients" task means when an item has one client; Undo on tick; the "how it repeats" words on CA-18. Not planned: an end date for a series, and a series started on the 30th meaning "month end" (the CA picks a 31st).
+
+## FS-10 decisions (2026-10-24, Lakshay; one question at a time, options plus a recommendation)
+**Already set:** the chips Valid, Renew soon, Expired, Details needed, Valid until cancelled (design.md); Renew soon from 90 days before the apply-by date until expiry, the same chip at 90, 60 and 30 days, only the emails differ (design.md, reminder days; this replaces the older five-level ladder in licences.md); `no_expiry` = Valid until cancelled with no reminders, an empty expiry without it = Details needed (FS-2 decision 5); Delhi factory licence apply by 30 days before expiry ✅.
+| # | Point | Decision |
+|---|---|---|
+| D1 | Store what | **Keep `apply_by_date`** (no migration), not `lead_days`. Saving an expiry fills it from the default lead time; the CA can change it; a renewal fills it again |
+| D2 | The expiry day | **Expired from the next day:** a licence "valid up to" 31 Dec is Renew soon on 31 Dec and Expired on 1 Jan |
+| D3 | Delhi fire certificate | **Expiry minus 6 calendar months** (31 Dec → 30 Jun), not 180 days (2 to 4 days too late). The [DFS FAQ](https://dfs.delhi.gov.in/faqs) (last updated 23 Oct 2026, read 2026-10-24) still says 3 years and "at least six months prior to the expiry"; the "valid until cancelled" amendment is only on a third-party site. A certificate that is valid until cancelled gets the "no expiry" tick |
+| D4 | Licence types | **Fixed codes plus the CA's own text**, the column stays plain text: `factory_licence`, `labour_registration`, `pollution_consent`, `fire_certificate`, `boiler_certificate`, `hazardous_waste`, `peso` (FS-13 creates these). Any other text is a CA's own licence, shown as typed, with no lead time |
+**Claude's calls (Lakshay can change them):** one file, `features/licences/licence-status.ts`: `defaultApplyBy`, `licenceStatus` → `{status, applyBy}`, `reminderDates` (for FS-15), `licenceName`. An empty apply-by date falls back to the default, so the 30-day lead is never lost; an unknown state is a plain error.
+
+**What the FS-10 core built (2026-10-24):** 27 unit tests (90, 60 and 30 days, the apply-by day, the expiry day and the day after, for the Delhi factory licence and for a licence with no lead time; no expiry with and without the tick; Delhi fire; the CA-16 and OW-10 examples), plus 5 for `addMonths`. Two deliberate breaks (Expired on the expiry day; reminders counted from expiry) made 2 and 3 tests fail.
+**Left for the FS-10 screen task:** the save action checks that apply-by is not after expiry and fills the default; "most urgent first" on CA-16; the words "Apply by 1 Dec" and "in 42 days".
 
 ## Lakshay does by hand (Claude can't)
 - [x] "comply pilot" restored (2026-10-22). Claude's Supabase tool pointed at another project (`bqprlhfixgcpfhxthrss`, neither of ours), so Claude set a local entry for this folder only, pointing at "comply pilot". Signed in on 2026-10-22; the address was checked (`weywbysvdcdjcciqgrqw`)
@@ -233,7 +247,7 @@ Lakshay's direction at PM-12 (2026-10-22): proper screens, subtle animation, a s
 - **Open question for the first screen task (FS-3):** CSS and shadcn's own animations only, or also an animation library for the richer moments. Recommendation then: CSS first.
 
 ## Builder check: open points for stage 2
-On 2026-10-22 a fresh helper agent read the design docs as a builder and listed 24 things it would have to guess. Three were contradictions and are corrected in the [README](../README.md#corrections-after-the-scope-lock). The rest are below: **recommended defaults, not agreed**. Each is settled with Lakshay, one at a time, in the task named in the last column (AGENTS.md: agree data and API shapes before screens). **The biggest gap is the first group: what a calendar item is and how its status moves.** **Settled in FS-2 (2026-10-22, "FS-2 decisions" above): points 1 to 5, 7, 8 and 16.** **Settled in FS-5 (2026-10-24, "FS-5 decisions"): the engine side of points 3 and 4, and the 7-day "Due soon" of point 9** (the licence-chip part of 9 waits for FS-10). Decisions needed at the design gate are in [design.md](../design/design.md) ("Decide at PM-12").
+On 2026-10-22 a fresh helper agent read the design docs as a builder and listed 24 things it would have to guess. Three were contradictions and are corrected in the [README](../README.md#corrections-after-the-scope-lock). The rest are below: **recommended defaults, not agreed**. Each is settled with Lakshay, one at a time, in the task named in the last column (AGENTS.md: agree data and API shapes before screens). **The biggest gap is the first group: what a calendar item is and how its status moves.** **Settled in FS-2 (2026-10-22, "FS-2 decisions" above): points 1 to 5, 7, 8 and 16.** **Settled in FS-5 (2026-10-24, "FS-5 decisions"): the engine side of points 3 and 4, and the 7-day "Due soon" of point 9**. **The licence part of point 9 was settled in FS-10 (2026-10-24, "FS-10 decisions"): Renew soon at 90, 60 and 30 days; the Delhi fire certificate uses 6 months, not 0.** Decisions needed at the design gate are in [design.md](../design/design.md) ("Decide at PM-12").
 | # | Point | Recommended default | Decide in |
 |---|---|---|---|
 | 1 | What a calendar item is, and its thread | Filings, licences and the firm's own tasks are items; each has one thread. An owner task is an item inside the filing's thread. On a thread: all firm staff and that client's owner. The "Notes" tab is CA-only (hidden from the owner by RLS); "Activity" is the event lines | FS-2 |
