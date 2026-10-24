@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import { addDays, daysBetween, parts, ymd } from './dates';
+import { addDays, addMonths, daysBetween, parts, ymd } from './dates';
 
 describe('ymd', () => {
   it('builds a plain date', () => {
@@ -20,6 +20,18 @@ describe('addDays', () => {
     ['2026-03-01', -1, '2026-02-28'],
   ])('%s + %i days = %s', (start, days, expected) => {
     expect(addDays(start, days)).toBe(expected);
+  });
+});
+
+describe('addMonths', () => {
+  it.each([
+    ['2026-12-31', -6, '2026-06-30'],
+    ['2027-08-31', -6, '2027-02-28'],
+    ['2027-08-31', 6, '2028-02-29'],
+    ['2027-01-31', 1, '2027-02-28'],
+    ['2026-10-25', 3, '2027-01-25'],
+  ])('%s + %i months = %s (a shorter month gets its last day)', (start, months, expected) => {
+    expect(addMonths(start, months)).toBe(expected);
   });
 });
 

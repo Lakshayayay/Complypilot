@@ -23,6 +23,13 @@ export function addDays(date: IsoDate, days: number): IsoDate {
   return ymd(year, month, day + days);
 }
 
+/** The same day `months` later (earlier when negative), or that month's last day if it is shorter. */
+export function addMonths(date: IsoDate, months: number): IsoDate {
+  const { year, month, day } = parts(date);
+  const lastDay = parts(ymd(year, month + months + 1, 0)).day;
+  return ymd(year, month + months, Math.min(day, lastDay));
+}
+
 /** Whole days from `from` to `to`; negative when `to` is earlier. */
 export function daysBetween(from: IsoDate, to: IsoDate): number {
   const a = parts(from);
