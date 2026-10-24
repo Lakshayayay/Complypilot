@@ -30,6 +30,7 @@ Researched 2026-10-05. Re-checked on official sources 2026-10-18 (tasks v1-PM-14
 | TDS / TCS Return, other | Forms 143, 144 (earlier 27EQ, 27Q) | Quarterly | Secondary sources agree on 31 Jul, 31 Oct, 31 Jan, 31 May | ⚠️ the official form documents exist, but the dates were not read on them (2026-10-21) |
 | Advance Tax Instalments | Income Tax | Quarterly | 15 Jun (at least 15%), 15 Sep (45%), 15 Dec (75%), 15 Mar (all); presumptive taxation: all by 15 Mar | ✅ Income-tax Act 2025, section 408, on incometaxindia.gov.in (checked 2026-10-21) |
 | Tax Audit Report | Income Tax: Audit cases | Annual | "one month before the return date, e.g. 30 September 2026"; for AY 2026-27 extended to **21 Oct 2026** | ✅ e-filing FAQ; CBDT Circular 07/2026 |
+| Tax Audit Report (Form 26) | Income-tax Act 2025: audit cases, tax year 2026-27 (the year from 1 Apr 2026) | Annual | **30 September 2027** | ✅ incometax.gov.in Income Tax Forms FAQ 30: "The due date for filing the tax audit report for Tax Year 2026-27 shall be 30th September, 2027" (opened 2026-10-24) |
 | Income Tax Return (ITR) | Audit cases | Annual | 31st October; for AY 2026-27 extended to **21 Nov 2026** (the group the circular calls "sl. no. 2") | ✅ CBDT Circular 07/2026 (companies not read) |
 | Income Tax Return (ITR) | Non-audit individuals/firms | Annual | The e-filing FAQ says "31st July 2026 or 31st August for non-audit cases": unclear. Secondary sources (2026-10-21): the Finance Bill 2026 moves non-audit business cases to 31 Aug and keeps ITR-1 and ITR-2 at 31 Jul, from tax year 2026-27; the enacted text was not found | ⚠️ |
 | PF Contribution (ECR Challan) | Employees' Provident Fund | Monthly | 15th of following month (no grace days) | ⚠️ EPFO pages unreadable (404 from my connection); search results of the EPF Scheme and the EPFO notice agree on the 15th |
@@ -46,7 +47,7 @@ MSME Form-1 (task v1-PM-10): the duty is confirmed in the Ministry of MSME annua
 ## ⚠️ Rows staying out of the app until confirmed
 1. TDS and TCS returns Forms 143 and 144 (Form 140 confirmed 2026-10-21).
 2. ~~Advance tax 15 Sep, 15 Dec and the percentage split~~: confirmed 2026-10-21 (section 408).
-3. ITR for non-audit filers, and ITR dates for tax year 2026-27 under section 263 of the new Act (Finance Bill 2026 says 31 Aug for non-audit business, per secondary sources only).
+3. ITR for non-audit filers, and ITR dates for tax year 2026-27 under section 263 of the new Act (Finance Bill 2026 says 31 Aug for non-audit business, per secondary sources only). Re-tried 2026-10-24: the section 263 page on incometaxindia.gov.in refuses automated reading (403); a search snippet says 31 Oct for audit cases, unread on an official page. So the audit-case return for tax year 2026-27 (31 Oct 2027) stays out; the tax audit report for that year (30 Sep 2027) is now ✅ above.
 4. PF 15th. A search of the EPF Scheme 1952 (paragraph 38(1): "within fifteen days of the close of every month") and the EPFO press release of 12.01.2016 (grace period withdrawn) both point to the 15th, but I could not open either page.
 5. MSME Form-1 dates (professional sites agree on 30 Apr and 31 Oct).
 
@@ -71,5 +72,6 @@ Lakshay chose on 2026-10-18 to leave items 4 and 5 as ⚠️. The CAs confirm th
 - ✅ Ministry of MSME annual report 2018-19 (S.O. 5622(E)): https://www.msme.gov.in/static/uploads/2025/06/07122dc914105f1ed8c869ad3d189e0f.pdf
 - ✅ Income Tax Dept, Form 140 document (opened by search 2026-10-21): https://www.incometaxindia.gov.in/documents/d/guest/fn-140
 - ✅ Income-tax Act 2025, section 408 (advance tax instalments, opened by search 2026-10-21): https://www.incometaxindia.gov.in/w/section-408-5
+- ✅ Income Tax Dept, Income Tax Forms FAQ (tax audit report, tax year 2026-27, opened 2026-10-24): https://www.incometax.gov.in/iec/foportal/help/all-topics/e-filing-services/%20income%20tax%20forms-faq
 - ⚠️ Forms 143 and 144 documents (dates not read): https://www.incometaxindia.gov.in/documents/d/guest/fn-143 · https://www.incometaxindia.gov.in/documents/d/guest/fn-144
 - ⚠️ EPFO Notice on Removal of 5-Day Grace Period: https://www.epfindia.gov.in/site_docs/PDFs/Updates/PressRelease_12012016.pdf (returns "not found" now)

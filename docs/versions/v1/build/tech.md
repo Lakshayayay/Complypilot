@@ -1,8 +1,8 @@
 # v1 Build (stage 2)
 
 **Stage:** 2 Build [FS], planned 2026-10-21 with Lakshay; **started 2026-10-22, after gate PM-12 (design approved)**. **Tasks:** FS-1 to FS-16, QA-1 and gate PM-16, in the [README](../README.md). **Decisions:** [docs/adr/](../../../adr/README.md) (0001 to 0011).
-**Next step:** FS-5 (the due-date engine), then the other logic cores. FS-2 (tables, RLS, security tests, GitHub checks) closed 2026-10-23; QA-1 (the app skeleton, on the Mac only) closed 2026-10-22; Vercel and the deploy wait until the end (D20).
-FS-2's decisions and steps are in "FS-2 decisions" below.
+**Next step:** the other logic cores (FS-14, FS-10, FS-13, FS-8). FS-5 (the due-date engine) closed 2026-10-24; FS-2 (tables, RLS, security tests, GitHub checks) closed 2026-10-23; QA-1 (the app skeleton, on the Mac only) closed 2026-10-22; Vercel and the deploy wait until the end (D20).
+FS-2's decisions and steps are in "FS-2 decisions" below; FS-5's are in "FS-5 decisions".
 
 ## Learn first
 New ideas this stage uses. Sources opened 2026-10-21 unless marked.
@@ -91,7 +91,7 @@ Agreed D13: logic that needs no screens comes first; screens follow in demo-stor
 - [x] v1-FS-1 close-out (2026-10-22): decisions written (this file, ADRs 0001 to 0011); the Supabase tool signed in; the training project checked (8 v0 tables, a few test rows, no logins or files) and wiped by Lakshay in the SQL Editor. Supabase's own `rls_auto_enable()` helper was kept: it turns RLS on for every new table in `public`
 - [x] v1-QA-1 app skeleton, on the Mac only (D20; closed 2026-10-22): one starter page; `npm run lint`, `npm run typecheck` and `npm run build` pass; `next dev` serves the page. Exact versions pinned (`.npmrc`), `engines` Node 24.x, `.nvmrc`. The GitHub Actions checks (lint, type check, Vitest) and the branch rule join at FS-2; the email-on-error hook comes at QA-5
 - [x] v1-FS-2 (closed 2026-10-23): two migrations in `supabase/migrations/` (12 tables, RLS on every one, explicit grants, no anonymous access, composite foreign keys, owner guards, database-written events, a private `files` bucket); 80 security tests in `tests/security/` pass on GitHub; on training, `db push` applied both and Supabase's security advisor shows no warnings. GitHub Actions (`.github/workflows/checks.yml`) runs lint, typecheck, unit tests and the security tests on every push
-- [ ] v1-FS-5 due-date engine (criterion 6)
+- [x] v1-FS-5 due-date engine (closed 2026-10-24, criterion 6): pure code in `src/features/due-dates/`, `src/features/calendar/item-status.ts` and `src/lib/` (`dates.ts`, `states.ts`); 106 unit tests, one per ✅ row of due-dates.md plus the rules below
 - [ ] Logic cores, each pure with unit tests: v1-FS-14 next dates (criterion 10) · v1-FS-10 licence warnings (criterion 9) · v1-FS-13 factory rules (criterion 5) · v1-FS-8 CSV parser and bad-row report (criterion 3)
 
 **Screens, in demo-story order (PM-12 passed 2026-10-22):**
@@ -170,6 +170,25 @@ Built only from the decisions above and the frames. **S** = staff of that firm, 
 
 **Three small points, confirmed 2026-10-23:** (a) filing codes (`gstr1`, `gstr3b`, `pmt06`, `cmp08`, `gstr4`, `gstr9`, `tds_deposit`, `tds_return_salary`, `tds_return_other`, `advance_tax`, `tax_audit`, `itr_audit`, `esic`) are plain text with a CHECK list, not a lookup table; (b) removing a due-date change keeps the row with `removed_at` (history stays); (c) events come from database triggers, as above.
 
+## FS-5 decisions (2026-10-24, Lakshay; one question at a time, options plus a recommendation)
+| # | Point | Decision |
+|---|---|---|
+| D1 | Files | Dates in `features/due-dates/due-date-engine.ts`; status in `features/calendar/item-status.ts`; states in `lib/states.ts`; date helpers in `lib/dates.ts` (Claude's addition: the engine, status and later cores share them). Tests beside each file |
+| D2 | Dates | Plain `"YYYY-MM-DD"` text (what Postgres `date` gives), tiny helpers that run in UTC, no package. `Temporal` is not in Node 24 (tried 2026-10-24). The engine never reads the clock: `today` is passed in, worked out in Asia/Kolkata by the caller |
+| D3 | Shape | One rule table keyed by filing code, three functions: `filingsFor(scheme)` (the add-client checkboxes), `workOutItems({scheme, state, filings, changes, from, to})` (items with the `calendar_items` fields), `ruleText(code, scheme)` (the CA-08 line). A rule and its text sit in one row, so they cannot disagree |
+| D4 | Window | An item is in the window by its **final** date (after changes), so an extended date stays on the calendar (30 Sep moved to 21 Oct is listed from 1 Oct) |
+| D5 | Which change wins | A change for the client's state beats an all-states change; between equals the newest wins; removed changes are ignored |
+| D6 | Period start, label | First day of the month, quarter or financial year (1 Apr); advance tax uses 1 Apr, 1 Jul, 1 Oct, 1 Jan. Labels: `September 2026`, `Jul to Sep 2026`, `FY 2025-26`, `1st instalment, FY 2026-27 (15%)`. FY wording works under both Income-tax Acts |
+| D7 | Bad input | A plain error, never a quiet skip: a filing that does not fit the scheme, an unknown filing, scheme or (QRMP GSTR-3B) state |
+| D8 | States | 36 names (28 states, 8 UTs); the merged "Dadra and Nagar Haveli and Daman and Diu" is in the 22nd group. Rule 61 still names the two UTs apart (37). GST state codes arrive in FS-8 |
+| D9 | Status | Two answers: **stage** (Done, Filed, Waiting on owner, Open: first that applies) and **timing** (Late with days, Due soon = today to 7 days ahead, Upcoming; none when Done). **Filed keeps its timing until Done** (criterion 12) |
+Also settled: advance tax is 4 instalments for every client (a presumptive client's CA unticks it and adds a 15 Mar task); the audit-case return for tax year 2026-27 stays out until its date is read on an official page ([due-dates.md](../research/due-dates.md)); the tax audit report for tax year 2026-27 (30 Sep 2027) is ✅ there.
+
+**What FS-5 built, and what it taught us (2026-10-24)**
+- **Tests:** 106 unit tests (`npm run test:unit`). The engine tests open a one-day window on each ✅ date and expect exactly that item. Three deliberate breaks (March TDS, the QRMP state split, the window using the official date) each made tests fail. A guard test compares the engine's 13 filing codes with the migration's CHECK list.
+- **Known limits (v1):** the client's current GST scheme applies to every period (a mid-year switch is not handled). Periods are tried from 3 years before the window (`ponytail:` note in the code). Left out on purpose: government deductors (7 April) and the 30-day challan-cum-statement TDS cases, which are not factory-client cases. Tax audit and audit-case return items exist only for years in due-dates.md; the CA adds later years as tasks until they are confirmed.
+- **Used by:** FS-4 (`filingsFor`, `ruleText`, then `workOutItems` to save items), FS-11 (`workOutItems` with changes, for the preview), FS-6/FS-7/FS-15 (`itemStatus`, `DUE_SOON_DAYS`), FS-8 and FS-10/FS-14 (`lib/dates.ts`, `lib/states.ts`).
+
 ## Lakshay does by hand (Claude can't)
 - [x] "comply pilot" restored (2026-10-22). Claude's Supabase tool pointed at another project (`bqprlhfixgcpfhxthrss`, neither of ours), so Claude set a local entry for this folder only, pointing at "comply pilot". Signed in on 2026-10-22; the address was checked (`weywbysvdcdjcciqgrqw`)
 - [x] The three old v0 env files are deleted (2026-10-22, D19)
@@ -201,7 +220,7 @@ Lakshay's direction at PM-12 (2026-10-22): proper screens, subtle animation, a s
 - **Open question for the first screen task (FS-3):** CSS and shadcn's own animations only, or also an animation library for the richer moments. Recommendation then: CSS first.
 
 ## Builder check: open points for stage 2
-On 2026-10-22 a fresh helper agent read the design docs as a builder and listed 24 things it would have to guess. Three were contradictions and are corrected in the [README](../README.md#corrections-after-the-scope-lock). The rest are below: **recommended defaults, not agreed**. Each is settled with Lakshay, one at a time, in the task named in the last column (AGENTS.md: agree data and API shapes before screens). **The biggest gap is the first group: what a calendar item is and how its status moves.** **Settled in FS-2 (2026-10-22, "FS-2 decisions" above): points 1 to 5, 7, 8 and 16.** Decisions needed at the design gate are in [design.md](../design/design.md) ("Decide at PM-12").
+On 2026-10-22 a fresh helper agent read the design docs as a builder and listed 24 things it would have to guess. Three were contradictions and are corrected in the [README](../README.md#corrections-after-the-scope-lock). The rest are below: **recommended defaults, not agreed**. Each is settled with Lakshay, one at a time, in the task named in the last column (AGENTS.md: agree data and API shapes before screens). **The biggest gap is the first group: what a calendar item is and how its status moves.** **Settled in FS-2 (2026-10-22, "FS-2 decisions" above): points 1 to 5, 7, 8 and 16.** **Settled in FS-5 (2026-10-24, "FS-5 decisions"): the engine side of points 3 and 4, and the 7-day "Due soon" of point 9** (the licence-chip part of 9 waits for FS-10). Decisions needed at the design gate are in [design.md](../design/design.md) ("Decide at PM-12").
 | # | Point | Recommended default | Decide in |
 |---|---|---|---|
 | 1 | What a calendar item is, and its thread | Filings, licences and the firm's own tasks are items; each has one thread. An owner task is an item inside the filing's thread. On a thread: all firm staff and that client's owner. The "Notes" tab is CA-only (hidden from the owner by RLS); "Activity" is the event lines | FS-2 |
